@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GamesModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="GamesEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Developers" EntityType="GamesModel.Developers" />
+    <EntitySet Name="Disk_types" EntityType="GamesModel.Disk_types" />
+    <EntitySet Name="Game_disks" EntityType="GamesModel.Game_disks" />
+    <EntitySet Name="Games" EntityType="GamesModel.Games" />
+    <EntitySet Name="Genres" EntityType="GamesModel.Genres" />
+    <EntitySet Name="Online_protections" EntityType="GamesModel.Online_protections" />
+    <EntitySet Name="Platforms" EntityType="GamesModel.Platforms" />
+    <EntitySet Name="Publishers" EntityType="GamesModel.Publishers" />
+    <EntitySet Name="RF_Distributors" EntityType="GamesModel.RF_Distributors" />
+    <AssociationSet Name="Game_Developer" Association="GamesModel.Game_Developer">
+      <End Role="Developers" EntitySet="Developers" />
+      <End Role="Games" EntitySet="Games" />
+    </AssociationSet>
+    <AssociationSet Name="In_type" Association="GamesModel.In_type">
+      <End Role="Disk_types" EntitySet="Disk_types" />
+      <End Role="Game_disks" EntitySet="Game_disks" />
+    </AssociationSet>
+    <AssociationSet Name="Disks_in_game" Association="GamesModel.Disks_in_game">
+      <End Role="Games" EntitySet="Games" />
+      <End Role="Game_disks" EntitySet="Game_disks" />
+    </AssociationSet>
+    <AssociationSet Name="Game_Publisher" Association="GamesModel.Game_Publisher">
+      <End Role="Publishers" EntitySet="Publishers" />
+      <End Role="Games" EntitySet="Games" />
+    </AssociationSet>
+    <AssociationSet Name="Game_RF_Distributor" Association="GamesModel.Game_RF_Distributor">
+      <End Role="RF_Distributors" EntitySet="RF_Distributors" />
+      <End Role="Games" EntitySet="Games" />
+    </AssociationSet>
+    <EntitySet Name="Boxes" EntityType="GamesModel.Boxes" />
+    <EntitySet Name="Editions" EntityType="GamesModel.Editions" />
+    <AssociationSet Name="Game_Box1" Association="GamesModel.Game_Box1">
+      <End Role="Boxes" EntitySet="Boxes" />
+      <End Role="Games" EntitySet="Games" />
+    </AssociationSet>
+    <AssociationSet Name="Game_Edition1" Association="GamesModel.Game_Edition1">
+      <End Role="Editions" EntitySet="Editions" />
+      <End Role="Games" EntitySet="Games" />
+    </AssociationSet>
+    <EntitySet Name="Series" EntityType="GamesModel.Series" />
+    <AssociationSet Name="Game_ser" Association="GamesModel.Game_ser">
+      <End Role="Series" EntitySet="Series" />
+      <End Role="Games" EntitySet="Games" />
+    </AssociationSet>
+    <AssociationSet Name="GenresGames" Association="GamesModel.GenresGames">
+      <End Role="Genres" EntitySet="Genres" />
+      <End Role="Games" EntitySet="Games" />
+    </AssociationSet>
+    <AssociationSet Name="GamesPlatforms" Association="GamesModel.GamesPlatforms">
+      <End Role="Games" EntitySet="Games" />
+      <End Role="Platforms" EntitySet="Platforms" />
+    </AssociationSet>
+    <AssociationSet Name="GamesOnline_protections" Association="GamesModel.GamesOnline_protections">
+      <End Role="Games" EntitySet="Games" />
+      <End Role="Online_protections" EntitySet="Online_protections" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Developers">
+    <Key>
+      <PropertyRef Name="ID_Developer" />
+    </Key>
+    <Property Name="ID_Developer" Type="Decimal" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Is_open" Type="Boolean" />
+    <Property Name="Date_open" Type="DateTime" Precision="3" />
+    <Property Name="Date_close" Type="DateTime" Precision="3" />
+    <Property Name="Icon" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Games" Relationship="GamesModel.Game_Developer" FromRole="Developers" ToRole="Games" />
+  </EntityType>
+  <EntityType Name="Disk_types">
+    <Key>
+      <PropertyRef Name="ID_Disk_Type" />
+    </Key>
+    <Property Name="ID_Disk_Type" Type="Decimal" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Max_Size" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Game_disks" Relationship="GamesModel.In_type" FromRole="Disk_types" ToRole="Game_disks" />
+  </EntityType>
+  <EntityType Name="Game_disks">
+    <Key>
+      <PropertyRef Name="ID_Game_disk" />
+    </Key>
+    <Property Name="ID_Game_disk" Type="Decimal" Nullable="false" />
+    <Property Name="ID_Game" Type="Decimal" />
+    <Property Name="ID_Disk_Type" Type="Decimal" Nullable="false" />
+    <NavigationProperty Name="Disk_types" Relationship="GamesModel.In_type" FromRole="Game_disks" ToRole="Disk_types" />
+    <NavigationProperty Name="Games" Relationship="GamesModel.Disks_in_game" FromRole="Game_disks" ToRole="Games" />
+    <Property Type="Decimal" Name="Kol_vo" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Games">
+    <Key>
+      <PropertyRef Name="ID_Game" />
+    </Key>
+    <Property Name="ID_Game" Type="Decimal" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Status_complite" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Rate_person" Type="Double" />
+    <Property Name="Rate_Igromania" Type="Double" />
+    <Property Name="Poster" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Date_Release" Type="DateTime" Precision="3" />
+    <Property Name="Localisation_Type" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Last_version" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Kol_updates" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Game_Type" Type="Boolean" />
+    <Property Name="ID_Publisher" Type="Decimal" />
+    <Property Name="ID_Developer" Type="Decimal" />
+    <Property Name="ID_RF_Distributor" Type="Decimal" />
+    <NavigationProperty Name="Developers" Relationship="GamesModel.Game_Developer" FromRole="Games" ToRole="Developers" />
+    <NavigationProperty Name="Game_disks" Relationship="GamesModel.Disks_in_game" FromRole="Games" ToRole="Game_disks" />
+    <NavigationProperty Name="Publishers" Relationship="GamesModel.Game_Publisher" FromRole="Games" ToRole="Publishers" />
+    <NavigationProperty Name="RF_Distributors" Relationship="GamesModel.Game_RF_Distributor" FromRole="Games" ToRole="RF_Distributors" />
+    <Property Type="String" Name="Original_Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_Edition" Nullable="false" />
+    <Property Type="Decimal" Name="ID_Box" Nullable="false" />
+    <NavigationProperty Name="Boxes" Relationship="GamesModel.Game_Box1" FromRole="Games" ToRole="Boxes" />
+    <NavigationProperty Name="Editions" Relationship="GamesModel.Game_Edition1" FromRole="Games" ToRole="Editions" />
+    <Property Type="Decimal" Name="ID_Ser" />
+    <Property Type="String" Name="WhereStatus" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WherePhoto" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Series" Relationship="GamesModel.Game_ser" FromRole="Games" ToRole="Series" />
+    <NavigationProperty Name="Genres" Relationship="GamesModel.GenresGames" FromRole="Games" ToRole="Genres" />
+    <NavigationProperty Name="Platforms" Relationship="GamesModel.GamesPlatforms" FromRole="Games" ToRole="Platforms" />
+    <NavigationProperty Name="Online_protections" Relationship="GamesModel.GamesOnline_protections" FromRole="Games" ToRole="Online_protections" />
+  </EntityType>
+  <EntityType Name="Genres">
+    <Key>
+      <PropertyRef Name="ID_Genre" />
+    </Key>
+    <Property Name="ID_Genre" Type="Decimal" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Games" Relationship="GamesModel.GenresGames" FromRole="Genres" ToRole="Games" />
+  </EntityType>
+  <EntityType Name="Online_protections">
+    <Key>
+      <PropertyRef Name="ID_Protect" />
+    </Key>
+    <Property Name="ID_Protect" Type="Decimal" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Icon" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Games" Relationship="GamesModel.GamesOnline_protections" FromRole="Online_protections" ToRole="Games" />
+  </EntityType>
+  <EntityType Name="Platforms">
+    <Key>
+      <PropertyRef Name="ID_Platform" />
+    </Key>
+    <Property Name="ID_Platform" Type="Decimal" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Icon" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Games" Relationship="GamesModel.GamesPlatforms" FromRole="Platforms" ToRole="Games" />
+  </EntityType>
+  <EntityType Name="Publishers">
+    <Key>
+      <PropertyRef Name="Id_Publisher" />
+    </Key>
+    <Property Name="Id_Publisher" Type="Decimal" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Is_open" Type="Boolean" />
+    <Property Name="Date_open" Type="DateTime" Precision="3" />
+    <Property Name="Icon" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Games" Relationship="GamesModel.Game_Publisher" FromRole="Publishers" ToRole="Games" />
+    <Property Type="DateTime" Name="Date_close" Precision="3" />
+  </EntityType>
+  <EntityType Name="RF_Distributors">
+    <Key>
+      <PropertyRef Name="ID_RF_Distributor" />
+    </Key>
+    <Property Name="ID_RF_Distributor" Type="Decimal" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Is_open" Type="Boolean" />
+    <Property Name="Date_open" Type="DateTime" Precision="3" />
+    <Property Name="Date_close" Type="DateTime" Precision="3" />
+    <Property Name="Icon" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Games" Relationship="GamesModel.Game_RF_Distributor" FromRole="RF_Distributors" ToRole="Games" />
+  </EntityType>
+  <Association Name="Game_Developer">
+    <End Role="Developers" Type="GamesModel.Developers" Multiplicity="0..1" />
+    <End Role="Games" Type="GamesModel.Games" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Developers">
+        <PropertyRef Name="ID_Developer" />
+      </Principal>
+      <Dependent Role="Games">
+        <PropertyRef Name="ID_Developer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="In_type">
+    <End Role="Disk_types" Type="GamesModel.Disk_types" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Game_disks" Type="GamesModel.Game_disks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disk_types">
+        <PropertyRef Name="ID_Disk_Type" />
+      </Principal>
+      <Dependent Role="Game_disks">
+        <PropertyRef Name="ID_Disk_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Disks_in_game">
+    <End Role="Games" Type="GamesModel.Games" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Game_disks" Type="GamesModel.Game_disks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Games">
+        <PropertyRef Name="ID_Game" />
+      </Principal>
+      <Dependent Role="Game_disks">
+        <PropertyRef Name="ID_Game" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Game_Publisher">
+    <End Role="Publishers" Type="GamesModel.Publishers" Multiplicity="0..1" />
+    <End Role="Games" Type="GamesModel.Games" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publishers">
+        <PropertyRef Name="Id_Publisher" />
+      </Principal>
+      <Dependent Role="Games">
+        <PropertyRef Name="ID_Publisher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Game_RF_Distributor">
+    <End Role="RF_Distributors" Type="GamesModel.RF_Distributors" Multiplicity="0..1" />
+    <End Role="Games" Type="GamesModel.Games" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RF_Distributors">
+        <PropertyRef Name="ID_RF_Distributor" />
+      </Principal>
+      <Dependent Role="Games">
+        <PropertyRef Name="ID_RF_Distributor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Boxes">
+    <Key>
+      <PropertyRef Name="ID_Box" />
+    </Key>
+    <Property Type="Decimal" Name="ID_Box" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Games" Relationship="GamesModel.Game_Box1" FromRole="Boxes" ToRole="Games" />
+  </EntityType>
+  <EntityType Name="Editions">
+    <Key>
+      <PropertyRef Name="ID_Edition" />
+    </Key>
+    <Property Type="Decimal" Name="ID_Edition" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Games" Relationship="GamesModel.Game_Edition1" FromRole="Editions" ToRole="Games" />
+  </EntityType>
+  <Association Name="Game_Box1">
+    <End Type="GamesModel.Boxes" Role="Boxes" Multiplicity="1" />
+    <End Type="GamesModel.Games" Role="Games" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Boxes">
+        <PropertyRef Name="ID_Box" />
+      </Principal>
+      <Dependent Role="Games">
+        <PropertyRef Name="ID_Box" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Game_Edition1">
+    <End Type="GamesModel.Editions" Role="Editions" Multiplicity="1" />
+    <End Type="GamesModel.Games" Role="Games" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Editions">
+        <PropertyRef Name="ID_Edition" />
+      </Principal>
+      <Dependent Role="Games">
+        <PropertyRef Name="ID_Edition" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Series">
+    <Key>
+      <PropertyRef Name="ID_Ser" />
+    </Key>
+    <Property Type="Decimal" Name="ID_Ser" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="Icon" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Games" Relationship="GamesModel.Game_ser" FromRole="Series" ToRole="Games" />
+  </EntityType>
+  <Association Name="Game_ser">
+    <End Type="GamesModel.Series" Role="Series" Multiplicity="0..1" />
+    <End Type="GamesModel.Games" Role="Games" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Series">
+        <PropertyRef Name="ID_Ser" />
+      </Principal>
+      <Dependent Role="Games">
+        <PropertyRef Name="ID_Ser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GenresGames">
+    <End Type="GamesModel.Genres" Role="Genres" Multiplicity="*" />
+    <End Type="GamesModel.Games" Role="Games" Multiplicity="*" />
+  </Association>
+  <Association Name="GamesPlatforms">
+    <End Type="GamesModel.Games" Role="Games" Multiplicity="*" />
+    <End Type="GamesModel.Platforms" Role="Platforms" Multiplicity="*" />
+  </Association>
+  <Association Name="GamesOnline_protections">
+    <End Type="GamesModel.Games" Role="Games" Multiplicity="*" />
+    <End Type="GamesModel.Online_protections" Role="Online_protections" Multiplicity="*" />
+  </Association>
+</Schema>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3238b8e88f194f5685e73054aeb0b268" Name="Диаграмма1">
+        <EntityTypeShape EntityType="GamesModel.Developers" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GamesModel.Disk_types" Width="1.5" PointX="3.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GamesModel.Game_disks" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GamesModel.Games" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GamesModel.Genres" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="GamesModel.Online_protections" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GamesModel.Platforms" Width="1.5" PointX="5.875" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="GamesModel.Publishers" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="GamesModel.RF_Distributors" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <AssociationConnector Association="GamesModel.Game_Developer" ManuallyRouted="false" />
+        <AssociationConnector Association="GamesModel.In_type" ManuallyRouted="false" />
+        <AssociationConnector Association="GamesModel.Disks_in_game" ManuallyRouted="false" />
+        <AssociationConnector Association="GamesModel.Game_Publisher" ManuallyRouted="false" />
+        <AssociationConnector Association="GamesModel.Game_RF_Distributor" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="GamesModel.Boxes" Width="1.5" PointX="7.25" PointY="12.25" />
+        <EntityTypeShape EntityType="GamesModel.Editions" Width="1.5" PointX="10" PointY="12.25" />
+        <AssociationConnector Association="GamesModel.Game_Box1" />
+        <AssociationConnector Association="GamesModel.Game_Edition1" />
+        <EntityTypeShape EntityType="GamesModel.Series" Width="1.5" PointX="0.75" PointY="14.625" />
+        <AssociationConnector Association="GamesModel.Game_ser" />
+        <AssociationConnector Association="GamesModel.GenresGames" />
+        <AssociationConnector Association="GamesModel.GamesPlatforms" />
+        <AssociationConnector Association="GamesModel.GamesOnline_protections" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

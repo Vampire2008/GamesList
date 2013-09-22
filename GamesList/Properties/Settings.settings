@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GamesList.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DefaultConStr" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Games.sdf</Value>
+    </Setting>
+    <Setting Name="FirstRun" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NewBase" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Recenzor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Игромания</Value>
+    </Setting>
+    <Setting Name="MaxRecenzorRating" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="MaxYourRating" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="DistrReg" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Издатель в России</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

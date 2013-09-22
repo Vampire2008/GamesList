@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GamesModelStoreContainer" CdmEntityContainer="GamesEntities">
+    <EntitySetMapping Name="Developers">
+      <EntityTypeMapping TypeName="IsTypeOf(GamesModel.Developers)">
+        <MappingFragment StoreEntitySet="Developers">
+          <ScalarProperty Name="ID_Developer" ColumnName="ID_Developer" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Is_open" ColumnName="Is_open" />
+          <ScalarProperty Name="Date_open" ColumnName="Date_open" />
+          <ScalarProperty Name="Date_close" ColumnName="Date_close" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Disk_types">
+      <EntityTypeMapping TypeName="IsTypeOf(GamesModel.Disk_types)">
+        <MappingFragment StoreEntitySet="Disk_types">
+          <ScalarProperty Name="ID_Disk_Type" ColumnName="ID_Disk_Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Max_Size" ColumnName="Max_Size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Game_disks">
+      <EntityTypeMapping TypeName="IsTypeOf(GamesModel.Game_disks)">
+        <MappingFragment StoreEntitySet="Game_disks">
+          <ScalarProperty Name="ID_Game_disk" ColumnName="ID_Game_disk" />
+          <ScalarProperty Name="ID_Game" ColumnName="ID_Game" />
+          <ScalarProperty Name="ID_Disk_Type" ColumnName="ID_Disk_Type" />
+          <ScalarProperty Name="Kol_vo" ColumnName="Kol_vo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Games">
+      <EntityTypeMapping TypeName="IsTypeOf(GamesModel.Games)">
+        <MappingFragment StoreEntitySet="Games">
+          <ScalarProperty Name="ID_Game" ColumnName="ID_Game" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Status_complite" ColumnName="Status_complite" />
+          <ScalarProperty Name="Rate_person" ColumnName="Rate_person" />
+          <ScalarProperty Name="Rate_Igromania" ColumnName="Rate_Igromania" />
+          <ScalarProperty Name="Poster" ColumnName="Poster" />
+          <ScalarProperty Name="Date_Release" ColumnName="Date_Release" />
+          <ScalarProperty Name="Localisation_Type" ColumnName="Localisation_Type" />
+          <ScalarProperty Name="Last_version" ColumnName="Last_version" />
+          <ScalarProperty Name="Kol_updates" ColumnName="Kol_updates" />
+          <ScalarProperty Name="Game_Type" ColumnName="Game_Type" />
+          <ScalarProperty Name="ID_Publisher" ColumnName="ID_Publisher" />
+          <ScalarProperty Name="ID_Developer" ColumnName="ID_Developer" />
+          <ScalarProperty Name="ID_RF_Distributor" ColumnName="ID_RF_Distributor" />
+          <ScalarProperty Name="Original_Name" ColumnName="Original_Name" />
+          <ScalarProperty Name="ID_Edition" ColumnName="ID_Edition" />
+          <ScalarProperty Name="ID_Box" ColumnName="ID_Box" />
+          <ScalarProperty Name="ID_Ser" ColumnName="ID_Ser" />
+          <ScalarProperty Name="WhereStatus" ColumnName="WhereStatus" />
+          <ScalarProperty Name="WherePhoto" ColumnName="WherePhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genres">
+      <EntityTypeMapping TypeName="IsTypeOf(GamesModel.Genres)">
+        <MappingFragment StoreEntitySet="Genres">
+          <ScalarProperty Name="ID_Genre" ColumnName="ID_Genre" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Online_protections">
+      <EntityTypeMapping TypeName="IsTypeOf(GamesModel.Online_protections)">
+        <MappingFragment StoreEntitySet="Online_protections">
+          <ScalarProperty Name="ID_Protect" ColumnName="ID_Protect" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platforms">
+      <EntityTypeMapping TypeName="IsTypeOf(GamesModel.Platforms)">
+        <MappingFragment StoreEntitySet="Platforms">
+          <ScalarProperty Name="ID_Platform" ColumnName="ID_Platform" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publishers">
+      <EntityTypeMapping TypeName="IsTypeOf(GamesModel.Publishers)">
+        <MappingFragment StoreEntitySet="Publishers">
+          <ScalarProperty Name="Id_Publisher" ColumnName="Id_Publisher" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Is_open" ColumnName="Is_open" />
+          <ScalarProperty Name="Date_open" ColumnName="Date_open" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Date_close" ColumnName="Date_close" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RF_Distributors">
+      <EntityTypeMapping TypeName="IsTypeOf(GamesModel.RF_Distributors)">
+        <MappingFragment StoreEntitySet="RF_Distributors">
+          <ScalarProperty Name="ID_RF_Distributor" ColumnName="ID_RF_Distributor" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Is_open" ColumnName="Is_open" />
+          <ScalarProperty Name="Date_open" ColumnName="Date_open" />
+          <ScalarProperty Name="Date_close" ColumnName="Date_close" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Boxes">
+      <EntityTypeMapping TypeName="IsTypeOf(GamesModel.Boxes)">
+        <MappingFragment StoreEntitySet="Boxes">
+          <ScalarProperty Name="ID_Box" ColumnName="ID_Box" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Editions">
+      <EntityTypeMapping TypeName="IsTypeOf(GamesModel.Editions)">
+        <MappingFragment StoreEntitySet="Editions">
+          <ScalarProperty Name="ID_Edition" ColumnName="ID_Edition" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Series">
+      <EntityTypeMapping TypeName="IsTypeOf(GamesModel.Series)">
+        <MappingFragment StoreEntitySet="Series">
+          <ScalarProperty Name="ID_Ser" ColumnName="ID_Ser" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="GenresGames" TypeName="GamesModel.GenresGames" StoreEntitySet="GenresGames">
+      <EndProperty Name="Genres">
+        <ScalarProperty Name="ID_Genre" ColumnName="Genres_ID_Genre" />
+      </EndProperty>
+      <EndProperty Name="Games">
+        <ScalarProperty Name="ID_Game" ColumnName="Games_ID_Game" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GamesPlatforms" TypeName="GamesModel.GamesPlatforms" StoreEntitySet="GamesPlatforms">
+      <EndProperty Name="Games">
+        <ScalarProperty Name="ID_Game" ColumnName="Games_ID_Game" />
+      </EndProperty>
+      <EndProperty Name="Platforms">
+        <ScalarProperty Name="ID_Platform" ColumnName="Platforms_ID_Platform" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GamesOnline_protections" TypeName="GamesModel.GamesOnline_protections" StoreEntitySet="GamesOnline_protections">
+      <EndProperty Name="Games">
+        <ScalarProperty Name="ID_Game" ColumnName="Games_ID_Game" />
+      </EndProperty>
+      <EndProperty Name="Online_protections">
+        <ScalarProperty Name="ID_Protect" ColumnName="Online_protections_ID_Protect" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
