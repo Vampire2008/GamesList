@@ -17,9 +17,10 @@ namespace GamesList.Model
         public Games()
         {
             this.Game_disks = new HashSet<Game_disks>();
-            this.Genres = new HashSet<Genres>();
-            this.Platforms = new HashSet<Platforms>();
+            this.Games1 = new HashSet<Games>();
             this.Online_protections = new HashSet<Online_protections>();
+            this.Platforms = new HashSet<Platforms>();
+            this.Genres = new HashSet<Genres>();
         }
     
         public decimal ID_Game { get; set; }
@@ -42,16 +43,20 @@ namespace GamesList.Model
         public Nullable<decimal> ID_Ser { get; set; }
         public string WhereStatus { get; set; }
         public string WherePhoto { get; set; }
+        public Nullable<decimal> ID_Content { get; set; }
+        public Nullable<bool> TypeContent { get; set; }
     
+        public virtual Boxes Boxes { get; set; }
         public virtual Developers Developers { get; set; }
+        public virtual Editions Editions { get; set; }
         public virtual ICollection<Game_disks> Game_disks { get; set; }
         public virtual Publishers Publishers { get; set; }
         public virtual RF_Distributors RF_Distributors { get; set; }
-        public virtual Boxes Boxes { get; set; }
-        public virtual Editions Editions { get; set; }
         public virtual Series Series { get; set; }
-        public virtual ICollection<Genres> Genres { get; set; }
-        public virtual ICollection<Platforms> Platforms { get; set; }
+        public virtual ICollection<Games> Games1 { get; set; }
+        public virtual Games Games2 { get; set; }
         public virtual ICollection<Online_protections> Online_protections { get; set; }
+        public virtual ICollection<Platforms> Platforms { get; set; }
+        public virtual ICollection<Genres> Genres { get; set; }
     }
 }

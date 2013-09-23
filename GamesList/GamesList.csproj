@@ -125,6 +125,7 @@
       <DependentUpon>AddGame.cs</DependentUpon>
     </Compile>
     <Compile Include="Config.cs" />
+    <Compile Include="DBUpdater.cs" />
     <Compile Include="InformationWindows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,7 +174,6 @@
     <Compile Include="MaxPoster.Designer.cs">
       <DependentUpon>MaxPoster.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Boxes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -246,6 +246,12 @@
     <Compile Include="Wizard.Designer.cs">
       <DependentUpon>Wizard.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddContent.Designer.cs">
+      <DependentUpon>AddContent.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Wizard.resx">
       <DependentUpon>Wizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddContent.resx">
+      <DependentUpon>AddContent.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

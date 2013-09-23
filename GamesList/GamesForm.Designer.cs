@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label kol_updatesLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GamesForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.baseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -176,6 +177,7 @@
             this.AddGame = new System.Windows.Forms.ToolStripButton();
             this.EditGame = new System.Windows.Forms.ToolStripButton();
             this.DelGame = new System.Windows.Forms.ToolStripButton();
+            this.AddContent = new System.Windows.Forms.ToolStripButton();
             kol_updatesLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SortBox.SuspendLayout();
@@ -1649,7 +1651,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddGame,
             this.EditGame,
-            this.DelGame});
+            this.DelGame,
+            this.AddContent});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1253, 25);
@@ -1688,6 +1691,15 @@
             this.DelGame.Text = "toolStripButton1";
             this.DelGame.ToolTipText = "Удалить игру";
             this.DelGame.Click += new System.EventHandler(this.delGameToolStripMenuItem_Click);
+            // 
+            // AddContent
+            // 
+            this.AddContent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.AddContent.Image = ((System.Drawing.Image)(resources.GetObject("AddContent.Image")));
+            this.AddContent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AddContent.Name = "AddContent";
+            this.AddContent.Size = new System.Drawing.Size(23, 22);
+            this.AddContent.Text = "toolStripButton1";
             // 
             // GamesForm
             // 
@@ -1887,6 +1899,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.BindingSource gamesBindingSource;
+        private System.Windows.Forms.ToolStripButton AddContent;
     }
 }
 

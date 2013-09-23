@@ -10,7 +10,7 @@ using System.Configuration;
 using System.IO;
 using System.Windows;
 using System.Data.Entity;
-using GamesList.Migrations;
+//using GamesList.Migrations;
 
 namespace GamesList
 {

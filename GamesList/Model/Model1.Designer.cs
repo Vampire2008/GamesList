@@ -1,4 +1,4 @@
-﻿// Создание кода по умолчанию отключено для модели "C:\Users\Kain_Stropov\Documents\Visual Studio 2012\Projects\GamesList\GamesList\Model\Model1.edmx". 
+﻿// Создание кода по умолчанию отключено для модели "C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\Model\Model1.edmx". 
 // Чтобы включить создание кода по умолчанию, замените значение свойства "Стратегия создания кода"
 // конструктора на другое. Это свойство доступно в окне "Свойства", когда модель
 // открыта в конструкторе.

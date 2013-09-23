@@ -20,13 +20,13 @@ namespace GamesList
                         select Games;
             gamesBindingSource.DataSource = Query.ToList();*/
             this.Text = "Список игр - " + Path.GetFileName(Properties.Settings.Default.DefaultConStr);
-            label9.Text = label26.Text = "Рейтинг "+ Properties.Settings.Default.Recenzor+":";
-            label1.Text = label14.Text = Properties.Settings.Default.DistrReg +":";
+            label9.Text = label26.Text = "Рейтинг " + Properties.Settings.Default.Recenzor + ":";
+            label1.Text = label14.Text = Properties.Settings.Default.DistrReg + ":";
             numericUpDown1.Maximum = numericUpDown2.Maximum = Properties.Settings.Default.MaxYourRating;
             numericUpDown3.Maximum = numericUpDown4.Maximum = Properties.Settings.Default.MaxRecenzorRating;
-            Init(); 
+            Init();
         }
-        
+
         /// <summary>
         /// Инициализация главной формы. Выполняется загрузка данных из базы данных
         /// </summary>
@@ -34,19 +34,24 @@ namespace GamesList
         {
             fp = fd = frf = fop = fg = fpl = fs = fyr = fir = fda = fl = true;
             //Загружаем игры из базы
-            gamesBindingSource.DataSource = Program.context.Games.Local.ToBindingList();
-            Program.context.Games.Load();
+            //gamesBindingSource.DataSource = Program.context.Games.Local.ToBindingList().Where(g => g.ID_Content==null).OrderBy(g => g.Name);
+            //Program.context.Games.Load();
+            var Query = from Games in Program.context.Games
+                        where Games.ID_Content == null
+                        orderby Games.Name
+                        select Games;
+            gamesBindingSource.DataSource = Query.ToList();
             //gamesBindingSource.Filter = "Name = 'DooM'";
             //Загружаем издателей из базы
             List<Publishers> LP = new List<Publishers>();
             LP.Add(new Publishers { Name = "<не важно>", Id_Publisher = 0 });
             LP.AddRange(Program.context.Publishers.ToArray());
             publishersBindingSource.DataSource = LP;
-           // publishersBindingSource.DataSource = Program.context.Publishers.Local.ToBindingList();
+            // publishersBindingSource.DataSource = Program.context.Publishers.Local.ToBindingList();
             //Program.context.Publishers.Load();
             //Загружаем разработчиков из базы
             List<Developers> LD = new List<Developers>();
-            LD.Add(new Developers {Name = "<не важно>", ID_Developer = 0});
+            LD.Add(new Developers { Name = "<не важно>", ID_Developer = 0 });
             LD.AddRange(Program.context.Developers.ToArray());
             developersBindingSource.DataSource = LD;
             //developersBindingSource.DataSource = Program.context.Developers.Local.ToBindingList();
@@ -81,7 +86,7 @@ namespace GamesList
             //Program.context.Platforms.Load();
             comboBox10.SelectedIndex = 0;
             comboBox7.SelectedIndex = 0;
-            
+
             UpdateView();//Настраиваем отображение полей на текущую позицию в базе
         }
 
@@ -310,15 +315,20 @@ namespace GamesList
                 pictureBox1.Image = null;//Если постера нет, очищаем изображение
                 label32.Visible = true;
             }
-            
+
         }
 
         private void ChangeFilter(Boolean dis)
         {
-            if ((dis) || ((fp == true) && (fd == true) && (frf == true) && (fop == true) && (fg == true) && (fpl == true) && (fs == true)&& (fyr ==true)&& (fir ==true)&& (fda ==true) && (fl == true)))
+            if ((dis) || ((fp == true) && (fd == true) && (frf == true) && (fop == true) && (fg == true) && (fpl == true) && (fs == true) && (fyr == true) && (fir == true) && (fda == true) && (fl == true)))
             {
-                gamesBindingSource.DataSource = Program.context.Games.Local.ToBindingList();
-                Program.context.Games.Load();
+                //gamesBindingSource.DataSource = Program.context.Games.Local.ToBindingList();
+                //Program.context.Games.Load();
+                var Query = from Games in Program.context.Games
+                            where Games.ID_Content == null
+                            orderby Games.Name
+                            select Games;
+                gamesBindingSource.DataSource = Query.ToList();
                 ovalShape1.FillColor = Color.White;
             }
             else
@@ -328,18 +338,20 @@ namespace GamesList
                 double? n3 = Decimal.ToDouble(numericUpDown3.Value);
                 double? n4 = Decimal.ToDouble(numericUpDown4.Value);
                 var GQuery = from Games in Program.context.Games
-                                                where (fp || Games.ID_Publisher == (decimal?)comboBox2.SelectedValue) &&
+                             where (Games.ID_Content == null) &&
+                                                (fp || Games.ID_Publisher == (decimal?)comboBox2.SelectedValue) &&
                                                 (fd || Games.ID_Developer == (decimal?)comboBox3.SelectedValue) &&
                                                 (frf || Games.ID_RF_Distributor == (decimal?)comboBox1.SelectedValue) &&
                                                 (fop || Games.Online_protections.Select(o => o.ID_Protect).Contains((decimal)comboBox4.SelectedValue)) &&
                                                 (fg || Games.Genres.Select(g => g.ID_Genre).Contains((decimal)comboBox5.SelectedValue)) &&
-                                                (fpl || Games.Platforms.Select(p => p.ID_Platform).Contains((decimal)comboBox6.SelectedValue))  &&
-                                                (fs || Games.Status_complite == (comboBox7.SelectedIndex-1)) &&
-                                                (fl || Games.Localisation_Type == (comboBox10.SelectedIndex-1)) &&
+                                                (fpl || Games.Platforms.Select(p => p.ID_Platform).Contains((decimal)comboBox6.SelectedValue)) &&
+                                                (fs || Games.Status_complite == (comboBox7.SelectedIndex - 1)) &&
+                                                (fl || Games.Localisation_Type == (comboBox10.SelectedIndex - 1)) &&
                                                 (fyr || (Games.Rate_person >= n1 && Games.Rate_person <= n2)) &&
                                                 (fir || (Games.Rate_Igromania >= n3 && Games.Rate_Igromania <= n4)) &&
                                                 (fda || (Games.Date_Release >= dateTimePicker1.Value && Games.Date_Release <= dateTimePicker2.Value))
-                                                select Games;
+                             orderby Games.Name
+                             select Games;
                 gamesBindingSource.DataSource = GQuery.ToList();
                 ovalShape1.FillColor = Color.Green;
             }
@@ -534,7 +546,7 @@ namespace GamesList
             {
                 if (MessageBox.Show("База очищена. Желаете ли добавить данные вспомогательных таблицы?", "Вспомогательные таблицы", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.OK)
                 {
-                    MessageBox.Show("Данный функционал ещё не реализован. Пользуйтесь пустой базой.","Информация",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Данный функционал ещё не реализован. Пользуйтесь пустой базой.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -554,7 +566,7 @@ namespace GamesList
                 try
                 {
                     gamesBindingSource.DataMember = "";
-                    gamesBindingSource.DataSource = Que.Count() == 0 ? new Games[] {} : Que;
+                    gamesBindingSource.DataSource = Que.Count() == 0 ? new Games[] { } : Que;
                 }
                 catch (Exception ex)
                 {
@@ -742,7 +754,7 @@ namespace GamesList
 
         private void DevName_Click(object sender, EventArgs e)
         {
-            Form Infa = new InformationWindows(0,((Games)gamesBindingSource.Current).Developers);
+            Form Infa = new InformationWindows(0, ((Games)gamesBindingSource.Current).Developers);
             Infa.Show();
         }
 
