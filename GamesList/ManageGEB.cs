@@ -68,8 +68,15 @@ namespace GamesList
 
         private void genresDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            genresBindingSource.EndEdit();
-            Program.context.SaveChanges();
+            try
+            {
+                genresBindingSource.EndEdit();
+                Program.context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

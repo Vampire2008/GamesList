@@ -715,30 +715,36 @@ namespace GamesList
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((decimal)comboBox3.SelectedValue == 0)
+            if ((comboBox3 != null) && (comboBox3.SelectedValue != null))
             {
-                fd = true;
+                if ((decimal)comboBox3.SelectedValue == 0)
+                {
+                    fd = true;
+                }
+                else
+                {
+                    fd = false;
+                    ovalShape1.FillColor = Color.Green;
+                }
+                ChangeFilter(false);
             }
-            else
-            {
-                fd = false;
-                ovalShape1.FillColor = Color.Green;
-            }
-            ChangeFilter(false);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((decimal)comboBox1.SelectedValue == 0)
+            if ((comboBox1 != null) && (comboBox1.SelectedValue != null))
             {
-                frf = true;
+                if ((decimal)comboBox1.SelectedValue == 0)
+                {
+                    frf = true;
+                }
+                else
+                {
+                    frf = false;
+                    ovalShape1.FillColor = Color.Green;
+                }
+                ChangeFilter(false);
             }
-            else
-            {
-                frf = false;
-                ovalShape1.FillColor = Color.Green;
-            }
-            ChangeFilter(false);
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
