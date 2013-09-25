@@ -36,6 +36,7 @@
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label rate_personLabel;
             System.Windows.Forms.Label status_compliteLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddContent));
             this.rate_IgromaniaLabel = new System.Windows.Forms.Label();
             this.gamesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.date_ReleaseDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -89,13 +90,14 @@
             this.boxesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ChooseImage = new System.Windows.Forms.OpenFileDialog();
             this.EditButton = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label11 = new System.Windows.Forms.Label();
             this.seriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.StandAlone = new System.Windows.Forms.CheckBox();
             this.SerName = new System.Windows.Forms.Label();
             this.GenLst = new System.Windows.Forms.Label();
             this.ParentGameName = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             date_ReleaseLabel = new System.Windows.Forms.Label();
             kol_updatesLabel = new System.Windows.Forms.Label();
             last_versionLabel = new System.Windows.Forms.Label();
@@ -350,7 +352,7 @@
             this.posterPictureBox.ContextMenuStrip = this.contextMenuStrip1;
             this.posterPictureBox.Location = new System.Drawing.Point(617, 25);
             this.posterPictureBox.Name = "posterPictureBox";
-            this.posterPictureBox.Size = new System.Drawing.Size(323, 492);
+            this.posterPictureBox.Size = new System.Drawing.Size(323, 507);
             this.posterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.posterPictureBox.TabIndex = 37;
             this.posterPictureBox.TabStop = false;
@@ -397,10 +399,9 @@
             this.DiskTypes.FormattingEnabled = true;
             this.DiskTypes.Location = new System.Drawing.Point(12, 409);
             this.DiskTypes.Name = "DiskTypes";
-            this.DiskTypes.Size = new System.Drawing.Size(120, 108);
+            this.DiskTypes.Size = new System.Drawing.Size(120, 121);
             this.DiskTypes.TabIndex = 40;
             this.DiskTypes.ValueMember = "ID_Disk_Type";
-            this.DiskTypes.SelectedIndexChanged += new System.EventHandler(this.DiskTypes_SelectedIndexChanged);
             // 
             // disktypesBindingSource
             // 
@@ -448,7 +449,7 @@
             this.GameDiskList.FormattingEnabled = true;
             this.GameDiskList.Location = new System.Drawing.Point(183, 409);
             this.GameDiskList.Name = "GameDiskList";
-            this.GameDiskList.Size = new System.Drawing.Size(128, 108);
+            this.GameDiskList.Size = new System.Drawing.Size(128, 121);
             this.GameDiskList.TabIndex = 44;
             this.GameDiskList.SelectedIndexChanged += new System.EventHandler(this.GameDiskList_SelectedIndexChanged);
             this.GameDiskList.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.listBox1_Format);
@@ -583,7 +584,7 @@
             // 
             // AddBut
             // 
-            this.AddBut.Location = new System.Drawing.Point(536, 494);
+            this.AddBut.Location = new System.Drawing.Point(536, 507);
             this.AddBut.Name = "AddBut";
             this.AddBut.Size = new System.Drawing.Size(75, 23);
             this.AddBut.TabIndex = 56;
@@ -622,6 +623,7 @@
             // 
             // comboBox6
             // 
+            this.comboBox6.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.gamesBindingSource, "ID_Edition", true));
             this.comboBox6.DataSource = this.editionsBindingSource;
             this.comboBox6.DisplayMember = "Name";
             this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -668,20 +670,13 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(455, 494);
+            this.EditButton.Location = new System.Drawing.Point(455, 507);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 23);
             this.EditButton.TabIndex = 62;
             this.EditButton.Text = "Изменить";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(0, 523);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(961, 21);
-            this.progressBar1.TabIndex = 63;
             // 
             // label11
             // 
@@ -735,11 +730,33 @@
             this.ParentGameName.TabIndex = 69;
             this.ParentGameName.Text = "label12";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(341, 393);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 13);
+            this.label12.TabIndex = 71;
+            this.label12.Text = "Описание";
+            // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Description", true));
+            this.textBox1.Location = new System.Drawing.Point(338, 409);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(256, 94);
+            this.textBox1.TabIndex = 70;
+            // 
             // AddContent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 544);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.AddBut);
+            this.Controls.Add(this.EditButton);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.SerName);
             this.Controls.Add(this.game_TypeCheckBox);
@@ -759,9 +776,6 @@
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(date_ReleaseLabel);
             this.Controls.Add(this.date_ReleaseDateTimePicker);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.EditButton);
-            this.Controls.Add(this.AddBut);
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.PersonRate);
@@ -791,6 +805,7 @@
             this.Controls.Add(rate_personLabel);
             this.Controls.Add(status_compliteLabel);
             this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddContent";
             this.Text = "Добавление дополнения";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddGame_FormClosing);
@@ -869,7 +884,6 @@
         private System.Windows.Forms.BindingSource boxesBindingSource;
         private System.Windows.Forms.OpenFileDialog ChooseImage;
         private System.Windows.Forms.Button EditButton;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem убратьИзображениеToolStripMenuItem;
         private System.Windows.Forms.Label label11;
@@ -879,5 +893,7 @@
         private System.Windows.Forms.Label SerName;
         private System.Windows.Forms.Label GenLst;
         private System.Windows.Forms.Label ParentGameName;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

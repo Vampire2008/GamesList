@@ -21,6 +21,7 @@ namespace GamesList.Model
             this.Online_protections = new HashSet<Online_protections>();
             this.Platforms = new HashSet<Platforms>();
             this.Genres = new HashSet<Genres>();
+            this.Games11 = new HashSet<Games>();
         }
     
         public decimal ID_Game { get; set; }
@@ -45,6 +46,8 @@ namespace GamesList.Model
         public string WherePhoto { get; set; }
         public Nullable<decimal> ID_Content { get; set; }
         public Nullable<bool> TypeContent { get; set; }
+        public string Description { get; set; }
+        public Nullable<decimal> ID_Collect { get; set; }
     
         public virtual Boxes Boxes { get; set; }
         public virtual Developers Developers { get; set; }
@@ -58,5 +61,7 @@ namespace GamesList.Model
         public virtual ICollection<Online_protections> Online_protections { get; set; }
         public virtual ICollection<Platforms> Platforms { get; set; }
         public virtual ICollection<Genres> Genres { get; set; }
+        public virtual ICollection<Games> Games11 { get; set; }
+        public virtual Games Games21 { get; set; }
     }
 }

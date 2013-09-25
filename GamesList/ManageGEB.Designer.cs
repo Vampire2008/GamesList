@@ -202,7 +202,7 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 250;
             // 
-            // ManageGenres
+            // ManageGEB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -210,8 +210,9 @@
             this.Controls.Add(this.genresDataGridView);
             this.Controls.Add(this.genresBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "ManageGenres";
+            this.Name = "ManageGEB";
             this.Text = "Управление жанрами";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageGenres_FormClosing);
             this.Load += new System.EventHandler(this.ManageGenres_Load);

@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Wizard));
             this.wizardControl1 = new AeroWizard.WizardControl();
             this.HelloPage = new AeroWizard.WizardPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BasePage = new AeroWizard.WizardPage();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.OpenButton = new System.Windows.Forms.Button();
             this.OpenPath = new System.Windows.Forms.TextBox();
@@ -65,15 +68,15 @@
             this.BaseCompl = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.HelloPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.BasePage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.RatingPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaxYourRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxRating)).BeginInit();
             this.DistrPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // wizardControl1
@@ -94,6 +97,7 @@
             // 
             // HelloPage
             // 
+            this.HelloPage.Controls.Add(this.pictureBox2);
             this.HelloPage.Controls.Add(this.label2);
             this.HelloPage.Controls.Add(this.label1);
             this.HelloPage.Name = "HelloPage";
@@ -101,6 +105,16 @@
             this.HelloPage.Size = new System.Drawing.Size(529, 326);
             this.HelloPage.TabIndex = 0;
             this.HelloPage.Text = "Приветствие";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GamesList.Properties.Resources.Wizard;
+            this.pictureBox2.Location = new System.Drawing.Point(21, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(222, 320);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -150,6 +164,15 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Введите существующий каталог в одно из полей!";
             this.label6.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(23, 272);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 27);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label5
             // 
@@ -429,15 +452,6 @@
             this.saveFileDialog1.FileName = "MyGames.gdb";
             this.saveFileDialog1.Filter = "База игр (*.gdb)|*.gdb";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(23, 272);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 27);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // Wizard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,20 +459,22 @@
             this.ClientSize = new System.Drawing.Size(576, 481);
             this.Controls.Add(this.wizardControl1);
             this.glassExtenderProvider1.SetGlassMargins(this, new System.Windows.Forms.Padding(0));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Wizard";
             this.Text = "Мастер настройки";
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).EndInit();
             this.HelloPage.ResumeLayout(false);
             this.HelloPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.BasePage.ResumeLayout(false);
             this.BasePage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.RatingPage.ResumeLayout(false);
             this.RatingPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaxYourRating)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxRating)).EndInit();
             this.DistrPage.ResumeLayout(false);
             this.DistrPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -502,6 +518,7 @@
         private System.Windows.Forms.TextBox DistrInText;
         private System.Windows.Forms.RadioButton DistrCust;
         private System.Windows.Forms.TextBox DistrCustText;
+        private System.Windows.Forms.PictureBox pictureBox2;
 
     }
 }

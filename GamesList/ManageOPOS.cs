@@ -54,8 +54,8 @@ namespace GamesList
 
         private void ManageOnlineProtects_FormClosing(object sender, FormClosingEventArgs e)
         {
-            online_protectionsBindingSource.EndEdit();
-            Program.context.SaveChanges();
+            /*online_protectionsBindingSource.EndEdit();
+            Program.context.SaveChanges();*/
         }
 
         private void online_protectionsDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)

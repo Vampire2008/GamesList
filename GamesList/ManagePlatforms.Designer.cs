@@ -49,7 +49,6 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iconPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.platformsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.platformsBindingNavigator)).BeginInit();
@@ -196,8 +195,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewImageColumn1,
-            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewImageColumn1});
             this.platformsDataGridView.DataSource = this.platformsBindingSource;
             this.platformsDataGridView.Location = new System.Drawing.Point(12, 28);
             this.platformsDataGridView.Name = "platformsDataGridView";
@@ -232,13 +230,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Visible = false;
             // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Game_platforms";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Game_platforms";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
             // iconPictureBox
             // 
             this.iconPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -259,6 +250,7 @@
             this.Controls.Add(this.platformsDataGridView);
             this.Controls.Add(this.platformsBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ManagePlatforms";
             this.Text = "Управление платформами";

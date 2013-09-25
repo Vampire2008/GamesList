@@ -13,7 +13,7 @@ namespace GamesList.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Data.Objects;
-
+    
     public partial class GamesEntities : DbContext
     {
         public GamesEntities()
@@ -25,14 +25,16 @@ namespace GamesList.Model
             : base(ConStr)
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
+        public DbSet<Boxes> Boxes { get; set; }
         public DbSet<Developers> Developers { get; set; }
         public DbSet<Disk_types> Disk_types { get; set; }
+        public DbSet<Editions> Editions { get; set; }
         public DbSet<Game_disks> Game_disks { get; set; }
         public DbSet<Games> Games { get; set; }
         public DbSet<Genres> Genres { get; set; }
@@ -40,8 +42,6 @@ namespace GamesList.Model
         public DbSet<Platforms> Platforms { get; set; }
         public DbSet<Publishers> Publishers { get; set; }
         public DbSet<RF_Distributors> RF_Distributors { get; set; }
-        public DbSet<Boxes> Boxes { get; set; }
-        public DbSet<Editions> Editions { get; set; }
         public DbSet<Series> Series { get; set; }
 
         public void RejectChanges(object entity)

@@ -47,8 +47,7 @@ namespace GamesList
 
         private void ManagePublisher_FormClosing(object sender, FormClosingEventArgs e)
         {
-            publishersBindingSource.EndEdit();
-            Program.context.SaveChanges();
+           
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)

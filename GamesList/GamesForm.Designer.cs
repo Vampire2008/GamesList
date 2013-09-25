@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label kol_updatesLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GamesForm));
+            this.kol_updatesLabel = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.baseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +49,9 @@
             this.addGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.addContentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewContentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managePublishersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageDevelopersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -125,6 +128,11 @@
             this.editGameContextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delGamecontextToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gamesListBox = new System.Windows.Forms.ListBox();
+            this.gamesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.CollectedLabel = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -178,7 +186,8 @@
             this.EditGame = new System.Windows.Forms.ToolStripButton();
             this.DelGame = new System.Windows.Forms.ToolStripButton();
             this.AddContent = new System.Windows.Forms.ToolStripButton();
-            kol_updatesLabel = new System.Windows.Forms.Label();
+            this.viewContent = new System.Windows.Forms.ToolStripButton();
+            this.AddCollect = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.SortBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
@@ -195,6 +204,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -207,12 +217,12 @@
             // 
             // kol_updatesLabel
             // 
-            kol_updatesLabel.AutoSize = true;
-            kol_updatesLabel.Location = new System.Drawing.Point(267, 415);
-            kol_updatesLabel.Name = "kol_updatesLabel";
-            kol_updatesLabel.Size = new System.Drawing.Size(132, 13);
-            kol_updatesLabel.TabIndex = 34;
-            kol_updatesLabel.Text = "Количество обновлений:";
+            this.kol_updatesLabel.AutoSize = true;
+            this.kol_updatesLabel.Location = new System.Drawing.Point(267, 415);
+            this.kol_updatesLabel.Name = "kol_updatesLabel";
+            this.kol_updatesLabel.Size = new System.Drawing.Size(132, 13);
+            this.kol_updatesLabel.TabIndex = 34;
+            this.kol_updatesLabel.Text = "Количество обновлений:";
             // 
             // menuStrip1
             // 
@@ -327,7 +337,10 @@
             this.gamseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addGameToolStripMenuItem,
             this.editGameToolStripMenuItem,
-            this.delGameToolStripMenuItem});
+            this.delGameToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.addContentToolStripMenuItem,
+            this.viewContentToolStripMenuItem});
             this.gamseToolStripMenuItem.Name = "gamseToolStripMenuItem";
             this.gamseToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.gamseToolStripMenuItem.Text = "Игры";
@@ -335,23 +348,42 @@
             // addGameToolStripMenuItem
             // 
             this.addGameToolStripMenuItem.Name = "addGameToolStripMenuItem";
-            this.addGameToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.addGameToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.addGameToolStripMenuItem.Text = "Добавить игру";
             this.addGameToolStripMenuItem.Click += new System.EventHandler(this.addGameToolStripMenuItem_Click);
             // 
             // editGameToolStripMenuItem
             // 
             this.editGameToolStripMenuItem.Name = "editGameToolStripMenuItem";
-            this.editGameToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.editGameToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.editGameToolStripMenuItem.Text = "Редакитировать игру";
             this.editGameToolStripMenuItem.Click += new System.EventHandler(this.editGameToolStripMenuItem_Click);
             // 
             // delGameToolStripMenuItem
             // 
             this.delGameToolStripMenuItem.Name = "delGameToolStripMenuItem";
-            this.delGameToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.delGameToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.delGameToolStripMenuItem.Text = "Удалить игру";
             this.delGameToolStripMenuItem.Click += new System.EventHandler(this.delGameToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(199, 6);
+            // 
+            // addContentToolStripMenuItem
+            // 
+            this.addContentToolStripMenuItem.Name = "addContentToolStripMenuItem";
+            this.addContentToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.addContentToolStripMenuItem.Text = "Добавить дополнение";
+            this.addContentToolStripMenuItem.Click += new System.EventHandler(this.AddContent_Click);
+            // 
+            // viewContentToolStripMenuItem
+            // 
+            this.viewContentToolStripMenuItem.Name = "viewContentToolStripMenuItem";
+            this.viewContentToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.viewContentToolStripMenuItem.Text = "Просмотр дополнений";
+            this.viewContentToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
             // 
             // controlToolStripMenuItem
             // 
@@ -498,7 +530,7 @@
             this.SortBox.Controls.Add(this.comboBox1);
             this.SortBox.Controls.Add(this.shapeContainer1);
             this.SortBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.SortBox.Location = new System.Drawing.Point(0, 509);
+            this.SortBox.Location = new System.Drawing.Point(0, 521);
             this.SortBox.Name = "SortBox";
             this.SortBox.Size = new System.Drawing.Size(1253, 115);
             this.SortBox.TabIndex = 1;
@@ -949,7 +981,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(233, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(233, 438);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDown);
             this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
@@ -1116,6 +1148,10 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.gamesListBox);
+            this.groupBox1.Controls.Add(this.CollectedLabel);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.pictureBox7);
             this.groupBox1.Controls.Add(this.pictureBox6);
             this.groupBox1.Controls.Add(this.pictureBox5);
@@ -1126,7 +1162,7 @@
             this.groupBox1.Controls.Add(this.label33);
             this.groupBox1.Controls.Add(this.Pirat);
             this.groupBox1.Controls.Add(this.label32);
-            this.groupBox1.Controls.Add(kol_updatesLabel);
+            this.groupBox1.Controls.Add(this.kol_updatesLabel);
             this.groupBox1.Controls.Add(this.kol_updatesLabel1);
             this.groupBox1.Controls.Add(this.EditionLabel);
             this.groupBox1.Controls.Add(this.label31);
@@ -1164,10 +1200,56 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(251, 51);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(990, 452);
+            this.groupBox1.Size = new System.Drawing.Size(990, 464);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Сведенья об игре";
+            // 
+            // gamesListBox
+            // 
+            this.gamesListBox.DataSource = this.gamesBindingSource1;
+            this.gamesListBox.DisplayMember = "Name";
+            this.gamesListBox.FormattingEnabled = true;
+            this.gamesListBox.Location = new System.Drawing.Point(580, 127);
+            this.gamesListBox.Name = "gamesListBox";
+            this.gamesListBox.Size = new System.Drawing.Size(228, 121);
+            this.gamesListBox.TabIndex = 50;
+            this.gamesListBox.ValueMember = "ID_Game";
+            this.gamesListBox.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.gamesListBox_Format);
+            // 
+            // gamesBindingSource1
+            // 
+            this.gamesBindingSource1.DataSource = typeof(GamesList.Model.Games);
+            // 
+            // CollectedLabel
+            // 
+            this.CollectedLabel.AutoSize = true;
+            this.CollectedLabel.Location = new System.Drawing.Point(577, 111);
+            this.CollectedLabel.Name = "CollectedLabel";
+            this.CollectedLabel.Size = new System.Drawing.Size(133, 13);
+            this.CollectedLabel.TabIndex = 50;
+            this.CollectedLabel.Text = "Сборник содержит игры:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Description", true));
+            this.textBox2.Location = new System.Drawing.Point(580, 254);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(228, 190);
+            this.textBox2.TabIndex = 48;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(829, 421);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 23);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "Просмотр дополнений";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox7
             // 
@@ -1366,7 +1448,7 @@
             // StatCompl
             // 
             this.StatCompl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.StatCompl.Location = new System.Drawing.Point(551, 144);
+            this.StatCompl.Location = new System.Drawing.Point(622, 57);
             this.StatCompl.Name = "StatCompl";
             this.StatCompl.Size = new System.Drawing.Size(340, 23);
             this.StatCompl.TabIndex = 26;
@@ -1377,7 +1459,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label27.Location = new System.Drawing.Point(686, 113);
+            this.label27.Location = new System.Drawing.Point(757, 26);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(66, 20);
             this.label27.TabIndex = 25;
@@ -1652,7 +1734,9 @@
             this.AddGame,
             this.EditGame,
             this.DelGame,
-            this.AddContent});
+            this.AddContent,
+            this.viewContent,
+            this.AddCollect});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1253, 25);
@@ -1695,17 +1779,39 @@
             // AddContent
             // 
             this.AddContent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddContent.Image = ((System.Drawing.Image)(resources.GetObject("AddContent.Image")));
+            this.AddContent.Image = global::GamesList.Properties.Resources.AddContent;
             this.AddContent.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddContent.Name = "AddContent";
             this.AddContent.Size = new System.Drawing.Size(23, 22);
-            this.AddContent.Text = "toolStripButton1";
+            this.AddContent.Text = "Добавить дополнение";
+            this.AddContent.Click += new System.EventHandler(this.AddContent_Click);
+            // 
+            // viewContent
+            // 
+            this.viewContent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.viewContent.Enabled = false;
+            this.viewContent.Image = global::GamesList.Properties.Resources.x86_microsoft_windows_imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_2005;
+            this.viewContent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.viewContent.Name = "viewContent";
+            this.viewContent.Size = new System.Drawing.Size(23, 22);
+            this.viewContent.Text = "Просмотр дополнений";
+            this.viewContent.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // AddCollect
+            // 
+            this.AddCollect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.AddCollect.Image = global::GamesList.Properties.Resources.wow64_microsoft_windows_shell32_31bf3856ad364e35_6_1_7100_0_none_438f691553cff239_shell32_dll_0d29dca9_2259;
+            this.AddCollect.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AddCollect.Name = "AddCollect";
+            this.AddCollect.Size = new System.Drawing.Size(23, 22);
+            this.AddCollect.Text = "Добавить сборник";
+            this.AddCollect.Click += new System.EventHandler(this.AddCollect_Click);
             // 
             // GamesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1253, 624);
+            this.ClientSize = new System.Drawing.Size(1253, 636);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
@@ -1713,6 +1819,7 @@
             this.Controls.Add(this.SortBox);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1262, 538);
             this.Name = "GamesForm";
@@ -1737,6 +1844,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -1900,6 +2008,17 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.BindingSource gamesBindingSource;
         private System.Windows.Forms.ToolStripButton AddContent;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripButton viewContent;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ToolStripButton AddCollect;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem addContentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewContentToolStripMenuItem;
+        private System.Windows.Forms.Label kol_updatesLabel;
+        private System.Windows.Forms.Label CollectedLabel;
+        private System.Windows.Forms.ListBox gamesListBox;
+        private System.Windows.Forms.BindingSource gamesBindingSource1;
     }
 }
 

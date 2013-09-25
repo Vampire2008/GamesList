@@ -62,8 +62,8 @@ namespace GamesList
 
         private void ManageGenres_FormClosing(object sender, FormClosingEventArgs e)
         {
-            genresBindingSource.EndEdit();
-            Program.context.SaveChanges();
+            /*genresBindingSource.EndEdit();
+            Program.context.SaveChanges();*/
         }
 
         private void genresDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)

@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>E:\GamesList\</PublishUrl>
+    <PublishUrl>C:\Users\Kain_Stropov\Documents\Проекты\Список игр\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,8 +22,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>0.9.0.%2a</ApplicationVersion>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -59,6 +60,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ProgIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AeroWizard">
@@ -252,6 +256,18 @@
     <Compile Include="AddContent.Designer.cs">
       <DependentUpon>AddContent.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContentForm.Designer.cs">
+      <DependentUpon>ContentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCollect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCollect.Designer.cs">
+      <DependentUpon>AddCollect.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +319,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddContent.resx">
       <DependentUpon>AddContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContentForm.resx">
+      <DependentUpon>ContentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCollect.resx">
+      <DependentUpon>AddCollect.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -375,6 +397,16 @@
     <Folder Include="DLLs\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\AddContent.png" />
+    <None Include="Resources\x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_2005.png" />
+    <None Include="Resources\WlanMM.dll-3131-05-256x256x32bit.PNG" />
+    <None Include="Resources\wow64_microsoft-windows-shell32_31bf3856ad364e35_6_1_7100_0_none_438f691553cff239_shell32_dll_0d29dca9_2259.png" />
+    <EmbeddedResource Include="Resources\FileIcon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Resources\ProgIcon.ico" />
+    <Content Include="FileIcon.ico" />
+    <None Include="Resources\Wizard.jpg" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -404,11 +436,18 @@
     <None Include="Resources\netshell_dll_386.png" />
     <None Include="Resources\Vista %28199%29.png" />
     <None Include="Resources\Vista %28198%29.png" />
-    <None Include="Resources\Prog.ico" />
     <Resource Include="Resources\gws_landing_hero.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".gdb">
+      <Visible>False</Visible>
+      <Description>Файл со списком игр</Description>
+      <Progid>9d069dd5-3a39-402d-82ae-7afb58bfd1a0</Progid>
+      <DefaultIcon>FileIcon.ico</DefaultIcon>
+    </FileAssociation>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

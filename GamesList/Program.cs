@@ -36,7 +36,11 @@ namespace GamesList
                 return;
             }
             
-
+            if (AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData != null)
+            {
+                args = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData;
+            }
+            
             if (Properties.Settings.Default.FirstRun)//Проверяем установлен ли флаг 1-ого запуска программы в Settings-файле
             {
                 Form Wiz = new Wizard(args);//Создаём форму Мастера настройки
@@ -85,6 +89,8 @@ namespace GamesList
                         }
                     }
                     context.Database.Create();//Создаём базу данных. Данный метод создаст файл базы данных в указанном месте.
+                    Properties.Settings.Default.NewBase = false;
+                    Properties.Settings.Default.Save();
                 }
                 Program.context.Database.Connection.Open();//Открваем соединение с базой
             }

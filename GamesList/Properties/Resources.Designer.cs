@@ -63,6 +63,26 @@ namespace GamesList.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddContent {
+            get {
+                object obj = ResourceManager.GetObject("AddContent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon FileIcon {
+            get {
+                object obj = ResourceManager.GetObject("FileIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gws_landing_hero {
             get {
                 object obj = ResourceManager.GetObject("gws_landing_hero", resourceCulture);
@@ -83,9 +103,9 @@ namespace GamesList.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
-        internal static System.Drawing.Icon Prog {
+        internal static System.Drawing.Icon ProgIcon {
             get {
-                object obj = ResourceManager.GetObject("Prog", resourceCulture);
+                object obj = ResourceManager.GetObject("ProgIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -116,6 +136,48 @@ namespace GamesList.Properties {
         internal static System.Drawing.Bitmap Vista__199_ {
             get {
                 object obj = ResourceManager.GetObject("Vista (199)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wizard {
+            get {
+                object obj = ResourceManager.GetObject("Wizard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WlanMM_dll_3131_05_256x256x32bit {
+            get {
+                object obj = ResourceManager.GetObject("WlanMM_dll_3131_05_256x256x32bit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wow64_microsoft_windows_shell32_31bf3856ad364e35_6_1_7100_0_none_438f691553cff239_shell32_dll_0d29dca9_2259 {
+            get {
+                object obj = ResourceManager.GetObject("wow64_microsoft-windows-shell32_31bf3856ad364e35_6_1_7100_0_none_438f691553cff239" +
+                        "_shell32_dll_0d29dca9_2259", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x86_microsoft_windows_imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_2005 {
+            get {
+                object obj = ResourceManager.GetObject("x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_" +
+                        "imageres_dll_44f44625_2005", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

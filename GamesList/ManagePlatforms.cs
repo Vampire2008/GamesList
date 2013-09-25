@@ -28,8 +28,8 @@ namespace GamesList
 
         private void ManagePlatforms_FormClosing(object sender, FormClosingEventArgs e)
         {
-            platformsBindingSource.EndEdit();
-            Program.context.SaveChanges();
+            /*platformsBindingSource.EndEdit();
+            Program.context.SaveChanges();*/
         }
 
         private void platformsDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)

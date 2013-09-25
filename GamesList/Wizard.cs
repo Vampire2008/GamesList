@@ -23,7 +23,7 @@ namespace GamesList
         public Wizard(string[] args)
         {
             InitializeComponent();
-            if ((args.Length >= 1) && ((args[1] != null) || (args[1] != "")))
+            if ((args.Length >= 1) && ((args[0] != null) || (args[0] != "")))
             {
                 OpenPath.Text = args[0];
                 radioButton1.Checked = false;

@@ -99,6 +99,8 @@
             this.Controls.Add(this.Description);
             this.Controls.Add(this.SerName);
             this.Controls.Add(this.listView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SeriesInf";
             this.Text = "SeriesInf";
             this.ResumeLayout(false);

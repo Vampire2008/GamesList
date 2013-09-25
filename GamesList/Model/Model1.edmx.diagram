@@ -29,6 +29,7 @@
         <AssociationConnector Association="GamesModel.GamesOnline_protections" />
         <AssociationConnector Association="GamesModel.GamesPlatforms" />
         <AssociationConnector Association="GamesModel.GenresGames" />
+        <AssociationConnector Association="GamesModel.GamesCollector" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

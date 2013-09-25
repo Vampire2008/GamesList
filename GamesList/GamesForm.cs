@@ -122,22 +122,167 @@ namespace GamesList
                 pictureBox5.Visible = false;
                 pictureBox6.Visible = false;
                 pictureBox7.Visible = false;
+                button1.Visible = false;
+                viewContent.Enabled = false;
+                viewContentToolStripMenuItem.Enabled = false;
+                addContentToolStripMenuItem.Enabled = false;
+                DelGame.Enabled = false;
+                EditGame.Enabled = false;
+                delGameToolStripMenuItem.Enabled = false;
+                delGamecontextToolStripMenuItem1.Enabled = false;
+                editGameContextToolStripMenuItem.Enabled = false;
+                editGameToolStripMenuItem.Enabled = false;
                 return;
             }
+            addContentToolStripMenuItem.Enabled = true;
+            DelGame.Enabled = true;
+            EditGame.Enabled = true;
+            delGameToolStripMenuItem.Enabled = true;
+            delGamecontextToolStripMenuItem1.Enabled = true;
+            editGameContextToolStripMenuItem.Enabled = true;
+            editGameToolStripMenuItem.Enabled = true;
             JenrName.Text = "";//Очищаем строку
-            foreach (var g in ((Games)gamesBindingSource.Current).Genres)//Перебираем жанры в текущей игре
+            if (((Games)gamesBindingSource.Current).Localisation_Type == -1)
             {
-                JenrName.Text += g.Name + ", ";//Добавляем в строку жанр и запятую
-            }
-
-            if (JenrName.Text.Length > 0)//Если строка не пуста
-            {
-                JenrName.Text = JenrName.Text.Substring(0, JenrName.Text.Length - 2);//Удаляем 2 последних символа ", " из строки 
+                JenrName.Visible = false;
+                label15.Visible = false;
+                label33.Visible = false;
+                SerName.Visible = false;
+                pictureBox2.Visible = false;
+                DevName.Visible = false;
+                Dev.Visible = false;
+                label27.Visible = false;
+                StatCompl.Visible = false;
+                label24.Visible = false;
+                Loc_type.Visible = false;
+                button1.Visible = false;
+                viewContent.Enabled = false;
+                viewContentToolStripMenuItem.Enabled = false;
+                label28.Visible = false;
+                kol_updatesLabel.Visible = false;
+                kol_updatesLabel1.Visible = false;
+                label32.Visible = false;
+                label26.Visible = false;
+                IgromaniaRate.Visible = false;
+                label25.Visible = false;
+                PersonalRate.Visible = false;
+                pictureBox3.Visible = false;
+                CollectedLabel.Visible = true;
+                gamesListBox.Visible = true;
+                var Q = from Games in Program.context.Games
+                        where Games.ID_Collect == ((Games)gamesBindingSource.Current).ID_Game
+                        orderby Games.Name
+                        select Games;
+                //gamesBindingSource1.DataSource = Program.context.Games.Local.ToBindingList().Where(g => g.ID_Collect == ((Games)gamesBindingSource.Current).ID_Game).OrderBy(g => g.Name);
+                gamesBindingSource1.DataSource = Q.ToList();
+                //Program.context.Games.Load();
             }
             else
             {
-                JenrName.Text = "<отсутствует>";//Если строка пуста, то пишем, что жанров нет
+                pictureBox3.Visible = true;
+                CollectedLabel.Visible = false;
+                gamesListBox.Visible = false;
+                label26.Visible = true;
+                IgromaniaRate.Visible = true;
+                label25.Visible = true;
+                PersonalRate.Visible = true;
+                label28.Visible = true;
+                kol_updatesLabel.Visible = true;
+                kol_updatesLabel1.Visible = true;
+                label32.Visible = true;
+                JenrName.Visible = true;
+                label15.Visible = true;
+                foreach (var g in ((Games)gamesBindingSource.Current).Genres)//Перебираем жанры в текущей игре
+                {
+                    JenrName.Text += g.Name + ", ";//Добавляем в строку жанр и запятую
+                }
+                if (JenrName.Text.Length > 0)//Если строка не пуста
+                {
+                    JenrName.Text = JenrName.Text.Substring(0, JenrName.Text.Length - 2);//Удаляем 2 последних символа ", " из строки 
+                }
+                else
+                {
+                    JenrName.Text = "<отсутствует>";//Если строка пуста, то пишем, что жанров нет
+                }
+
+                if (((Games)gamesBindingSource.Current).Series != null)//Если серия задана, то
+                {
+                    label33.Visible = true;//Делаем поле видимым
+                    SerName.Visible = true;
+                    SerName.Text = ((Games)gamesBindingSource.Current).Series.Name;
+                    pictureBox2.Visible = true;
+                    pictureBox2.Left = SerName.Right + 5;
+                }
+                else
+                {
+                    label33.Visible = false;//Или невидимым, если отсутствует
+                    SerName.Visible = false;
+                    pictureBox2.Visible = false;
+                }
+                Dev.Visible = true;
+                DevName.Visible = true;
+                if (((Games)gamesBindingSource.Current).Developers != null)//Если разработчик задан, то 
+                {
+                    DevName.Text = ((Games)gamesBindingSource.Current).Developers.Name;//Отображаем его имя
+                    pictureBox3.Visible = true;
+                    pictureBox3.Left = DevName.Right + 5;
+                }
+                else
+                {
+                    DevName.Text = "<отсутствует>";//Либо заглушку
+                    pictureBox3.Visible = false;
+                }
+                label27.Visible = true;
+                StatCompl.Visible = true;
+                //Проверяем статус пройденности и выводим соответствующуюю строку
+                switch (((Games)gamesBindingSource.Current).Status_complite.ToString())
+                {
+                    case "0":
+                        StatCompl.Text = "Не пройдено";
+                        StatCompl.ForeColor = Color.Red;
+                        break;
+                    case "1":
+                        StatCompl.Text = "Ожидает прохождения";
+                        StatCompl.ForeColor = Color.Orange;
+                        break;
+                    case "2":
+                        StatCompl.Text = "Пройдено (не 100%)";
+                        StatCompl.ForeColor = Color.Green;
+                        break;
+                    case "3":
+                        StatCompl.Text = "Пройдено";
+                        StatCompl.ForeColor = Color.Green;
+                        break;
+                }
+                label24.Visible = true;
+                Loc_type.Visible = true;
+                switch (((Games)gamesBindingSource.Current).Localisation_Type.ToString())//Выставляем типу локализации в соответствующий текст
+                {
+                    case "0":
+                        Loc_type.Text = "Нет";
+                        break;
+                    case "1":
+                        Loc_type.Text = "Субтиры";
+                        break;
+                    case "2":
+                        Loc_type.Text = "Полная";
+                        break;
+                }
             }
+            if ((((Games)gamesBindingSource.Current).Games1.Count > 0) || (((Games)gamesBindingSource.Current).Games11.Count > 0))
+            {
+                button1.Visible = true;
+                viewContent.Enabled = true;
+                viewContentToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                button1.Visible = false;
+                viewContent.Enabled = false;
+                viewContentToolStripMenuItem.Enabled = false;
+            }
+
+            
             if (((Games)gamesBindingSource.Current).Original_Name != null)//Если оригинальное название задано, то
             {
                 Original.Visible = true;//Делаем поле видимым
@@ -148,32 +293,9 @@ namespace GamesList
                 Original.Visible = false;//Или невидимым, если отсутствует
                 OriginalName.Visible = false;
             }
-            if (((Games)gamesBindingSource.Current).Series != null)//Если серия задана, то
-            {
-                label33.Visible = true;//Делаем поле видимым
-                SerName.Visible = true;
-                SerName.Text = ((Games)gamesBindingSource.Current).Series.Name;
-                pictureBox2.Visible = true;
-                pictureBox2.Left = SerName.Right + 5;
-            }
-            else
-            {
-                label33.Visible = false;//Или невидимым, если отсутствует
-                SerName.Visible = false;
-                pictureBox2.Visible = false;
-            }
+            
 
-            if (((Games)gamesBindingSource.Current).Developers != null)//Если разработчик задан, то 
-            {
-                DevName.Text = ((Games)gamesBindingSource.Current).Developers.Name;//Отображаем его имя
-                pictureBox3.Visible = true;
-                pictureBox3.Left = DevName.Right + 5;
-            }
-            else
-            {
-                DevName.Text = "<отсутствует>";//Либо заглушку
-                pictureBox3.Visible = false;
-            }
+            
             if (((Games)gamesBindingSource.Current).Publishers != null)//То же самое, что и разработчик
             {
                 DistrName.Text = ((Games)gamesBindingSource.Current).Publishers.Name;
@@ -210,18 +332,7 @@ namespace GamesList
             {
                 Online_Protect.Text = "<отсутствуют>";
             }
-            switch (((Games)gamesBindingSource.Current).Localisation_Type.ToString())//Выставляем типу локализации в соответствующий текст
-            {
-                case "0":
-                    Loc_type.Text = "Нет";
-                    break;
-                case "1":
-                    Loc_type.Text = "Субтиры";
-                    break;
-                case "2":
-                    Loc_type.Text = "Полная";
-                    break;
-            }
+            
             //Тоже самое, что и с жанрами, но с платформами
             PlatformsLabel.Text = "";
             foreach (var p in ((Games)gamesBindingSource.Current).Platforms)
@@ -245,26 +356,7 @@ namespace GamesList
             {
                 Release_Date.Text = "<отсутствует>";
             }
-            //Проверяем статус пройденности и выводим соответствующуюю строку
-            switch (((Games)gamesBindingSource.Current).Status_complite.ToString())
-            {
-                case "0":
-                    StatCompl.Text = "Не пройдено";
-                    StatCompl.ForeColor = Color.Red;
-                    break;
-                case "1":
-                    StatCompl.Text = "Ожидает прохождения";
-                    StatCompl.ForeColor = Color.Yellow;
-                    break;
-                case "2":
-                    StatCompl.Text = "Пройдено (не 100%)";
-                    StatCompl.ForeColor = Color.Green;
-                    break;
-                case "3":
-                    StatCompl.Text = "Пройдено";
-                    StatCompl.ForeColor = Color.Green;
-                    break;
-            }
+            
             //Тоже самое, что и с жанрами, но с дисками
             Disks.Text = "";
             foreach (var p in ((Games)gamesBindingSource.Current).Game_disks)
@@ -315,7 +407,7 @@ namespace GamesList
                 pictureBox1.Image = null;//Если постера нет, очищаем изображение
                 label32.Visible = true;
             }
-
+            
         }
 
         private void ChangeFilter(Boolean dis)
@@ -339,6 +431,7 @@ namespace GamesList
                 double? n4 = Decimal.ToDouble(numericUpDown4.Value);
                 var GQuery = from Games in Program.context.Games
                              where (Games.ID_Content == null) &&
+                                   (Games.Localisation_Type > -1) &&
                                                 (fp || Games.ID_Publisher == (decimal?)comboBox2.SelectedValue) &&
                                                 (fd || Games.ID_Developer == (decimal?)comboBox3.SelectedValue) &&
                                                 (frf || Games.ID_RF_Distributor == (decimal?)comboBox1.SelectedValue) &&
@@ -451,16 +544,27 @@ namespace GamesList
         {
             Form ДобавитьИгру = new AddGame(null);
             ДобавитьИгру.ShowDialog();
+            var Query = from Games in Program.context.Games
+                        where Games.ID_Content == null
+                        orderby Games.Name
+                        select Games;
+            gamesBindingSource.DataSource = Query.ToList();
             UpdateView();
         }
 
         private void delGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Вы действительно хотите удалить игру " + ((Games)gamesBindingSource.Current).Name + " из базы?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
-                DialogResult.Yes)
+            if (((Games)gamesBindingSource.Current!= null) && (MessageBox.Show("Вы действительно хотите удалить игру " + ((Games)gamesBindingSource.Current).Name + " из базы?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
+                DialogResult.Yes))
             {
+
                 Program.context.Games.Remove((Games)gamesBindingSource.Current);
                 Program.context.SaveChanges();
+                var Query = from Games in Program.context.Games
+                            where Games.ID_Content == null
+                            orderby Games.Name
+                            select Games;
+                gamesBindingSource.DataSource = Query.ToList();
                 UpdateView();
             }
         }
@@ -485,8 +589,19 @@ namespace GamesList
 
         private void editGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form EditGame = new AddGame(Program.context.Games.Find(((Games)gamesBindingSource.Current).ID_Game));
+            Form EditGame;
+            if (((Games)gamesBindingSource.Current).Localisation_Type > -1)
+            {
+                EditGame = new AddGame(Program.context.Games.Find(((Games)gamesBindingSource.Current).ID_Game));
+            }
+            else
+                EditGame = new AddCollect(Program.context.Games.Find(((Games)gamesBindingSource.Current).ID_Game));
             EditGame.ShowDialog();
+            var Query = from Games in Program.context.Games
+                        where Games.ID_Content == null
+                        orderby Games.Name
+                        select Games;
+            gamesBindingSource.DataSource = Query.ToList();
             UpdateView();
         }
 
@@ -813,6 +928,52 @@ namespace GamesList
             Form Infa = new SeriesInf(((Games)gamesBindingSource.Current).Series);
             Infa.Owner = this;
             Infa.Show();
+        }
+
+        private void AddContent_Click(object sender, EventArgs e)
+        {
+            Form AddC = new AddContent((Games)gamesBindingSource.Current);
+            if (AddC.ShowDialog() == DialogResult.OK)
+                UpdateView();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (((Games)gamesBindingSource.Current).Games1.Count > 0)
+            {
+                Form Con = new ContentForm((Games)gamesBindingSource.Current);
+                Con.Show();
+            }
+            else if (((Games)gamesBindingSource.Current).Games11.Count >0)
+            {
+                Form Col = new SeriesInf((Games)gamesBindingSource.Current);
+                Col.Show();
+            }
+        }
+
+        private void AddCollect_Click(object sender, EventArgs e)
+        {
+            Form AddCol = new AddCollect(null);
+            AddCol.ShowDialog();
+            var Query = from Games in Program.context.Games
+                        where Games.ID_Content == null
+                        orderby Games.Name
+                        select Games;
+            gamesBindingSource.DataSource = Query.ToList();
+            UpdateView();
+        }
+
+        private void gamesListBox_Format(object sender, ListControlConvertEventArgs e)
+        {
+            if (((Games)gamesBindingSource.Current).Localisation_Type == -1 && ((Games)e.ListItem).ID_Content != null)
+            {
+                if (((Games)e.ListItem).Games2.Name.IndexOf(":") > -1)
+                {
+                    e.Value = ((Games)e.ListItem).Games2.Name + " - " + ((Games)e.ListItem).Name;
+                }
+                else
+                    e.Value = ((Games)e.ListItem).Games2.Name + ": " + ((Games)e.ListItem).Name;
+            }
         }
     }
 }

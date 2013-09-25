@@ -262,29 +262,28 @@ namespace GamesList
                 MessageBox.Show("Введите хотя бы имя игры!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            this.Cursor = Cursors.WaitCursor;
                 if (!OriginalNameEn.Checked)
                 {
                     AddingGame.Original_Name = null;
                 }
-                progressBar1.Value = 10;
                 if (numericUpDown1.Value == 0)
                 {
                     AddingGame.Kol_updates = 0;
                 }
-                progressBar1.Value = 20;
                 if (posterPictureBox.Image != null)
                 {
                     var stream = new MemoryStream();
                     posterPictureBox.Image.Save(stream, posterPictureBox.Image.RawFormat);
                     AddingGame.Poster = stream.GetBuffer();
                 }
-                progressBar1.Value = 30;
+                else
+                {
+                    AddingGame.Poster = null;
+                }
                 AddingGame.Localisation_Type = comboBox4.SelectedIndex;
-                progressBar1.Value = 40;
                 AddingGame.Status_complite = comboBox5.SelectedIndex;
-                progressBar1.Value = 50;
                 AddingGame.ID_Game = (Program.context.Games.Count() > 0 ? Program.context.Games.Max(p => p.ID_Game) : 0) + 1;
-                progressBar1.Value = 60;
                 //Game_platforms gp;
                 AddingGame.Platforms = new List<Platforms>();
                 foreach (Platforms p in PlatformsList.CheckedItems)
@@ -300,7 +299,6 @@ namespace GamesList
                     gp = null;*/
                     AddingGame.Platforms.Add(Program.context.Platforms.Find(p.ID_Platform));
                 }
-                progressBar1.Value = 70;
                 AddingGame.Genres = new List<Genres>();
                 //Game_Genres gg;
                 foreach (Genres p in GenresList.CheckedItems)
@@ -316,7 +314,6 @@ namespace GamesList
                     gg = null;*/
                     AddingGame.Genres.Add(Program.context.Genres.Find(p.ID_Genre));
                 }
-                progressBar1.Value = 80;
                 //Game_protections gop;
                 AddingGame.Online_protections = new List<Online_protections>();
                 foreach (Online_protections p in OnlineProtectionsList.CheckedItems)
@@ -332,7 +329,6 @@ namespace GamesList
                     gop = null;*/
                     AddingGame.Online_protections.Add(Program.context.Online_protections.Find(p.ID_Protect));
                 }
-                progressBar1.Value = 90;
                 Program.context.Games.Add(AddingGame);
                 if (AddingGame.ID_Developer == 0)
                 {
@@ -353,7 +349,6 @@ namespace GamesList
                 Program.context.SaveChanges();
                 var ID_G = Program.context.Games.Max(p => p.ID_Game);
                 var game = Program.context.Games.Find(ID_G);
-                progressBar1.Value = 95;
                 Game_disks gd;
                 foreach (Game_disks p in GameDiskList.Items)
                 {
@@ -368,7 +363,7 @@ namespace GamesList
                     Program.context.SaveChanges();
                     gd = null;
                 }
-                progressBar1.Value = 100;
+                this.Cursor = Cursors.Default;
             DialogResult = DialogResult.OK;
         }
 
@@ -388,26 +383,27 @@ namespace GamesList
                 MessageBox.Show("Введите хотя бы имя игры!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            this.Cursor = Cursors.WaitCursor;
             if (!OriginalNameEn.Checked)
             {
                 AddingGame.Original_Name = null;
             }
-            progressBar1.Value = 10;
             if (numericUpDown1.Value == 0)
             {
                 AddingGame.Kol_updates = 0;
             }
-            progressBar1.Value = 20;
             if (posterPictureBox.Image != null)
             {
                 var stream = new MemoryStream();
                 posterPictureBox.Image.Save(stream, posterPictureBox.Image.RawFormat);
                 AddingGame.Poster = stream.GetBuffer();
             }
-            progressBar1.Value = 30;
+            else
+            {
+                AddingGame.Poster = null;
+            }
             AddingGame.Localisation_Type = comboBox4.SelectedIndex;
             AddingGame.Status_complite = comboBox5.SelectedIndex;
-            progressBar1.Value = 40;
             //Обновление платформ
             Platforms[] gpp = new Platforms[PlatformsList.CheckedItems.Count];
             PlatformsList.CheckedItems.CopyTo(gpp, 0);
@@ -443,7 +439,6 @@ namespace GamesList
                 Program.context.SaveChanges();*/
                 AddingGame.Platforms.Remove(Program.context.Platforms.Find(p.ID_Platform));
             }
-            progressBar1.Value = 50;
             //Обновление жанров
             Genres[] ggg = new Genres[GenresList.CheckedItems.Count];
             GenresList.CheckedItems.CopyTo(ggg, 0);
@@ -479,7 +474,6 @@ namespace GamesList
                 Program.context.SaveChanges();*/
                 AddingGame.Genres.Remove(Program.context.Genres.Find(p.ID_Genre));
             }
-            progressBar1.Value = 60;
             //Обновление защит
             Online_protections[] gopp = new Online_protections[OnlineProtectionsList.CheckedItems.Count];
             OnlineProtectionsList.CheckedItems.CopyTo(gopp, 0);
@@ -539,10 +533,8 @@ namespace GamesList
             {
                 MessageBox.Show("Произошла ошибка:\n" + ex, "Ошибка", MessageBoxButtons.OK);
             }
-            progressBar1.Value = 70;
             var ID_G = AddingGame.ID_Game;
             var game = Program.context.Games.Find(ID_G);
-            progressBar1.Value = 80;
             //Обновление дисков
             Game_disks[] gdd = new Game_disks[GameDiskList.Items.Count];
             GameDiskList.Items.CopyTo(gdd, 0);
@@ -590,7 +582,7 @@ namespace GamesList
                 Program.context.Game_disks.Remove(Program.context.Game_disks.Find(p.ID_Game_disk));
                 Program.context.SaveChanges();
             }
-            progressBar1.Value = 100;
+            this.Cursor = Cursors.Default;
             DialogResult = DialogResult.OK;
         }
 

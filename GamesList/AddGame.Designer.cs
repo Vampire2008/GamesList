@@ -36,6 +36,7 @@
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label rate_personLabel;
             System.Windows.Forms.Label status_compliteLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGame));
             this.rate_IgromaniaLabel = new System.Windows.Forms.Label();
             this.gamesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.date_ReleaseDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -90,10 +91,11 @@
             this.boxesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ChooseImage = new System.Windows.Forms.OpenFileDialog();
             this.EditButton = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.seriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             date_ReleaseLabel = new System.Windows.Forms.Label();
             kol_updatesLabel = new System.Windows.Forms.Label();
             last_versionLabel = new System.Windows.Forms.Label();
@@ -166,15 +168,6 @@
             nameLabel.TabIndex = 18;
             nameLabel.Text = "Название: ";
             // 
-            // rate_IgromaniaLabel
-            // 
-            this.rate_IgromaniaLabel.AutoSize = true;
-            this.rate_IgromaniaLabel.Location = new System.Drawing.Point(9, 324);
-            this.rate_IgromaniaLabel.Name = "rate_IgromaniaLabel";
-            this.rate_IgromaniaLabel.Size = new System.Drawing.Size(111, 13);
-            this.rate_IgromaniaLabel.TabIndex = 22;
-            this.rate_IgromaniaLabel.Text = "Рейтинг Игромании:";
-            // 
             // rate_personLabel
             // 
             rate_personLabel.AutoSize = true;
@@ -192,6 +185,15 @@
             status_compliteLabel.Size = new System.Drawing.Size(114, 13);
             status_compliteLabel.TabIndex = 26;
             status_compliteLabel.Text = "Статус прохождения:";
+            // 
+            // rate_IgromaniaLabel
+            // 
+            this.rate_IgromaniaLabel.AutoSize = true;
+            this.rate_IgromaniaLabel.Location = new System.Drawing.Point(9, 324);
+            this.rate_IgromaniaLabel.Name = "rate_IgromaniaLabel";
+            this.rate_IgromaniaLabel.Size = new System.Drawing.Size(111, 13);
+            this.rate_IgromaniaLabel.TabIndex = 22;
+            this.rate_IgromaniaLabel.Text = "Рейтинг Игромании:";
             // 
             // gamesBindingSource
             // 
@@ -348,7 +350,7 @@
             this.posterPictureBox.ContextMenuStrip = this.contextMenuStrip1;
             this.posterPictureBox.Location = new System.Drawing.Point(617, 25);
             this.posterPictureBox.Name = "posterPictureBox";
-            this.posterPictureBox.Size = new System.Drawing.Size(323, 492);
+            this.posterPictureBox.Size = new System.Drawing.Size(323, 507);
             this.posterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.posterPictureBox.TabIndex = 37;
             this.posterPictureBox.TabStop = false;
@@ -395,7 +397,7 @@
             this.DiskTypes.FormattingEnabled = true;
             this.DiskTypes.Location = new System.Drawing.Point(12, 409);
             this.DiskTypes.Name = "DiskTypes";
-            this.DiskTypes.Size = new System.Drawing.Size(120, 108);
+            this.DiskTypes.Size = new System.Drawing.Size(120, 121);
             this.DiskTypes.TabIndex = 40;
             this.DiskTypes.ValueMember = "ID_Disk_Type";
             this.DiskTypes.SelectedIndexChanged += new System.EventHandler(this.DiskTypes_SelectedIndexChanged);
@@ -446,7 +448,7 @@
             this.GameDiskList.FormattingEnabled = true;
             this.GameDiskList.Location = new System.Drawing.Point(183, 409);
             this.GameDiskList.Name = "GameDiskList";
-            this.GameDiskList.Size = new System.Drawing.Size(128, 108);
+            this.GameDiskList.Size = new System.Drawing.Size(128, 121);
             this.GameDiskList.TabIndex = 44;
             this.GameDiskList.SelectedIndexChanged += new System.EventHandler(this.GameDiskList_SelectedIndexChanged);
             this.GameDiskList.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.listBox1_Format);
@@ -479,7 +481,7 @@
             this.GenresList.FormattingEnabled = true;
             this.GenresList.Location = new System.Drawing.Point(338, 326);
             this.GenresList.Name = "GenresList";
-            this.GenresList.Size = new System.Drawing.Size(208, 94);
+            this.GenresList.Size = new System.Drawing.Size(208, 49);
             this.GenresList.TabIndex = 47;
             this.GenresList.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.GenresList_Format);
             // 
@@ -591,7 +593,7 @@
             // 
             // AddBut
             // 
-            this.AddBut.Location = new System.Drawing.Point(536, 494);
+            this.AddBut.Location = new System.Drawing.Point(536, 509);
             this.AddBut.Name = "AddBut";
             this.AddBut.Size = new System.Drawing.Size(75, 23);
             this.AddBut.TabIndex = 56;
@@ -630,6 +632,7 @@
             // 
             // comboBox6
             // 
+            this.comboBox6.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.gamesBindingSource, "ID_Edition", true));
             this.comboBox6.DataSource = this.editionsBindingSource;
             this.comboBox6.DisplayMember = "Name";
             this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -676,20 +679,13 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(455, 494);
+            this.EditButton.Location = new System.Drawing.Point(455, 509);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 23);
             this.EditButton.TabIndex = 62;
             this.EditButton.Text = "Изменить";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(0, 523);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(961, 21);
-            this.progressBar1.TabIndex = 63;
             // 
             // label11
             // 
@@ -717,11 +713,33 @@
             // 
             this.seriesBindingSource.DataSource = typeof(GamesList.Model.Series);
             // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Description", true));
+            this.textBox1.Location = new System.Drawing.Point(338, 409);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(256, 94);
+            this.textBox1.TabIndex = 66;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(341, 393);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 13);
+            this.label12.TabIndex = 67;
+            this.label12.Text = "Описание";
+            // 
             // AddGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 544);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.AddBut);
+            this.Controls.Add(this.EditButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.PlatformsList);
             this.Controls.Add(this.label8);
@@ -734,9 +752,6 @@
             this.Controls.Add(this.comboBox7);
             this.Controls.Add(this.comboBox8);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.EditButton);
-            this.Controls.Add(this.AddBut);
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.PersonRate);
@@ -771,6 +786,7 @@
             this.Controls.Add(rate_personLabel);
             this.Controls.Add(status_compliteLabel);
             this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddGame";
             this.Text = "Добавление игры";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddGame_FormClosing);
@@ -850,12 +866,13 @@
         private System.Windows.Forms.BindingSource boxesBindingSource;
         private System.Windows.Forms.OpenFileDialog ChooseImage;
         private System.Windows.Forms.Button EditButton;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem убратьИзображениеToolStripMenuItem;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.BindingSource seriesBindingSource;
         private System.Windows.Forms.Label rate_IgromaniaLabel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label12;
     }
 }

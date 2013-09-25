@@ -45,10 +45,10 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.online_protectionsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.online_protectionsDataGridView = new System.Windows.Forms.DataGridView();
-            this.iconPictureBox = new System.Windows.Forms.PictureBox();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.iconPictureBox = new System.Windows.Forms.PictureBox();
             this.ChooseImage = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.online_protectionsBindingNavigator)).BeginInit();
             this.online_protectionsBindingNavigator.SuspendLayout();
@@ -202,17 +202,6 @@
             this.online_protectionsDataGridView.TabIndex = 1;
             this.online_protectionsDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.online_protectionsDataGridView_CellEndEdit);
             // 
-            // iconPictureBox
-            // 
-            this.iconPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.iconPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.online_protectionsBindingSource, "Icon", true));
-            this.iconPictureBox.Location = new System.Drawing.Point(430, 28);
-            this.iconPictureBox.Name = "iconPictureBox";
-            this.iconPictureBox.Size = new System.Drawing.Size(112, 105);
-            this.iconPictureBox.TabIndex = 3;
-            this.iconPictureBox.TabStop = false;
-            this.iconPictureBox.Click += new System.EventHandler(this.iconPictureBox_Click);
-            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
@@ -233,11 +222,22 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Visible = false;
             // 
+            // iconPictureBox
+            // 
+            this.iconPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.iconPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.online_protectionsBindingSource, "Icon", true));
+            this.iconPictureBox.Location = new System.Drawing.Point(430, 28);
+            this.iconPictureBox.Name = "iconPictureBox";
+            this.iconPictureBox.Size = new System.Drawing.Size(112, 105);
+            this.iconPictureBox.TabIndex = 3;
+            this.iconPictureBox.TabStop = false;
+            this.iconPictureBox.Click += new System.EventHandler(this.iconPictureBox_Click);
+            // 
             // ChooseImage
             // 
             this.ChooseImage.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF";
             // 
-            // ManageOnlineProtects
+            // ManageOPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -246,8 +246,9 @@
             this.Controls.Add(this.online_protectionsDataGridView);
             this.Controls.Add(this.online_protectionsBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "ManageOnlineProtects";
+            this.Name = "ManageOPOS";
             this.Text = "Управление онлайн-защитами";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageOnlineProtects_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.online_protectionsBindingNavigator)).EndInit();
