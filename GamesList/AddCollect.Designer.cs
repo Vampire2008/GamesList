@@ -82,6 +82,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.AddGame = new System.Windows.Forms.Button();
             this.RemoveGame = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             date_ReleaseLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).BeginInit();
@@ -282,14 +283,15 @@
             // 
             // ColDisks
             // 
+            this.ColDisks.DecimalPlaces = 3;
             this.ColDisks.Location = new System.Drawing.Point(138, 497);
             this.ColDisks.Minimum = new decimal(new int[] {
             1,
             0,
             0,
-            0});
+            196608});
             this.ColDisks.Name = "ColDisks";
-            this.ColDisks.Size = new System.Drawing.Size(39, 20);
+            this.ColDisks.Size = new System.Drawing.Size(52, 20);
             this.ColDisks.TabIndex = 41;
             this.ColDisks.Value = new decimal(new int[] {
             1,
@@ -299,7 +301,7 @@
             // 
             // AddDisk
             // 
-            this.AddDisk.Location = new System.Drawing.Point(138, 431);
+            this.AddDisk.Location = new System.Drawing.Point(145, 434);
             this.AddDisk.Name = "AddDisk";
             this.AddDisk.Size = new System.Drawing.Size(39, 23);
             this.AddDisk.TabIndex = 42;
@@ -309,7 +311,7 @@
             // 
             // RemoveDisk
             // 
-            this.RemoveDisk.Location = new System.Drawing.Point(138, 460);
+            this.RemoveDisk.Location = new System.Drawing.Point(145, 463);
             this.RemoveDisk.Name = "RemoveDisk";
             this.RemoveDisk.Size = new System.Drawing.Size(39, 23);
             this.RemoveDisk.TabIndex = 43;
@@ -320,9 +322,9 @@
             // GameDiskList
             // 
             this.GameDiskList.FormattingEnabled = true;
-            this.GameDiskList.Location = new System.Drawing.Point(183, 409);
+            this.GameDiskList.Location = new System.Drawing.Point(196, 409);
             this.GameDiskList.Name = "GameDiskList";
-            this.GameDiskList.Size = new System.Drawing.Size(128, 121);
+            this.GameDiskList.Size = new System.Drawing.Size(115, 121);
             this.GameDiskList.TabIndex = 44;
             this.GameDiskList.SelectedIndexChanged += new System.EventHandler(this.GameDiskList_SelectedIndexChanged);
             this.GameDiskList.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.listBox1_Format);
@@ -343,7 +345,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(180, 393);
+            this.label6.Location = new System.Drawing.Point(193, 393);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 13);
             this.label6.TabIndex = 46;
@@ -466,7 +468,7 @@
             // 
             // ChooseImage
             // 
-            this.ChooseImage.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF";
+            this.ChooseImage.Filter = "Файлы изображений (*.BMP;*.JPG;*.GIF,*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
             // 
             // EditButton
             // 
@@ -569,11 +571,25 @@
             this.RemoveGame.UseVisualStyleBackColor = true;
             this.RemoveGame.Click += new System.EventHandler(this.RemoveGame_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(650, 259);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(263, 13);
+            this.label13.TabIndex = 78;
+            this.label13.Text = "Дважды щёлкните, чтобы добавить изображение.";
+            this.label13.DoubleClick += new System.EventHandler(this.posterPictureBox_DoubleClick);
+            // 
             // AddCollect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 544);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.RemoveDisk);
+            this.Controls.Add(this.AddDisk);
             this.Controls.Add(this.RemoveGame);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.listBox1);
@@ -601,11 +617,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.AddBut);
             this.Controls.Add(this.EditButton);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.GameDiskList);
-            this.Controls.Add(this.RemoveDisk);
-            this.Controls.Add(this.AddDisk);
             this.Controls.Add(this.ColDisks);
             this.Controls.Add(this.DiskTypes);
             this.Controls.Add(this.OriginalNameEn);
@@ -686,5 +699,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button AddGame;
         private System.Windows.Forms.Button RemoveGame;
+        private System.Windows.Forms.Label label13;
     }
 }

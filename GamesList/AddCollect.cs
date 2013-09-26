@@ -132,6 +132,7 @@ namespace GamesList
                 {
                     var stream = new MemoryStream(AddingGame.Poster);
                     posterPictureBox.Image = Image.FromStream(stream);
+                    label13.Visible = false;
                 }
                 else
                 {
@@ -168,7 +169,7 @@ namespace GamesList
             for (int i = 0; i < GameDiskList.Items.Count; i++)
                 if (((Game_disks)GameDiskList.Items[i]).ID_Disk_Type == (decimal)DiskTypes.SelectedValue)
                 {
-                    ((Game_disks)GameDiskList.Items[i]).Kol_vo = ColDisks.Value;
+                    ((Game_disks)GameDiskList.Items[i]).Kol_vo = (double)Decimal.ToDouble(ColDisks.Value);
                     if (AddingGame.ID_Game > 0)
                     {
                         ((Game_disks)GameDiskList.Items[i]).ID_Disk_Type = 0;
@@ -185,7 +186,7 @@ namespace GamesList
                 ID_Game_disk = 0,
                 ID_Disk_Type = (decimal)DiskTypes.SelectedValue,
                 Disk_types = Program.context.Disk_types.Find(DiskTypes.SelectedValue),
-                Kol_vo = ColDisks.Value
+                Kol_vo = (double)Decimal.ToDouble(ColDisks.Value)
             });
         }
 
@@ -289,6 +290,7 @@ namespace GamesList
             if (ChooseImage.ShowDialog() == DialogResult.OK)
             {
                 posterPictureBox.Image = Image.FromFile(ChooseImage.FileName);
+                label13.Visible = false;
             }
         }
 
@@ -462,6 +464,7 @@ namespace GamesList
         private void убратьИзображениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             posterPictureBox.Image = null;
+            label13.Visible = true;
         }
 
         private void listBox1_Format_1(object sender, ListControlConvertEventArgs e)

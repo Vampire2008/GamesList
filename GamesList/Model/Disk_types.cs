@@ -22,7 +22,7 @@ namespace GamesList.Model
         public decimal ID_Disk_Type { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public Nullable<decimal> Max_Size { get; set; }
+        public Nullable<double> Max_Size { get; set; }
     
         public virtual ICollection<Game_disks> Game_disks { get; set; }
     }

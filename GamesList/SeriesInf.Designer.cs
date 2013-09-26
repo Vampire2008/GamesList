@@ -73,10 +73,9 @@
             // 
             // Description
             // 
-            this.Description.AutoSize = true;
             this.Description.Location = new System.Drawing.Point(15, 49);
             this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(35, 13);
+            this.Description.Size = new System.Drawing.Size(791, 52);
             this.Description.TabIndex = 2;
             this.Description.Text = "label2";
             // 

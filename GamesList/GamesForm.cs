@@ -176,9 +176,11 @@ namespace GamesList
                 //gamesBindingSource1.DataSource = Program.context.Games.Local.ToBindingList().Where(g => g.ID_Collect == ((Games)gamesBindingSource.Current).ID_Game).OrderBy(g => g.Name);
                 gamesBindingSource1.DataSource = Q.ToList();
                 //Program.context.Games.Load();
+                button1.Text = viewContent.Text = "Просмотр игр";
             }
             else
             {
+                button1.Text = viewContent.Text = "Просмотр дополнений";
                 pictureBox3.Visible = true;
                 CollectedLabel.Visible = false;
                 gamesListBox.Visible = false;
@@ -479,18 +481,21 @@ namespace GamesList
         private void manageGenresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManageGenres = new ManageGEB(0);
+            ManageGenres.Text = "Управление жанрами";
             ManageGenres.ShowDialog();
         }
 
         private void manageOnlineProtectsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManageOnline_Protections = new ManageOPOS(0);
+            ManageOnline_Protections.Text = "Управление онлайн-защитами";
             ManageOnline_Protections.ShowDialog();
         }
 
         private void managePatformsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManagePlatforms = new ManageOPOS(1);
+            ManagePlatforms.Text = "Управление платформами";
             ManagePlatforms.ShowDialog();
         }
 
@@ -572,12 +577,14 @@ namespace GamesList
         private void manageEditionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManageEditions = new ManageGEB(1);
+            ManageEditions.Text = "Управление видами изданий";
             ManageEditions.ShowDialog();
         }
 
         private void manageBoxesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManageBoxes = new ManageGEB(2);
+            ManageBoxes.Text = "Управление комплектациями";
             ManageBoxes.ShowDialog();
         }
 
@@ -593,9 +600,13 @@ namespace GamesList
             if (((Games)gamesBindingSource.Current).Localisation_Type > -1)
             {
                 EditGame = new AddGame(Program.context.Games.Find(((Games)gamesBindingSource.Current).ID_Game));
+                EditGame.Text = "Редактирование игры " + ((Games)gamesBindingSource.Current).Name;
             }
             else
+            {
                 EditGame = new AddCollect(Program.context.Games.Find(((Games)gamesBindingSource.Current).ID_Game));
+                EditGame.Text = "Редактирование сборника " + ((Games)gamesBindingSource.Current).Name;
+            }
             EditGame.ShowDialog();
             var Query = from Games in Program.context.Games
                         where Games.ID_Content == null
@@ -642,6 +653,7 @@ namespace GamesList
                 {
                     Program.context = new GamesEntities(Program.buidConStr(openFileDialog1.FileName));
                     Program.context.Database.Connection.Open();
+                    DBUpdater.checkDBVersion();
                     this.Text = "Список игр - " + Path.GetFileName(openFileDialog1.FileName);
                 }
                 catch
@@ -698,6 +710,7 @@ namespace GamesList
         private void manageSeriesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManageSeries = new ManageOPOS(2);
+            ManageSeries.Text = "Управление сериями";
             ManageSeries.ShowDialog();
         }
 
@@ -749,44 +762,53 @@ namespace GamesList
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((decimal)comboBox4.SelectedValue == 0)
+            if ((comboBox4 != null) && (comboBox4.SelectedValue != null))
             {
-                fop = true;
+                if ((decimal)comboBox4.SelectedValue == 0)
+                {
+                    fop = true;
+                }
+                else
+                {
+                    fop = false;
+                    ovalShape1.FillColor = Color.Green;
+                }
+                ChangeFilter(false);
             }
-            else
-            {
-                fop = false;
-                ovalShape1.FillColor = Color.Green;
-            }
-            ChangeFilter(false);
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((decimal)comboBox5.SelectedValue == 0)
+            if ((comboBox5 != null) && (comboBox5.SelectedValue != null))
             {
-                fg = true;
+                if ((decimal)comboBox5.SelectedValue == 0)
+                {
+                    fg = true;
+                }
+                else
+                {
+                    fg = false;
+                    ovalShape1.FillColor = Color.Green;
+                }
+                ChangeFilter(false);
             }
-            else
-            {
-                fg = false;
-                ovalShape1.FillColor = Color.Green;
-            }
-            ChangeFilter(false);
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((decimal)comboBox6.SelectedValue == 0)
+            if ((comboBox6 != null) && (comboBox6.SelectedValue != null))
             {
-                fpl = true;
+                if ((decimal)comboBox6.SelectedValue == 0)
+                {
+                    fpl = true;
+                }
+                else
+                {
+                    fpl = false;
+                    ovalShape1.FillColor = Color.Green;
+                }
+                ChangeFilter(false);
             }
-            else
-            {
-                fpl = false;
-                ovalShape1.FillColor = Color.Green;
-            }
-            ChangeFilter(false);
         }
 
         private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
@@ -948,11 +970,13 @@ namespace GamesList
             if (((Games)gamesBindingSource.Current).Games1.Count > 0)
             {
                 Form Con = new ContentForm((Games)gamesBindingSource.Current);
+                Con.Owner = this;
                 Con.Show();
             }
             else if (((Games)gamesBindingSource.Current).Games11.Count >0)
             {
                 Form Col = new SeriesInf((Games)gamesBindingSource.Current);
+                Col.Text = "Игры сборника " + ((Games)gamesBindingSource.Current).Name;
                 Col.Show();
             }
         }
@@ -979,6 +1003,20 @@ namespace GamesList
                 }
                 else
                     e.Value = ((Games)e.ListItem).Games2.Name + ": " + ((Games)e.ListItem).Name;
+            }
+        }
+
+        private void сделатьДополнениемToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form CG = new ChooseGame((Games)gamesBindingSource.Current);
+            if (CG.ShowDialog() == DialogResult.OK)
+            {
+                var Query = from Games in Program.context.Games
+                            where Games.ID_Content == null
+                            orderby Games.Name
+                            select Games;
+                gamesBindingSource.DataSource = Query.ToList();
+                UpdateView();
             }
         }
     }

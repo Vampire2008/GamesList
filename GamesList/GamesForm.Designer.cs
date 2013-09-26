@@ -52,6 +52,8 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.addContentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewContentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.addCollectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managePublishersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageDevelopersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +65,7 @@
             this.manageEditionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageBoxesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageSeriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -127,6 +130,10 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editGameContextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delGamecontextToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.addContentContextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.сделатьДополнениемToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gamesListBox = new System.Windows.Forms.ListBox();
             this.gamesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -340,7 +347,9 @@
             this.delGameToolStripMenuItem,
             this.toolStripSeparator3,
             this.addContentToolStripMenuItem,
-            this.viewContentToolStripMenuItem});
+            this.viewContentToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.addCollectToolStripMenuItem});
             this.gamseToolStripMenuItem.Name = "gamseToolStripMenuItem";
             this.gamseToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.gamseToolStripMenuItem.Text = "Игры";
@@ -385,6 +394,18 @@
             this.viewContentToolStripMenuItem.Text = "Просмотр дополнений";
             this.viewContentToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
             // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(199, 6);
+            // 
+            // addCollectToolStripMenuItem
+            // 
+            this.addCollectToolStripMenuItem.Name = "addCollectToolStripMenuItem";
+            this.addCollectToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.addCollectToolStripMenuItem.Text = "Добавить сборник";
+            this.addCollectToolStripMenuItem.Click += new System.EventHandler(this.AddCollect_Click);
+            // 
             // controlToolStripMenuItem
             // 
             this.controlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -398,6 +419,7 @@
             this.manageEditionsToolStripMenuItem,
             this.manageBoxesToolStripMenuItem,
             this.manageSeriesToolStripMenuItem,
+            this.toolStripSeparator4,
             this.configToolStripMenuItem});
             this.controlToolStripMenuItem.Name = "controlToolStripMenuItem";
             this.controlToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
@@ -449,7 +471,7 @@
             // 
             this.manageDiskTypesToolStripMenuItem.Name = "manageDiskTypesToolStripMenuItem";
             this.manageDiskTypesToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
-            this.manageDiskTypesToolStripMenuItem.Text = "Управление типами дисков";
+            this.manageDiskTypesToolStripMenuItem.Text = "Управление типами носителей";
             this.manageDiskTypesToolStripMenuItem.Click += new System.EventHandler(this.manageDiskTypesToolStripMenuItem_Click);
             // 
             // manageEditionsToolStripMenuItem
@@ -463,7 +485,7 @@
             // 
             this.manageBoxesToolStripMenuItem.Name = "manageBoxesToolStripMenuItem";
             this.manageBoxesToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
-            this.manageBoxesToolStripMenuItem.Text = "Управление коробками";
+            this.manageBoxesToolStripMenuItem.Text = "Управление комплектациями";
             this.manageBoxesToolStripMenuItem.Click += new System.EventHandler(this.manageBoxesToolStripMenuItem_Click);
             // 
             // manageSeriesToolStripMenuItem
@@ -472,6 +494,11 @@
             this.manageSeriesToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
             this.manageSeriesToolStripMenuItem.Text = "Управление сериями";
             this.manageSeriesToolStripMenuItem.Click += new System.EventHandler(this.manageSeriesToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(297, 6);
             // 
             // configToolStripMenuItem
             // 
@@ -1125,23 +1152,51 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editGameContextToolStripMenuItem,
-            this.delGamecontextToolStripMenuItem1});
+            this.delGamecontextToolStripMenuItem1,
+            this.toolStripSeparator6,
+            this.addContentContextToolStripMenuItem,
+            this.toolStripSeparator7,
+            this.сделатьДополнениемToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(183, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(198, 126);
             // 
             // editGameContextToolStripMenuItem
             // 
             this.editGameContextToolStripMenuItem.Name = "editGameContextToolStripMenuItem";
-            this.editGameContextToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.editGameContextToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.editGameContextToolStripMenuItem.Text = "Редактировать игру";
             this.editGameContextToolStripMenuItem.Click += new System.EventHandler(this.editGameToolStripMenuItem_Click);
             // 
             // delGamecontextToolStripMenuItem1
             // 
             this.delGamecontextToolStripMenuItem1.Name = "delGamecontextToolStripMenuItem1";
-            this.delGamecontextToolStripMenuItem1.Size = new System.Drawing.Size(182, 22);
+            this.delGamecontextToolStripMenuItem1.Size = new System.Drawing.Size(197, 22);
             this.delGamecontextToolStripMenuItem1.Text = "Удалить игру";
             this.delGamecontextToolStripMenuItem1.Click += new System.EventHandler(this.delGameToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(194, 6);
+            // 
+            // addContentContextToolStripMenuItem
+            // 
+            this.addContentContextToolStripMenuItem.Name = "addContentContextToolStripMenuItem";
+            this.addContentContextToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.addContentContextToolStripMenuItem.Text = "Добавить дополнение";
+            this.addContentContextToolStripMenuItem.Click += new System.EventHandler(this.AddContent_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(194, 6);
+            // 
+            // сделатьДополнениемToolStripMenuItem
+            // 
+            this.сделатьДополнениемToolStripMenuItem.Name = "сделатьДополнениемToolStripMenuItem";
+            this.сделатьДополнениемToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.сделатьДополнениемToolStripMenuItem.Text = "Сделать дополнением";
+            this.сделатьДополнениемToolStripMenuItem.Click += new System.EventHandler(this.сделатьДополнениемToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -1237,6 +1292,7 @@
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox2.Size = new System.Drawing.Size(228, 190);
             this.textBox2.TabIndex = 48;
             // 
@@ -1394,7 +1450,7 @@
             // BoxLabel
             // 
             this.BoxLabel.AutoSize = true;
-            this.BoxLabel.Location = new System.Drawing.Point(329, 391);
+            this.BoxLabel.Location = new System.Drawing.Point(351, 391);
             this.BoxLabel.Name = "BoxLabel";
             this.BoxLabel.Size = new System.Drawing.Size(51, 13);
             this.BoxLabel.TabIndex = 32;
@@ -1405,9 +1461,9 @@
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(267, 391);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(53, 13);
+            this.label30.Size = new System.Drawing.Size(84, 13);
             this.label30.TabIndex = 31;
-            this.label30.Text = "Коробка:";
+            this.label30.Text = "Комплектация:";
             // 
             // Disks
             // 
@@ -2019,6 +2075,13 @@
         private System.Windows.Forms.Label CollectedLabel;
         private System.Windows.Forms.ListBox gamesListBox;
         private System.Windows.Forms.BindingSource gamesBindingSource1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem addCollectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem addContentContextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripMenuItem сделатьДополнениемToolStripMenuItem;
     }
 }
 

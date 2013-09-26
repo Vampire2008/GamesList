@@ -32,23 +32,6 @@
             System.Windows.Forms.Label kol_updatesLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContentForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statuscompliteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ratepersonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rateIgromaniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.posterDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dateReleaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.localisationTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastversionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gameTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDPublisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDeveloperDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDRFDistributorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.developersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gamedisksDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publishersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rFDistributorsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gamesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editGameContextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delGamecontextToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,9 +87,27 @@
             this.AddGame = new System.Windows.Forms.ToolStripButton();
             this.EditGame = new System.Windows.Forms.ToolStripButton();
             this.DelGame = new System.Windows.Forms.ToolStripButton();
+            this.сделатьОбычнойИгройToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gamesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statuscompliteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ratepersonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rateIgromaniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.posterDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dateReleaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.localisationTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastversionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDPublisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDeveloperDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDRFDistributorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.developersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gamedisksDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publishersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rFDistributorsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stand = new System.Windows.Forms.Label();
             kol_updatesLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -117,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // kol_updatesLabel
@@ -166,148 +168,14 @@
             this.dataGridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDown);
             this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
             // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // statuscompliteDataGridViewTextBoxColumn
-            // 
-            this.statuscompliteDataGridViewTextBoxColumn.DataPropertyName = "Status_complite";
-            this.statuscompliteDataGridViewTextBoxColumn.HeaderText = "Status_complite";
-            this.statuscompliteDataGridViewTextBoxColumn.Name = "statuscompliteDataGridViewTextBoxColumn";
-            this.statuscompliteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statuscompliteDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ratepersonDataGridViewTextBoxColumn
-            // 
-            this.ratepersonDataGridViewTextBoxColumn.DataPropertyName = "Rate_person";
-            this.ratepersonDataGridViewTextBoxColumn.HeaderText = "Rate_person";
-            this.ratepersonDataGridViewTextBoxColumn.Name = "ratepersonDataGridViewTextBoxColumn";
-            this.ratepersonDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ratepersonDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // rateIgromaniaDataGridViewTextBoxColumn
-            // 
-            this.rateIgromaniaDataGridViewTextBoxColumn.DataPropertyName = "Rate_Igromania";
-            this.rateIgromaniaDataGridViewTextBoxColumn.HeaderText = "Rate_Igromania";
-            this.rateIgromaniaDataGridViewTextBoxColumn.Name = "rateIgromaniaDataGridViewTextBoxColumn";
-            this.rateIgromaniaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rateIgromaniaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // posterDataGridViewImageColumn
-            // 
-            this.posterDataGridViewImageColumn.DataPropertyName = "Poster";
-            this.posterDataGridViewImageColumn.HeaderText = "Poster";
-            this.posterDataGridViewImageColumn.Name = "posterDataGridViewImageColumn";
-            this.posterDataGridViewImageColumn.ReadOnly = true;
-            this.posterDataGridViewImageColumn.Visible = false;
-            // 
-            // dateReleaseDataGridViewTextBoxColumn
-            // 
-            this.dateReleaseDataGridViewTextBoxColumn.DataPropertyName = "Date_Release";
-            this.dateReleaseDataGridViewTextBoxColumn.HeaderText = "Date_Release";
-            this.dateReleaseDataGridViewTextBoxColumn.Name = "dateReleaseDataGridViewTextBoxColumn";
-            this.dateReleaseDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateReleaseDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // localisationTypeDataGridViewTextBoxColumn
-            // 
-            this.localisationTypeDataGridViewTextBoxColumn.DataPropertyName = "Localisation_Type";
-            this.localisationTypeDataGridViewTextBoxColumn.HeaderText = "Localisation_Type";
-            this.localisationTypeDataGridViewTextBoxColumn.Name = "localisationTypeDataGridViewTextBoxColumn";
-            this.localisationTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.localisationTypeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // lastversionDataGridViewTextBoxColumn
-            // 
-            this.lastversionDataGridViewTextBoxColumn.DataPropertyName = "Last_version";
-            this.lastversionDataGridViewTextBoxColumn.HeaderText = "Last_version";
-            this.lastversionDataGridViewTextBoxColumn.Name = "lastversionDataGridViewTextBoxColumn";
-            this.lastversionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastversionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // gameTypeDataGridViewTextBoxColumn
-            // 
-            this.gameTypeDataGridViewTextBoxColumn.DataPropertyName = "Game_Type";
-            this.gameTypeDataGridViewTextBoxColumn.HeaderText = "Game_Type";
-            this.gameTypeDataGridViewTextBoxColumn.Name = "gameTypeDataGridViewTextBoxColumn";
-            this.gameTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gameTypeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iDPublisherDataGridViewTextBoxColumn
-            // 
-            this.iDPublisherDataGridViewTextBoxColumn.DataPropertyName = "ID_Publisher";
-            this.iDPublisherDataGridViewTextBoxColumn.HeaderText = "ID_Publisher";
-            this.iDPublisherDataGridViewTextBoxColumn.Name = "iDPublisherDataGridViewTextBoxColumn";
-            this.iDPublisherDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDPublisherDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iDDeveloperDataGridViewTextBoxColumn
-            // 
-            this.iDDeveloperDataGridViewTextBoxColumn.DataPropertyName = "ID_Developer";
-            this.iDDeveloperDataGridViewTextBoxColumn.HeaderText = "ID_Developer";
-            this.iDDeveloperDataGridViewTextBoxColumn.Name = "iDDeveloperDataGridViewTextBoxColumn";
-            this.iDDeveloperDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDeveloperDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iDRFDistributorDataGridViewTextBoxColumn
-            // 
-            this.iDRFDistributorDataGridViewTextBoxColumn.DataPropertyName = "ID_RF_Distributor";
-            this.iDRFDistributorDataGridViewTextBoxColumn.HeaderText = "ID_RF_Distributor";
-            this.iDRFDistributorDataGridViewTextBoxColumn.Name = "iDRFDistributorDataGridViewTextBoxColumn";
-            this.iDRFDistributorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDRFDistributorDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // developersDataGridViewTextBoxColumn
-            // 
-            this.developersDataGridViewTextBoxColumn.DataPropertyName = "Developers";
-            this.developersDataGridViewTextBoxColumn.HeaderText = "Developers";
-            this.developersDataGridViewTextBoxColumn.Name = "developersDataGridViewTextBoxColumn";
-            this.developersDataGridViewTextBoxColumn.ReadOnly = true;
-            this.developersDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // gamedisksDataGridViewTextBoxColumn
-            // 
-            this.gamedisksDataGridViewTextBoxColumn.DataPropertyName = "Game_disks";
-            this.gamedisksDataGridViewTextBoxColumn.HeaderText = "Game_disks";
-            this.gamedisksDataGridViewTextBoxColumn.Name = "gamedisksDataGridViewTextBoxColumn";
-            this.gamedisksDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gamedisksDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // publishersDataGridViewTextBoxColumn
-            // 
-            this.publishersDataGridViewTextBoxColumn.DataPropertyName = "Publishers";
-            this.publishersDataGridViewTextBoxColumn.HeaderText = "Publishers";
-            this.publishersDataGridViewTextBoxColumn.Name = "publishersDataGridViewTextBoxColumn";
-            this.publishersDataGridViewTextBoxColumn.ReadOnly = true;
-            this.publishersDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // rFDistributorsDataGridViewTextBoxColumn
-            // 
-            this.rFDistributorsDataGridViewTextBoxColumn.DataPropertyName = "RF_Distributors";
-            this.rFDistributorsDataGridViewTextBoxColumn.HeaderText = "RF_Distributors";
-            this.rFDistributorsDataGridViewTextBoxColumn.Name = "rFDistributorsDataGridViewTextBoxColumn";
-            this.rFDistributorsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rFDistributorsDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // gamesBindingSource
-            // 
-            this.gamesBindingSource.AllowNew = false;
-            this.gamesBindingSource.DataSource = typeof(GamesList.Model.Games);
-            this.gamesBindingSource.Sort = "Name";
-            this.gamesBindingSource.CurrentChanged += new System.EventHandler(this.gamesBindingSource_CurrentChanged);
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editGameContextToolStripMenuItem,
-            this.delGamecontextToolStripMenuItem1});
+            this.delGamecontextToolStripMenuItem1,
+            this.сделатьОбычнойИгройToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(225, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(225, 70);
             // 
             // editGameContextToolStripMenuItem
             // 
@@ -328,6 +196,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.Stand);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.pictureBox7);
             this.groupBox1.Controls.Add(this.pictureBox6);
@@ -535,7 +404,7 @@
             // BoxLabel
             // 
             this.BoxLabel.AutoSize = true;
-            this.BoxLabel.Location = new System.Drawing.Point(329, 391);
+            this.BoxLabel.Location = new System.Drawing.Point(351, 391);
             this.BoxLabel.Name = "BoxLabel";
             this.BoxLabel.Size = new System.Drawing.Size(51, 13);
             this.BoxLabel.TabIndex = 32;
@@ -546,9 +415,9 @@
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(267, 391);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(53, 13);
+            this.label30.Size = new System.Drawing.Size(84, 13);
             this.label30.TabIndex = 31;
-            this.label30.Text = "Коробка:";
+            this.label30.Text = "Комплектация:";
             // 
             // Disks
             // 
@@ -901,6 +770,158 @@
             this.DelGame.ToolTipText = "Удалить дополнение";
             this.DelGame.Click += new System.EventHandler(this.delGameToolStripMenuItem_Click);
             // 
+            // сделатьОбычнойИгройToolStripMenuItem
+            // 
+            this.сделатьОбычнойИгройToolStripMenuItem.Name = "сделатьОбычнойИгройToolStripMenuItem";
+            this.сделатьОбычнойИгройToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.сделатьОбычнойИгройToolStripMenuItem.Text = "Сделать обычной игрой";
+            this.сделатьОбычнойИгройToolStripMenuItem.Click += new System.EventHandler(this.сделатьОбычнойИгройToolStripMenuItem_Click);
+            // 
+            // gamesBindingSource
+            // 
+            this.gamesBindingSource.AllowNew = false;
+            this.gamesBindingSource.DataSource = typeof(GamesList.Model.Games);
+            this.gamesBindingSource.Sort = "Name";
+            this.gamesBindingSource.CurrentChanged += new System.EventHandler(this.gamesBindingSource_CurrentChanged);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // statuscompliteDataGridViewTextBoxColumn
+            // 
+            this.statuscompliteDataGridViewTextBoxColumn.DataPropertyName = "Status_complite";
+            this.statuscompliteDataGridViewTextBoxColumn.HeaderText = "Status_complite";
+            this.statuscompliteDataGridViewTextBoxColumn.Name = "statuscompliteDataGridViewTextBoxColumn";
+            this.statuscompliteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statuscompliteDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ratepersonDataGridViewTextBoxColumn
+            // 
+            this.ratepersonDataGridViewTextBoxColumn.DataPropertyName = "Rate_person";
+            this.ratepersonDataGridViewTextBoxColumn.HeaderText = "Rate_person";
+            this.ratepersonDataGridViewTextBoxColumn.Name = "ratepersonDataGridViewTextBoxColumn";
+            this.ratepersonDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ratepersonDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // rateIgromaniaDataGridViewTextBoxColumn
+            // 
+            this.rateIgromaniaDataGridViewTextBoxColumn.DataPropertyName = "Rate_Igromania";
+            this.rateIgromaniaDataGridViewTextBoxColumn.HeaderText = "Rate_Igromania";
+            this.rateIgromaniaDataGridViewTextBoxColumn.Name = "rateIgromaniaDataGridViewTextBoxColumn";
+            this.rateIgromaniaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rateIgromaniaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // posterDataGridViewImageColumn
+            // 
+            this.posterDataGridViewImageColumn.DataPropertyName = "Poster";
+            this.posterDataGridViewImageColumn.HeaderText = "Poster";
+            this.posterDataGridViewImageColumn.Name = "posterDataGridViewImageColumn";
+            this.posterDataGridViewImageColumn.ReadOnly = true;
+            this.posterDataGridViewImageColumn.Visible = false;
+            // 
+            // dateReleaseDataGridViewTextBoxColumn
+            // 
+            this.dateReleaseDataGridViewTextBoxColumn.DataPropertyName = "Date_Release";
+            this.dateReleaseDataGridViewTextBoxColumn.HeaderText = "Date_Release";
+            this.dateReleaseDataGridViewTextBoxColumn.Name = "dateReleaseDataGridViewTextBoxColumn";
+            this.dateReleaseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateReleaseDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // localisationTypeDataGridViewTextBoxColumn
+            // 
+            this.localisationTypeDataGridViewTextBoxColumn.DataPropertyName = "Localisation_Type";
+            this.localisationTypeDataGridViewTextBoxColumn.HeaderText = "Localisation_Type";
+            this.localisationTypeDataGridViewTextBoxColumn.Name = "localisationTypeDataGridViewTextBoxColumn";
+            this.localisationTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.localisationTypeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // lastversionDataGridViewTextBoxColumn
+            // 
+            this.lastversionDataGridViewTextBoxColumn.DataPropertyName = "Last_version";
+            this.lastversionDataGridViewTextBoxColumn.HeaderText = "Last_version";
+            this.lastversionDataGridViewTextBoxColumn.Name = "lastversionDataGridViewTextBoxColumn";
+            this.lastversionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastversionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // gameTypeDataGridViewTextBoxColumn
+            // 
+            this.gameTypeDataGridViewTextBoxColumn.DataPropertyName = "Game_Type";
+            this.gameTypeDataGridViewTextBoxColumn.HeaderText = "Game_Type";
+            this.gameTypeDataGridViewTextBoxColumn.Name = "gameTypeDataGridViewTextBoxColumn";
+            this.gameTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gameTypeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iDPublisherDataGridViewTextBoxColumn
+            // 
+            this.iDPublisherDataGridViewTextBoxColumn.DataPropertyName = "ID_Publisher";
+            this.iDPublisherDataGridViewTextBoxColumn.HeaderText = "ID_Publisher";
+            this.iDPublisherDataGridViewTextBoxColumn.Name = "iDPublisherDataGridViewTextBoxColumn";
+            this.iDPublisherDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDPublisherDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iDDeveloperDataGridViewTextBoxColumn
+            // 
+            this.iDDeveloperDataGridViewTextBoxColumn.DataPropertyName = "ID_Developer";
+            this.iDDeveloperDataGridViewTextBoxColumn.HeaderText = "ID_Developer";
+            this.iDDeveloperDataGridViewTextBoxColumn.Name = "iDDeveloperDataGridViewTextBoxColumn";
+            this.iDDeveloperDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDeveloperDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iDRFDistributorDataGridViewTextBoxColumn
+            // 
+            this.iDRFDistributorDataGridViewTextBoxColumn.DataPropertyName = "ID_RF_Distributor";
+            this.iDRFDistributorDataGridViewTextBoxColumn.HeaderText = "ID_RF_Distributor";
+            this.iDRFDistributorDataGridViewTextBoxColumn.Name = "iDRFDistributorDataGridViewTextBoxColumn";
+            this.iDRFDistributorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDRFDistributorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // developersDataGridViewTextBoxColumn
+            // 
+            this.developersDataGridViewTextBoxColumn.DataPropertyName = "Developers";
+            this.developersDataGridViewTextBoxColumn.HeaderText = "Developers";
+            this.developersDataGridViewTextBoxColumn.Name = "developersDataGridViewTextBoxColumn";
+            this.developersDataGridViewTextBoxColumn.ReadOnly = true;
+            this.developersDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // gamedisksDataGridViewTextBoxColumn
+            // 
+            this.gamedisksDataGridViewTextBoxColumn.DataPropertyName = "Game_disks";
+            this.gamedisksDataGridViewTextBoxColumn.HeaderText = "Game_disks";
+            this.gamedisksDataGridViewTextBoxColumn.Name = "gamedisksDataGridViewTextBoxColumn";
+            this.gamedisksDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gamedisksDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // publishersDataGridViewTextBoxColumn
+            // 
+            this.publishersDataGridViewTextBoxColumn.DataPropertyName = "Publishers";
+            this.publishersDataGridViewTextBoxColumn.HeaderText = "Publishers";
+            this.publishersDataGridViewTextBoxColumn.Name = "publishersDataGridViewTextBoxColumn";
+            this.publishersDataGridViewTextBoxColumn.ReadOnly = true;
+            this.publishersDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // rFDistributorsDataGridViewTextBoxColumn
+            // 
+            this.rFDistributorsDataGridViewTextBoxColumn.DataPropertyName = "RF_Distributors";
+            this.rFDistributorsDataGridViewTextBoxColumn.HeaderText = "RF_Distributors";
+            this.rFDistributorsDataGridViewTextBoxColumn.Name = "rFDistributorsDataGridViewTextBoxColumn";
+            this.rFDistributorsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rFDistributorsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Stand
+            // 
+            this.Stand.AutoSize = true;
+            this.Stand.Location = new System.Drawing.Point(851, 41);
+            this.Stand.Name = "Stand";
+            this.Stand.Size = new System.Drawing.Size(98, 13);
+            this.Stand.TabIndex = 50;
+            this.Stand.Text = "Самостоятельное";
+            this.Stand.Visible = false;
+            // 
             // ContentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -915,7 +936,6 @@
             this.Name = "ContentForm";
             this.Text = "Дополнения для";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -928,6 +948,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1008,6 +1029,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.BindingSource gamesBindingSource;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ToolStripMenuItem сделатьОбычнойИгройToolStripMenuItem;
+        private System.Windows.Forms.Label Stand;
     }
 }
 

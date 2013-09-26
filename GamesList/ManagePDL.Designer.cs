@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.iconPictureBox = new System.Windows.Forms.PictureBox();
-            this.publishersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ChooseImage = new System.Windows.Forms.OpenFileDialog();
             this.publishersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -55,11 +54,12 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publishersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.publishersBindingNavigator)).BeginInit();
             this.publishersBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.publishersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // iconPictureBox
@@ -69,18 +69,14 @@
             this.iconPictureBox.Location = new System.Drawing.Point(527, 35);
             this.iconPictureBox.Name = "iconPictureBox";
             this.iconPictureBox.Size = new System.Drawing.Size(304, 203);
-            this.iconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPictureBox.TabIndex = 2;
             this.iconPictureBox.TabStop = false;
             this.iconPictureBox.DoubleClick += new System.EventHandler(this.iconPictureBox_DoubleClick);
             // 
-            // publishersBindingSource
-            // 
-            this.publishersBindingSource.DataSource = typeof(GamesList.Model.Publishers);
-            // 
             // ChooseImage
             // 
-            this.ChooseImage.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF";
+            this.ChooseImage.Filter = "Файлы изображений (*.BMP;*.JPG;*.GIF,*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
             // 
             // publishersBindingNavigator
             // 
@@ -275,6 +271,10 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Visible = false;
             // 
+            // publishersBindingSource
+            // 
+            this.publishersBindingSource.DataSource = typeof(GamesList.Model.Publishers);
+            // 
             // ManagePDL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,11 +290,11 @@
             this.Text = "Управление издателями";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManagePublisher_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.publishersBindingNavigator)).EndInit();
             this.publishersBindingNavigator.ResumeLayout(false);
             this.publishersBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.publishersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

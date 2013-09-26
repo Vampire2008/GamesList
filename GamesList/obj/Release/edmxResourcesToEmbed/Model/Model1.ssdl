@@ -11,6 +11,11 @@
     <EntitySet Name="GamesPlatforms" EntityType="GamesModel.Store.GamesPlatforms" store:Type="Tables" />
     <EntitySet Name="Genres" EntityType="GamesModel.Store.Genres" store:Type="Tables" />
     <EntitySet Name="GenresGames" EntityType="GamesModel.Store.GenresGames" store:Type="Tables" />
+    <EntitySet Name="GLDBVersion" EntityType="GamesModel.Store.GLDBVersion" store:Type="Tables" store:Name="GLDBVersion">
+      <DefiningQuery>SELECT 
+            [GLDBVersion].[Version] AS [Version]
+            FROM [GLDBVersion] AS [GLDBVersion]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="Online_protections" EntityType="GamesModel.Store.Online_protections" store:Type="Tables" />
     <EntitySet Name="Platforms" EntityType="GamesModel.Store.Platforms" store:Type="Tables" />
     <EntitySet Name="Publishers" EntityType="GamesModel.Store.Publishers" store:Type="Tables" />
@@ -106,7 +111,7 @@
     <Property Name="ID_Disk_Type" Type="numeric" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" />
     <Property Name="Description" Type="nvarchar" MaxLength="200" />
-    <Property Name="Max_Size" Type="numeric" />
+    <Property Name="Max_Size" Type="float" />
   </EntityType>
   <EntityType Name="Editions">
     <Key>
@@ -122,7 +127,7 @@
     <Property Name="ID_Game_disk" Type="numeric" Nullable="false" />
     <Property Name="ID_Game" Type="numeric" />
     <Property Name="ID_Disk_Type" Type="numeric" Nullable="false" />
-    <Property Name="Kol_vo" Type="numeric" Nullable="false" />
+    <Property Name="Kol_vo" Type="float" />
   </EntityType>
   <EntityType Name="Games">
     <Key>
@@ -150,7 +155,7 @@
     <Property Name="WherePhoto" Type="nvarchar" MaxLength="100" />
     <Property Name="ID_Content" Type="numeric" />
     <Property Name="TypeContent" Type="bit" />
-    <Property Name="Description" Type="nvarchar" MaxLength="400" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
     <Property Name="ID_Collect" Type="numeric" />
   </EntityType>
   <EntityType Name="GamesOnline_protections">
@@ -183,6 +188,15 @@
     </Key>
     <Property Name="Genres_ID_Genre" Type="numeric" Nullable="false" />
     <Property Name="Games_ID_Game" Type="numeric" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+            предупреждение 6002: В таблице или представлении "GLDBVersion" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+            -->
+  <EntityType Name="GLDBVersion">
+    <Key>
+      <PropertyRef Name="Version" />
+    </Key>
+    <Property Name="Version" Type="numeric" Nullable="false" />
   </EntityType>
   <EntityType Name="Online_protections">
     <Key>

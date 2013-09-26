@@ -89,15 +89,16 @@ namespace GamesList
                         }
                     }
                     context.Database.Create();//Создаём базу данных. Данный метод создаст файл базы данных в указанном месте.
+                    context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (Version) VALUES (4);");
                     Properties.Settings.Default.NewBase = false;
                     Properties.Settings.Default.Save();
                 }
-                Program.context.Database.Connection.Open();//Открваем соединение с базой
+                Program.context.Database.Connection.Open();//Открываем соединение с базой
             }
-            catch (Exception ex1)
+            catch
             {//Если соединение с базой по умолчанию не удалось установить, то выводим следующий диалог
                 DialogResult DR = MessageBox.Show("База данных по умолчанию (" + Properties.Settings.Default.DefaultConStr + ") не обнаружена. Создать новую базу?\n" +
-                "Или нажмите \"Нет\" чтобы открыть другой файл базы данных.\n"+ex1.ToString(), "Ошибка открытия", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                "Или нажмите \"Нет\" чтобы открыть другой файл базы данных.", "Ошибка открытия", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 //Предлагаем пользователию либо создать файл базы данны, либо открыть другую базу, или вообще выйти из программы
                 switch (DR)//Перебираем результат диалога
                 {
@@ -123,7 +124,7 @@ namespace GamesList
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show("Произошла ошибка.\n" + ex);//Если соединение установить не удалось, показываем ошибку.
+                                MessageBox.Show("Произошла ошибка. Свяжитесь с автором.\n" + ex);//Если соединение установить не удалось, показываем ошибку.
                                 return;//Выходим из программы
                             }
                         }
@@ -136,6 +137,8 @@ namespace GamesList
                         return;//то выходим из программы
                 }
             }
+            if (!DBUpdater.checkDBVersion())
+                return;
             s.Close(new TimeSpan(0, 0, 0, 0, 500));
             Application.Run(new GamesForm());//Запускаем главную форму
             GC.KeepAlive(m);//Нужно для проверки уже запущенной копии

@@ -274,7 +274,7 @@ namespace GamesList
                 pictureBox1.Image = null;//Если постера нет, очищаем изображение
                 label32.Visible = true;
             }
-
+            Stand.Visible=(bool)((Games)gamesBindingSource.Current).TypeContent;
         }
 
         private void gamesBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -396,6 +396,30 @@ namespace GamesList
             Form Infa = new SeriesInf(((Games)gamesBindingSource.Current).Series);
             //Infa.Owner = this;
             Infa.Show();
+        }
+
+        private void сделатьОбычнойИгройToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы правда хотите " + ((Games)gamesBindingSource.Current).Name + " сделать обычной игрой?", "Уточнение", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                Games g = ((Games)gamesBindingSource.Current);
+                if (g.Games2.Name.IndexOf(":") > -1)
+                {
+                    g.Name = g.Games2.Name + " - " + g.Name;
+                }
+                else
+                    g.Name = g.Games2.Name + ": " + g.Name;
+                g.TypeContent = null;
+                g.Games2 = null;
+                g.ID_Content = null;
+                Program.context.SaveChanges();
+                Init();
+                var Query = from Games in Program.context.Games
+                        where Games.ID_Content == null
+                        orderby Games.Name
+                        select Games;
+                ((GamesForm)this.Owner).gamesBindingSource.DataSource = Query.ToList();
+            }
         }
     }
 }

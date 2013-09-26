@@ -30,6 +30,7 @@
         <AssociationConnector Association="GamesModel.GamesPlatforms" />
         <AssociationConnector Association="GamesModel.GenresGames" />
         <AssociationConnector Association="GamesModel.GamesCollector" />
+        <EntityTypeShape EntityType="GamesModel.GLDBVersion" Width="1.5" PointX="4.8669734973772307" PointY="15.089595503681151" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

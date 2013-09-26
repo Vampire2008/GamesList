@@ -16,6 +16,11 @@
           <EntitySet Name="GamesPlatforms" EntityType="GamesModel.Store.GamesPlatforms" store:Type="Tables" />
           <EntitySet Name="Genres" EntityType="GamesModel.Store.Genres" store:Type="Tables" />
           <EntitySet Name="GenresGames" EntityType="GamesModel.Store.GenresGames" store:Type="Tables" />
+          <EntitySet Name="GLDBVersion" EntityType="GamesModel.Store.GLDBVersion" store:Type="Tables" store:Name="GLDBVersion">
+            <DefiningQuery>SELECT 
+            [GLDBVersion].[Version] AS [Version]
+            FROM [GLDBVersion] AS [GLDBVersion]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Online_protections" EntityType="GamesModel.Store.Online_protections" store:Type="Tables" />
           <EntitySet Name="Platforms" EntityType="GamesModel.Store.Platforms" store:Type="Tables" />
           <EntitySet Name="Publishers" EntityType="GamesModel.Store.Publishers" store:Type="Tables" />
@@ -111,7 +116,7 @@
           <Property Name="ID_Disk_Type" Type="numeric" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
           <Property Name="Description" Type="nvarchar" MaxLength="200" />
-          <Property Name="Max_Size" Type="numeric" />
+          <Property Name="Max_Size" Type="float" />
         </EntityType>
         <EntityType Name="Editions">
           <Key>
@@ -127,7 +132,7 @@
           <Property Name="ID_Game_disk" Type="numeric" Nullable="false" />
           <Property Name="ID_Game" Type="numeric" />
           <Property Name="ID_Disk_Type" Type="numeric" Nullable="false" />
-          <Property Name="Kol_vo" Type="numeric" Nullable="false" />
+          <Property Name="Kol_vo" Type="float" />
         </EntityType>
         <EntityType Name="Games">
           <Key>
@@ -155,7 +160,7 @@
           <Property Name="WherePhoto" Type="nvarchar" MaxLength="100" />
           <Property Name="ID_Content" Type="numeric" />
           <Property Name="TypeContent" Type="bit" />
-          <Property Name="Description" Type="nvarchar" MaxLength="400" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
           <Property Name="ID_Collect" Type="numeric" />
         </EntityType>
         <EntityType Name="GamesOnline_protections">
@@ -188,6 +193,15 @@
           </Key>
           <Property Name="Genres_ID_Genre" Type="numeric" Nullable="false" />
           <Property Name="Games_ID_Game" Type="numeric" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+            предупреждение 6002: В таблице или представлении "GLDBVersion" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+            -->
+        <EntityType Name="GLDBVersion">
+          <Key>
+            <PropertyRef Name="Version" />
+          </Key>
+          <Property Name="Version" Type="numeric" Nullable="false" />
         </EntityType>
         <EntityType Name="Online_protections">
           <Key>
@@ -515,6 +529,7 @@
             <End Role="Games" EntitySet="Games" />
             <End Role="Games1" EntitySet="Games" />
           </AssociationSet>
+          <EntitySet Name="GLDBVersion" EntityType="GamesModel.GLDBVersion" />
         </EntityContainer>
         <EntityType Name="Boxes">
           <Key>
@@ -543,7 +558,7 @@
           <Property Type="Decimal" Name="ID_Disk_Type" Nullable="false" Precision="18" Scale="0" />
           <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="Decimal" Name="Max_Size" Precision="18" Scale="0" />
+          <Property Type="Double" Name="Max_Size" />
           <NavigationProperty Name="Game_disks" Relationship="GamesModel.In_type" FromRole="Disk_types" ToRole="Game_disks" />
         </EntityType>
         <EntityType Name="Editions">
@@ -561,7 +576,7 @@
           <Property Type="Decimal" Name="ID_Game_disk" Nullable="false" Precision="18" Scale="0" />
           <Property Type="Decimal" Name="ID_Game" Precision="18" Scale="0" />
           <Property Type="Decimal" Name="ID_Disk_Type" Nullable="false" Precision="18" Scale="0" />
-          <Property Type="Decimal" Name="Kol_vo" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Double" Name="Kol_vo" />
           <NavigationProperty Name="Disk_types" Relationship="GamesModel.In_type" FromRole="Game_disks" ToRole="Disk_types" />
           <NavigationProperty Name="Games" Relationship="GamesModel.Disks_in_game" FromRole="Game_disks" ToRole="Games" />
         </EntityType>
@@ -603,7 +618,7 @@
           <NavigationProperty Name="Online_protections" Relationship="GamesModel.GamesOnline_protections" FromRole="Games" ToRole="Online_protections" />
           <NavigationProperty Name="Platforms" Relationship="GamesModel.GamesPlatforms" FromRole="Games" ToRole="Platforms" />
           <NavigationProperty Name="Genres" Relationship="GamesModel.GenresGames" FromRole="Games" ToRole="Genres" />
-          <Property Type="String" Name="Description" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Type="Decimal" Name="ID_Collect" Precision="18" Scale="0" />
           <NavigationProperty Name="Games11" Relationship="GamesModel.GamesCollector" FromRole="Games" ToRole="Games1" />
           <NavigationProperty Name="Games21" Relationship="GamesModel.GamesCollector" FromRole="Games1" ToRole="Games" />
@@ -806,6 +821,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="GLDBVersion">
+          <Key>
+            <PropertyRef Name="Version" />
+          </Key>
+          <Property Type="Decimal" Name="Version" Nullable="false" Precision="18" Scale="0" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -976,6 +997,13 @@
               <ScalarProperty Name="ID_Game" ColumnName="Games_ID_Game" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="GLDBVersion">
+            <EntityTypeMapping TypeName="GamesModel.GLDBVersion">
+              <MappingFragment StoreEntitySet="GLDBVersion">
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

@@ -17,7 +17,7 @@ namespace GamesList.Model
         public decimal ID_Game_disk { get; set; }
         public Nullable<decimal> ID_Game { get; set; }
         public decimal ID_Disk_Type { get; set; }
-        public decimal Kol_vo { get; set; }
+        public Nullable<double> Kol_vo { get; set; }
     
         public virtual Disk_types Disk_types { get; set; }
         public virtual Games Games { get; set; }

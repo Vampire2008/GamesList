@@ -83,7 +83,7 @@
             this.disk_typesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.disk_typesBindingNavigator.Name = "disk_typesBindingNavigator";
             this.disk_typesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.disk_typesBindingNavigator.Size = new System.Drawing.Size(531, 25);
+            this.disk_typesBindingNavigator.Size = new System.Drawing.Size(549, 25);
             this.disk_typesBindingNavigator.TabIndex = 0;
             this.disk_typesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -200,7 +200,7 @@
             this.disk_typesDataGridView.DataSource = this.disk_typesBindingSource;
             this.disk_typesDataGridView.Location = new System.Drawing.Point(12, 28);
             this.disk_typesDataGridView.Name = "disk_typesDataGridView";
-            this.disk_typesDataGridView.Size = new System.Drawing.Size(501, 220);
+            this.disk_typesDataGridView.Size = new System.Drawing.Size(525, 220);
             this.disk_typesDataGridView.TabIndex = 1;
             this.disk_typesDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.disk_typesDataGridView_CellEndEdit);
             // 
@@ -230,9 +230,9 @@
             dataGridViewCellStyle1.Format = "N2";
             dataGridViewCellStyle1.NullValue = null;
             this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Максимальный объём";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Максимальный объём (Гб)";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 150;
+            this.dataGridViewTextBoxColumn4.Width = 170;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -245,14 +245,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 266);
+            this.ClientSize = new System.Drawing.Size(549, 266);
             this.Controls.Add(this.disk_typesDataGridView);
             this.Controls.Add(this.disk_typesBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ManageDiskTypes";
-            this.Text = "Управление типами дисков";
+            this.Text = "Управление типами носителей";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageDiskTypes_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.disk_typesBindingNavigator)).EndInit();
             this.disk_typesBindingNavigator.ResumeLayout(false);

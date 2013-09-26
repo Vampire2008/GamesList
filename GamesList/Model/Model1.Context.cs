@@ -13,7 +13,7 @@ namespace GamesList.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Data.Objects;
-    
+
     public partial class GamesEntities : DbContext
     {
         public GamesEntities()
@@ -25,12 +25,12 @@ namespace GamesList.Model
             : base(ConStr)
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
         public DbSet<Boxes> Boxes { get; set; }
         public DbSet<Developers> Developers { get; set; }
         public DbSet<Disk_types> Disk_types { get; set; }

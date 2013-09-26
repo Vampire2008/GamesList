@@ -69,6 +69,8 @@ namespace GamesList
             if (ChooseImage.ShowDialog() == DialogResult.OK)
             {
                 iconPictureBox.Image = Image.FromFile(ChooseImage.FileName);
+                online_protectionsBindingSource.EndEdit();
+                Program.context.SaveChanges();
             }
         }
     }

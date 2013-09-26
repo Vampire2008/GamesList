@@ -65,6 +65,7 @@
       <End Role="Games" EntitySet="Games" />
       <End Role="Games1" EntitySet="Games" />
     </AssociationSet>
+    <EntitySet Name="GLDBVersion" EntityType="GamesModel.GLDBVersion" />
   </EntityContainer>
   <EntityType Name="Boxes">
     <Key>
@@ -93,7 +94,7 @@
     <Property Type="Decimal" Name="ID_Disk_Type" Nullable="false" Precision="18" Scale="0" />
     <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Type="Decimal" Name="Max_Size" Precision="18" Scale="0" />
+    <Property Type="Double" Name="Max_Size" />
     <NavigationProperty Name="Game_disks" Relationship="GamesModel.In_type" FromRole="Disk_types" ToRole="Game_disks" />
   </EntityType>
   <EntityType Name="Editions">
@@ -111,7 +112,7 @@
     <Property Type="Decimal" Name="ID_Game_disk" Nullable="false" Precision="18" Scale="0" />
     <Property Type="Decimal" Name="ID_Game" Precision="18" Scale="0" />
     <Property Type="Decimal" Name="ID_Disk_Type" Nullable="false" Precision="18" Scale="0" />
-    <Property Type="Decimal" Name="Kol_vo" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Double" Name="Kol_vo" />
     <NavigationProperty Name="Disk_types" Relationship="GamesModel.In_type" FromRole="Game_disks" ToRole="Disk_types" />
     <NavigationProperty Name="Games" Relationship="GamesModel.Disks_in_game" FromRole="Game_disks" ToRole="Games" />
   </EntityType>
@@ -153,7 +154,7 @@
     <NavigationProperty Name="Online_protections" Relationship="GamesModel.GamesOnline_protections" FromRole="Games" ToRole="Online_protections" />
     <NavigationProperty Name="Platforms" Relationship="GamesModel.GamesPlatforms" FromRole="Games" ToRole="Platforms" />
     <NavigationProperty Name="Genres" Relationship="GamesModel.GenresGames" FromRole="Games" ToRole="Genres" />
-    <Property Type="String" Name="Description" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="true" />
     <Property Type="Decimal" Name="ID_Collect" Precision="18" Scale="0" />
     <NavigationProperty Name="Games11" Relationship="GamesModel.GamesCollector" FromRole="Games" ToRole="Games1" />
     <NavigationProperty Name="Games21" Relationship="GamesModel.GamesCollector" FromRole="Games1" ToRole="Games" />
@@ -356,4 +357,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="GLDBVersion">
+    <Key>
+      <PropertyRef Name="Version" />
+    </Key>
+    <Property Type="Decimal" Name="Version" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
 </Schema>

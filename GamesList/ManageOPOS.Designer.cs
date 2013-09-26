@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageOPOS));
             this.online_protectionsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.online_protectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -45,16 +44,17 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.online_protectionsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.online_protectionsDataGridView = new System.Windows.Forms.DataGridView();
+            this.iconPictureBox = new System.Windows.Forms.PictureBox();
+            this.ChooseImage = new System.Windows.Forms.OpenFileDialog();
+            this.online_protectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.iconPictureBox = new System.Windows.Forms.PictureBox();
-            this.ChooseImage = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.online_protectionsBindingNavigator)).BeginInit();
             this.online_protectionsBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.online_protectionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.online_protectionsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.online_protectionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // online_protectionsBindingNavigator
@@ -96,10 +96,6 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // online_protectionsBindingSource
-            // 
-            this.online_protectionsBindingSource.DataSource = typeof(GamesList.Model.Online_protections);
             // 
             // bindingNavigatorCountItem
             // 
@@ -202,6 +198,26 @@
             this.online_protectionsDataGridView.TabIndex = 1;
             this.online_protectionsDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.online_protectionsDataGridView_CellEndEdit);
             // 
+            // iconPictureBox
+            // 
+            this.iconPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.iconPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.online_protectionsBindingSource, "Icon", true));
+            this.iconPictureBox.Location = new System.Drawing.Point(430, 28);
+            this.iconPictureBox.Name = "iconPictureBox";
+            this.iconPictureBox.Size = new System.Drawing.Size(112, 105);
+            this.iconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconPictureBox.TabIndex = 3;
+            this.iconPictureBox.TabStop = false;
+            this.iconPictureBox.DoubleClick += new System.EventHandler(this.iconPictureBox_Click);
+            // 
+            // ChooseImage
+            // 
+            this.ChooseImage.Filter = "Файлы изображений (*.BMP;*.JPG;*.GIF,*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
+            // 
+            // online_protectionsBindingSource
+            // 
+            this.online_protectionsBindingSource.DataSource = typeof(GamesList.Model.Online_protections);
+            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
@@ -222,21 +238,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Visible = false;
             // 
-            // iconPictureBox
-            // 
-            this.iconPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.iconPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.online_protectionsBindingSource, "Icon", true));
-            this.iconPictureBox.Location = new System.Drawing.Point(430, 28);
-            this.iconPictureBox.Name = "iconPictureBox";
-            this.iconPictureBox.Size = new System.Drawing.Size(112, 105);
-            this.iconPictureBox.TabIndex = 3;
-            this.iconPictureBox.TabStop = false;
-            this.iconPictureBox.Click += new System.EventHandler(this.iconPictureBox_Click);
-            // 
-            // ChooseImage
-            // 
-            this.ChooseImage.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF";
-            // 
             // ManageOPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,9 +255,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.online_protectionsBindingNavigator)).EndInit();
             this.online_protectionsBindingNavigator.ResumeLayout(false);
             this.online_protectionsBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.online_protectionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.online_protectionsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.online_protectionsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

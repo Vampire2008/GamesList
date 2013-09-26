@@ -42,12 +42,19 @@ namespace GamesList
             if (ChooseImage.ShowDialog() == DialogResult.OK)
             {
                 iconPictureBox.Image = Image.FromFile(ChooseImage.FileName);
+                publishersBindingSource.EndEdit();
+                Program.context.SaveChanges();
             }
         }
 
         private void ManagePublisher_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
+          /*  try
+            {
+                publishersBindingSource.EndEdit();
+                Program.context.SaveChanges();
+            }
+            catch { }*/
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -70,8 +77,15 @@ namespace GamesList
 
         private void publishersDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            publishersBindingSource.EndEdit();
-            Program.context.SaveChanges();
+            try
+            {
+                publishersBindingSource.EndEdit();
+                Program.context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
