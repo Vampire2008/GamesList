@@ -12,7 +12,7 @@ namespace GamesList
 {
     public partial class GamesForm : Form
     {
-        private Boolean fp, fd, frf, fop, fg, fpl, fs, fyr, fir, fda, fl;
+        private Boolean fp, fd, frf, fop, fg, fpl, fs, fyr, fir, fda, fl, fc;
         public GamesForm()//Точка входа в программу
         {
             InitializeComponent();
@@ -33,6 +33,7 @@ namespace GamesList
         private void Init()
         {
             fp = fd = frf = fop = fg = fpl = fs = fyr = fir = fda = fl = true;
+            fc = false;
             //Загружаем игры из базы
             //gamesBindingSource.DataSource = Program.context.Games.Local.ToBindingList().Where(g => g.ID_Content==null).OrderBy(g => g.Name);
             //Program.context.Games.Load();
@@ -409,12 +410,15 @@ namespace GamesList
                 pictureBox1.Image = null;//Если постера нет, очищаем изображение
                 label32.Visible = true;
             }
-            
+            if (((Games)gamesBindingSource.Current).ID_Content != null)
+            {
+                
+            }
         }
 
         private void ChangeFilter(Boolean dis)
         {
-            if ((dis) || ((fp == true) && (fd == true) && (frf == true) && (fop == true) && (fg == true) && (fpl == true) && (fs == true) && (fyr == true) && (fir == true) && (fda == true) && (fl == true)))
+            if ((dis) || ((fp == true) && (fd == true) && (frf == true) && (fop == true) && (fg == true) && (fpl == true) && (fs == true) && (fyr == true) && (fir == true) && (fda == true) && (fl == true) && (fc == false)))
             {
                 //gamesBindingSource.DataSource = Program.context.Games.Local.ToBindingList();
                 //Program.context.Games.Load();
@@ -432,8 +436,7 @@ namespace GamesList
                 double? n3 = Decimal.ToDouble(numericUpDown3.Value);
                 double? n4 = Decimal.ToDouble(numericUpDown4.Value);
                 var GQuery = from Games in Program.context.Games
-                             where (Games.ID_Content == null) &&
-                                   (Games.Localisation_Type > -1) &&
+                             where (fc || Games.ID_Content == null)  &&
                                                 (fp || Games.ID_Publisher == (decimal?)comboBox2.SelectedValue) &&
                                                 (fd || Games.ID_Developer == (decimal?)comboBox3.SelectedValue) &&
                                                 (frf || Games.ID_RF_Distributor == (decimal?)comboBox1.SelectedValue) &&
@@ -653,8 +656,12 @@ namespace GamesList
                 {
                     Program.context = new GamesEntities(Program.buidConStr(openFileDialog1.FileName));
                     Program.context.Database.Connection.Open();
-                    DBUpdater.checkDBVersion();
                     this.Text = "Список игр - " + Path.GetFileName(openFileDialog1.FileName);
+                    if (!DBUpdater.checkDBVersion())
+                    {
+                        Program.context = new GamesEntities(Program.buidConStr(Properties.Settings.Default.DefaultConStr));
+                        this.Text = "Список игр - " + Path.GetFileName(Properties.Settings.Default.DefaultConStr);
+                    }
                 }
                 catch
                 {
@@ -662,7 +669,7 @@ namespace GamesList
                     Program.context = new GamesEntities(Program.buidConStr(Properties.Settings.Default.DefaultConStr));
                 }
                 Init();
-                this.Text = "Список игр - " + Path.GetFileName(saveFileDialog1.FileName);
+                //this.Text = "Список игр - " + Path.GetFileName(openFileDialog1.FileName);
                 this.Cursor = Cursors.Default;
             }
         }
@@ -820,7 +827,6 @@ namespace GamesList
             else
             {
                 fs = false;
-                ovalShape1.FillColor = Color.Green;
             }
             ChangeFilter(false);
         }
@@ -841,29 +847,53 @@ namespace GamesList
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            fyr = false;
-            ovalShape1.FillColor = Color.Green;
+            if ((numericUpDown1.Value == 0) && (numericUpDown2.Value == Properties.Settings.Default.MaxYourRating))
+            {
+                fyr = true;
+            }
+            else
+            {
+                fyr = false;
+            }
             ChangeFilter(false);
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
-            fyr = false;
-            ovalShape1.FillColor = Color.Green;
+            if ((numericUpDown1.Value == 0) && (numericUpDown2.Value == Properties.Settings.Default.MaxYourRating))
+            {
+                fyr = true;
+            }
+            else
+            {
+                fyr = false;
+            }
             ChangeFilter(false);
         }
 
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
         {
-            fir = false;
-            ovalShape1.FillColor = Color.Green;
+            if ((numericUpDown3.Value == 0) && (numericUpDown4.Value == Properties.Settings.Default.MaxRecenzorRating))
+            {
+                fir = true;
+            }
+            else
+            {
+                fir = false;
+            }
             ChangeFilter(false);
         }
 
         private void numericUpDown4_ValueChanged(object sender, EventArgs e)
         {
-            fir = false;
-            ovalShape1.FillColor = Color.Green;
+            if ((numericUpDown3.Value == 0) && (numericUpDown4.Value == Properties.Settings.Default.MaxRecenzorRating))
+            {
+                fir = true;
+            }
+            else
+            {
+                fir = false;
+            }
             ChangeFilter(false);
         }
 
@@ -1017,6 +1047,27 @@ namespace GamesList
                             select Games;
                 gamesBindingSource.DataSource = Query.ToList();
                 UpdateView();
+            }
+        }
+
+        private void DispContent_CheckedChanged(object sender, EventArgs e)
+        {
+            fc = DispContent.Checked;
+            ChangeFilter(false);
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (((Games)dataGridView1.Rows[e.RowIndex].DataBoundItem).ID_Content != null)
+            {
+                if (((Games)dataGridView1.Rows[e.RowIndex].DataBoundItem).Games2.Name.IndexOf(":") > -1)
+                {
+                    e.Value = ((Games)dataGridView1.Rows[e.RowIndex].DataBoundItem).Games2.Name + " - " + e.Value;
+                }
+                else
+                {
+                    e.Value = ((Games)dataGridView1.Rows[e.RowIndex].DataBoundItem).Games2.Name + ": " + e.Value;
+                }
             }
         }
     }

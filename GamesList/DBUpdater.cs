@@ -38,17 +38,10 @@ namespace GamesList
 
         public static void patch1to4()
         {
-            try
-            {
-                Program.context.Database.ExecuteSqlCommand("ALTER TABLE Game_disks ALTER COLUMN Kol_vo float;"+
-                    "ALTER TABLE Disk_types ALTER COLUMN Max_Size float;"+
-                    "ALTER TABLE Games ALTER COLUMN Description Nvarchar(2000);");
-                Program.context.Database.ExecuteSqlCommand("UPDATE GLDBVersion SET Version = 2;");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }            
+                Program.context.Database.ExecuteSqlCommand("ALTER TABLE Game_disks ALTER COLUMN Kol_vo float;");
+                Program.context.Database.ExecuteSqlCommand("ALTER TABLE Disk_types ALTER COLUMN Max_Size float;");
+                Program.context.Database.ExecuteSqlCommand("ALTER TABLE Games ALTER COLUMN Description Nvarchar(2000);");
+                Program.context.Database.ExecuteSqlCommand("UPDATE GLDBVersion SET Version = 4;");         
         }
     }
 }

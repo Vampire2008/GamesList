@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.iconPictureBox = new System.Windows.Forms.PictureBox();
+            this.publishersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ChooseImage = new System.Windows.Forms.OpenFileDialog();
             this.publishersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -54,12 +55,11 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publishersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.publishersBindingNavigator)).BeginInit();
             this.publishersBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.publishersDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // iconPictureBox
@@ -73,6 +73,10 @@
             this.iconPictureBox.TabIndex = 2;
             this.iconPictureBox.TabStop = false;
             this.iconPictureBox.DoubleClick += new System.EventHandler(this.iconPictureBox_DoubleClick);
+            // 
+            // publishersBindingSource
+            // 
+            this.publishersBindingSource.DataSource = typeof(GamesList.Model.Publishers);
             // 
             // ChooseImage
             // 
@@ -222,6 +226,7 @@
             this.publishersDataGridView.Size = new System.Drawing.Size(496, 203);
             this.publishersDataGridView.TabIndex = 3;
             this.publishersDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.publishersDataGridView_CellEndEdit);
+            this.publishersDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.publishersDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -271,10 +276,6 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Visible = false;
             // 
-            // publishersBindingSource
-            // 
-            this.publishersBindingSource.DataSource = typeof(GamesList.Model.Publishers);
-            // 
             // ManagePDL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,11 +291,11 @@
             this.Text = "Управление издателями";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManagePublisher_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.publishersBindingNavigator)).EndInit();
             this.publishersBindingNavigator.ResumeLayout(false);
             this.publishersBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.publishersDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.Entity;
 using System.Data.Objects;
 using GamesList.Model;
+using System.Globalization;
 
 namespace GamesList
 {
@@ -84,8 +85,19 @@ namespace GamesList
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
+        }
+
+        private void publishersDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if ((e.ColumnIndex == 1) || (e.ColumnIndex == 3))
+            {
+                MessageBox.Show("Введите дату в формате "+CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern+". Или нажмите Esc, чтобы отменить ввод.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show(e.Exception.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
         }
     }
 }

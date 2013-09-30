@@ -70,6 +70,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SortBox = new System.Windows.Forms.GroupBox();
+            this.DispContent = new System.Windows.Forms.CheckBox();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
@@ -524,6 +525,7 @@
             // 
             // SortBox
             // 
+            this.SortBox.Controls.Add(this.DispContent);
             this.SortBox.Controls.Add(this.numericUpDown4);
             this.SortBox.Controls.Add(this.label20);
             this.SortBox.Controls.Add(this.numericUpDown3);
@@ -564,6 +566,17 @@
             this.SortBox.TabStop = false;
             this.SortBox.Text = "Сортировка";
             // 
+            // DispContent
+            // 
+            this.DispContent.AutoSize = true;
+            this.DispContent.Location = new System.Drawing.Point(1053, 25);
+            this.DispContent.Name = "DispContent";
+            this.DispContent.Size = new System.Drawing.Size(151, 17);
+            this.DispContent.TabIndex = 34;
+            this.DispContent.Text = "Отображать дополнения";
+            this.DispContent.UseVisualStyleBackColor = true;
+            this.DispContent.CheckedChanged += new System.EventHandler(this.DispContent_CheckedChanged);
+            // 
             // numericUpDown4
             // 
             this.numericUpDown4.DecimalPlaces = 1;
@@ -572,7 +585,7 @@
             0,
             0,
             65536});
-            this.numericUpDown4.Location = new System.Drawing.Point(780, 78);
+            this.numericUpDown4.Location = new System.Drawing.Point(749, 78);
             this.numericUpDown4.Maximum = new decimal(new int[] {
             10,
             0,
@@ -591,7 +604,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(755, 80);
+            this.label20.Location = new System.Drawing.Point(724, 80);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(19, 13);
             this.label20.TabIndex = 32;
@@ -605,7 +618,7 @@
             0,
             0,
             65536});
-            this.numericUpDown3.Location = new System.Drawing.Point(706, 78);
+            this.numericUpDown3.Location = new System.Drawing.Point(675, 78);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             10,
             0,
@@ -619,7 +632,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(682, 80);
+            this.label19.Location = new System.Drawing.Point(651, 80);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(18, 13);
             this.label19.TabIndex = 30;
@@ -633,7 +646,7 @@
             0,
             0,
             65536});
-            this.numericUpDown2.Location = new System.Drawing.Point(780, 51);
+            this.numericUpDown2.Location = new System.Drawing.Point(749, 51);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             5,
             0,
@@ -652,7 +665,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(755, 53);
+            this.label18.Location = new System.Drawing.Point(724, 53);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(19, 13);
             this.label18.TabIndex = 28;
@@ -666,7 +679,7 @@
             0,
             0,
             65536});
-            this.numericUpDown1.Location = new System.Drawing.Point(706, 51);
+            this.numericUpDown1.Location = new System.Drawing.Point(675, 51);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             5,
             0,
@@ -680,7 +693,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(682, 53);
+            this.label17.Location = new System.Drawing.Point(651, 53);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(18, 13);
             this.label17.TabIndex = 27;
@@ -688,7 +701,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(1080, 78);
+            this.dateTimePicker2.Location = new System.Drawing.Point(1037, 78);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(141, 20);
             this.dateTimePicker2.TabIndex = 24;
@@ -697,7 +710,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1052, 80);
+            this.label13.Location = new System.Drawing.Point(1009, 80);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(22, 13);
             this.label13.TabIndex = 23;
@@ -705,7 +718,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(901, 78);
+            this.dateTimePicker1.Location = new System.Drawing.Point(858, 78);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(145, 20);
             this.dateTimePicker1.TabIndex = 22;
@@ -715,7 +728,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(875, 80);
+            this.label12.Location = new System.Drawing.Point(832, 80);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(20, 13);
             this.label12.TabIndex = 21;
@@ -730,7 +743,7 @@
             "Нет перевода",
             "Субтиры",
             "Полная"});
-            this.comboBox10.Location = new System.Drawing.Point(957, 23);
+            this.comboBox10.Location = new System.Drawing.Point(914, 23);
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(128, 21);
             this.comboBox10.TabIndex = 20;
@@ -746,7 +759,7 @@
             "Ожидает прохождения",
             "Пройдено (не 100%)",
             "Пройдено"});
-            this.comboBox7.Location = new System.Drawing.Point(682, 23);
+            this.comboBox7.Location = new System.Drawing.Point(651, 23);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(128, 21);
             this.comboBox7.TabIndex = 17;
@@ -772,7 +785,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(853, 53);
+            this.label11.Location = new System.Drawing.Point(810, 53);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 13);
             this.label11.TabIndex = 15;
@@ -781,7 +794,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(853, 26);
+            this.label10.Location = new System.Drawing.Point(810, 26);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(98, 13);
             this.label10.TabIndex = 14;
@@ -824,7 +837,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(565, 80);
+            this.label9.Location = new System.Drawing.Point(534, 80);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(111, 13);
             this.label9.TabIndex = 11;
@@ -833,7 +846,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(585, 53);
+            this.label8.Location = new System.Drawing.Point(554, 53);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 13);
             this.label8.TabIndex = 10;
@@ -842,7 +855,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(562, 26);
+            this.label7.Location = new System.Drawing.Point(531, 26);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 13);
             this.label7.TabIndex = 9;
@@ -970,7 +983,7 @@
             // 
             this.ovalShape1.FillColor = System.Drawing.Color.White;
             this.ovalShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid;
-            this.ovalShape1.Location = new System.Drawing.Point(1218, 7);
+            this.ovalShape1.Location = new System.Drawing.Point(1219, 11);
             this.ovalShape1.Name = "ovalShape1";
             this.ovalShape1.Size = new System.Drawing.Size(11, 12);
             this.ovalShape1.Click += new System.EventHandler(this.ovalShape1_Click);
@@ -1010,6 +1023,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(233, 438);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDown);
             this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
             // 
@@ -1158,7 +1172,7 @@
             this.toolStripSeparator7,
             this.сделатьДополнениемToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(198, 126);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(198, 104);
             // 
             // editGameContextToolStripMenuItem
             // 
@@ -2082,6 +2096,7 @@
         private System.Windows.Forms.ToolStripMenuItem addContentContextToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem сделатьДополнениемToolStripMenuItem;
+        private System.Windows.Forms.CheckBox DispContent;
     }
 }
 

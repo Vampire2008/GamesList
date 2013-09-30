@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using GamesList.Model;
+using System.Globalization;
 
 namespace GamesList
 {
@@ -34,8 +35,53 @@ namespace GamesList
 
         private void disk_typesDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            /*if (e.ColumnIndex == dataGridViewTextBoxColumn4.Index)
+            {
+                string s = Convert.ToString(disk_typesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+                int i = s.IndexOf(".");
+                if (i > -1)
+                {
+                    s[i] = CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
+                }
+                ((string)disk_typesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value).Replace('.', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]);
+            }*/
+            //byte i = ((Disk_types)disk_typesBindingSource.Current).Max_Size.
             disk_typesBindingSource.EndEdit();
             Program.context.SaveChanges();
+        }
+
+        private void disk_typesDataGridView_CellParsing(object sender, DataGridViewCellParsingEventArgs e)
+        {
+            
+        }
+
+        private void disk_typesDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewTextBoxColumn4.Index)
+            {
+                string s = ((string)e.FormattedValue);
+                if (CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator == ",")
+                {
+                    if (s.IndexOf(".") > -1)
+                    {
+                        s = s.Replace('.', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]);
+                        disk_typesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = Convert.ToDouble(s);
+                    }
+                }
+                else
+                {
+                    if (s.IndexOf(",") > -1)
+                    {
+                        s = s.Replace('.', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]);
+                        disk_typesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = Convert.ToDouble(s);
+                    }
+                }
+            }
+        }
+
+        private void disk_typesDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show(e.Exception.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

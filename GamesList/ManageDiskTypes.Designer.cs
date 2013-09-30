@@ -189,6 +189,7 @@
             // disk_typesDataGridView
             // 
             this.disk_typesDataGridView.AllowUserToAddRows = false;
+            this.disk_typesDataGridView.AllowUserToResizeRows = false;
             this.disk_typesDataGridView.AutoGenerateColumns = false;
             this.disk_typesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.disk_typesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -200,9 +201,12 @@
             this.disk_typesDataGridView.DataSource = this.disk_typesBindingSource;
             this.disk_typesDataGridView.Location = new System.Drawing.Point(12, 28);
             this.disk_typesDataGridView.Name = "disk_typesDataGridView";
+            this.disk_typesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.disk_typesDataGridView.Size = new System.Drawing.Size(525, 220);
             this.disk_typesDataGridView.TabIndex = 1;
             this.disk_typesDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.disk_typesDataGridView_CellEndEdit);
+            this.disk_typesDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.disk_typesDataGridView_CellValidating);
+            this.disk_typesDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.disk_typesDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn1
             // 

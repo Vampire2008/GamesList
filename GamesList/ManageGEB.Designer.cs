@@ -184,6 +184,7 @@
             // genresDataGridView
             // 
             this.genresDataGridView.AllowUserToAddRows = false;
+            this.genresDataGridView.AllowUserToResizeRows = false;
             this.genresDataGridView.AutoGenerateColumns = false;
             this.genresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.genresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -191,6 +192,7 @@
             this.genresDataGridView.DataSource = this.genresBindingSource;
             this.genresDataGridView.Location = new System.Drawing.Point(12, 28);
             this.genresDataGridView.Name = "genresDataGridView";
+            this.genresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.genresDataGridView.Size = new System.Drawing.Size(297, 197);
             this.genresDataGridView.TabIndex = 1;
             this.genresDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.genresDataGridView_CellEndEdit);

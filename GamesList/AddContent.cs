@@ -85,12 +85,22 @@ namespace GamesList
                 last_versionTextBox.Enabled=false;
                 AddingGame.Kol_updates = game.Kol_updates;
                 numericUpDown1.Enabled = false;*/
-                AddingGame.ID_Developer = 0;
-                AddingGame.ID_Publisher = 0;
-                AddingGame.ID_RF_Distributor = 0;
+                AddingGame.ID_Developer = game.ID_Developer;
+                AddingGame.Developers = game.Developers;
+                if (AddingGame.ID_Developer == null)
+                {
+                    AddingGame.ID_Developer = 0;
+                }
+                AddingGame.ID_Publisher = game.ID_Publisher;
+                AddingGame.Publishers = game.Publishers;
+                if (AddingGame.ID_Publisher == null)
+                    AddingGame.ID_Publisher = 0;
+                AddingGame.ID_RF_Distributor = game.ID_RF_Distributor;
+                AddingGame.RF_Distributors = game.RF_Distributors;
+                if (AddingGame.ID_RF_Distributor == null)
+                    AddingGame.ID_RF_Distributor = 0;
                 AddingGame.ID_Box = 1;
                 AddingGame.ID_Edition = 1;
-                AddingGame.ID_Ser = 0;
                 comboBox4.SelectedIndex = 0;
                 comboBox5.SelectedIndex = 0;
                 AddBut.Visible = true;
@@ -113,7 +123,7 @@ namespace GamesList
                     }
                 }
                 PlatformsList.Enabled = false;*/
-                AddingGame.ID_Ser = AddingGame.ID_Ser;
+                AddingGame.ID_Ser = game.ID_Ser;
                 AddingGame.Series = game.Series;
                 AddingGame.Genres = game.Genres;
 
