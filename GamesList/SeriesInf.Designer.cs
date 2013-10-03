@@ -46,10 +46,10 @@
             listViewItem1,
             listViewItem2});
             this.listView1.LargeImageList = this.imageList1;
-            this.listView1.Location = new System.Drawing.Point(12, 121);
+            this.listView1.Location = new System.Drawing.Point(12, 139);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(794, 308);
+            this.listView1.Size = new System.Drawing.Size(794, 290);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
@@ -75,7 +75,7 @@
             // 
             this.Description.Location = new System.Drawing.Point(15, 49);
             this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(791, 52);
+            this.Description.Size = new System.Drawing.Size(791, 70);
             this.Description.TabIndex = 2;
             this.Description.Text = "label2";
             // 
@@ -83,7 +83,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(9, 101);
+            this.label1.Location = new System.Drawing.Point(9, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 17);
             this.label1.TabIndex = 3;

@@ -21,14 +21,17 @@ namespace GamesList
             switch (type)
             {
                 case 0:
+                    this.Text = "Управление онлайн-защитами";
                     online_protectionsBindingSource.DataSource = Program.context.Online_protections.Local.ToBindingList();
                     Program.context.Online_protections.Load();
                     break;
                 case 1:
+                    this.Text = "Управление платформами";
                     online_protectionsBindingSource.DataSource = Program.context.Platforms.Local.ToBindingList();
                     Program.context.Platforms.Load();
                     break;
                 case 2:
+                    this.Text = "Управление сериями";
                     online_protectionsBindingSource.DataSource = Program.context.Series.Local.ToBindingList();
                     Program.context.Series.Load();
                     break;
@@ -54,14 +57,25 @@ namespace GamesList
 
         private void ManageOnlineProtects_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /*online_protectionsBindingSource.EndEdit();
-            Program.context.SaveChanges();*/
+            try
+            {
+                online_protectionsBindingSource.EndEdit();
+                Program.context.SaveChanges();
+            }
+            catch { }
         }
 
         private void online_protectionsDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            online_protectionsBindingSource.EndEdit();
-            Program.context.SaveChanges();
+            try
+            {
+                online_protectionsBindingSource.EndEdit();
+                Program.context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void iconPictureBox_Click(object sender, EventArgs e)

@@ -217,6 +217,12 @@ namespace GamesList
                     posterPictureBox.Image = null;
                 }
                 changeTypeContent((bool)AddingGame.TypeContent);
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
+                button5.Enabled = false;
+                button8.Enabled = false;
             }
 
             if (AddingGame.ID_Ser != null)
@@ -256,6 +262,11 @@ namespace GamesList
                 numericUpDown1.Enabled = true;
                 OnlineProtectionsList.Enabled = true;
                 PlatformsList.Enabled = true;
+                if (AddingGame.ID_Game < 1)
+                {
+                    button6.Enabled = true;
+                    button7.Enabled = true;
+                }
             }
             else
             {
@@ -281,6 +292,8 @@ namespace GamesList
                     }
                 }
                 PlatformsList.Enabled = false;
+                button6.Enabled = false;
+                button7.Enabled = false;
             }
         }
 
@@ -291,17 +304,20 @@ namespace GamesList
 
         private void Platforms_Format(object sender, ListControlConvertEventArgs e)
         {
-            e.Value = ((Platforms)e.Value).Name;
+            try
+            {
+                e.Value = ((Platforms)e.Value).Name;
+            }
+            catch { }
         }
-
-        /*private void GenresList_Format(object sender, ListControlConvertEventArgs e)
-        {
-            e.Value = ((Genres)e.Value).Name;
-        }*/
 
         private void OnlineProtectionsList_Format(object sender, ListControlConvertEventArgs e)
         {
-            e.Value = ((Online_protections)e.Value).Name;
+            try
+            {
+                e.Value = ((Online_protections)e.Value).Name;
+            }
+            catch { }
         }
 
         private void listBox1_Format(object sender, ListControlConvertEventArgs e)
@@ -613,6 +629,129 @@ namespace GamesList
         private void StandAlone_CheckedChanged(object sender, EventArgs e)
         {
             changeTypeContent(StandAlone.Checked);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form ManageD = new ManagePDL(1);
+            ManageD.ShowDialog();
+            List<Developers> LD = new List<Developers>();
+            LD.Add(new Developers { Name = "<отсутствует>", ID_Developer = 0 });
+            LD.AddRange(Program.context.Developers.ToArray());
+            comboBox1.DataSource = LD;
+            ((Games)gamesBindingSource.Current).ID_Developer = ((Developers)((ManagePDL)ManageD).publishersBindingSource.Current).ID_Developer;
+            comboBox1.SelectedValue = ((Games)gamesBindingSource.Current).ID_Developer;
+            ManageD.Dispose();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form ManageP = new ManagePDL(0);
+            ManageP.ShowDialog();
+            List<Publishers> LP = new List<Publishers>();
+            LP.Add(new Publishers { Name = "<отсутствует>", Id_Publisher = 0 });
+            LP.AddRange(Program.context.Publishers.ToArray());
+            comboBox2.DataSource = LP;
+            ((Games)gamesBindingSource.Current).ID_Publisher = ((Publishers)((ManagePDL)ManageP).publishersBindingSource.Current).Id_Publisher;
+            comboBox2.SelectedValue = ((Games)gamesBindingSource.Current).ID_Publisher;
+            ManageP.Dispose();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form ManageRF = new ManagePDL(2);
+            ManageRF.ShowDialog();
+            List<RF_Distributors> LRF = new List<RF_Distributors>();
+            LRF.Add(new RF_Distributors { Name = "<отсутствует>", ID_RF_Distributor = 0 });
+            LRF.AddRange(Program.context.RF_Distributors.ToArray());
+            comboBox3.DataSource = LRF;
+            ((Games)gamesBindingSource.Current).ID_RF_Distributor = ((RF_Distributors)((ManagePDL)ManageRF).publishersBindingSource.Current).ID_RF_Distributor;
+            comboBox3.SelectedValue = ((Games)gamesBindingSource.Current).ID_RF_Distributor;
+            ManageRF.Dispose();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form ManageE = new ManageGEB(1);
+            ManageE.ShowDialog();
+            List<Editions> LE = new List<Editions>();
+            LE.AddRange(Program.context.Editions.ToArray());
+            comboBox6.DataSource = LE;
+            ((Games)gamesBindingSource.Current).ID_Edition = ((Editions)((ManageGEB)ManageE).genresBindingSource.Current).ID_Edition;
+            comboBox6.SelectedValue = ((Games)gamesBindingSource.Current).ID_Edition;
+            ManageE.Dispose();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form ManageB = new ManageGEB(2);
+            ManageB.ShowDialog();
+            //comboBox7.DataSource = Program.context.Boxes.Local.ToBindingList();
+            //Program.context.Boxes.Load();
+            List<Boxes> LB = new List<Boxes>();
+            LB.AddRange(Program.context.Boxes.ToArray());
+            comboBox7.DataSource = LB;
+            ((Games)gamesBindingSource.Current).ID_Box = ((Boxes)((ManageGEB)ManageB).genresBindingSource.Current).ID_Box;
+            comboBox7.SelectedValue = ((Games)gamesBindingSource.Current).ID_Box;
+            ManageB.Dispose();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form ManageP = new ManageOPOS(1);
+            ManageP.ShowDialog();
+            PlatformsList.DataSource = platformsBindingSource;
+            PlatformsList.DisplayMember = "Name";
+            PlatformsList.ValueMember = "ID_Platform";
+            PlatformsList.DataSource = Program.context.Platforms.Local.ToBindingList();
+            Program.context.Platforms.Load();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form ManageP = new ManageOPOS(0);
+            ManageP.ShowDialog();
+            OnlineProtectionsList.DataSource = online_protectionsBindingSource;
+            OnlineProtectionsList.DisplayMember = "Name";
+            OnlineProtectionsList.ValueMember = "ID_Protect";
+            OnlineProtectionsList.DataSource = Program.context.Online_protections.Local.ToBindingList();
+            Program.context.Platforms.Load();
+        }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedValue == null)
+            {
+                MessageBox.Show("Недопустимый разработчик!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBox1.Focus();
+            }
+        }
+
+        private void comboBox2_Leave(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedValue == null)
+            {
+                MessageBox.Show("Недопустимый издатель!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBox2.Focus();
+            }
+        }
+
+        private void comboBox3_Leave(object sender, EventArgs e)
+        {
+            if (comboBox3.SelectedValue == null)
+            {
+                MessageBox.Show("Недопустимый региональный издатель!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBox3.Focus();
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form ManageD = new ManageDiskTypes();
+            ManageD.ShowDialog();
+            List<Disk_types> LDT = new List<Disk_types>();
+            LDT.AddRange(Program.context.Disk_types.ToArray());
+            DiskTypes.DataSource = LDT;
         }
     }
 

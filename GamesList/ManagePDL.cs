@@ -22,15 +22,18 @@ namespace GamesList
             InitializeComponent();
             switch (typeManage){
                 case 0:
+                    this.Text = "Управление издателями";
                     publishersBindingSource.DataSource = Program.context.Publishers.Local.ToBindingList();
                     Program.context.Publishers.Load();
                     //publishersBindingSource.DataSource = Program.context.Publishers.Execute(MergeOption.AppendOnly);
                     break;
                 case 1:
+                    this.Text = "Управление разработчиками";
                     publishersBindingSource.DataSource = Program.context.Developers.Local.ToBindingList();
                     Program.context.Developers.Load();
                     break;
                 case 2:
+                    this.Text = "Управление региональными издателями";
                     publishersBindingSource.DataSource = Program.context.RF_Distributors.Local.ToBindingList();
                     Program.context.RF_Distributors.Load();
                     break;
@@ -50,12 +53,12 @@ namespace GamesList
 
         private void ManagePublisher_FormClosing(object sender, FormClosingEventArgs e)
         {
-          /*  try
+            try
             {
                 publishersBindingSource.EndEdit();
                 Program.context.SaveChanges();
             }
-            catch { }*/
+            catch { }
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)

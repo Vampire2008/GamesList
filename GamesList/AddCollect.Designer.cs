@@ -83,6 +83,13 @@
             this.AddGame = new System.Windows.Forms.Button();
             this.RemoveGame = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             date_ReleaseLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).BeginInit();
@@ -160,16 +167,18 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.gamesBindingSource, "ID_Publisher", true));
             this.comboBox2.DataSource = this.publishersBindingSource;
             this.comboBox2.DisplayMember = "Name";
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(111, 88);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
+            this.comboBox2.Size = new System.Drawing.Size(172, 21);
             this.comboBox2.TabIndex = 31;
             this.comboBox2.ValueMember = "Id_Publisher";
+            this.comboBox2.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
             // publishersBindingSource
             // 
@@ -186,16 +195,18 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox3.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.gamesBindingSource, "ID_RF_Distributor", true));
             this.comboBox3.DataSource = this.rFDistributorsBindingSource;
             this.comboBox3.DisplayMember = "Name";
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(126, 118);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(185, 21);
+            this.comboBox3.Size = new System.Drawing.Size(157, 21);
             this.comboBox3.TabIndex = 33;
             this.comboBox3.ValueMember = "ID_RF_Distributor";
+            this.comboBox3.Leave += new System.EventHandler(this.comboBox3_Leave);
             // 
             // rFDistributorsBindingSource
             // 
@@ -284,7 +295,7 @@
             // ColDisks
             // 
             this.ColDisks.DecimalPlaces = 3;
-            this.ColDisks.Location = new System.Drawing.Point(138, 497);
+            this.ColDisks.Location = new System.Drawing.Point(138, 479);
             this.ColDisks.Minimum = new decimal(new int[] {
             1,
             0,
@@ -301,7 +312,7 @@
             // 
             // AddDisk
             // 
-            this.AddDisk.Location = new System.Drawing.Point(145, 434);
+            this.AddDisk.Location = new System.Drawing.Point(145, 421);
             this.AddDisk.Name = "AddDisk";
             this.AddDisk.Size = new System.Drawing.Size(39, 23);
             this.AddDisk.TabIndex = 42;
@@ -311,7 +322,7 @@
             // 
             // RemoveDisk
             // 
-            this.RemoveDisk.Location = new System.Drawing.Point(145, 463);
+            this.RemoveDisk.Location = new System.Drawing.Point(145, 450);
             this.RemoveDisk.Name = "RemoveDisk";
             this.RemoveDisk.Size = new System.Drawing.Size(39, 23);
             this.RemoveDisk.TabIndex = 43;
@@ -432,7 +443,7 @@
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(111, 147);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(200, 21);
+            this.comboBox6.Size = new System.Drawing.Size(172, 21);
             this.comboBox6.TabIndex = 59;
             this.comboBox6.ValueMember = "ID_Edition";
             // 
@@ -458,7 +469,7 @@
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Location = new System.Drawing.Point(111, 180);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(200, 21);
+            this.comboBox7.Size = new System.Drawing.Size(172, 21);
             this.comboBox7.TabIndex = 61;
             this.comboBox7.ValueMember = "ID_Box";
             // 
@@ -581,15 +592,93 @@
             this.label13.Text = "Дважды щёлкните, чтобы добавить изображение.";
             this.label13.DoubleClick += new System.EventHandler(this.posterPictureBox_DoubleClick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(287, 88);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 21);
+            this.button1.TabIndex = 79;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(287, 115);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(24, 21);
+            this.button2.TabIndex = 80;
+            this.button2.Text = "...";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(287, 146);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(24, 21);
+            this.button3.TabIndex = 81;
+            this.button3.Text = "...";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(287, 180);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(24, 21);
+            this.button4.TabIndex = 82;
+            this.button4.Text = "...";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(121, 300);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(24, 21);
+            this.button5.TabIndex = 83;
+            this.button5.Text = "...";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(277, 300);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(24, 21);
+            this.button6.TabIndex = 84;
+            this.button6.Text = "...";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(138, 509);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(24, 21);
+            this.button7.TabIndex = 85;
+            this.button7.Text = "...";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // AddCollect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 544);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.AddDisk);
+            this.Controls.Add(this.RemoveDisk);
+            this.Controls.Add(this.ColDisks);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.RemoveDisk);
-            this.Controls.Add(this.AddDisk);
             this.Controls.Add(this.RemoveGame);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.listBox1);
@@ -619,7 +708,6 @@
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.GameDiskList);
-            this.Controls.Add(this.ColDisks);
             this.Controls.Add(this.DiskTypes);
             this.Controls.Add(this.OriginalNameEn);
             this.Controls.Add(this.posterPictureBox);
@@ -700,5 +788,12 @@
         private System.Windows.Forms.Button AddGame;
         private System.Windows.Forms.Button RemoveGame;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }

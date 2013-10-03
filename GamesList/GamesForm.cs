@@ -133,6 +133,7 @@ namespace GamesList
                 delGamecontextToolStripMenuItem1.Enabled = false;
                 editGameContextToolStripMenuItem.Enabled = false;
                 editGameToolStripMenuItem.Enabled = false;
+                toolStripButton1.Text = "Игор нет";
                 return;
             }
             addContentToolStripMenuItem.Enabled = true;
@@ -414,6 +415,7 @@ namespace GamesList
             {
                 
             }
+            toolStripButton1.Text = "Кол-во игр: " + Program.context.Games.Where(g => g.Localisation_Type > -1).Count().ToString();
         }
 
         private void ChangeFilter(Boolean dis)
@@ -458,7 +460,6 @@ namespace GamesList
         private void managePublishersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManagePublisher = new ManagePDL(0);
-            ManagePublisher.Text = "Управление издателями";
             ManagePublisher.ShowDialog();
         }
 
@@ -470,35 +471,30 @@ namespace GamesList
         private void manageDevelopersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManagePublisher = new ManagePDL(1);
-            ManagePublisher.Text = "Управление разработчиками";
             ManagePublisher.ShowDialog();
         }
 
         private void manageRFDistrToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManagePublisher = new ManagePDL(2);
-            ManagePublisher.Text = "Управление издателями в России";
             ManagePublisher.ShowDialog();
         }
 
         private void manageGenresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManageGenres = new ManageGEB(0);
-            ManageGenres.Text = "Управление жанрами";
             ManageGenres.ShowDialog();
         }
 
         private void manageOnlineProtectsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManageOnline_Protections = new ManageOPOS(0);
-            ManageOnline_Protections.Text = "Управление онлайн-защитами";
             ManageOnline_Protections.ShowDialog();
         }
 
         private void managePatformsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManagePlatforms = new ManageOPOS(1);
-            ManagePlatforms.Text = "Управление платформами";
             ManagePlatforms.ShowDialog();
         }
 
@@ -580,14 +576,12 @@ namespace GamesList
         private void manageEditionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManageEditions = new ManageGEB(1);
-            ManageEditions.Text = "Управление видами изданий";
             ManageEditions.ShowDialog();
         }
 
         private void manageBoxesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManageBoxes = new ManageGEB(2);
-            ManageBoxes.Text = "Управление комплектациями";
             ManageBoxes.ShowDialog();
         }
 
@@ -717,7 +711,6 @@ namespace GamesList
         private void manageSeriesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ManageSeries = new ManageOPOS(2);
-            ManageSeries.Text = "Управление сериями";
             ManageSeries.ShowDialog();
         }
 
@@ -1069,6 +1062,17 @@ namespace GamesList
                     e.Value = ((Games)dataGridView1.Rows[e.RowIndex].DataBoundItem).Games2.Name + ": " + e.Value;
                 }
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Всего игр (с дополнениями): " + Program.context.Games.Where(g => g.Localisation_Type > -1).Count().ToString() + "\n" +
+                "Лицензионных игр (с учётом дополнений): " + Program.context.Games.Where(g => g.Localisation_Type > -1 && (bool)g.Game_Type).Count().ToString() + "\n" +
+                "Лицензионных игр (без учёта дополнений): " + Program.context.Games.Where(g => g.Localisation_Type > -1 && (bool)g.Game_Type && g.ID_Content == null).Count().ToString() + "\n"+
+                "Пиратских игр (с учётом дополнений): " + Program.context.Games.Where(g => g.Localisation_Type > -1 && !(bool)g.Game_Type).Count().ToString() + "\n" +
+                "Пиратских игр (без учёта дополнений): " + Program.context.Games.Where(g => g.Localisation_Type > -1 && g.ID_Content == null && !(bool)g.Game_Type).Count().ToString() + "\n" +
+                "Лицензионных сборников: " + Program.context.Games.Where(g => g.Localisation_Type == -1 && (bool)g.Game_Type).Count().ToString() + "\n" +
+                "Пиратских сборников: " + Program.context.Games.Where(g => g.Localisation_Type == -1 && !(bool)g.Game_Type).Count().ToString(), "Количество игр");
         }
     }
 }

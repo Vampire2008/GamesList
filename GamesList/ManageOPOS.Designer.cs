@@ -198,6 +198,7 @@
             this.dataGridViewImageColumn1});
             this.online_protectionsDataGridView.DataSource = this.online_protectionsBindingSource;
             this.online_protectionsDataGridView.Location = new System.Drawing.Point(12, 28);
+            this.online_protectionsDataGridView.MultiSelect = false;
             this.online_protectionsDataGridView.Name = "online_protectionsDataGridView";
             this.online_protectionsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.online_protectionsDataGridView.Size = new System.Drawing.Size(412, 220);
@@ -267,7 +268,6 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource online_protectionsBindingSource;
         private System.Windows.Forms.BindingNavigator online_protectionsBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -287,5 +287,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.OpenFileDialog ChooseImage;
+        public System.Windows.Forms.BindingSource online_protectionsBindingSource;
     }
 }

@@ -29,8 +29,12 @@ namespace GamesList
 
         private void ManageDiskTypes_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /*disk_typesBindingSource.EndEdit();
-            Program.context.SaveChanges();*/
+            try
+            {
+                disk_typesBindingSource.EndEdit();
+                Program.context.SaveChanges();
+            }
+            catch { }
         }
 
         private void disk_typesDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)

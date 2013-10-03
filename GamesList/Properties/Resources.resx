@@ -118,33 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Vista (198)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Vista (198).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WlanMM_dll_3131_05_256x256x32bit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WlanMM.dll-3131-05-256x256x32bit.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gws_landing_hero" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gws_landing_hero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Vista (199)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Vista (199).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="netshell_dll_386" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\netshell_dll_386.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ProgIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ProgIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_2005" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_2005.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddContent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddContent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="psr_exe_91" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\psr_exe_91.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_956" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_956.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,7 +127,37 @@
   <data name="wow64_microsoft-windows-shell32_31bf3856ad364e35_6_1_7100_0_none_438f691553cff239_shell32_dll_0d29dca9_2259" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wow64_microsoft-windows-shell32_31bf3856ad364e35_6_1_7100_0_none_438f691553cff239_shell32_dll_0d29dca9_2259.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_2005" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_2005.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Vista (199)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Vista (199).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddContent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddContent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="netshell_dll_386" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\netshell_dll_386.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="psr_exe_91" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\psr_exe_91.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ProgIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ProgIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gws_landing_hero" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gws_landing_hero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Wizard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wizard.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Vista (198)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Vista (198).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WlanMM_dll_3131_05_256x256x32bit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WlanMM.dll-3131-05-256x256x32bit.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Автор" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Автор.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

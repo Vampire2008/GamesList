@@ -196,6 +196,7 @@
             this.AddContent = new System.Windows.Forms.ToolStripButton();
             this.viewContent = new System.Windows.Forms.ToolStripButton();
             this.AddCollect = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.SortBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
@@ -1806,7 +1807,8 @@
             this.DelGame,
             this.AddContent,
             this.viewContent,
-            this.AddCollect});
+            this.AddCollect,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1253, 25);
@@ -1876,6 +1878,18 @@
             this.AddCollect.Size = new System.Drawing.Size(23, 22);
             this.AddCollect.Text = "Добавить сборник";
             this.AddCollect.Click += new System.EventHandler(this.AddCollect_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoToolTip = false;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(98, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.ToolTipText = "Показать статистику";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // GamesForm
             // 
@@ -2097,6 +2111,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem сделатьДополнениемToolStripMenuItem;
         private System.Windows.Forms.CheckBox DispContent;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

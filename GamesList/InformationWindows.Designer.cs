@@ -42,11 +42,10 @@
             // 
             // NameI
             // 
-            this.NameI.AutoSize = true;
             this.NameI.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameI.Location = new System.Drawing.Point(12, 21);
             this.NameI.Name = "NameI";
-            this.NameI.Size = new System.Drawing.Size(46, 19);
+            this.NameI.Size = new System.Drawing.Size(195, 38);
             this.NameI.TabIndex = 0;
             this.NameI.Text = "Name";
             // 

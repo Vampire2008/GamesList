@@ -21,19 +21,22 @@ namespace GamesList
             switch (typeManage)
             {
                 case 0:
+                    this.Text = "Управление жанрами";
                     genresBindingSource.DataSource = Program.context.Genres.Local.ToBindingList();
                     Program.context.Genres.Load();
                     dataGridViewTextBoxColumn2.HeaderText = "Жанр";
                     break;
                 case 1:
+                    this.Text = "Управление видами изданий";
                     genresBindingSource.DataSource = Program.context.Editions.Local.ToBindingList();
                     Program.context.Editions.Load();
                     dataGridViewTextBoxColumn2.HeaderText = "Издание";
                     break;
                 case 2:
+                    this.Text = "Управление комплектациями";
                     genresBindingSource.DataSource = Program.context.Boxes.Local.ToBindingList();
                     Program.context.Boxes.Load();
-                    dataGridViewTextBoxColumn2.HeaderText = "Коробка";
+                    dataGridViewTextBoxColumn2.HeaderText = "Вид комплектации";
                     break;
             }
             type = typeManage;
@@ -62,8 +65,12 @@ namespace GamesList
 
         private void ManageGenres_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /*genresBindingSource.EndEdit();
-            Program.context.SaveChanges();*/
+            try
+            {
+                genresBindingSource.EndEdit();
+                Program.context.SaveChanges();
+            }
+            catch { }
         }
 
         private void genresDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)

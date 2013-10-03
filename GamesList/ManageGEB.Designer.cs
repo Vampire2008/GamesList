@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageGEB));
-            this.genresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.genresBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -46,15 +45,12 @@
             this.genresBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.genresDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.genresBindingSource)).BeginInit();
+            this.genresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.genresBindingNavigator)).BeginInit();
             this.genresBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.genresDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genresBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // genresBindingSource
-            // 
-            this.genresBindingSource.DataSource = typeof(GamesList.Model.Genres);
             // 
             // genresBindingNavigator
             // 
@@ -191,6 +187,7 @@
             this.dataGridViewTextBoxColumn2});
             this.genresDataGridView.DataSource = this.genresBindingSource;
             this.genresDataGridView.Location = new System.Drawing.Point(12, 28);
+            this.genresDataGridView.MultiSelect = false;
             this.genresDataGridView.Name = "genresDataGridView";
             this.genresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.genresDataGridView.Size = new System.Drawing.Size(297, 197);
@@ -203,6 +200,10 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Жанр";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 250;
+            // 
+            // genresBindingSource
+            // 
+            this.genresBindingSource.DataSource = typeof(GamesList.Model.Genres);
             // 
             // ManageGEB
             // 
@@ -218,11 +219,11 @@
             this.Text = "Управление жанрами";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageGenres_FormClosing);
             this.Load += new System.EventHandler(this.ManageGenres_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.genresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genresBindingNavigator)).EndInit();
             this.genresBindingNavigator.ResumeLayout(false);
             this.genresBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.genresDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genresBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,7 +231,6 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource genresBindingSource;
         private System.Windows.Forms.BindingNavigator genresBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -246,5 +246,6 @@
         private System.Windows.Forms.ToolStripButton genresBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView genresDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        public System.Windows.Forms.BindingSource genresBindingSource;
     }
 }
