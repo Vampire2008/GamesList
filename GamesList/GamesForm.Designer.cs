@@ -136,6 +136,7 @@
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.сделатьДополнениемToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Stand = new System.Windows.Forms.Label();
             this.gamesListBox = new System.Windows.Forms.ListBox();
             this.gamesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.CollectedLabel = new System.Windows.Forms.Label();
@@ -197,6 +198,7 @@
             this.viewContent = new System.Windows.Forms.ToolStripButton();
             this.AddCollect = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.label34 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SortBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
@@ -367,7 +369,7 @@
             // 
             this.editGameToolStripMenuItem.Name = "editGameToolStripMenuItem";
             this.editGameToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.editGameToolStripMenuItem.Text = "Редакитировать игру";
+            this.editGameToolStripMenuItem.Text = "Редактировать игру";
             this.editGameToolStripMenuItem.Click += new System.EventHandler(this.editGameToolStripMenuItem_Click);
             // 
             // delGameToolStripMenuItem
@@ -755,11 +757,13 @@
             this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Items.AddRange(new object[] {
-            "<не важно>",
             "Не пройдено",
             "Ожидает прохождения",
             "Пройдено (не 100%)",
-            "Пройдено"});
+            "Пройдено",
+            "Сетевая игра",
+            "Бесконечно",
+            "Свистелка"});
             this.comboBox7.Location = new System.Drawing.Point(651, 23);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(128, 21);
@@ -1024,6 +1028,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(233, 438);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDown);
             this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
@@ -1218,6 +1223,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.Stand);
             this.groupBox1.Controls.Add(this.gamesListBox);
             this.groupBox1.Controls.Add(this.CollectedLabel);
             this.groupBox1.Controls.Add(this.textBox2);
@@ -1275,12 +1281,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Сведенья об игре";
             // 
+            // Stand
+            // 
+            this.Stand.AutoSize = true;
+            this.Stand.Location = new System.Drawing.Point(885, 41);
+            this.Stand.Name = "Stand";
+            this.Stand.Size = new System.Drawing.Size(98, 13);
+            this.Stand.TabIndex = 51;
+            this.Stand.Text = "Самостоятельное";
+            this.Stand.Visible = false;
+            // 
             // gamesListBox
             // 
             this.gamesListBox.DataSource = this.gamesBindingSource1;
             this.gamesListBox.DisplayMember = "Name";
             this.gamesListBox.FormattingEnabled = true;
-            this.gamesListBox.Location = new System.Drawing.Point(580, 127);
+            this.gamesListBox.Location = new System.Drawing.Point(552, 129);
             this.gamesListBox.Name = "gamesListBox";
             this.gamesListBox.Size = new System.Drawing.Size(228, 121);
             this.gamesListBox.TabIndex = 50;
@@ -1294,7 +1310,7 @@
             // CollectedLabel
             // 
             this.CollectedLabel.AutoSize = true;
-            this.CollectedLabel.Location = new System.Drawing.Point(577, 111);
+            this.CollectedLabel.Location = new System.Drawing.Point(549, 113);
             this.CollectedLabel.Name = "CollectedLabel";
             this.CollectedLabel.Size = new System.Drawing.Size(133, 13);
             this.CollectedLabel.TabIndex = 50;
@@ -1303,7 +1319,7 @@
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Description", true));
-            this.textBox2.Location = new System.Drawing.Point(580, 254);
+            this.textBox2.Location = new System.Drawing.Point(552, 256);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -1539,7 +1555,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(851, 176);
+            this.label26.Location = new System.Drawing.Point(833, 175);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(111, 13);
             this.label26.TabIndex = 24;
@@ -1549,11 +1565,10 @@
             // 
             this.IgromaniaRate.BackColor = System.Drawing.Color.Transparent;
             this.IgromaniaRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IgromaniaRate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Rate_Igromania", true));
-            this.IgromaniaRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.IgromaniaRate.Location = new System.Drawing.Point(843, 202);
+            this.IgromaniaRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IgromaniaRate.Location = new System.Drawing.Point(802, 198);
             this.IgromaniaRate.Name = "IgromaniaRate";
-            this.IgromaniaRate.Size = new System.Drawing.Size(127, 75);
+            this.IgromaniaRate.Size = new System.Drawing.Size(181, 75);
             this.IgromaniaRate.TabIndex = 23;
             this.IgromaniaRate.Text = "0,0";
             this.IgromaniaRate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1563,11 +1578,10 @@
             // 
             this.PersonalRate.BackColor = System.Drawing.Color.Transparent;
             this.PersonalRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PersonalRate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Rate_person", true));
-            this.PersonalRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PersonalRate.Location = new System.Drawing.Point(843, 317);
+            this.PersonalRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PersonalRate.Location = new System.Drawing.Point(802, 316);
             this.PersonalRate.Name = "PersonalRate";
-            this.PersonalRate.Size = new System.Drawing.Size(127, 75);
+            this.PersonalRate.Size = new System.Drawing.Size(181, 75);
             this.PersonalRate.TabIndex = 22;
             this.PersonalRate.Text = "0,0";
             this.PersonalRate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1576,7 +1590,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(861, 293);
+            this.label25.Location = new System.Drawing.Point(842, 292);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(92, 13);
             this.label25.TabIndex = 21;
@@ -1891,11 +1905,25 @@
             this.toolStripButton1.ToolTipText = "Показать статистику";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.White;
+            this.label34.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label34.Location = new System.Drawing.Point(226, 55);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(14, 13);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "Х";
+            this.label34.Visible = false;
+            this.label34.Click += new System.EventHandler(this.label34_Click);
+            // 
             // GamesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1253, 636);
+            this.Controls.Add(this.label34);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
@@ -1905,6 +1933,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1262, 538);
             this.Name = "GamesForm";
             this.Text = "Список игр";
@@ -2112,6 +2141,8 @@
         private System.Windows.Forms.ToolStripMenuItem сделатьДополнениемToolStripMenuItem;
         private System.Windows.Forms.CheckBox DispContent;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label Stand;
     }
 }
 

@@ -46,6 +46,16 @@ namespace GamesList
                 DistrCustText.Enabled = true;
                 DistrCustText.Text = Properties.Settings.Default.DistrReg;
             }
+            VisMax.Checked = Properties.Settings.Default.VisMax;
+            CurrentBase.Text = Program.CurrentBase;
+            if (CurrentBase.Text != textBox1.Text)
+            {
+                MakeCurrent.Enabled = true;
+            }
+            else
+            {
+                MakeCurrent.Enabled = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -80,6 +90,7 @@ namespace GamesList
                 MessageBox.Show("Подключение к новой базе будет выполняться со следующего запуска программы.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Properties.Settings.Default.DefaultConStr = textBox1.Text;
             }
+            Properties.Settings.Default.VisMax = VisMax.Checked;
             Properties.Settings.Default.Save();
             DialogResult = DialogResult.OK;
         }
@@ -90,6 +101,22 @@ namespace GamesList
             {
                 textBox1.Text = openFileDialog1.FileName;
             }
+        }
+
+        private void MakeCurrent_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = CurrentBase.Text;
+            MakeCurrent.Enabled = false;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text != CurrentBase.Text)
+            {
+                MakeCurrent.Enabled = true;
+            }
+            else
+                MakeCurrent.Enabled = false;
         }
     }
 }

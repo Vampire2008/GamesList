@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagePDL));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.iconPictureBox = new System.Windows.Forms.PictureBox();
+            this.publishersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ChooseImage = new System.Windows.Forms.OpenFileDialog();
             this.publishersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -49,17 +49,16 @@
             this.publishersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.publishersDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new GamesList.Components.CalendarColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new GamesList.Components.CalendarColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publishersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.publishersBindingNavigator)).BeginInit();
             this.publishersBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.publishersDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // iconPictureBox
@@ -73,6 +72,10 @@
             this.iconPictureBox.TabIndex = 2;
             this.iconPictureBox.TabStop = false;
             this.iconPictureBox.DoubleClick += new System.EventHandler(this.iconPictureBox_DoubleClick);
+            // 
+            // publishersBindingSource
+            // 
+            this.publishersBindingSource.DataSource = typeof(GamesList.Model.Publishers);
             // 
             // ChooseImage
             // 
@@ -222,6 +225,7 @@
             this.publishersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.publishersDataGridView.Size = new System.Drawing.Size(496, 203);
             this.publishersDataGridView.TabIndex = 3;
+            this.publishersDataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.publishersDataGridView_CellBeginEdit);
             this.publishersDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.publishersDataGridView_CellEndEdit);
             this.publishersDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.publishersDataGridView_DataError);
             // 
@@ -234,11 +238,10 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Date_open";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn4.HeaderText = "Дата открытия";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn4.Width = 120;
             // 
             // dataGridViewTextBoxColumn3
@@ -252,11 +255,12 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Date_close";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "d";
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn5.HeaderText = "Дата закрытия";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn5.Width = 120;
             // 
             // dataGridViewImageColumn1
@@ -273,10 +277,6 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Visible = false;
             // 
-            // publishersBindingSource
-            // 
-            this.publishersBindingSource.DataSource = typeof(GamesList.Model.Publishers);
-            // 
             // ManagePDL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,11 +292,11 @@
             this.Text = "Управление издателями";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManagePublisher_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.publishersBindingNavigator)).EndInit();
             this.publishersBindingNavigator.ResumeLayout(false);
             this.publishersBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.publishersDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,12 +320,12 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton publishersBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView publishersDataGridView;
+        public System.Windows.Forms.BindingSource publishersBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private Components.CalendarColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private Components.CalendarColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        public System.Windows.Forms.BindingSource publishersBindingSource;
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3238b8e88f194f5685e73054aeb0b268" Name="Диаграмма1" ZoomLevel="111">
+      <Diagram DiagramId="3238b8e88f194f5685e73054aeb0b268" Name="Диаграмма1" ZoomLevel="63">
         <EntityTypeShape EntityType="GamesModel.Boxes" Width="1.5" PointX="3.625" PointY="1.5" />
         <EntityTypeShape EntityType="GamesModel.Developers" Width="1.5" PointX="6.625" PointY="3" />
         <EntityTypeShape EntityType="GamesModel.Disk_types" Width="1.5" PointX="9.625" PointY="4.5" />
@@ -30,7 +30,7 @@
         <AssociationConnector Association="GamesModel.GamesPlatforms" />
         <AssociationConnector Association="GamesModel.GenresGames" />
         <AssociationConnector Association="GamesModel.GamesCollector" />
-        <EntityTypeShape EntityType="GamesModel.GLDBVersion" Width="1.5" PointX="4.8669734973772307" PointY="15.089595503681151" />
+        <EntityTypeShape EntityType="GamesModel.GLDBVersion" Width="1.5" PointX="4.2153705750663626" PointY="28.86302769038036" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

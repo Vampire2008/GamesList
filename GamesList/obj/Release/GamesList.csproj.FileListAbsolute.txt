@@ -90,4 +90,5 @@ C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\Спис�
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\obj\Release\Список игр.g.resources
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\obj\Release\Список игр.exe.manifest
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\obj\Release\Список игр.application
+C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\obj\Release\GamesList.SaveNotSaveDialog.resources
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\obj\Release\GamesList.csprojResolveAssemblyReference.cache

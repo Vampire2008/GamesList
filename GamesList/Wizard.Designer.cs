@@ -68,6 +68,7 @@
             this.BaseCompl = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.VisMax = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.HelloPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -275,6 +276,7 @@
             // 
             // RatingPage
             // 
+            this.RatingPage.Controls.Add(this.VisMax);
             this.RatingPage.Controls.Add(this.MaxYourRating);
             this.RatingPage.Controls.Add(this.label10);
             this.RatingPage.Controls.Add(this.MaxRating);
@@ -452,6 +454,18 @@
             this.saveFileDialog1.FileName = "MyGames.gdb";
             this.saveFileDialog1.Filter = "База игр (*.gdb)|*.gdb";
             // 
+            // VisMax
+            // 
+            this.VisMax.AutoSize = true;
+            this.VisMax.Checked = true;
+            this.VisMax.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.VisMax.Location = new System.Drawing.Point(26, 244);
+            this.VisMax.Name = "VisMax";
+            this.VisMax.Size = new System.Drawing.Size(414, 19);
+            this.VisMax.TabIndex = 1;
+            this.VisMax.Text = "Показывать максимальную оценку рядом с текущей (например 9/10).";
+            this.VisMax.UseVisualStyleBackColor = true;
+            // 
             // Wizard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,6 +533,7 @@
         private System.Windows.Forms.RadioButton DistrCust;
         private System.Windows.Forms.TextBox DistrCustText;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.CheckBox VisMax;
 
     }
 }

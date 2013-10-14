@@ -20,6 +20,7 @@ namespace GamesList
         /// Контекст базы данных, обеспечивает связь с базой данных.
         /// </summary>
         public static GamesEntities context;
+        public static string CurrentBase;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -59,15 +60,18 @@ namespace GamesList
                     if (args[0] == "active")
                     {
                         context = new GamesEntities(buidConStr(Properties.Settings.Default.DefaultConStr));//Создаём новый контекст базы данных, используя подключение по умолчанию из файла настроек
+                        CurrentBase = Properties.Settings.Default.DefaultConStr;
                     }
                     else
                     {
                         context = new GamesEntities(buidConStr(args[0]));
+                        CurrentBase = args[0];
                     }
                 }
                 else
                 {
                     context = new GamesEntities(buidConStr(Properties.Settings.Default.DefaultConStr));//Создаём новый контекст базы данных, используя подключение по умолчанию из файла настроек
+                    CurrentBase = Properties.Settings.Default.DefaultConStr;
                 }
                 //Database.SetInitializer(new MigrateDatabaseToLatestVersion<GamesEntities, Migrations.Configuration>());
                 if (Properties.Settings.Default.NewBase)//Если стоит флаг новой базы, то
@@ -89,21 +93,38 @@ namespace GamesList
                         }
                     }
                     context.Database.Create();//Создаём базу данных. Данный метод создаст файл базы данных в указанном месте.
-                    context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (Version) VALUES (4);");
+                    context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (ID_V, Version) VALUES (1,4);");
                     Properties.Settings.Default.NewBase = false;
                     Properties.Settings.Default.Save();
                 }
                 Program.context.Database.Connection.Open();//Открываем соединение с базой
             }
-            catch
+            catch (Exception ex1)
             {//Если соединение с базой по умолчанию не удалось установить, то выводим следующий диалог
-                DialogResult DR = MessageBox.Show("База данных по умолчанию (" + Properties.Settings.Default.DefaultConStr + ") не обнаружена. Создать новую базу?\n" +
+                DialogResult DR = MessageBox.Show("Не удаётся подключиться к базе по умолчанию (" + Properties.Settings.Default.DefaultConStr + "). "+ex1.Message+" Попытаться создать новую базу?\n" +
                 "Или нажмите \"Нет\" чтобы открыть другой файл базы данных.", "Ошибка открытия", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 //Предлагаем пользователию либо создать файл базы данны, либо открыть другую базу, или вообще выйти из программы
                 switch (DR)//Перебираем результат диалога
                 {
                     case DialogResult.Yes://Если пользователь нажал Да
+                        if (File.Exists(Properties.Settings.Default.DefaultConStr))//Проверяем существует ли файл с указанным именем.
+                        {
+                            try
+                            {
+                                File.Delete(Properties.Settings.Default.DefaultConStr);//Пробуем удалить файл
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Не удаётся перезаписать файл! Программа перезапустится, чтобы вы могли заного выбрать файл с играми.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                //Если удалить не удаётся, выводим сообщение об ошибке
+                                Properties.Settings.Default.FirstRun = true;//Устанавливаем флаг первого запуска, чтобы пользователь мог повторно создать базу.
+                                Properties.Settings.Default.Save();//Сохраняем файл настроек
+                                Application.Restart();//Перезапускаем программу
+                                return;//Выходим из текущего экземпляра программы
+                            }
+                        }
                         context.Database.Create();//Создаём базу данных
+                        context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (ID_V, Version) VALUES (1,4);");
                         break;
                     case DialogResult.No://Если пользователь нажал Нет
                         OpenFileDialog Dial = new OpenFileDialog();//Создаём диалог открытия файла
@@ -116,6 +137,7 @@ namespace GamesList
                             try
                             {
                                 context.Database.Connection.Open();//Пробуем установить соединение
+                                CurrentBase = Dial.FileName;
                                 if (MessageBox.Show("Вы хотите, чтобы эта база стала базой по умолчанию?", "База по умолчанию", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                                 {
                                     Properties.Settings.Default.DefaultConStr = Dial.FileName;
@@ -124,7 +146,7 @@ namespace GamesList
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show("Произошла ошибка. Свяжитесь с автором.\n" + ex);//Если соединение установить не удалось, показываем ошибку.
+                                MessageBox.Show("Произошла ошибка. Свяжитесь с автором.\n" + ex.Message);//Если соединение установить не удалось, показываем ошибку.
                                 return;//Выходим из программы
                             }
                         }

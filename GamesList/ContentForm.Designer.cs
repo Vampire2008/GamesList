@@ -35,7 +35,12 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editGameContextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delGamecontextToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.сделатьОбычнойИгройToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.добавитьДополнениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Stand = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -87,7 +92,8 @@
             this.AddGame = new System.Windows.Forms.ToolStripButton();
             this.EditGame = new System.Windows.Forms.ToolStripButton();
             this.DelGame = new System.Windows.Forms.ToolStripButton();
-            this.сделатьОбычнойИгройToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddContent = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.gamesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statuscompliteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,7 +111,6 @@
             this.gamedisksDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.publishersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rFDistributorsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stand = new System.Windows.Forms.Label();
             kol_updatesLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -165,6 +170,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(233, 409);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDown);
             this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
             // 
@@ -173,9 +179,11 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editGameContextToolStripMenuItem,
             this.delGamecontextToolStripMenuItem1,
-            this.сделатьОбычнойИгройToolStripMenuItem});
+            this.сделатьОбычнойИгройToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.добавитьДополнениеToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(225, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(225, 98);
             // 
             // editGameContextToolStripMenuItem
             // 
@@ -191,11 +199,31 @@
             this.delGamecontextToolStripMenuItem1.Text = "Удалить дополнение";
             this.delGamecontextToolStripMenuItem1.Click += new System.EventHandler(this.delGameToolStripMenuItem_Click);
             // 
+            // сделатьОбычнойИгройToolStripMenuItem
+            // 
+            this.сделатьОбычнойИгройToolStripMenuItem.Name = "сделатьОбычнойИгройToolStripMenuItem";
+            this.сделатьОбычнойИгройToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.сделатьОбычнойИгройToolStripMenuItem.Text = "Сделать обычной игрой";
+            this.сделатьОбычнойИгройToolStripMenuItem.Click += new System.EventHandler(this.сделатьОбычнойИгройToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            // 
+            // добавитьДополнениеToolStripMenuItem
+            // 
+            this.добавитьДополнениеToolStripMenuItem.Name = "добавитьДополнениеToolStripMenuItem";
+            this.добавитьДополнениеToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.добавитьДополнениеToolStripMenuItem.Text = "Добавить дополнение";
+            this.добавитьДополнениеToolStripMenuItem.Click += new System.EventHandler(this.AddContent_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.Stand);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.pictureBox7);
@@ -251,13 +279,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Сведенья о дополнении";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(829, 405);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 23);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "Просмотр дополнений";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Stand
+            // 
+            this.Stand.AutoSize = true;
+            this.Stand.Location = new System.Drawing.Point(851, 41);
+            this.Stand.Name = "Stand";
+            this.Stand.Size = new System.Drawing.Size(98, 13);
+            this.Stand.TabIndex = 50;
+            this.Stand.Text = "Самостоятельное";
+            this.Stand.Visible = false;
+            // 
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Description", true));
-            this.textBox2.Location = new System.Drawing.Point(586, 202);
+            this.textBox2.Location = new System.Drawing.Point(545, 202);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox2.Size = new System.Drawing.Size(228, 190);
             this.textBox2.TabIndex = 49;
             // 
@@ -478,7 +528,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(851, 176);
+            this.label26.Location = new System.Drawing.Point(826, 183);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(111, 13);
             this.label26.TabIndex = 24;
@@ -488,11 +538,10 @@
             // 
             this.IgromaniaRate.BackColor = System.Drawing.Color.Transparent;
             this.IgromaniaRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IgromaniaRate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Rate_Igromania", true));
             this.IgromaniaRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.IgromaniaRate.Location = new System.Drawing.Point(843, 202);
+            this.IgromaniaRate.Location = new System.Drawing.Point(788, 202);
             this.IgromaniaRate.Name = "IgromaniaRate";
-            this.IgromaniaRate.Size = new System.Drawing.Size(127, 75);
+            this.IgromaniaRate.Size = new System.Drawing.Size(182, 75);
             this.IgromaniaRate.TabIndex = 23;
             this.IgromaniaRate.Text = "0,0";
             this.IgromaniaRate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -502,11 +551,10 @@
             // 
             this.PersonalRate.BackColor = System.Drawing.Color.Transparent;
             this.PersonalRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PersonalRate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Rate_person", true));
             this.PersonalRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PersonalRate.Location = new System.Drawing.Point(843, 317);
+            this.PersonalRate.Location = new System.Drawing.Point(788, 317);
             this.PersonalRate.Name = "PersonalRate";
-            this.PersonalRate.Size = new System.Drawing.Size(127, 75);
+            this.PersonalRate.Size = new System.Drawing.Size(182, 75);
             this.PersonalRate.TabIndex = 22;
             this.PersonalRate.Text = "0,0";
             this.PersonalRate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -515,7 +563,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(861, 293);
+            this.label25.Location = new System.Drawing.Point(837, 297);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(92, 13);
             this.label25.TabIndex = 21;
@@ -730,7 +778,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddGame,
             this.EditGame,
-            this.DelGame});
+            this.DelGame,
+            this.AddContent,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1253, 25);
@@ -770,12 +820,26 @@
             this.DelGame.ToolTipText = "Удалить дополнение";
             this.DelGame.Click += new System.EventHandler(this.delGameToolStripMenuItem_Click);
             // 
-            // сделатьОбычнойИгройToolStripMenuItem
+            // AddContent
             // 
-            this.сделатьОбычнойИгройToolStripMenuItem.Name = "сделатьОбычнойИгройToolStripMenuItem";
-            this.сделатьОбычнойИгройToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.сделатьОбычнойИгройToolStripMenuItem.Text = "Сделать обычной игрой";
-            this.сделатьОбычнойИгройToolStripMenuItem.Click += new System.EventHandler(this.сделатьОбычнойИгройToolStripMenuItem_Click);
+            this.AddContent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.AddContent.Image = global::GamesList.Properties.Resources.AddContent;
+            this.AddContent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AddContent.Name = "AddContent";
+            this.AddContent.Size = new System.Drawing.Size(23, 22);
+            this.AddContent.Text = "Добавить дополнение";
+            this.AddContent.Click += new System.EventHandler(this.AddContent_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.CheckOnClick = true;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(148, 22);
+            this.toolStripButton1.Text = "Отображать дополнения";
+            this.toolStripButton1.CheckedChanged += new System.EventHandler(this.toolStripButton1_CheckedChanged);
             // 
             // gamesBindingSource
             // 
@@ -912,16 +976,6 @@
             this.rFDistributorsDataGridViewTextBoxColumn.ReadOnly = true;
             this.rFDistributorsDataGridViewTextBoxColumn.Visible = false;
             // 
-            // Stand
-            // 
-            this.Stand.AutoSize = true;
-            this.Stand.Location = new System.Drawing.Point(851, 41);
-            this.Stand.Name = "Stand";
-            this.Stand.Size = new System.Drawing.Size(98, 13);
-            this.Stand.TabIndex = 50;
-            this.Stand.Text = "Самостоятельное";
-            this.Stand.Visible = false;
-            // 
             // ContentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -933,6 +987,7 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ContentForm";
             this.Text = "Дополнения для";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1031,6 +1086,11 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ToolStripMenuItem сделатьОбычнойИгройToolStripMenuItem;
         private System.Windows.Forms.Label Stand;
+        private System.Windows.Forms.ToolStripButton AddContent;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem добавитьДополнениеToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

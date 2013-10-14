@@ -39,6 +39,7 @@ namespace GamesList
                     break;
         }
             type = typeManage;
+            
         }
 
         private void iconPictureBox_DoubleClick(object sender, EventArgs e)
@@ -101,6 +102,18 @@ namespace GamesList
             else
                 MessageBox.Show(e.Exception.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
+        }
+
+        private void publishersDataGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewTextBoxColumn4.Index || e.ColumnIndex == dataGridViewTextBoxColumn5.Index)
+            {
+                //MessageBox.Show(publishersDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                if (publishersDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    publishersDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                }
+            }
         }
     }
 }

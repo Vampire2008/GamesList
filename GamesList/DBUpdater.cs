@@ -27,10 +27,25 @@ namespace GamesList
                         }
                     }
                 }
-                catch (Exception ex)
+                catch 
                 {
+                    try
+                    {
+                        Program.context.Database.ExecuteSqlCommand("DROP TABLE GLDBVersion;");
+
+                    }
+                    catch {}
+                    try
+                    {
+                        Program.context.Database.ExecuteSqlCommand("CREATE TABLE GLDBVersion (ID_V numeric(18,0) PRIMARY KEY,Version numeric(18,0);");
+                        Program.context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (ID_V, Version) VALUES (1,4);");
+                    }
+                    catch (Exception ex) {
+                        MessageBox.Show("Данная база данных несовместима.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
                    MessageBox.Show("Данная база данных несовместима.","Ошибка",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                   return false;
+                   return true;
                 }
             }
             return true;

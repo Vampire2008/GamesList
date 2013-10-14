@@ -16,11 +16,7 @@
           <EntitySet Name="GamesPlatforms" EntityType="GamesModel.Store.GamesPlatforms" store:Type="Tables" />
           <EntitySet Name="Genres" EntityType="GamesModel.Store.Genres" store:Type="Tables" />
           <EntitySet Name="GenresGames" EntityType="GamesModel.Store.GenresGames" store:Type="Tables" />
-          <EntitySet Name="GLDBVersion" EntityType="GamesModel.Store.GLDBVersion" store:Type="Tables" store:Name="GLDBVersion">
-            <DefiningQuery>SELECT 
-            [GLDBVersion].[Version] AS [Version]
-            FROM [GLDBVersion] AS [GLDBVersion]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="GLDBVersion" EntityType="GamesModel.Store.GLDBVersion" store:Type="Tables" />
           <EntitySet Name="Online_protections" EntityType="GamesModel.Store.Online_protections" store:Type="Tables" />
           <EntitySet Name="Platforms" EntityType="GamesModel.Store.Platforms" store:Type="Tables" />
           <EntitySet Name="Publishers" EntityType="GamesModel.Store.Publishers" store:Type="Tables" />
@@ -194,14 +190,12 @@
           <Property Name="Genres_ID_Genre" Type="numeric" Nullable="false" />
           <Property Name="Games_ID_Game" Type="numeric" Nullable="false" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-            предупреждение 6002: В таблице или представлении "GLDBVersion" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
-            -->
         <EntityType Name="GLDBVersion">
           <Key>
-            <PropertyRef Name="Version" />
+            <PropertyRef Name="ID_V" />
           </Key>
-          <Property Name="Version" Type="numeric" Nullable="false" />
+          <Property Name="ID_V" Type="numeric" Nullable="false" />
+          <Property Name="Version" Type="numeric" />
         </EntityType>
         <EntityType Name="Online_protections">
           <Key>
@@ -823,9 +817,10 @@
         </Association>
         <EntityType Name="GLDBVersion">
           <Key>
-            <PropertyRef Name="Version" />
+            <PropertyRef Name="ID_V" />
           </Key>
-          <Property Type="Decimal" Name="Version" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="ID_V" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Version" Precision="18" Scale="0" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1001,6 +996,7 @@
             <EntityTypeMapping TypeName="GamesModel.GLDBVersion">
               <MappingFragment StoreEntitySet="GLDBVersion">
                 <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="ID_V" ColumnName="ID_V" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

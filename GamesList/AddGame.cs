@@ -21,6 +21,7 @@ namespace GamesList
         private Platforms[] GamePlatforms;
         private Genres[] GameGenres;
         private Online_protections[] OnlineProtections;
+        private Boolean Compl = false;
 
         public AddGame(Games game)
         {
@@ -48,14 +49,14 @@ namespace GamesList
             Program.context.Disk_types.Load();
             List<Publishers> LP = new List<Publishers>();
             LP.Add(new Publishers { Name = "<отсутствует>", Id_Publisher = 0 });
-            LP.AddRange(Program.context.Publishers.ToArray());
+            LP.AddRange(Program.context.Publishers.OrderBy(p => p.Name).ToArray());
             comboBox2.DataSource = LP;
             //Program.context.Publishers.Load();
             //comboBox1.DataSource = Program.context.Developers.Local.ToBindingList();
             //Program.context.Developers.Load();
             List<Developers> LD = new List<Developers>();
             LD.Add(new Developers { Name = "<отсутствует>", ID_Developer = 0 });
-            LD.AddRange(Program.context.Developers.ToArray());
+            LD.AddRange(Program.context.Developers.OrderBy(d => d.Name).ToArray());
             comboBox1.DataSource = LD;
             //comboBox1.DisplayMember = "Name";
             //comboBox1.ValueMember = "ID_Developer";
@@ -63,13 +64,13 @@ namespace GamesList
 
             List<RF_Distributors> LRF = new List<RF_Distributors>();
             LRF.Add(new RF_Distributors { Name = "<отсутствует>", ID_RF_Distributor = 0 });
-            LRF.AddRange(Program.context.RF_Distributors.ToArray());
+            LRF.AddRange(Program.context.RF_Distributors.OrderBy(r => r.Name).ToArray());
             comboBox3.DataSource = LRF;
             //Program.context.RF_Distributors.Load();
 
             List<Series> LS = new List<Series>();
             LS.Add(new Series { Name = "<отсутствует>", ID_Ser = 0 });
-            LS.AddRange(Program.context.Series.ToArray());
+            LS.AddRange(Program.context.Series.OrderBy(s => s.Name).ToArray());
             comboBox8.DataSource = LS;
 
             comboBox6.DataSource = Program.context.Editions.Local.ToBindingList();
@@ -91,6 +92,7 @@ namespace GamesList
                 comboBox5.SelectedIndex = 0;
                 AddBut.Visible = true;
                 EditButton.Visible = false;
+                this.AcceptButton = AddBut;
             }
             else
             {
@@ -187,6 +189,7 @@ namespace GamesList
                 button8.Enabled = false;
                 button9.Enabled = false;
                 button10.Enabled = false;
+                this.AcceptButton = EditButton;
             }
             gamesBindingSource.DataSource = new[] { AddingGame };
             
@@ -274,7 +277,34 @@ namespace GamesList
 
         private void AddGame_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.context.RejectChanges(AddingGame);
+            if ((nameTextBox.Text != "") && (nameTextBox.Text != null)&& (!Compl))
+            {
+                Form SV = new SaveNotSaveDialog();
+                DialogResult DR = SV.ShowDialog();
+                switch (DR)
+                {
+                    case DialogResult.OK:
+                        if (AddingGame.ID_Game > 0)
+                        {
+                            EditButton.PerformClick();
+                        }
+                        else
+                        {
+                            AddBut.PerformClick();
+                        }
+                        break;
+                    case DialogResult.No:
+                        Program.context.RejectChanges(AddingGame);
+                        break;
+                    case DialogResult.Cancel:
+                        e.Cancel = true;
+                        break;
+                }
+            }
+            else
+            {
+                Program.context.RejectChanges(AddingGame);
+            }
         }
 
         private void AddBut_Click(object sender, EventArgs e)
@@ -395,6 +425,7 @@ namespace GamesList
                     gd = null;
                 }
                 this.Cursor = Cursors.Default;
+                Compl = true;
             DialogResult = DialogResult.OK;
         }
 
@@ -567,6 +598,14 @@ namespace GamesList
             }
             var ID_G = AddingGame.ID_Game;
             var game = Program.context.Games.Find(ID_G);
+            if (game.Games1 != null)
+            {
+                foreach (Games g in game.Games1) {
+                    g.ID_Ser = game.ID_Ser;
+                    g.Series = game.Series;
+                }
+            }
+            Program.context.SaveChanges();
             //Обновление дисков
             Game_disks[] gdd = new Game_disks[GameDiskList.Items.Count];
             GameDiskList.Items.CopyTo(gdd, 0);
@@ -615,6 +654,7 @@ namespace GamesList
                 Program.context.SaveChanges();
             }
             this.Cursor = Cursors.Default;
+            Compl = true;
             DialogResult = DialogResult.OK;
         }
 
@@ -630,8 +670,9 @@ namespace GamesList
             ManageD.ShowDialog();
             List<Developers> LD = new List<Developers>();
             LD.Add(new Developers { Name = "<отсутствует>", ID_Developer = 0 });
-            LD.AddRange(Program.context.Developers.ToArray());
+            LD.AddRange(Program.context.Developers.OrderBy(d => d.Name).ToArray());
             comboBox1.DataSource = LD;
+            if (((ManagePDL)ManageD).publishersBindingSource.Current != null)
             ((Games)gamesBindingSource.Current).ID_Developer = ((Developers)((ManagePDL)ManageD).publishersBindingSource.Current).ID_Developer;
             comboBox1.SelectedValue = ((Games)gamesBindingSource.Current).ID_Developer;
             ManageD.Dispose();
@@ -643,8 +684,9 @@ namespace GamesList
             ManageP.ShowDialog();
             List<Publishers> LP = new List<Publishers>();
             LP.Add(new Publishers { Name = "<отсутствует>", Id_Publisher = 0 });
-            LP.AddRange(Program.context.Publishers.ToArray());
+            LP.AddRange(Program.context.Publishers.OrderBy(p => p.Name).ToArray());
             comboBox2.DataSource = LP;
+            if (((ManagePDL)ManageP).publishersBindingSource.Current != null)
             ((Games)gamesBindingSource.Current).ID_Publisher = ((Publishers)((ManagePDL)ManageP).publishersBindingSource.Current).Id_Publisher;
             comboBox2.SelectedValue = ((Games)gamesBindingSource.Current).ID_Publisher;
             ManageP.Dispose();
@@ -656,8 +698,9 @@ namespace GamesList
             ManageRF.ShowDialog();
             List<RF_Distributors> LRF = new List<RF_Distributors>();
             LRF.Add(new RF_Distributors { Name = "<отсутствует>", ID_RF_Distributor = 0 });
-            LRF.AddRange(Program.context.RF_Distributors.ToArray());
+            LRF.AddRange(Program.context.RF_Distributors.OrderBy(r => r.Name).ToArray());
             comboBox3.DataSource = LRF;
+            if (((ManagePDL)ManageRF).publishersBindingSource.Current !=null)
             ((Games)gamesBindingSource.Current).ID_RF_Distributor = ((RF_Distributors)((ManagePDL)ManageRF).publishersBindingSource.Current).ID_RF_Distributor;
             comboBox3.SelectedValue = ((Games)gamesBindingSource.Current).ID_RF_Distributor;
             ManageRF.Dispose();
@@ -669,8 +712,9 @@ namespace GamesList
             ManageS.ShowDialog();
             List<Series> LS = new List<Series>();
             LS.Add(new Series { Name = "<отсутствует>", ID_Ser = 0 });
-            LS.AddRange(Program.context.Series.ToArray());
+            LS.AddRange(Program.context.Series.OrderBy(s => s.Name).ToArray());
             comboBox8.DataSource = LS;
+            if (((ManageOPOS)ManageS).online_protectionsBindingSource.Current !=null)
             ((Games)gamesBindingSource.Current).ID_Ser = ((Series)((ManageOPOS)ManageS).online_protectionsBindingSource.Current).ID_Ser;
             comboBox8.SelectedValue = ((Games)gamesBindingSource.Current).ID_Ser;
             ManageS.Dispose();
@@ -686,6 +730,7 @@ namespace GamesList
             LE.AddRange(Program.context.Editions.ToArray());
             comboBox6.DataSource = LE;
             //Program.context.Editions.Load();
+            if (((ManageGEB)ManageE).genresBindingSource.Current != null)
             ((Games)gamesBindingSource.Current).ID_Edition = ((Editions)((ManageGEB)ManageE).genresBindingSource.Current).ID_Edition;
             comboBox6.SelectedValue = ((Games)gamesBindingSource.Current).ID_Edition;
             ManageE.Dispose();
@@ -700,6 +745,7 @@ namespace GamesList
             List<Boxes> LB = new List<Boxes>();
             LB.AddRange(Program.context.Boxes.ToArray());
             comboBox7.DataSource = LB;
+            if (((ManageGEB)ManageB).genresBindingSource.Current != null)
             ((Games)gamesBindingSource.Current).ID_Box = ((Boxes)((ManageGEB)ManageB).genresBindingSource.Current).ID_Box;
             comboBox7.SelectedValue = ((Games)gamesBindingSource.Current).ID_Box;
             ManageB.Dispose();
@@ -781,6 +827,46 @@ namespace GamesList
             List<Disk_types> LDT = new List<Disk_types>();
             LDT.AddRange(Program.context.Disk_types.ToArray());
             DiskTypes.DataSource = LDT;
+        }
+
+        private void numericUpDown1_Enter(object sender, EventArgs e)
+        {
+            numericUpDown1.Select(0, 1);
+        }
+
+        private void PersonRate_Enter(object sender, EventArgs e)
+        {
+            PersonRate.Select(0, 3);
+        }
+
+        private void PersonRate_MouseDown(object sender, MouseEventArgs e)
+        {
+            PersonRate.Select(0, 3);
+        }
+
+        private void numericUpDown1_MouseDown(object sender, MouseEventArgs e)
+        {
+            numericUpDown1.Select(0, 1);
+        }
+
+        private void numericUpDown2_MouseDown(object sender, MouseEventArgs e)
+        {
+            numericUpDown2.Select(0, 3);
+        }
+
+        private void numericUpDown2_Enter(object sender, EventArgs e)
+        {
+            numericUpDown2.Select(0, 3);
+        }
+
+        private void ColDisks_MouseDown(object sender, MouseEventArgs e)
+        {
+            ColDisks.Select(0, 5);
+        }
+
+        private void ColDisks_Enter(object sender, EventArgs e)
+        {
+            ColDisks.Select(0, 5);
         }
     }
     

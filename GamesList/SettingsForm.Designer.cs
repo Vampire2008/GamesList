@@ -38,6 +38,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.VisMax = new System.Windows.Forms.CheckBox();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -53,6 +54,9 @@
             this.DistrRegi = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.MakeCurrent = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.CurrentBase = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -63,6 +67,7 @@
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Location = new System.Drawing.Point(363, 295);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -95,6 +100,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.CurrentBase);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.MakeCurrent);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.textBox1);
@@ -133,6 +141,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(282, 20);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -145,6 +154,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.VisMax);
             this.tabPage2.Controls.Add(this.numericUpDown2);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.numericUpDown1);
@@ -159,6 +169,18 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Рецензор";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // VisMax
+            // 
+            this.VisMax.AutoSize = true;
+            this.VisMax.Checked = true;
+            this.VisMax.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.VisMax.Location = new System.Drawing.Point(11, 139);
+            this.VisMax.Name = "VisMax";
+            this.VisMax.Size = new System.Drawing.Size(385, 17);
+            this.VisMax.TabIndex = 7;
+            this.VisMax.Text = "Показывать максимальную оценку рядом с текущей (например 9/10).";
+            this.VisMax.UseVisualStyleBackColor = true;
             // 
             // numericUpDown2
             // 
@@ -306,16 +328,47 @@
             this.openFileDialog1.FileName = "MyGames.gdb";
             this.openFileDialog1.Filter = "База игр (*.gdb)|*.gdb";
             // 
+            // MakeCurrent
+            // 
+            this.MakeCurrent.Enabled = false;
+            this.MakeCurrent.Location = new System.Drawing.Point(11, 136);
+            this.MakeCurrent.Name = "MakeCurrent";
+            this.MakeCurrent.Size = new System.Drawing.Size(243, 23);
+            this.MakeCurrent.TabIndex = 4;
+            this.MakeCurrent.Text = "Сделать текущую базу базой по умолчанию";
+            this.MakeCurrent.UseVisualStyleBackColor = true;
+            this.MakeCurrent.Click += new System.EventHandler(this.MakeCurrent_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 95);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Текущая база:";
+            // 
+            // CurrentBase
+            // 
+            this.CurrentBase.Location = new System.Drawing.Point(96, 95);
+            this.CurrentBase.Name = "CurrentBase";
+            this.CurrentBase.Size = new System.Drawing.Size(335, 38);
+            this.CurrentBase.TabIndex = 6;
+            this.CurrentBase.Text = "label9";
+            // 
             // SettingsForm
             // 
+            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(447, 330);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "SettingsForm";
             this.Text = "Настройки";
             this.tabControl1.ResumeLayout(false);
@@ -357,5 +410,9 @@
         private System.Windows.Forms.RadioButton DistrIn;
         private System.Windows.Forms.RadioButton DistrRegi;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.CheckBox VisMax;
+        private System.Windows.Forms.Label CurrentBase;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button MakeCurrent;
     }
 }

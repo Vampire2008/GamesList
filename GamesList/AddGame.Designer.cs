@@ -216,7 +216,7 @@
             this.date_ReleaseDateTimePicker.Location = new System.Drawing.Point(434, 25);
             this.date_ReleaseDateTimePicker.Name = "date_ReleaseDateTimePicker";
             this.date_ReleaseDateTimePicker.Size = new System.Drawing.Size(160, 20);
-            this.date_ReleaseDateTimePicker.TabIndex = 1;
+            this.date_ReleaseDateTimePicker.TabIndex = 22;
             // 
             // last_versionTextBox
             // 
@@ -224,7 +224,7 @@
             this.last_versionTextBox.Location = new System.Drawing.Point(123, 228);
             this.last_versionTextBox.Name = "last_versionTextBox";
             this.last_versionTextBox.Size = new System.Drawing.Size(188, 20);
-            this.last_versionTextBox.TabIndex = 15;
+            this.last_versionTextBox.TabIndex = 11;
             // 
             // nameTextBox
             // 
@@ -234,7 +234,7 @@
             this.nameTextBox.Location = new System.Drawing.Point(111, 25);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nameTextBox.TabIndex = 19;
+            this.nameTextBox.TabIndex = 1;
             // 
             // original_NameTextBox
             // 
@@ -243,7 +243,7 @@
             this.original_NameTextBox.Location = new System.Drawing.Point(166, 60);
             this.original_NameTextBox.Name = "original_NameTextBox";
             this.original_NameTextBox.Size = new System.Drawing.Size(145, 20);
-            this.original_NameTextBox.TabIndex = 21;
+            this.original_NameTextBox.TabIndex = 3;
             // 
             // label1
             // 
@@ -265,7 +265,7 @@
             this.comboBox1.Location = new System.Drawing.Point(111, 92);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(175, 21);
-            this.comboBox1.TabIndex = 29;
+            this.comboBox1.TabIndex = 4;
             this.comboBox1.ValueMember = "ID_Developer";
             this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
@@ -293,7 +293,7 @@
             this.comboBox2.Location = new System.Drawing.Point(111, 125);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(175, 21);
-            this.comboBox2.TabIndex = 31;
+            this.comboBox2.TabIndex = 6;
             this.comboBox2.ValueMember = "Id_Publisher";
             this.comboBox2.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
@@ -321,7 +321,7 @@
             this.comboBox3.Location = new System.Drawing.Point(126, 155);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(160, 21);
-            this.comboBox3.TabIndex = 33;
+            this.comboBox3.TabIndex = 8;
             this.comboBox3.ValueMember = "ID_RF_Distributor";
             this.comboBox3.Leave += new System.EventHandler(this.comboBox3_Leave);
             // 
@@ -341,7 +341,7 @@
             this.PlatformsList.Location = new System.Drawing.Point(338, 207);
             this.PlatformsList.Name = "PlatformsList";
             this.PlatformsList.Size = new System.Drawing.Size(104, 94);
-            this.PlatformsList.TabIndex = 34;
+            this.PlatformsList.TabIndex = 30;
             this.PlatformsList.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.Platforms_Format);
             // 
             // platformsBindingSource
@@ -359,7 +359,7 @@
             this.comboBox4.Location = new System.Drawing.Point(111, 190);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(200, 21);
-            this.comboBox4.TabIndex = 36;
+            this.comboBox4.TabIndex = 10;
             // 
             // posterPictureBox
             // 
@@ -402,7 +402,7 @@
             this.OriginalNameEn.Location = new System.Drawing.Point(15, 62);
             this.OriginalNameEn.Name = "OriginalNameEn";
             this.OriginalNameEn.Size = new System.Drawing.Size(153, 17);
-            this.OriginalNameEn.TabIndex = 39;
+            this.OriginalNameEn.TabIndex = 2;
             this.OriginalNameEn.Text = "Оригинальное название:";
             this.OriginalNameEn.UseVisualStyleBackColor = true;
             this.OriginalNameEn.CheckedChanged += new System.EventHandler(this.OriginalNameEn_CheckedChanged);
@@ -415,7 +415,7 @@
             this.DiskTypes.Location = new System.Drawing.Point(12, 409);
             this.DiskTypes.Name = "DiskTypes";
             this.DiskTypes.Size = new System.Drawing.Size(120, 121);
-            this.DiskTypes.TabIndex = 40;
+            this.DiskTypes.TabIndex = 16;
             this.DiskTypes.ValueMember = "ID_Disk_Type";
             this.DiskTypes.SelectedIndexChanged += new System.EventHandler(this.DiskTypes_SelectedIndexChanged);
             // 
@@ -434,19 +434,21 @@
             196608});
             this.ColDisks.Name = "ColDisks";
             this.ColDisks.Size = new System.Drawing.Size(48, 20);
-            this.ColDisks.TabIndex = 41;
+            this.ColDisks.TabIndex = 19;
             this.ColDisks.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.ColDisks.Enter += new System.EventHandler(this.ColDisks_Enter);
+            this.ColDisks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ColDisks_MouseDown);
             // 
             // AddDisk
             // 
             this.AddDisk.Location = new System.Drawing.Point(143, 420);
             this.AddDisk.Name = "AddDisk";
             this.AddDisk.Size = new System.Drawing.Size(39, 23);
-            this.AddDisk.TabIndex = 42;
+            this.AddDisk.TabIndex = 17;
             this.AddDisk.Text = "->";
             this.AddDisk.UseVisualStyleBackColor = true;
             this.AddDisk.Click += new System.EventHandler(this.AddDisk_Click);
@@ -456,7 +458,7 @@
             this.RemoveDisk.Location = new System.Drawing.Point(143, 449);
             this.RemoveDisk.Name = "RemoveDisk";
             this.RemoveDisk.Size = new System.Drawing.Size(39, 23);
-            this.RemoveDisk.TabIndex = 43;
+            this.RemoveDisk.TabIndex = 18;
             this.RemoveDisk.Text = "<-";
             this.RemoveDisk.UseVisualStyleBackColor = true;
             this.RemoveDisk.Click += new System.EventHandler(this.RemoveDisk_Click);
@@ -467,7 +469,7 @@
             this.GameDiskList.Location = new System.Drawing.Point(192, 409);
             this.GameDiskList.Name = "GameDiskList";
             this.GameDiskList.Size = new System.Drawing.Size(119, 121);
-            this.GameDiskList.TabIndex = 44;
+            this.GameDiskList.TabIndex = 21;
             this.GameDiskList.SelectedIndexChanged += new System.EventHandler(this.GameDiskList_SelectedIndexChanged);
             this.GameDiskList.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.listBox1_Format);
             // 
@@ -500,7 +502,7 @@
             this.GenresList.Location = new System.Drawing.Point(338, 326);
             this.GenresList.Name = "GenresList";
             this.GenresList.Size = new System.Drawing.Size(208, 49);
-            this.GenresList.TabIndex = 47;
+            this.GenresList.TabIndex = 34;
             this.GenresList.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.GenresList_Format);
             // 
             // label7
@@ -519,7 +521,7 @@
             this.OnlineProtectionsList.Location = new System.Drawing.Point(474, 207);
             this.OnlineProtectionsList.Name = "OnlineProtectionsList";
             this.OnlineProtectionsList.Size = new System.Drawing.Size(107, 94);
-            this.OnlineProtectionsList.TabIndex = 49;
+            this.OnlineProtectionsList.TabIndex = 32;
             this.OnlineProtectionsList.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.OnlineProtectionsList_Format);
             // 
             // label8
@@ -537,7 +539,7 @@
             this.game_TypeCheckBox.Location = new System.Drawing.Point(338, 55);
             this.game_TypeCheckBox.Name = "game_TypeCheckBox";
             this.game_TypeCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.game_TypeCheckBox.TabIndex = 51;
+            this.game_TypeCheckBox.TabIndex = 23;
             this.game_TypeCheckBox.Text = "Лицензия";
             this.game_TypeCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -547,7 +549,9 @@
             this.numericUpDown1.Location = new System.Drawing.Point(150, 261);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 52;
+            this.numericUpDown1.TabIndex = 12;
+            this.numericUpDown1.Enter += new System.EventHandler(this.numericUpDown1_Enter);
+            this.numericUpDown1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.numericUpDown1_MouseDown);
             // 
             // PersonRate
             // 
@@ -566,7 +570,9 @@
             0});
             this.PersonRate.Name = "PersonRate";
             this.PersonRate.Size = new System.Drawing.Size(120, 20);
-            this.PersonRate.TabIndex = 53;
+            this.PersonRate.TabIndex = 13;
+            this.PersonRate.Enter += new System.EventHandler(this.PersonRate_Enter);
+            this.PersonRate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PersonRate_MouseDown);
             // 
             // numericUpDown2
             // 
@@ -585,7 +591,9 @@
             0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 54;
+            this.numericUpDown2.TabIndex = 14;
+            this.numericUpDown2.Enter += new System.EventHandler(this.numericUpDown2_Enter);
+            this.numericUpDown2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.numericUpDown2_MouseDown);
             // 
             // comboBox5
             // 
@@ -595,11 +603,14 @@
             "Не пройдено",
             "Ожидает прохождения",
             "Пройдено (не 100%)",
-            "Пройдено"});
+            "Пройдено",
+            "Сетевая игра",
+            "Бесконечно",
+            "Свистелка"});
             this.comboBox5.Location = new System.Drawing.Point(149, 354);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 55;
+            this.comboBox5.TabIndex = 15;
             // 
             // online_protectionsBindingSource
             // 
@@ -614,7 +625,7 @@
             this.AddBut.Location = new System.Drawing.Point(536, 509);
             this.AddBut.Name = "AddBut";
             this.AddBut.Size = new System.Drawing.Size(75, 23);
-            this.AddBut.TabIndex = 56;
+            this.AddBut.TabIndex = 38;
             this.AddBut.Text = "Добавить";
             this.AddBut.UseVisualStyleBackColor = true;
             this.AddBut.Click += new System.EventHandler(this.AddBut_Click);
@@ -658,7 +669,7 @@
             this.comboBox6.Location = new System.Drawing.Point(405, 125);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(159, 21);
-            this.comboBox6.TabIndex = 59;
+            this.comboBox6.TabIndex = 26;
             this.comboBox6.ValueMember = "ID_Edition";
             // 
             // editionsBindingSource
@@ -684,7 +695,7 @@
             this.comboBox7.Location = new System.Drawing.Point(425, 158);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(139, 21);
-            this.comboBox7.TabIndex = 61;
+            this.comboBox7.TabIndex = 28;
             this.comboBox7.ValueMember = "ID_Box";
             // 
             // boxesBindingSource
@@ -700,7 +711,7 @@
             this.EditButton.Location = new System.Drawing.Point(455, 509);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 23);
-            this.EditButton.TabIndex = 62;
+            this.EditButton.TabIndex = 37;
             this.EditButton.Text = "Изменить";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
@@ -725,7 +736,7 @@
             this.comboBox8.Location = new System.Drawing.Point(405, 92);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(159, 21);
-            this.comboBox8.TabIndex = 65;
+            this.comboBox8.TabIndex = 24;
             this.comboBox8.ValueMember = "ID_Ser";
             this.comboBox8.Leave += new System.EventHandler(this.comboBox8_Leave);
             // 
@@ -739,8 +750,9 @@
             this.textBox1.Location = new System.Drawing.Point(338, 409);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(256, 94);
-            this.textBox1.TabIndex = 66;
+            this.textBox1.TabIndex = 36;
             // 
             // label12
             // 
@@ -766,7 +778,7 @@
             this.button1.Location = new System.Drawing.Point(287, 92);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(24, 21);
-            this.button1.TabIndex = 69;
+            this.button1.TabIndex = 5;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -776,7 +788,7 @@
             this.button2.Location = new System.Drawing.Point(287, 125);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(24, 21);
-            this.button2.TabIndex = 70;
+            this.button2.TabIndex = 7;
             this.button2.Text = "...";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -786,7 +798,7 @@
             this.button3.Location = new System.Drawing.Point(287, 155);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(24, 21);
-            this.button3.TabIndex = 71;
+            this.button3.TabIndex = 9;
             this.button3.Text = "...";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -796,7 +808,7 @@
             this.button4.Location = new System.Drawing.Point(570, 92);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(24, 21);
-            this.button4.TabIndex = 72;
+            this.button4.TabIndex = 25;
             this.button4.Text = "...";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -806,7 +818,7 @@
             this.button5.Location = new System.Drawing.Point(570, 125);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(24, 21);
-            this.button5.TabIndex = 73;
+            this.button5.TabIndex = 27;
             this.button5.Text = "...";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -816,7 +828,7 @@
             this.button6.Location = new System.Drawing.Point(570, 158);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(24, 21);
-            this.button6.TabIndex = 74;
+            this.button6.TabIndex = 29;
             this.button6.Text = "...";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -826,7 +838,7 @@
             this.button7.Location = new System.Drawing.Point(444, 280);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(24, 21);
-            this.button7.TabIndex = 75;
+            this.button7.TabIndex = 31;
             this.button7.Text = "...";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -836,7 +848,7 @@
             this.button8.Location = new System.Drawing.Point(587, 280);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(24, 21);
-            this.button8.TabIndex = 76;
+            this.button8.TabIndex = 33;
             this.button8.Text = "...";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -846,7 +858,7 @@
             this.button9.Location = new System.Drawing.Point(552, 354);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(24, 21);
-            this.button9.TabIndex = 77;
+            this.button9.TabIndex = 35;
             this.button9.Text = "...";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
@@ -856,7 +868,7 @@
             this.button10.Location = new System.Drawing.Point(136, 509);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(24, 21);
-            this.button10.TabIndex = 78;
+            this.button10.TabIndex = 20;
             this.button10.Text = "...";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
@@ -927,7 +939,9 @@
             this.Controls.Add(rate_personLabel);
             this.Controls.Add(status_compliteLabel);
             this.Controls.Add(this.shapeContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AddGame";
             this.Text = "Добавление игры";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddGame_FormClosing);

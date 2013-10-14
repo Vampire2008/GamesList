@@ -30,7 +30,7 @@ namespace GamesList
             g.Games2 = gg;
             g.ID_Content = gg.ID_Game;
             g.TypeContent = true;
-            Form AddCon = new AddContent(g);
+            Form AddCon = new AddContent(g,0);
             DialogResult =  AddCon.ShowDialog();
         }
 

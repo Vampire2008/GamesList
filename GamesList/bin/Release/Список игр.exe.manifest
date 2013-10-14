@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Список игр.exe" version="1.0.3.16" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Список игр.exe" version="1.0.3.24" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Resources\ProgIcon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -127,14 +127,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Список игр.exe" size="1511936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Список игр.exe" size="1530880">
       <assemblyIdentity name="Список игр" version="1.0.3.16" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fhe9y0jPU54mpWWuf8t17M8ECbvttOL9HeUaqg2L5pc=</dsig:DigestValue>
+        <dsig:DigestValue>SVE1RXRo8jHHM6jxCH968bNlLC2jauBB++UbFi21ycY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -228,13 +228,13 @@
       <dsig:DigestValue>9VV8lrUvjA8dN0wSu2KYG9g0LyJOVq6GiKQZcxw3QXM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Список игр.exe.config" size="4124">
+  <file name="Список игр.exe.config" size="4223">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>SXuRWJ15cBOl3rDgbvSnYnn1yOxnn3QeF+qNixO9x6o=</dsig:DigestValue>
+      <dsig:DigestValue>bc0J8P0miWv+6rlW65ixlS8n0Q7SJSpqqqpg4RHuxKQ=</dsig:DigestValue>
     </hash>
   </file>
   <fileAssociation extension=".gdb" description="Файл со списком игр" progid="9d069dd5-3a39-402d-82ae-7afb58bfd1a0" defaultIcon="FileIcon.ico" xmlns="urn:schemas-microsoft-com:clickonce.v1" />

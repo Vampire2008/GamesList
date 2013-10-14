@@ -95,6 +95,7 @@ namespace GamesList
             {
                 Properties.Settings.Default.DistrReg = DistrCustText.Text;
             }
+            Properties.Settings.Default.VisMax = VisMax.Checked;
             Properties.Settings.Default.Save();
             DialogResult = DialogResult.OK;
         }

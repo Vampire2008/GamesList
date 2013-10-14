@@ -45,11 +45,11 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.online_protectionsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.online_protectionsDataGridView = new System.Windows.Forms.DataGridView();
+            this.iconPictureBox = new System.Windows.Forms.PictureBox();
+            this.ChooseImage = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.iconPictureBox = new System.Windows.Forms.PictureBox();
-            this.ChooseImage = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.online_protectionsBindingNavigator)).BeginInit();
             this.online_protectionsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.online_protectionsBindingSource)).BeginInit();
@@ -205,26 +205,6 @@
             this.online_protectionsDataGridView.TabIndex = 1;
             this.online_protectionsDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.online_protectionsDataGridView_CellEndEdit);
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Описание";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 200;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "Icon";
-            this.dataGridViewImageColumn1.HeaderText = "Icon";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Visible = false;
-            // 
             // iconPictureBox
             // 
             this.iconPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -240,6 +220,26 @@
             // ChooseImage
             // 
             this.ChooseImage.Filter = "Файлы изображений (*.BMP;*.JPG;*.GIF,*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Описание";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 400;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "Icon";
+            this.dataGridViewImageColumn1.HeaderText = "Icon";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Visible = false;
             // 
             // ManageOPOS
             // 
@@ -283,10 +283,10 @@
         private System.Windows.Forms.ToolStripButton online_protectionsBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView online_protectionsDataGridView;
         private System.Windows.Forms.PictureBox iconPictureBox;
+        private System.Windows.Forms.OpenFileDialog ChooseImage;
+        public System.Windows.Forms.BindingSource online_protectionsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.OpenFileDialog ChooseImage;
-        public System.Windows.Forms.BindingSource online_protectionsBindingSource;
     }
 }

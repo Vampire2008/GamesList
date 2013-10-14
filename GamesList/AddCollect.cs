@@ -21,12 +21,14 @@ namespace GamesList
         private Platforms[] GamePlatforms;
         private Online_protections[] OnlineProtections;
         private Games[] CollectedGames;
+        private Boolean Compl = false;
 
         public AddCollect(Games game)
         {
             InitializeComponent();
             var Query = from Games in Program.context.Games
                         where Games.Localisation_Type != -1
+                        orderby Games.ID_Content == null ? Games.Name : (Games.Games2.Name + (Games.Games2.Name.IndexOf(":") > -1 ? " - " : ": ") + Games.Name)
                         select Games;
             gamesBindingSource1.DataSource = Query.ToList();
             //gamesBindingSource1.DataSource = Program.context.Games.Local.ToBindingList();
@@ -46,12 +48,12 @@ namespace GamesList
             Program.context.Disk_types.Load();
             List<Publishers> LP = new List<Publishers>();
             LP.Add(new Publishers { Name = "<отсутствует>", Id_Publisher = 0 });
-            LP.AddRange(Program.context.Publishers.ToArray());
+            LP.AddRange(Program.context.Publishers.OrderBy(p => p.Name).ToArray());
             comboBox2.DataSource = LP;
 
             List<RF_Distributors> LRF = new List<RF_Distributors>();
             LRF.Add(new RF_Distributors { Name = "<отсутствует>", ID_RF_Distributor = 0 });
-            LRF.AddRange(Program.context.RF_Distributors.ToArray());
+            LRF.AddRange(Program.context.RF_Distributors.OrderBy(r=> r.Name).ToArray());
             comboBox3.DataSource = LRF;
 
             comboBox6.DataSource = Program.context.Editions.Local.ToBindingList();
@@ -69,6 +71,7 @@ namespace GamesList
                 AddingGame.ID_Edition = 1;
                 AddBut.Visible = true;
                 EditButton.Visible = false;
+                this.AcceptButton = AddBut;
             }
             else
             {
@@ -145,6 +148,7 @@ namespace GamesList
                 button5.Enabled = false;
                 button6.Enabled = false;
                 button7.Enabled = false;
+                this.AcceptButton = EditButton;
             }
             gamesBindingSource.DataSource = new[] { AddingGame };
         }
@@ -222,7 +226,34 @@ namespace GamesList
 
         private void AddGame_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.context.RejectChanges(AddingGame);
+            if ((nameTextBox.Text != "") && (nameTextBox.Text != null) && (!Compl))
+            {
+                Form SV = new SaveNotSaveDialog();
+                DialogResult DR = SV.ShowDialog();
+                switch (DR)
+                {
+                    case DialogResult.OK:
+                        if (AddingGame.ID_Game > 0)
+                        {
+                            EditButton.PerformClick();
+                        }
+                        else
+                        {
+                            AddBut.PerformClick();
+                        }
+                        break;
+                    case DialogResult.No:
+                        Program.context.RejectChanges(AddingGame);
+                        break;
+                    case DialogResult.Cancel:
+                        e.Cancel = true;
+                        break;
+                }
+            }
+            else
+            {
+                Program.context.RejectChanges(AddingGame);
+            }
         }
 
         private void AddBut_Click(object sender, EventArgs e)
@@ -297,6 +328,7 @@ namespace GamesList
                 gd = null;
             }
             this.Cursor = Cursors.Default;
+            Compl = true;
             DialogResult = DialogResult.OK;
         }
 
@@ -473,6 +505,7 @@ namespace GamesList
                 Program.context.SaveChanges();
             }
             this.Cursor = Cursors.Default;
+            Compl = true;
             DialogResult = DialogResult.OK;
         }
 
@@ -506,6 +539,7 @@ namespace GamesList
                 Games g = Program.context.Games.Find(comboBox1.SelectedValue);
                 if ((g != null) && (!listBox1.Items.Contains(g)))
                     listBox1.Items.Add(g);
+                comboBox1.Focus();
             }
             else
             {
@@ -540,8 +574,9 @@ namespace GamesList
             ManageP.ShowDialog();
             List<Publishers> LP = new List<Publishers>();
             LP.Add(new Publishers { Name = "<отсутствует>", Id_Publisher = 0 });
-            LP.AddRange(Program.context.Publishers.ToArray());
+            LP.AddRange(Program.context.Publishers.OrderBy(p => p.Name).ToArray());
             comboBox2.DataSource = LP;
+            if (((ManagePDL)ManageP).publishersBindingSource.Current != null)
             ((Games)gamesBindingSource.Current).ID_Publisher = ((Publishers)((ManagePDL)ManageP).publishersBindingSource.Current).Id_Publisher;
             comboBox2.SelectedValue = ((Games)gamesBindingSource.Current).ID_Publisher;
             ManageP.Dispose();
@@ -553,8 +588,9 @@ namespace GamesList
             ManageRF.ShowDialog();
             List<RF_Distributors> LRF = new List<RF_Distributors>();
             LRF.Add(new RF_Distributors { Name = "<отсутствует>", ID_RF_Distributor = 0 });
-            LRF.AddRange(Program.context.RF_Distributors.ToArray());
+            LRF.AddRange(Program.context.RF_Distributors.OrderBy(r => r.Name).ToArray());
             comboBox3.DataSource = LRF;
+            if (((ManagePDL)ManageRF).publishersBindingSource.Current != null)
             ((Games)gamesBindingSource.Current).ID_RF_Distributor = ((RF_Distributors)((ManagePDL)ManageRF).publishersBindingSource.Current).ID_RF_Distributor;
             comboBox3.SelectedValue = ((Games)gamesBindingSource.Current).ID_RF_Distributor;
             ManageRF.Dispose();
@@ -570,6 +606,7 @@ namespace GamesList
             LE.AddRange(Program.context.Editions.ToArray());
             comboBox6.DataSource = LE;
             //Program.context.Editions.Load();
+            if (((ManageGEB)ManageE).genresBindingSource.Current != null)
             ((Games)gamesBindingSource.Current).ID_Edition = ((Editions)((ManageGEB)ManageE).genresBindingSource.Current).ID_Edition;
             comboBox6.SelectedValue = ((Games)gamesBindingSource.Current).ID_Edition;
             ManageE.Dispose();
@@ -584,6 +621,7 @@ namespace GamesList
             List<Boxes> LB = new List<Boxes>();
             LB.AddRange(Program.context.Boxes.ToArray());
             comboBox7.DataSource = LB;
+            if (((ManageGEB)ManageB).genresBindingSource.Current != null)
             ((Games)gamesBindingSource.Current).ID_Box = ((Boxes)((ManageGEB)ManageB).genresBindingSource.Current).ID_Box;
             comboBox7.SelectedValue = ((Games)gamesBindingSource.Current).ID_Box;
             ManageB.Dispose();
@@ -636,6 +674,16 @@ namespace GamesList
             List<Disk_types> LDT = new List<Disk_types>();
             LDT.AddRange(Program.context.Disk_types.ToArray());
             DiskTypes.DataSource = LDT;
+        }
+
+        private void ColDisks_MouseDown(object sender, MouseEventArgs e)
+        {
+            ColDisks.Select(0, 5);
+        }
+
+        private void ColDisks_Enter(object sender, EventArgs e)
+        {
+            ColDisks.Select(0, 5);
         }
     }
 

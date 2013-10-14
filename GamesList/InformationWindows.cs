@@ -24,7 +24,7 @@ namespace GamesList
                     NameI.Text = ((Developers)obj).Name + ((bool)((Developers)obj).Is_open ? "" : " (закрыты)");
                     label1.Visible = true;
                     DateOpen.Visible = true;
-                    DateOpen.Text = ((DateTime)((Developers)obj).Date_open).ToString("dd.MM.yyyy");
+                    DateOpen.Text = ((Developers)obj).Date_open != null ? ((DateTime)((Developers)obj).Date_open).ToString("dd.MM.yyyy") : "<отсутствует>";
                     if ((bool)((Developers)obj).Is_open)
                     {
                         DateClose.Visible = false;
@@ -34,7 +34,7 @@ namespace GamesList
                     {
                         DateClose.Visible = true;
                         label2.Visible = true;
-                        DateClose.Text = ((DateTime)((Developers)obj).Date_close).ToString("dd.MM.yyyy");
+                        DateClose.Text = ((Developers)obj).Date_close!= null ? ((DateTime)((Developers)obj).Date_close).ToString("dd.MM.yyyy") : "<отсутствует>";
                     }
                     label3.Visible = false;
                     Description.Visible = false;
@@ -53,7 +53,7 @@ namespace GamesList
                     NameI.Text = ((Publishers)obj).Name + ((bool)((Publishers)obj).Is_open ? "" : " (закрыты)");
                     label1.Visible = true;
                     DateOpen.Visible = true;
-                    DateOpen.Text = ((DateTime)((Publishers)obj).Date_open).ToString("dd.MM.yyyy");
+                    DateOpen.Text = ((Publishers)obj).Date_open != null ? ((DateTime)((Publishers)obj).Date_open).ToString("dd.MM.yyyy") : "<отсутствует>";
                     if ((bool)((Publishers)obj).Is_open)
                     {
                         DateClose.Visible = false;
@@ -63,7 +63,7 @@ namespace GamesList
                     {
                         DateClose.Visible = true;
                         label2.Visible = true;
-                        DateClose.Text = ((DateTime)((Publishers)obj).Date_close).ToString("dd.MM.yyyy");
+                        DateClose.Text = ((Publishers)obj).Date_close != null ? ((DateTime)((Publishers)obj).Date_close).ToString("dd.MM.yyyy") : "<отсутствует>";
                     }
                     label3.Visible = false;
                     Description.Visible = false;
@@ -99,7 +99,7 @@ namespace GamesList
                     {
                         DateClose.Visible = true;
                         label2.Visible = true;
-                        DateClose.Text = ((DateTime)((RF_Distributors)obj).Date_close).ToString("dd.MM.yyyy");
+                        DateClose.Text = ((RF_Distributors)obj).Date_close != null ? ((DateTime)((RF_Distributors)obj).Date_close).ToString("dd.MM.yyyy") : "<отсутствует>";
                     }
                     label3.Visible = false;
                     Description.Visible = false;

@@ -126,6 +126,7 @@
             this.Controls.Add(this.icon);
             this.Controls.Add(this.NameI);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "InformationWindows";
             this.Text = "InformationWindows";
             ((System.ComponentModel.ISupportInitialize)(this.icon)).EndInit();

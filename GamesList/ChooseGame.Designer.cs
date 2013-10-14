@@ -76,6 +76,7 @@
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(216, 72);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -86,14 +87,17 @@
             // 
             // ChooseGame
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(321, 109);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(nameLabel);
             this.Controls.Add(this.nameComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "ChooseGame";
             this.Text = "Выбрать игру";
             ((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).EndInit();

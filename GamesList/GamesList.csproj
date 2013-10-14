@@ -23,7 +23,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>1.0.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -118,6 +118,9 @@
     </Compile>
     <Compile Include="ChooseGame.Designer.cs">
       <DependentUpon>ChooseGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CalendarCollum.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Config.cs" />
     <Compile Include="DBUpdater.cs" />
@@ -219,6 +222,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveNotSaveDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveNotSaveDialog.Designer.cs">
+      <DependentUpon>SaveNotSaveDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="SeriesInf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +305,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SaveNotSaveDialog.resx">
+      <DependentUpon>SaveNotSaveDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SeriesInf.resx">
       <DependentUpon>SeriesInf.cs</DependentUpon>
     </EmbeddedResource>

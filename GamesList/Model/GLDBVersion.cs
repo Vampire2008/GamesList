@@ -14,6 +14,7 @@ namespace GamesList.Model
     
     public partial class GLDBVersion
     {
-        public decimal Version { get; set; }
+        public decimal ID_V { get; set; }
+        public Nullable<decimal> Version { get; set; }
     }
 }

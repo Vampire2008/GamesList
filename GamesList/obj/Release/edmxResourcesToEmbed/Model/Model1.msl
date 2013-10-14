@@ -169,6 +169,7 @@
       <EntityTypeMapping TypeName="GamesModel.GLDBVersion">
         <MappingFragment StoreEntitySet="GLDBVersion">
           <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="ID_V" ColumnName="ID_V" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
