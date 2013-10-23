@@ -46,7 +46,6 @@ C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\AeroWizar
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\EntityFramework.dll
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\System.Data.SqlServerCe.dll
-C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\System.Data.SqlServerCe.Entity.dll
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\AeroWizard.xml
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\EntityFramework.xml
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\ru\EntityFramework.resources.dll
@@ -92,3 +91,8 @@ C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\obj\Release\Спис�
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\obj\Release\Список игр.application
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\obj\Release\GamesList.SaveNotSaveDialog.resources
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\obj\Release\GamesList.csprojResolveAssemblyReference.cache
+C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\EntityFramework.SqlServerCompact.dll
+C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\EntityFramework.SqlServerCompact.xml
+C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\ru\EntityFramework.SqlServer.resources.dll

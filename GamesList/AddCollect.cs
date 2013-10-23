@@ -454,6 +454,7 @@ namespace GamesList
             catch (Exception ex)
             {
                 MessageBox.Show("Произошла ошибка:\n" + ex, "Ошибка", MessageBoxButtons.OK);
+				this.Cursor = Cursors.Default;
             }
             var ID_G = AddingGame.ID_Game;
             var game = Program.context.Games.Find(ID_G);
@@ -649,23 +650,27 @@ namespace GamesList
             Program.context.Platforms.Load();
         }
 
-        private void comboBox2_Leave(object sender, EventArgs e)
-        {
-            if (comboBox2.SelectedValue == null)
-            {
-                MessageBox.Show("Недопустимый издатель!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                comboBox2.Focus();
-            }
-        }
+		private void comboBox2_Leave(object sender, EventArgs e)
+		{
+			if (comboBox2.SelectedValue == null)
+			{
+				/*MessageBox.Show("Недопустимый издатель!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				comboBox2.Focus();*/
+				comboBox2.SelectedIndex = 0;
+				((Games)gamesBindingSource.Current).ID_Publisher = 0;
+			}
+		}
 
-        private void comboBox3_Leave(object sender, EventArgs e)
-        {
-            if (comboBox3.SelectedValue == null)
-            {
-                MessageBox.Show("Недопустимый региональный издатель!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                comboBox3.Focus();
-            }
-        }
+		private void comboBox3_Leave(object sender, EventArgs e)
+		{
+			if (comboBox3.SelectedValue == null)
+			{
+				/*MessageBox.Show("Недопустимый региональный издатель!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				comboBox3.Focus();*/
+				comboBox3.SelectedIndex = 0;
+				((Games)gamesBindingSource.Current).ID_RF_Distributor = 0;
+			}
+		}
 
         private void button7_Click(object sender, EventArgs e)
         {

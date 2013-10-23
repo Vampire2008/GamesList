@@ -473,12 +473,8 @@ namespace GamesList
                 g.Games2 = null;
                 g.ID_Content = null;
                 Program.context.SaveChanges();
-                Init();
-                var Query = from Games in Program.context.Games
-                        where Games.ID_Content == null
-                        orderby Games.Name
-                        select Games;
-                ((GamesForm)this.Owner).gamesBindingSource.DataSource = Query.ToList();
+				changefilter();
+				((GamesForm)this.Owner).ChangeFilter();
             }
         }
 
@@ -490,7 +486,7 @@ namespace GamesList
 
         private void AddContent_Click(object sender, EventArgs e)
         {
-            Form AddC = new AddContent(((Games)gamesBindingSource.Current),1);
+			Form AddC = new AddContent(((Games)gamesBindingSource.Current), 1);
             if (AddC.ShowDialog() == DialogResult.OK)
             {
                 changefilter();

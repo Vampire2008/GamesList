@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
-using System.Data.Objects;
 using GamesList.Model;
 using System.Globalization;
 

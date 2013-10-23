@@ -1,7 +1,6 @@
 ﻿using GamesList.Model;
 using System;
 using System.Collections.Generic;
-using System.Data.EntityClient;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,6 +9,7 @@ using System.Configuration;
 using System.IO;
 using System.Windows;
 using System.Data.Entity;
+using System.Data.Entity.Core.EntityClient;
 //using GamesList.Migrations;
 
 namespace GamesList

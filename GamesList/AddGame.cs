@@ -382,7 +382,7 @@ namespace GamesList
                     gop = null;*/
                     AddingGame.Online_protections.Add(Program.context.Online_protections.Find(p.ID_Protect));
                 }
-                Program.context.Games.Add(AddingGame);
+                
                 if (AddingGame.ID_Developer == 0)
                 {
                     AddingGame.ID_Developer = null;
@@ -399,6 +399,7 @@ namespace GamesList
                 {
                     AddingGame.ID_Ser = null;
                 }
+				Program.context.Games.Add(AddingGame);
                 try
                 {
                     Program.context.SaveChanges();
@@ -406,6 +407,8 @@ namespace GamesList
                 catch (Exception ex1)
                 {
                     MessageBox.Show(ex1.ToString());
+					this.Cursor = Cursors.Default;
+					Program.context.Games.Remove(AddingGame);
                     return;
                 }
                 var ID_G = Program.context.Games.Max(p => p.ID_Game);
@@ -482,24 +485,12 @@ namespace GamesList
                     glp.Remove(u);
                 }
             }
-            //Game_platforms gp;
             foreach (Platforms p in PlfLst)
             {
-               /* gp = Program.context.Game_platforms.Create();
-                gp.Games = game;
-                gp.ID_Game = (decimal)game.ID_Game;
-                gp.Platforms = Program.context.Platforms.Find(p.ID_Platform);
-                gp.ID_Platform = p.ID_Platform;
-                gp.ID_Game_Platform = (Program.context.Game_platforms.Count() > 0 ? Program.context.Game_platforms.Max(pp => pp.ID_Game_Platform) : 0) + 1;
-                Program.context.Game_platforms.Add(gp);
-                Program.context.SaveChanges();
-                gp = null;*/
                 AddingGame.Platforms.Add(Program.context.Platforms.Find(p.ID_Platform));
             }
             foreach (Platforms p in glp)
             {
-                /*Program.context.Platforms.Remove(Program.context.Platforms.Find(p.ID_Platform));
-                Program.context.SaveChanges();*/
                 AddingGame.Platforms.Remove(Program.context.Platforms.Find(p.ID_Platform));
             }
             //Обновление жанров
@@ -552,24 +543,12 @@ namespace GamesList
                     glop.Remove(u);
                 }
             }
-            //Game_protections gop;
             foreach (Online_protections p in OprLst)
             {
-                /*gop = Program.context.Game_protections.Create();
-                gop.Games = game;
-                gop.ID_Game = (decimal)game.ID_Game;
-                gop.Online_protections = Program.context.Online_protections.Find(p.ID_Protect);
-                gop.ID_Protect = p.ID_Protect;
-                gop.ID_Game_protect = (Program.context.Game_protections.Count() > 0 ? Program.context.Game_protections.Max(pp => pp.ID_Game_protect) : 0) + 1;
-                Program.context.Game_protections.Add(gop);
-                Program.context.SaveChanges();
-                gop = null;*/
                 AddingGame.Online_protections.Add(Program.context.Online_protections.Find(p.ID_Protect));
             }
             foreach (Online_protections p in glop)
             {
-               /* Program.context.Online_protections.Remove(Program.context.Online_protections.Find(p.ID_Protect));
-                Program.context.SaveChanges();*/
                 AddingGame.Online_protections.Remove(Program.context.Online_protections.Find(p.ID_Protect));
             }
             if (AddingGame.ID_Developer == 0)
@@ -603,9 +582,60 @@ namespace GamesList
                 foreach (Games g in game.Games1) {
                     g.ID_Ser = game.ID_Ser;
                     g.Series = game.Series;
+					if (!(bool)g.TypeContent)
+					{
+						g.Kol_updates = game.Kol_updates;
+						g.Last_version = game.Last_version;
+
+						gopp = new Online_protections[OnlineProtectionsList.CheckedItems.Count];
+						OnlineProtectionsList.CheckedItems.CopyTo(gopp, 0);
+						glop = g.Online_protections.ToList();
+						OprArr = new Online_protections[OnlineProtectionsList.CheckedItems.Count];
+						OnlineProtectionsList.CheckedItems.CopyTo(OprArr, 0);
+						OprLst = OprArr.ToList();
+						foreach (Online_protections u in gopp)
+						{
+							if (OprLst.Contains(u) && glop.Contains(u))
+							{
+								OprLst.Remove(u);
+								glop.Remove(u);
+							}
+						}
+						foreach (Online_protections p in OprLst)
+						{
+							g.Online_protections.Add(Program.context.Online_protections.Find(p.ID_Protect));
+						}
+						foreach (Online_protections p in glop)
+						{
+							g.Online_protections.Remove(Program.context.Online_protections.Find(p.ID_Protect));
+						}
+
+						gpp = new Platforms[PlatformsList.CheckedItems.Count];
+						PlatformsList.CheckedItems.CopyTo(gpp, 0);
+						glp = g.Platforms.ToList();
+						PlfArr = new Platforms[PlatformsList.CheckedItems.Count];
+						PlatformsList.CheckedItems.CopyTo(PlfArr, 0);
+						PlfLst = PlfArr.ToList();
+						foreach (Platforms u in gpp)
+						{
+							if (PlfLst.Contains(u) && glp.Contains(u))
+							{
+								PlfLst.Remove(u);
+								glp.Remove(u);
+							}
+						}
+						foreach (Platforms p in PlfLst)
+						{
+							g.Platforms.Add(Program.context.Platforms.Find(p.ID_Platform));
+						}
+						foreach (Platforms p in glp)
+						{
+							g.Platforms.Remove(Program.context.Platforms.Find(p.ID_Platform));
+						}
+						Program.context.SaveChanges();
+					}
                 }
             }
-            Program.context.SaveChanges();
             //Обновление дисков
             Game_disks[] gdd = new Game_disks[GameDiskList.Items.Count];
             GameDiskList.Items.CopyTo(gdd, 0);
@@ -788,8 +818,10 @@ namespace GamesList
         {
             if (comboBox1.SelectedValue == null)
             {
-                MessageBox.Show("Недопустимый разработчик!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                comboBox1.Focus();
+                /*MessageBox.Show("Недопустимый разработчик!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBox1.Focus();*/
+				comboBox1.SelectedIndex = 0;
+				((Games)gamesBindingSource.Current).ID_Developer = 0;
             }
         }
 
@@ -797,8 +829,10 @@ namespace GamesList
         {
             if (comboBox2.SelectedValue == null)
             {
-                MessageBox.Show("Недопустимый издатель!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                comboBox2.Focus();
+                /*MessageBox.Show("Недопустимый издатель!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBox2.Focus();*/
+				comboBox2.SelectedIndex = 0;
+				((Games)gamesBindingSource.Current).ID_Publisher = 0;
             }
         }
 
@@ -806,8 +840,10 @@ namespace GamesList
         {
             if (comboBox3.SelectedValue == null)
             {
-                MessageBox.Show("Недопустимый региональный издатель!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                comboBox3.Focus();
+                /*MessageBox.Show("Недопустимый региональный издатель!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBox3.Focus();*/
+				comboBox3.SelectedIndex = 0;
+				((Games)gamesBindingSource.Current).ID_RF_Distributor = 0;
             }
         }
 
@@ -815,8 +851,10 @@ namespace GamesList
         {
             if (comboBox8.SelectedValue == null)
             {
-                MessageBox.Show("Недопустимая серия!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                comboBox8.Focus();
+                /*MessageBox.Show("Недопустимая серия!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBox8.Focus();*/
+				comboBox8.SelectedIndex = 0;
+				((Games)gamesBindingSource.Current).ID_Ser = 0;
             }
         }
 
@@ -867,7 +905,7 @@ namespace GamesList
         private void ColDisks_Enter(object sender, EventArgs e)
         {
             ColDisks.Select(0, 5);
-        }
+		}
     }
     
 }
