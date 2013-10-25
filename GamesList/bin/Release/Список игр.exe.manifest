@@ -151,14 +151,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Список игр.exe" size="1535488">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Список игр.exe" size="1547776">
       <assemblyIdentity name="Список игр" version="1.0.3.16" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ldtbxf6jK8aetr3jOPb0KwIg9ilIbO1u1ifgCOcW5mQ=</dsig:DigestValue>
+        <dsig:DigestValue>gvTzxPtRKt5b0BpgjqTxgrZYO0+MzmDsNEb/9cYTk50=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -252,13 +252,13 @@
       <dsig:DigestValue>9VV8lrUvjA8dN0wSu2KYG9g0LyJOVq6GiKQZcxw3QXM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Список игр.exe.config" size="4806">
+  <file name="Список игр.exe.config" size="4808">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>rGww0VqXP+kKnncvck9wP/X08JgAD7tHYmRQ2kW6QCk=</dsig:DigestValue>
+      <dsig:DigestValue>mH5eK8MxoRfZZbVgZ6VLcgs6LN1/5rvNLBGVlGA/avY=</dsig:DigestValue>
     </hash>
   </file>
   <fileAssociation extension=".gdb" description="Файл со списком игр" progid="9d069dd5-3a39-402d-82ae-7afb58bfd1a0" defaultIcon="FileIcon.ico" xmlns="urn:schemas-microsoft-com:clickonce.v1" />

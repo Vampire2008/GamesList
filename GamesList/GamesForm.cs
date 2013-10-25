@@ -512,6 +512,14 @@ namespace GamesList
 				Pirat.Visible = true;
 				Pirat.Left = GameName.Right + 10;
 			}
+			if (((Games)gamesBindingSource.Current).WhereStatus != null && ((Games)gamesBindingSource.Current).WhereStatus != "")
+			{
+				Where.Visible = true;
+			}
+			else
+			{
+				Where.Visible = false;
+			}
         }
 
         public void ChangeFilter()
@@ -766,7 +774,7 @@ namespace GamesList
                 Program.context.Dispose();
                 Program.context = new GamesEntities(Program.buidConStr(saveFileDialog1.FileName));
                 Program.context.Database.Create();
-                Program.context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (ID_V, Version) VALUES (1,4);");
+                Program.context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (ID_V, Version) VALUES (1,5);");
                 Init();
                 Program.CurrentBase = saveFileDialog1.FileName;
                 this.Text = "Список игр - " + Path.GetFileName(saveFileDialog1.FileName);
@@ -815,7 +823,7 @@ namespace GamesList
                 {
                     Program.context.Database.Delete();
                     Program.context.Database.Create();
-                    Program.context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (ID_V, Version) VALUES (1,4);");
+                    Program.context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (ID_V, Version) VALUES (1,5);");
                     Init();
                 }
             }
@@ -1316,6 +1324,21 @@ namespace GamesList
 				ef = false;
 			}
 			ChangeFilter();
+		}
+
+		private void giveGameStripButton_Click(object sender, EventArgs e)
+		{
+			Form Where = new Forms.Additional_Forms.WhereGame(((Games)gamesBindingSource.Current));
+			Where.ShowDialog();
+			UpdateView();
+		}
+
+		private void Where_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Form Where = new Forms.Additional_Forms.WhereGame(((Games)gamesBindingSource.Current));
+			Where.ShowDialog();
+			UpdateView();
+			this.Where.LinkVisited = false;
 		}
     }
 }

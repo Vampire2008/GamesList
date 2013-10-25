@@ -43,7 +43,7 @@ namespace GamesList.Model
         public decimal ID_Box { get; set; }
         public Nullable<decimal> ID_Ser { get; set; }
         public string WhereStatus { get; set; }
-        public string WherePhoto { get; set; }
+        public byte[] WherePhoto { get; set; }
         public Nullable<decimal> ID_Content { get; set; }
         public Nullable<bool> TypeContent { get; set; }
         public string Description { get; set; }

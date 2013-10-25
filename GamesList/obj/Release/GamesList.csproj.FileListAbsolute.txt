@@ -96,3 +96,4 @@ C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\EntityFra
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\EntityFramework.SqlServer.xml
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\EntityFramework.SqlServerCompact.xml
 C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\bin\Release\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Kain_Stropov\Documents\GitHub\GamesList\GamesList\obj\Release\GamesList.Forms.Additional_Forms.WhereGame.resources

@@ -93,7 +93,7 @@ namespace GamesList
                         }
                     }
                     context.Database.Create();//Создаём базу данных. Данный метод создаст файл базы данных в указанном месте.
-                    context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (ID_V, Version) VALUES (1,4);");
+                    context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (ID_V, Version) VALUES (1,5);");
                     Properties.Settings.Default.NewBase = false;
                     Properties.Settings.Default.Save();
                 }
@@ -124,7 +124,7 @@ namespace GamesList
                             }
                         }
                         context.Database.Create();//Создаём базу данных
-                        context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (ID_V, Version) VALUES (1,4);");
+                        context.Database.ExecuteSqlCommand("INSERT INTO GLDBVersion (ID_V, Version) VALUES (1,5);");
                         break;
                     case DialogResult.No://Если пользователь нажал Нет
                         OpenFileDialog Dial = new OpenFileDialog();//Создаём диалог открытия файла

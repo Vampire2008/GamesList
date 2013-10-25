@@ -25,6 +25,7 @@ namespace GamesList.Model
         public Nullable<System.DateTime> Date_open { get; set; }
         public byte[] Icon { get; set; }
         public Nullable<System.DateTime> Date_close { get; set; }
+        public string Description { get; set; }
     
         public virtual ICollection<Games> Games { get; set; }
     }

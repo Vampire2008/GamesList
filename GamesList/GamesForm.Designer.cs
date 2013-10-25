@@ -70,6 +70,8 @@
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.SortBox = new System.Windows.Forms.GroupBox();
+			this.comboBox8 = new System.Windows.Forms.ComboBox();
+			this.label35 = new System.Windows.Forms.Label();
 			this.DispContent = new System.Windows.Forms.CheckBox();
 			this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
 			this.label20 = new System.Windows.Forms.Label();
@@ -136,6 +138,7 @@
 			this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
 			this.сделатьДополнениемToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.Where = new System.Windows.Forms.LinkLabel();
 			this.Stand = new System.Windows.Forms.Label();
 			this.gamesListBox = new System.Windows.Forms.ListBox();
 			this.gamesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -198,9 +201,8 @@
 			this.viewContent = new System.Windows.Forms.ToolStripButton();
 			this.AddCollect = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+			this.giveGameStripButton = new System.Windows.Forms.ToolStripButton();
 			this.label34 = new System.Windows.Forms.Label();
-			this.label35 = new System.Windows.Forms.Label();
-			this.comboBox8 = new System.Windows.Forms.ComboBox();
 			this.menuStrip1.SuspendLayout();
 			this.SortBox.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
@@ -572,6 +574,30 @@
 			this.SortBox.TabIndex = 1;
 			this.SortBox.TabStop = false;
 			this.SortBox.Text = "Сортировка";
+			// 
+			// comboBox8
+			// 
+			this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox8.FormattingEnabled = true;
+			this.comboBox8.Items.AddRange(new object[] {
+            "<не важно>",
+            "Только лицензии",
+            "Только пиратки"});
+			this.comboBox8.Location = new System.Drawing.Point(1053, 50);
+			this.comboBox8.Name = "comboBox8";
+			this.comboBox8.Size = new System.Drawing.Size(125, 21);
+			this.comboBox8.TabIndex = 36;
+			this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
+			// 
+			// label35
+			// 
+			this.label35.AutoSize = true;
+			this.label35.Location = new System.Drawing.Point(982, 53);
+			this.label35.Name = "label35";
+			this.label35.Size = new System.Drawing.Size(60, 13);
+			this.label35.TabIndex = 35;
+			this.label35.Text = "Лицензия:";
+			this.label35.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// DispContent
 			// 
@@ -1227,6 +1253,7 @@
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Controls.Add(this.Where);
 			this.groupBox1.Controls.Add(this.Stand);
 			this.groupBox1.Controls.Add(this.gamesListBox);
 			this.groupBox1.Controls.Add(this.CollectedLabel);
@@ -1284,6 +1311,18 @@
 			this.groupBox1.TabIndex = 3;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Сведенья об игре";
+			// 
+			// Where
+			// 
+			this.Where.AutoSize = true;
+			this.Where.Location = new System.Drawing.Point(899, 58);
+			this.Where.Name = "Where";
+			this.Where.Size = new System.Drawing.Size(70, 13);
+			this.Where.TabIndex = 52;
+			this.Where.TabStop = true;
+			this.Where.Text = "Не на месте";
+			this.Where.Visible = false;
+			this.Where.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Where_LinkClicked);
 			// 
 			// Stand
 			// 
@@ -1825,7 +1864,8 @@
             this.AddContent,
             this.viewContent,
             this.AddCollect,
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.giveGameStripButton});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 24);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(1253, 25);
@@ -1908,6 +1948,16 @@
 			this.toolStripButton1.ToolTipText = "Показать статистику";
 			this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
 			// 
+			// giveGameStripButton
+			// 
+			this.giveGameStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.giveGameStripButton.Image = global::GamesList.Properties.Resources.msra_exe_9;
+			this.giveGameStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.giveGameStripButton.Name = "giveGameStripButton";
+			this.giveGameStripButton.Size = new System.Drawing.Size(23, 22);
+			this.giveGameStripButton.Text = "Дал поиграть";
+			this.giveGameStripButton.Click += new System.EventHandler(this.giveGameStripButton_Click);
+			// 
 			// label34
 			// 
 			this.label34.AutoSize = true;
@@ -1920,30 +1970,6 @@
 			this.label34.Text = "Х";
 			this.label34.Visible = false;
 			this.label34.Click += new System.EventHandler(this.label34_Click);
-			// 
-			// label35
-			// 
-			this.label35.AutoSize = true;
-			this.label35.Location = new System.Drawing.Point(982, 53);
-			this.label35.Name = "label35";
-			this.label35.Size = new System.Drawing.Size(60, 13);
-			this.label35.TabIndex = 35;
-			this.label35.Text = "Лицензия:";
-			this.label35.TextAlign = System.Drawing.ContentAlignment.TopRight;
-			// 
-			// comboBox8
-			// 
-			this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox8.FormattingEnabled = true;
-			this.comboBox8.Items.AddRange(new object[] {
-            "<не важно>",
-            "Только лицензии",
-            "Только пиратки"});
-			this.comboBox8.Location = new System.Drawing.Point(1053, 50);
-			this.comboBox8.Name = "comboBox8";
-			this.comboBox8.Size = new System.Drawing.Size(125, 21);
-			this.comboBox8.TabIndex = 36;
-			this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
 			// 
 			// GamesForm
 			// 
@@ -2172,6 +2198,8 @@
         private System.Windows.Forms.Label Stand;
 		private System.Windows.Forms.ComboBox comboBox8;
 		private System.Windows.Forms.Label label35;
+		private System.Windows.Forms.ToolStripButton giveGameStripButton;
+		private System.Windows.Forms.LinkLabel Where;
     }
 }
 

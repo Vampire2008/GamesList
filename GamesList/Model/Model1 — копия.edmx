@@ -104,7 +104,6 @@
           <Property Name="Date_open" Type="datetime" />
           <Property Name="Date_close" Type="datetime" />
           <Property Name="Icon" Type="image" />
-          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
         </EntityType>
         <EntityType Name="Disk_types">
           <Key>
@@ -112,7 +111,7 @@
           </Key>
           <Property Name="ID_Disk_Type" Type="numeric" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
-          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
           <Property Name="Max_Size" Type="float" />
         </EntityType>
         <EntityType Name="Editions">
@@ -154,11 +153,11 @@
           <Property Name="ID_Box" Type="numeric" Nullable="false" />
           <Property Name="ID_Ser" Type="numeric" />
           <Property Name="WhereStatus" Type="nvarchar" MaxLength="100" />
+          <Property Name="WherePhoto" Type="nvarchar" MaxLength="100" />
           <Property Name="ID_Content" Type="numeric" />
           <Property Name="TypeContent" Type="bit" />
           <Property Name="Description" Type="nvarchar" MaxLength="2000" />
           <Property Name="ID_Collect" Type="numeric" />
-          <Property Name="WherePhoto" Type="image" />
         </EntityType>
         <EntityType Name="GamesOnline_protections">
           <Key>
@@ -204,7 +203,7 @@
           </Key>
           <Property Name="ID_Protect" Type="numeric" Nullable="false" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
           <Property Name="Icon" Type="image" />
         </EntityType>
         <EntityType Name="Platforms">
@@ -213,7 +212,7 @@
           </Key>
           <Property Name="ID_Platform" Type="numeric" Nullable="false" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
           <Property Name="Icon" Type="image" />
         </EntityType>
         <EntityType Name="Publishers">
@@ -226,7 +225,6 @@
           <Property Name="Date_open" Type="datetime" />
           <Property Name="Icon" Type="image" />
           <Property Name="Date_close" Type="datetime" />
-          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
         </EntityType>
         <EntityType Name="RF_Distributors">
           <Key>
@@ -238,7 +236,6 @@
           <Property Name="Date_open" Type="datetime" />
           <Property Name="Date_close" Type="datetime" />
           <Property Name="Icon" Type="image" />
-          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
         </EntityType>
         <EntityType Name="Series">
           <Key>
@@ -246,7 +243,7 @@
           </Key>
           <Property Name="ID_Ser" Type="numeric" Nullable="false" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
           <Property Name="Icon" Type="image" />
         </EntityType>
         <Association Name="Disks_in_game">
@@ -547,7 +544,6 @@
           <Property Type="DateTime" Name="Date_close" Precision="3" />
           <Property Type="Binary" Name="Icon" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Games" Relationship="GamesModel.Game_Developer" FromRole="Developers" ToRole="Games" />
-          <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Disk_types">
           <Key>
@@ -555,7 +551,7 @@
           </Key>
           <Property Type="Decimal" Name="ID_Disk_Type" Nullable="false" Precision="18" Scale="0" />
           <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="Double" Name="Max_Size" />
           <NavigationProperty Name="Game_disks" Relationship="GamesModel.In_type" FromRole="Disk_types" ToRole="Game_disks" />
         </EntityType>
@@ -601,7 +597,7 @@
           <Property Type="Decimal" Name="ID_Box" Nullable="false" Precision="18" Scale="0" />
           <Property Type="Decimal" Name="ID_Ser" Precision="18" Scale="0" />
           <Property Type="String" Name="WhereStatus" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="Binary" Name="WherePhoto" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="WherePhoto" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="Decimal" Name="ID_Content" Precision="18" Scale="0" />
           <Property Type="Boolean" Name="TypeContent" />
           <NavigationProperty Name="Boxes" Relationship="GamesModel.Game_Box1" FromRole="Games" ToRole="Boxes" />
@@ -635,7 +631,7 @@
           </Key>
           <Property Type="Decimal" Name="ID_Protect" Nullable="false" Precision="18" Scale="0" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="Binary" Name="Icon" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Games" Relationship="GamesModel.GamesOnline_protections" FromRole="Online_protections" ToRole="Games" />
         </EntityType>
@@ -645,7 +641,7 @@
           </Key>
           <Property Type="Decimal" Name="ID_Platform" Nullable="false" Precision="18" Scale="0" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="Binary" Name="Icon" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Games" Relationship="GamesModel.GamesPlatforms" FromRole="Platforms" ToRole="Games" />
         </EntityType>
@@ -660,7 +656,6 @@
           <Property Type="Binary" Name="Icon" MaxLength="Max" FixedLength="false" />
           <Property Type="DateTime" Name="Date_close" Precision="3" />
           <NavigationProperty Name="Games" Relationship="GamesModel.Game_Publisher" FromRole="Publishers" ToRole="Games" />
-          <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="RF_Distributors">
           <Key>
@@ -673,7 +668,6 @@
           <Property Type="DateTime" Name="Date_close" Precision="3" />
           <Property Type="Binary" Name="Icon" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Games" Relationship="GamesModel.Game_RF_Distributor" FromRole="RF_Distributors" ToRole="Games" />
-          <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Series">
           <Key>
@@ -681,7 +675,7 @@
           </Key>
           <Property Type="Decimal" Name="ID_Ser" Nullable="false" Precision="18" Scale="0" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="Binary" Name="Icon" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Games" Relationship="GamesModel.Game_ser" FromRole="Series" ToRole="Games" />
         </EntityType>
@@ -845,7 +839,6 @@
           <EntitySetMapping Name="Developers">
             <EntityTypeMapping TypeName="GamesModel.Developers">
               <MappingFragment StoreEntitySet="Developers">
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Icon" ColumnName="Icon" />
                 <ScalarProperty Name="Date_close" ColumnName="Date_close" />
                 <ScalarProperty Name="Date_open" ColumnName="Date_open" />
@@ -944,7 +937,6 @@
           <EntitySetMapping Name="Publishers">
             <EntityTypeMapping TypeName="GamesModel.Publishers">
               <MappingFragment StoreEntitySet="Publishers">
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Date_close" ColumnName="Date_close" />
                 <ScalarProperty Name="Icon" ColumnName="Icon" />
                 <ScalarProperty Name="Date_open" ColumnName="Date_open" />
@@ -957,7 +949,6 @@
           <EntitySetMapping Name="RF_Distributors">
             <EntityTypeMapping TypeName="GamesModel.RF_Distributors">
               <MappingFragment StoreEntitySet="RF_Distributors">
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Icon" ColumnName="Icon" />
                 <ScalarProperty Name="Date_close" ColumnName="Date_close" />
                 <ScalarProperty Name="Date_open" ColumnName="Date_open" />

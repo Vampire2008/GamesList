@@ -93,6 +93,16 @@ namespace GamesList.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap msra_exe_9 {
+            get {
+                object obj = ResourceManager.GetObject("msra_exe_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap netshell_dll_386 {
             get {
                 object obj = ResourceManager.GetObject("netshell_dll_386", resourceCulture);
