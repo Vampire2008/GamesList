@@ -37,7 +37,7 @@ namespace GamesList
                         DateClose.Text = ((Developers)obj).Date_close!= null ? ((DateTime)((Developers)obj).Date_close).ToString("dd.MM.yyyy") : "<отсутствует>";
                     }
                     label3.Visible = false;
-                    Description.Visible = false;
+					Description.Text = ((Developers)obj).Description;
                     if (((Developers)obj).Icon != null)
                     {
                         var stream = new MemoryStream(((Developers)obj).Icon);//Получаем поток данных постера из базы
@@ -66,7 +66,7 @@ namespace GamesList
                         DateClose.Text = ((Publishers)obj).Date_close != null ? ((DateTime)((Publishers)obj).Date_close).ToString("dd.MM.yyyy") : "<отсутствует>";
                     }
                     label3.Visible = false;
-                    Description.Visible = false;
+					Description.Text = ((Publishers)obj).Description;
                     if (((Publishers)obj).Icon != null)
                     {
                         var stream = new MemoryStream(((Publishers)obj).Icon);//Получаем поток данных постера из базы
@@ -102,7 +102,7 @@ namespace GamesList
                         DateClose.Text = ((RF_Distributors)obj).Date_close != null ? ((DateTime)((RF_Distributors)obj).Date_close).ToString("dd.MM.yyyy") : "<отсутствует>";
                     }
                     label3.Visible = false;
-                    Description.Visible = false;
+					Description.Text = ((RF_Distributors)obj).Description;
                     if (((RF_Distributors)obj).Icon != null)
                     {
                         var stream = new MemoryStream(((RF_Distributors)obj).Icon);//Получаем поток данных постера из базы
