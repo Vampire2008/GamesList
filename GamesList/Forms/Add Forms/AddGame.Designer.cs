@@ -39,15 +39,19 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGame));
 			this.rate_IgromaniaLabel = new System.Windows.Forms.Label();
 			this.date_ReleaseDateTimePicker = new System.Windows.Forms.DateTimePicker();
+			this.gamesBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.last_versionTextBox = new System.Windows.Forms.TextBox();
 			this.nameTextBox = new System.Windows.Forms.TextBox();
 			this.original_NameTextBox = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.developersBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.label2 = new System.Windows.Forms.Label();
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.publishersBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.label3 = new System.Windows.Forms.Label();
 			this.comboBox3 = new System.Windows.Forms.ComboBox();
+			this.rFDistributorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.PlatformsList = new System.Windows.Forms.CheckedListBox();
 			this.comboBox4 = new System.Windows.Forms.ComboBox();
 			this.posterPictureBox = new System.Windows.Forms.PictureBox();
@@ -56,6 +60,7 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.OriginalNameEn = new System.Windows.Forms.CheckBox();
 			this.DiskTypes = new System.Windows.Forms.ListBox();
+			this.disktypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.ColDisks = new System.Windows.Forms.NumericUpDown();
 			this.AddDisk = new System.Windows.Forms.Button();
 			this.RemoveDisk = new System.Windows.Forms.Button();
@@ -76,13 +81,15 @@
 			this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
 			this.label9 = new System.Windows.Forms.Label();
 			this.comboBox6 = new System.Windows.Forms.ComboBox();
+			this.editionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.label10 = new System.Windows.Forms.Label();
 			this.comboBox7 = new System.Windows.Forms.ComboBox();
+			this.boxesBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.ChooseImage = new System.Windows.Forms.OpenFileDialog();
 			this.EditButton = new System.Windows.Forms.Button();
 			this.label11 = new System.Windows.Forms.Label();
 			this.comboBox8 = new System.Windows.Forms.ComboBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.seriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.label12 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
@@ -95,18 +102,11 @@
 			this.button8 = new System.Windows.Forms.Button();
 			this.button9 = new System.Windows.Forms.Button();
 			this.button10 = new System.Windows.Forms.Button();
-			this.gamesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.editionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.boxesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.seriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.disktypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.rFDistributorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.publishersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.developersBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.platformsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.gamedisksBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.online_protectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.genresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.textBox1 = new System.Windows.Forms.RichTextBox();
 			date_ReleaseLabel = new System.Windows.Forms.Label();
 			kol_updatesLabel = new System.Windows.Forms.Label();
 			last_versionLabel = new System.Windows.Forms.Label();
@@ -114,20 +114,20 @@
 			nameLabel = new System.Windows.Forms.Label();
 			rate_personLabel = new System.Windows.Forms.Label();
 			status_compliteLabel = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.developersBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.rFDistributorsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.posterPictureBox)).BeginInit();
 			this.contextMenuStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.disktypesBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ColDisks)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.PersonRate)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.editionsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.boxesBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.seriesBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.disktypesBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.rFDistributorsBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.developersBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.platformsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gamedisksBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.online_protectionsBindingSource)).BeginInit();
@@ -214,6 +214,10 @@
 			this.date_ReleaseDateTimePicker.Size = new System.Drawing.Size(160, 20);
 			this.date_ReleaseDateTimePicker.TabIndex = 22;
 			// 
+			// gamesBindingSource
+			// 
+			this.gamesBindingSource.DataSource = typeof(GamesList.Model.Games);
+			// 
 			// last_versionTextBox
 			// 
 			this.last_versionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Last_version", true));
@@ -265,6 +269,10 @@
 			this.comboBox1.ValueMember = "ID_Developer";
 			this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
 			// 
+			// developersBindingSource
+			// 
+			this.developersBindingSource.DataSource = typeof(GamesList.Model.Developers);
+			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
@@ -289,6 +297,10 @@
 			this.comboBox2.ValueMember = "Id_Publisher";
 			this.comboBox2.Leave += new System.EventHandler(this.comboBox2_Leave);
 			// 
+			// publishersBindingSource
+			// 
+			this.publishersBindingSource.DataSource = typeof(GamesList.Model.Publishers);
+			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
@@ -312,6 +324,10 @@
 			this.comboBox3.TabIndex = 8;
 			this.comboBox3.ValueMember = "ID_RF_Distributor";
 			this.comboBox3.Leave += new System.EventHandler(this.comboBox3_Leave);
+			// 
+			// rFDistributorsBindingSource
+			// 
+			this.rFDistributorsBindingSource.DataSource = typeof(GamesList.Model.RF_Distributors);
 			// 
 			// PlatformsList
 			// 
@@ -347,7 +363,7 @@
 			this.posterPictureBox.ContextMenuStrip = this.contextMenuStrip1;
 			this.posterPictureBox.Location = new System.Drawing.Point(617, 25);
 			this.posterPictureBox.Name = "posterPictureBox";
-			this.posterPictureBox.Size = new System.Drawing.Size(323, 507);
+			this.posterPictureBox.Size = new System.Drawing.Size(323, 323);
 			this.posterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.posterPictureBox.TabIndex = 37;
 			this.posterPictureBox.TabStop = false;
@@ -398,6 +414,10 @@
 			this.DiskTypes.TabIndex = 16;
 			this.DiskTypes.ValueMember = "ID_Disk_Type";
 			this.DiskTypes.SelectedIndexChanged += new System.EventHandler(this.DiskTypes_SelectedIndexChanged);
+			// 
+			// disktypesBindingSource
+			// 
+			this.disktypesBindingSource.DataSource = typeof(GamesList.Model.Disk_types);
 			// 
 			// ColDisks
 			// 
@@ -473,7 +493,7 @@
 			this.GenresList.FormattingEnabled = true;
 			this.GenresList.Location = new System.Drawing.Point(338, 326);
 			this.GenresList.Name = "GenresList";
-			this.GenresList.Size = new System.Drawing.Size(208, 49);
+			this.GenresList.Size = new System.Drawing.Size(243, 139);
 			this.GenresList.TabIndex = 34;
 			this.GenresList.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.GenresList_Format);
 			// 
@@ -636,6 +656,10 @@
 			this.comboBox6.TabIndex = 26;
 			this.comboBox6.ValueMember = "ID_Edition";
 			// 
+			// editionsBindingSource
+			// 
+			this.editionsBindingSource.DataSource = typeof(GamesList.Model.Editions);
+			// 
 			// label10
 			// 
 			this.label10.AutoSize = true;
@@ -657,6 +681,10 @@
 			this.comboBox7.Size = new System.Drawing.Size(139, 21);
 			this.comboBox7.TabIndex = 28;
 			this.comboBox7.ValueMember = "ID_Box";
+			// 
+			// boxesBindingSource
+			// 
+			this.boxesBindingSource.DataSource = typeof(GamesList.Model.Boxes);
 			// 
 			// ChooseImage
 			// 
@@ -696,20 +724,14 @@
 			this.comboBox8.ValueMember = "ID_Ser";
 			this.comboBox8.Leave += new System.EventHandler(this.comboBox8_Leave);
 			// 
-			// textBox1
+			// seriesBindingSource
 			// 
-			this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Description", true));
-			this.textBox1.Location = new System.Drawing.Point(338, 409);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textBox1.Size = new System.Drawing.Size(256, 94);
-			this.textBox1.TabIndex = 36;
+			this.seriesBindingSource.DataSource = typeof(GamesList.Model.Series);
 			// 
 			// label12
 			// 
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(341, 393);
+			this.label12.Location = new System.Drawing.Point(614, 354);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(57, 13);
 			this.label12.TabIndex = 67;
@@ -718,7 +740,7 @@
 			// label13
 			// 
 			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(656, 268);
+			this.label13.Location = new System.Drawing.Point(650, 180);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(263, 13);
 			this.label13.TabIndex = 68;
@@ -807,7 +829,7 @@
 			// 
 			// button9
 			// 
-			this.button9.Location = new System.Drawing.Point(552, 354);
+			this.button9.Location = new System.Drawing.Point(587, 444);
 			this.button9.Name = "button9";
 			this.button9.Size = new System.Drawing.Size(24, 21);
 			this.button9.TabIndex = 35;
@@ -825,38 +847,6 @@
 			this.button10.UseVisualStyleBackColor = true;
 			this.button10.Click += new System.EventHandler(this.button10_Click);
 			// 
-			// gamesBindingSource
-			// 
-			this.gamesBindingSource.DataSource = typeof(GamesList.Model.Games);
-			// 
-			// editionsBindingSource
-			// 
-			this.editionsBindingSource.DataSource = typeof(GamesList.Model.Editions);
-			// 
-			// boxesBindingSource
-			// 
-			this.boxesBindingSource.DataSource = typeof(GamesList.Model.Boxes);
-			// 
-			// seriesBindingSource
-			// 
-			this.seriesBindingSource.DataSource = typeof(GamesList.Model.Series);
-			// 
-			// disktypesBindingSource
-			// 
-			this.disktypesBindingSource.DataSource = typeof(GamesList.Model.Disk_types);
-			// 
-			// rFDistributorsBindingSource
-			// 
-			this.rFDistributorsBindingSource.DataSource = typeof(GamesList.Model.RF_Distributors);
-			// 
-			// publishersBindingSource
-			// 
-			this.publishersBindingSource.DataSource = typeof(GamesList.Model.Publishers);
-			// 
-			// developersBindingSource
-			// 
-			this.developersBindingSource.DataSource = typeof(GamesList.Model.Developers);
-			// 
 			// platformsBindingSource
 			// 
 			this.platformsBindingSource.DataSource = typeof(GamesList.Model.Platforms);
@@ -873,11 +863,21 @@
 			// 
 			this.genresBindingSource.DataSource = typeof(GamesList.Model.Genres);
 			// 
+			// textBox1
+			// 
+			this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Description", true));
+			this.textBox1.Location = new System.Drawing.Point(617, 370);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(323, 162);
+			this.textBox1.TabIndex = 69;
+			this.textBox1.Text = "";
+			// 
 			// AddGame
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(961, 544);
+			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.button10);
 			this.Controls.Add(this.AddDisk);
 			this.Controls.Add(this.RemoveDisk);
@@ -894,7 +894,6 @@
 			this.Controls.Add(this.label13);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label12);
-			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.AddBut);
 			this.Controls.Add(this.EditButton);
 			this.Controls.Add(this.label9);
@@ -945,20 +944,20 @@
 			this.Name = "AddGame";
 			this.Text = "Добавление игры";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddGame_FormClosing);
+			((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.developersBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.rFDistributorsBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.posterPictureBox)).EndInit();
 			this.contextMenuStrip1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.disktypesBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ColDisks)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.PersonRate)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.editionsBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.boxesBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.seriesBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.disktypesBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.rFDistributorsBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.publishersBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.developersBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.platformsBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gamedisksBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.online_protectionsBindingSource)).EndInit();
@@ -1026,8 +1025,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.BindingSource seriesBindingSource;
-        private System.Windows.Forms.Label rate_IgromaniaLabel;
-        private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Label rate_IgromaniaLabel;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button1;
@@ -1040,5 +1038,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+		private System.Windows.Forms.RichTextBox textBox1;
     }
 }

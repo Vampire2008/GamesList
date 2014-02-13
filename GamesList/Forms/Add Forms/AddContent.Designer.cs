@@ -367,7 +367,7 @@
 			this.posterPictureBox.ContextMenuStrip = this.contextMenuStrip1;
 			this.posterPictureBox.Location = new System.Drawing.Point(617, 25);
 			this.posterPictureBox.Name = "posterPictureBox";
-			this.posterPictureBox.Size = new System.Drawing.Size(323, 507);
+			this.posterPictureBox.Size = new System.Drawing.Size(323, 323);
 			this.posterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.posterPictureBox.TabIndex = 37;
 			this.posterPictureBox.TabStop = false;
@@ -760,7 +760,7 @@
 			// label12
 			// 
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(341, 393);
+			this.label12.Location = new System.Drawing.Point(614, 356);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(57, 13);
 			this.label12.TabIndex = 71;
@@ -769,17 +769,17 @@
 			// textBox1
 			// 
 			this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Description", true));
-			this.textBox1.Location = new System.Drawing.Point(338, 409);
+			this.textBox1.Location = new System.Drawing.Point(617, 372);
 			this.textBox1.Multiline = true;
 			this.textBox1.Name = "textBox1";
 			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textBox1.Size = new System.Drawing.Size(256, 94);
+			this.textBox1.Size = new System.Drawing.Size(323, 158);
 			this.textBox1.TabIndex = 33;
 			// 
 			// label13
 			// 
 			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(654, 268);
+			this.label13.Location = new System.Drawing.Point(647, 188);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(263, 13);
 			this.label13.TabIndex = 72;

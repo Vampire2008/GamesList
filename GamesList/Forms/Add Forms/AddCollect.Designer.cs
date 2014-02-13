@@ -496,7 +496,7 @@
 			// label12
 			// 
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(341, 393);
+			this.label12.Location = new System.Drawing.Point(335, 321);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(57, 13);
 			this.label12.TabIndex = 71;
@@ -505,11 +505,11 @@
 			// textBox1
 			// 
 			this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Description", true));
-			this.textBox1.Location = new System.Drawing.Point(338, 409);
+			this.textBox1.Location = new System.Drawing.Point(338, 337);
 			this.textBox1.Multiline = true;
 			this.textBox1.Name = "textBox1";
 			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textBox1.Size = new System.Drawing.Size(256, 94);
+			this.textBox1.Size = new System.Drawing.Size(256, 166);
 			this.textBox1.TabIndex = 29;
 			// 
 			// comboBox1

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Win7StyleTreeView</id>
+    <version>1.0.0.2</version>
+    <title>Win7StyleTreeView</title>
+    <authors>柯志光 Freeman</authors>
+    <owners>柯志光 Freeman</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>TreeView with windows 7 style</description>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>TreeView</tags>
+  </metadata>
+</package>

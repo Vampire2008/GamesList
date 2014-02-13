@@ -12,7 +12,7 @@ namespace GamesList
 {
     public partial class ContentForm : Form
     {
-        public Boolean fc;
+        public Boolean fc,IsInit;
         private Games game;
         public ContentForm(Games g)//Точка входа в программу
         {
@@ -20,7 +20,9 @@ namespace GamesList
             game = g;
             this.Text = "Дополнения для "+ game.Name;
             this.MouseWheel += new MouseEventHandler(wheel);
+			IsInit = true;
             Init();
+			IsInit = false;
         }
 
         /// <summary>
@@ -65,12 +67,6 @@ namespace GamesList
                 label32.Visible = true;
                 label33.Visible = false;
                 SerName.Visible = false;
-                pictureBox2.Visible = false;
-                pictureBox3.Visible = false;
-                pictureBox4.Visible = false;
-                pictureBox5.Visible = false;
-                pictureBox6.Visible = false;
-                pictureBox7.Visible = false;
                 DelGame.Enabled = false;
                 EditGame.Enabled = false;
                 delGamecontextToolStripMenuItem1.Enabled = false;
@@ -110,48 +106,36 @@ namespace GamesList
                 label33.Visible = true;//Делаем поле видимым
                 SerName.Visible = true;
                 SerName.Text = ((Games)gamesBindingSource.Current).Series.Name;
-                pictureBox2.Visible = true;
-                pictureBox2.Left = SerName.Right + 5;
             }
             else
             {
                 label33.Visible = false;//Или невидимым, если отсутствует
                 SerName.Visible = false;
-                pictureBox2.Visible = false;
             }
 
             if (((Games)gamesBindingSource.Current).Developers != null)//Если разработчик задан, то 
             {
                 DevName.Text = ((Games)gamesBindingSource.Current).Developers.Name;//Отображаем его имя
-                pictureBox3.Visible = true;
-                pictureBox3.Left = DevName.Right + 5;
             }
             else
             {
                 DevName.Text = "<отсутствует>";//Либо заглушку
-                pictureBox3.Visible = false;
             }
             if (((Games)gamesBindingSource.Current).Publishers != null)//То же самое, что и разработчик
             {
                 DistrName.Text = ((Games)gamesBindingSource.Current).Publishers.Name;
-                pictureBox4.Visible = true;
-                pictureBox4.Left = DistrName.Right + 5;
             }
             else
             {
                 DistrName.Text = "<отсутствует>";
-                pictureBox4.Visible = false;
             }
             if (((Games)gamesBindingSource.Current).RF_Distributors != null)//То же самое, что и разработчик
             {
                 RFDistrName.Text = ((Games)gamesBindingSource.Current).RF_Distributors.Name;
-                pictureBox5.Visible = true;
-                pictureBox5.Left = RFDistrName.Right + 5;
             }
             else
             {
                 RFDistrName.Text = "<отсутствует>";
-                pictureBox5.Visible = false;
             }
             //Тоже самое, что и с жанрами, но с онлайн-защитами
             Online_Protect.Text = "";
@@ -264,12 +248,7 @@ namespace GamesList
             {
                 EditionLabel.Text = "<отсутствует>";
             }
-            if (((Games)gamesBindingSource.Current).Games2.Name.IndexOf(":") > 0)
-            {
-                GameName.Text = ((Games)gamesBindingSource.Current).Games2.Name + " - " + ((Games)gamesBindingSource.Current).Name;
-            }
-            else
-                GameName.Text = ((Games)gamesBindingSource.Current).Games2.Name + ": " + ((Games)gamesBindingSource.Current).Name;
+			GameName.Text = ((Games)gamesBindingSource.Current).getName();
             if ((bool)((Games)gamesBindingSource.Current).Game_Type)
             {
                 Pirat.Visible = false;
@@ -277,7 +256,6 @@ namespace GamesList
             else
             {
                 Pirat.Visible = true;
-                Pirat.Left = GameName.Right + 10;
             }
             if (((Games)gamesBindingSource.Current).Poster != null)//Проверяем наличие постера
             {
@@ -320,6 +298,33 @@ namespace GamesList
                 PersonalRate.Font = new Font("Microsoft Sans Serif", 48, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             }
             button1.Visible = ((Games)gamesBindingSource.Current).Games1.Count >0;
+
+			//Нормализуем вывод информации
+			int i = 15;
+			while (!IsInit)
+			{
+				SerName.Top = label33.Top = label33.Visible ? GameName.Bottom + i : GameName.Bottom - label33.Height;
+				OriginalName.Top = Original.Top = Original.Visible ? label33.Bottom + i : label33.Bottom - Original.Height;
+				EditionLabel.Top = label31.Top = Original.Bottom + i;
+				JenrName.Top = label15.Top = label15.Visible ? label31.Bottom + i : label31.Bottom - label15.Height;
+				DevName.Top = Dev.Top = Dev.Visible ? JenrName.Bottom + i : JenrName.Bottom - Dev.Height;
+				DistrName.Top = label16.Top = Dev.Bottom + i;
+				RFDistrName.Top = label14.Top = label16.Bottom + i;
+				Loc_type.Top = label24.Top = label24.Visible ? label14.Bottom + i : label14.Bottom - label24.Height;
+				Online_Protect.Top = label21.Top = label24.Bottom + i;
+				PlatformsLabel.Top = label22.Top = Online_Protect.Bottom + i;
+				Release_Date.Top = label23.Top = PlatformsLabel.Bottom + i;
+				last_versionLabel1.Top = label28.Top = label28.Visible ? label23.Bottom + i : label23.Bottom - label28.Height;
+				Disks.Top = label29.Top = label28.Bottom + i;
+				BoxLabel.Top = label30.Top = Disks.Bottom + i;
+				kol_updatesLabel1.Top = kol_updatesLabel.Top = kol_updatesLabel.Visible ? label30.Bottom + i : label30.Bottom - kol_updatesLabel.Height;
+				decimal different = kol_updatesLabel.Bottom - groupBox1.Bottom + 61;
+				//if ((different > -15)&&(different<=0))
+				if (different <= 0)
+					break;
+				different = different / 15;
+				i = i - Decimal.ToInt32(Math.Ceiling(different));
+			}
         }
 
         protected void changefilter()
@@ -420,8 +425,11 @@ namespace GamesList
 
         private void DevName_Click(object sender, EventArgs e)
         {
-            Form Infa = new InformationWindows(0, ((Games)gamesBindingSource.Current).Developers);
-            Infa.Show();
+			if (((Games)gamesBindingSource.Current).Developers != null)
+			{
+				Form Infa = new InformationWindows(0, ((Games)gamesBindingSource.Current).Developers);
+				Infa.Show();
+			}
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -434,21 +442,22 @@ namespace GamesList
             }
         }
 
-        private void configToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Form Infa = new InformationWindows(1, ((Games)gamesBindingSource.Current).Publishers);
-            Infa.Show();
+			if (((Games)gamesBindingSource.Current).Publishers != null)
+			{
+				Form Infa = new InformationWindows(1, ((Games)gamesBindingSource.Current).Publishers);
+				Infa.Show();
+			}
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Form Infa = new InformationWindows(2, ((Games)gamesBindingSource.Current).RF_Distributors);
-            Infa.Show();
+			if (((Games)gamesBindingSource.Current).RF_Distributors != null)
+			{
+				Form Infa = new InformationWindows(2, ((Games)gamesBindingSource.Current).RF_Distributors);
+				Infa.Show();
+			}
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -520,5 +529,10 @@ namespace GamesList
                 Con.Show();
             }
         }
+
+		private void ContentForm_Shown(object sender, EventArgs e)
+		{
+			UpdateView();
+		}
     }
 }

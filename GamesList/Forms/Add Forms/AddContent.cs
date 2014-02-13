@@ -102,7 +102,8 @@ namespace GamesList
                     AddingGame.ID_RF_Distributor = 0;
                 AddingGame.ID_Box = 1;
                 AddingGame.ID_Edition = 1;
-                comboBox4.SelectedIndex = 0;
+				AddingGame.Localisation_Type = game.Localisation_Type;
+				comboBox4.SelectedIndex = Decimal.ToInt32((decimal)AddingGame.Localisation_Type);
                 comboBox5.SelectedIndex = 0;
                 AddBut.Visible = true;
                 EditButton.Visible = false;

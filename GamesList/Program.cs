@@ -29,8 +29,8 @@ namespace GamesList
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            bool ok;
-            var m = new System.Threading.Mutex(true, "YourNameHere", out ok);//Проверяем не запущена ли ещё одна копия программы
+			bool ok = true;
+            //var m = new System.Threading.Mutex(true, "YourNameHere", out ok);//Проверяем не запущена ли ещё одна копия программы
             if (!ok)//Если запущена, то выдаём ошибку и закрываем программу.
             {
                 MessageBox.Show("Другая копия программы уже запущена.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -41,7 +41,7 @@ namespace GamesList
             {
                 args = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData;
             }
-            
+            //MessageBox.Show(Environment.Version.Build.ToString());
             if (Properties.Settings.Default.FirstRun)//Проверяем установлен ли флаг 1-ого запуска программы в Settings-файле
             {
                 Form Wiz = new Wizard(args);//Создаём форму Мастера настройки
@@ -159,11 +159,11 @@ namespace GamesList
                         return;//то выходим из программы
                 }
             }
-            if (!DBUpdater.checkDBVersion())
+			if (!DBUpdater.checkDBVersion(context))
                 return;
             s.Close(new TimeSpan(0, 0, 0, 0, 500));
             Application.Run(new GamesForm());//Запускаем главную форму
-            GC.KeepAlive(m);//Нужно для проверки уже запущенной копии
+            //GC.KeepAlive(m);//Нужно для проверки уже запущенной копии
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace GamesList
             string serverName = Path;//Задаём путь к базе, как имя сервера
             SqlConnectionStringBuilder sqlBuilder = new SqlConnectionStringBuilder();//Создаём экземпляр строителя строки подключения
             sqlBuilder.DataSource = serverName;//Задаём источник данных
-            string providerString = sqlBuilder.ToString();//Получаем строку подключения к базе
+            string providerString = sqlBuilder.ToString() + ";Max Database Size=4091";//Получаем строку подключения к базе
             EntityConnectionStringBuilder entityBuilder = new EntityConnectionStringBuilder();//Создаём экземпляр строителя строки подключения формата Entity Framework
             entityBuilder.Provider = providerName;//Задаём провайдера БД
             entityBuilder.ProviderConnectionString = providerString;//Задаём строку подключения к БД, полученную ранее
@@ -191,5 +191,40 @@ namespace GamesList
         {
             return null;
         }
+
+		public static string getName(this Games g)
+		{
+			string name;
+			if (g.Games2 != null)
+			{
+				if (g.Games2.Games2 != null)
+				{
+					if (g.Games2.Games2.Name.Contains(":"))
+					{
+						name = g.Games2.Games2.Name + " - " + g.Games2.Name + " - " + g.Name;
+					}
+					else
+					{
+						name = g.Games2.Games2.Name + ": " + g.Games2.Name + " - " + g.Name;
+					}
+				}
+				else
+				{
+					if (g.Games2.Name.Contains(":"))
+					{
+						name = g.Games2.Name + " - " + g.Name;
+					}
+					else
+					{
+						name = g.Games2.Name + ": " + g.Name;
+					}
+				}
+			}
+			else
+			{
+				name = g.Name;
+			}
+			return name;
+		}
     }
 }

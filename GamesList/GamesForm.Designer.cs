@@ -54,6 +54,8 @@
 			this.viewContentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.addCollectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.managePublishersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.manageDevelopersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,6 +140,10 @@
 			this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
 			this.сделатьДополнениемToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.RFDistrName = new System.Windows.Forms.LinkLabel();
+			this.DistrName = new System.Windows.Forms.LinkLabel();
+			this.DevName = new System.Windows.Forms.LinkLabel();
+			this.SerName = new System.Windows.Forms.LinkLabel();
 			this.Where = new System.Windows.Forms.LinkLabel();
 			this.Stand = new System.Windows.Forms.Label();
 			this.gamesListBox = new System.Windows.Forms.ListBox();
@@ -145,13 +151,6 @@
 			this.CollectedLabel = new System.Windows.Forms.Label();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.button1 = new System.Windows.Forms.Button();
-			this.pictureBox7 = new System.Windows.Forms.PictureBox();
-			this.pictureBox6 = new System.Windows.Forms.PictureBox();
-			this.pictureBox5 = new System.Windows.Forms.PictureBox();
-			this.pictureBox4 = new System.Windows.Forms.PictureBox();
-			this.pictureBox3 = new System.Windows.Forms.PictureBox();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.SerName = new System.Windows.Forms.Label();
 			this.label33 = new System.Windows.Forms.Label();
 			this.Pirat = new System.Windows.Forms.Label();
 			this.label32 = new System.Windows.Forms.Label();
@@ -180,11 +179,8 @@
 			this.label21 = new System.Windows.Forms.Label();
 			this.JenrName = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
-			this.RFDistrName = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
-			this.DistrName = new System.Windows.Forms.Label();
 			this.label16 = new System.Windows.Forms.Label();
-			this.DevName = new System.Windows.Forms.Label();
 			this.OriginalName = new System.Windows.Forms.Label();
 			this.Dev = new System.Windows.Forms.Label();
 			this.Original = new System.Windows.Forms.Label();
@@ -220,12 +216,6 @@
 			this.contextMenuStrip1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -233,7 +223,7 @@
 			// kol_updatesLabel
 			// 
 			this.kol_updatesLabel.AutoSize = true;
-			this.kol_updatesLabel.Location = new System.Drawing.Point(267, 415);
+			this.kol_updatesLabel.Location = new System.Drawing.Point(267, 457);
 			this.kol_updatesLabel.Name = "kol_updatesLabel";
 			this.kol_updatesLabel.Size = new System.Drawing.Size(132, 13);
 			this.kol_updatesLabel.TabIndex = 34;
@@ -243,8 +233,8 @@
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.baseToolStripMenuItem,
-            this.gamseToolStripMenuItem,
             this.controlToolStripMenuItem,
+            this.gamseToolStripMenuItem,
             this.helpToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
@@ -357,7 +347,9 @@
             this.addContentToolStripMenuItem,
             this.viewContentToolStripMenuItem,
             this.toolStripSeparator5,
-            this.addCollectToolStripMenuItem});
+            this.addCollectToolStripMenuItem,
+            this.toolStripSeparator8,
+            this.toolStripMenuItem1});
 			this.gamseToolStripMenuItem.Name = "gamseToolStripMenuItem";
 			this.gamseToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
 			this.gamseToolStripMenuItem.Text = "Игры";
@@ -365,54 +357,67 @@
 			// addGameToolStripMenuItem
 			// 
 			this.addGameToolStripMenuItem.Name = "addGameToolStripMenuItem";
-			this.addGameToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.addGameToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
 			this.addGameToolStripMenuItem.Text = "Добавить игру";
 			this.addGameToolStripMenuItem.Click += new System.EventHandler(this.addGameToolStripMenuItem_Click);
 			// 
 			// editGameToolStripMenuItem
 			// 
 			this.editGameToolStripMenuItem.Name = "editGameToolStripMenuItem";
-			this.editGameToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.editGameToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
 			this.editGameToolStripMenuItem.Text = "Редактировать игру";
 			this.editGameToolStripMenuItem.Click += new System.EventHandler(this.editGameToolStripMenuItem_Click);
 			// 
 			// delGameToolStripMenuItem
 			// 
 			this.delGameToolStripMenuItem.Name = "delGameToolStripMenuItem";
-			this.delGameToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.delGameToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
 			this.delGameToolStripMenuItem.Text = "Удалить игру";
 			this.delGameToolStripMenuItem.Click += new System.EventHandler(this.delGameToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator3
 			// 
 			this.toolStripSeparator3.Name = "toolStripSeparator3";
-			this.toolStripSeparator3.Size = new System.Drawing.Size(199, 6);
+			this.toolStripSeparator3.Size = new System.Drawing.Size(211, 6);
 			// 
 			// addContentToolStripMenuItem
 			// 
 			this.addContentToolStripMenuItem.Name = "addContentToolStripMenuItem";
-			this.addContentToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.addContentToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
 			this.addContentToolStripMenuItem.Text = "Добавить дополнение";
 			this.addContentToolStripMenuItem.Click += new System.EventHandler(this.AddContent_Click);
 			// 
 			// viewContentToolStripMenuItem
 			// 
 			this.viewContentToolStripMenuItem.Name = "viewContentToolStripMenuItem";
-			this.viewContentToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.viewContentToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
 			this.viewContentToolStripMenuItem.Text = "Просмотр дополнений";
 			this.viewContentToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// toolStripSeparator5
 			// 
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
-			this.toolStripSeparator5.Size = new System.Drawing.Size(199, 6);
+			this.toolStripSeparator5.Size = new System.Drawing.Size(211, 6);
 			// 
 			// addCollectToolStripMenuItem
 			// 
 			this.addCollectToolStripMenuItem.Name = "addCollectToolStripMenuItem";
-			this.addCollectToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.addCollectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
 			this.addCollectToolStripMenuItem.Text = "Добавить сборник";
 			this.addCollectToolStripMenuItem.Click += new System.EventHandler(this.AddCollect_Click);
+			// 
+			// toolStripSeparator8
+			// 
+			this.toolStripSeparator8.Name = "toolStripSeparator8";
+			this.toolStripSeparator8.Size = new System.Drawing.Size(211, 6);
+			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.Enabled = false;
+			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
+			this.toolStripMenuItem1.Text = "Загрузить из другой базы";
+			this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
 			// 
 			// controlToolStripMenuItem
 			// 
@@ -568,7 +573,7 @@
 			this.SortBox.Controls.Add(this.comboBox1);
 			this.SortBox.Controls.Add(this.shapeContainer1);
 			this.SortBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.SortBox.Location = new System.Drawing.Point(0, 521);
+			this.SortBox.Location = new System.Drawing.Point(0, 537);
 			this.SortBox.Name = "SortBox";
 			this.SortBox.Size = new System.Drawing.Size(1253, 115);
 			this.SortBox.TabIndex = 1;
@@ -787,6 +792,7 @@
 			this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox7.FormattingEnabled = true;
 			this.comboBox7.Items.AddRange(new object[] {
+            "<не важно>",
             "Не пройдено",
             "Ожидает прохождения",
             "Пройдено (не 100%)",
@@ -1056,7 +1062,7 @@
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowHeadersVisible = false;
 			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridView1.Size = new System.Drawing.Size(233, 438);
+			this.dataGridView1.Size = new System.Drawing.Size(233, 454);
 			this.dataGridView1.TabIndex = 0;
 			this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
 			this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
@@ -1253,19 +1259,16 @@
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Controls.Add(this.RFDistrName);
+			this.groupBox1.Controls.Add(this.DistrName);
+			this.groupBox1.Controls.Add(this.DevName);
+			this.groupBox1.Controls.Add(this.SerName);
 			this.groupBox1.Controls.Add(this.Where);
 			this.groupBox1.Controls.Add(this.Stand);
 			this.groupBox1.Controls.Add(this.gamesListBox);
 			this.groupBox1.Controls.Add(this.CollectedLabel);
 			this.groupBox1.Controls.Add(this.textBox2);
 			this.groupBox1.Controls.Add(this.button1);
-			this.groupBox1.Controls.Add(this.pictureBox7);
-			this.groupBox1.Controls.Add(this.pictureBox6);
-			this.groupBox1.Controls.Add(this.pictureBox5);
-			this.groupBox1.Controls.Add(this.pictureBox4);
-			this.groupBox1.Controls.Add(this.pictureBox3);
-			this.groupBox1.Controls.Add(this.pictureBox2);
-			this.groupBox1.Controls.Add(this.SerName);
 			this.groupBox1.Controls.Add(this.label33);
 			this.groupBox1.Controls.Add(this.Pirat);
 			this.groupBox1.Controls.Add(this.label32);
@@ -1295,11 +1298,8 @@
 			this.groupBox1.Controls.Add(this.label21);
 			this.groupBox1.Controls.Add(this.JenrName);
 			this.groupBox1.Controls.Add(this.label15);
-			this.groupBox1.Controls.Add(this.RFDistrName);
 			this.groupBox1.Controls.Add(this.label14);
-			this.groupBox1.Controls.Add(this.DistrName);
 			this.groupBox1.Controls.Add(this.label16);
-			this.groupBox1.Controls.Add(this.DevName);
 			this.groupBox1.Controls.Add(this.OriginalName);
 			this.groupBox1.Controls.Add(this.Dev);
 			this.groupBox1.Controls.Add(this.Original);
@@ -1307,15 +1307,59 @@
 			this.groupBox1.Controls.Add(this.pictureBox1);
 			this.groupBox1.Location = new System.Drawing.Point(251, 51);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(990, 464);
+			this.groupBox1.Size = new System.Drawing.Size(990, 480);
 			this.groupBox1.TabIndex = 3;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Сведенья об игре";
 			// 
+			// RFDistrName
+			// 
+			this.RFDistrName.AutoSize = true;
+			this.RFDistrName.Location = new System.Drawing.Point(384, 253);
+			this.RFDistrName.Name = "RFDistrName";
+			this.RFDistrName.Size = new System.Drawing.Size(70, 13);
+			this.RFDistrName.TabIndex = 56;
+			this.RFDistrName.TabStop = true;
+			this.RFDistrName.Text = "RFDistrName";
+			this.RFDistrName.Click += new System.EventHandler(this.pictureBox5_Click);
+			// 
+			// DistrName
+			// 
+			this.DistrName.AutoSize = true;
+			this.DistrName.Location = new System.Drawing.Point(335, 227);
+			this.DistrName.Name = "DistrName";
+			this.DistrName.Size = new System.Drawing.Size(56, 13);
+			this.DistrName.TabIndex = 55;
+			this.DistrName.TabStop = true;
+			this.DistrName.Text = "DistrName";
+			this.DistrName.Click += new System.EventHandler(this.pictureBox4_Click);
+			// 
+			// DevName
+			// 
+			this.DevName.AutoSize = true;
+			this.DevName.Location = new System.Drawing.Point(345, 199);
+			this.DevName.Name = "DevName";
+			this.DevName.Size = new System.Drawing.Size(55, 13);
+			this.DevName.TabIndex = 54;
+			this.DevName.TabStop = true;
+			this.DevName.Text = "DevName";
+			this.DevName.Click += new System.EventHandler(this.DevName_Click);
+			// 
+			// SerName
+			// 
+			this.SerName.AutoSize = true;
+			this.SerName.Location = new System.Drawing.Point(345, 101);
+			this.SerName.Name = "SerName";
+			this.SerName.Size = new System.Drawing.Size(51, 13);
+			this.SerName.TabIndex = 53;
+			this.SerName.TabStop = true;
+			this.SerName.Text = "SerName";
+			this.SerName.Click += new System.EventHandler(this.pictureBox2_Click);
+			// 
 			// Where
 			// 
 			this.Where.AutoSize = true;
-			this.Where.Location = new System.Drawing.Point(899, 58);
+			this.Where.Location = new System.Drawing.Point(894, 96);
 			this.Where.Name = "Where";
 			this.Where.Size = new System.Drawing.Size(70, 13);
 			this.Where.TabIndex = 52;
@@ -1327,7 +1371,7 @@
 			// Stand
 			// 
 			this.Stand.AutoSize = true;
-			this.Stand.Location = new System.Drawing.Point(885, 41);
+			this.Stand.Location = new System.Drawing.Point(879, 74);
 			this.Stand.Name = "Stand";
 			this.Stand.Size = new System.Drawing.Size(98, 13);
 			this.Stand.TabIndex = 51;
@@ -1381,92 +1425,10 @@
 			this.button1.Visible = false;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// pictureBox7
-			// 
-			this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pictureBox7.Image = global::GamesList.Properties.Resources.x86_microsoft_windows_imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_956;
-			this.pictureBox7.Location = new System.Drawing.Point(400, 283);
-			this.pictureBox7.Name = "pictureBox7";
-			this.pictureBox7.Size = new System.Drawing.Size(16, 15);
-			this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox7.TabIndex = 46;
-			this.pictureBox7.TabStop = false;
-			this.pictureBox7.Visible = false;
-			// 
-			// pictureBox6
-			// 
-			this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pictureBox6.Image = global::GamesList.Properties.Resources.x86_microsoft_windows_imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_956;
-			this.pictureBox6.Location = new System.Drawing.Point(445, 258);
-			this.pictureBox6.Name = "pictureBox6";
-			this.pictureBox6.Size = new System.Drawing.Size(16, 15);
-			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox6.TabIndex = 45;
-			this.pictureBox6.TabStop = false;
-			this.pictureBox6.Visible = false;
-			// 
-			// pictureBox5
-			// 
-			this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pictureBox5.Image = global::GamesList.Properties.Resources.x86_microsoft_windows_imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_956;
-			this.pictureBox5.Location = new System.Drawing.Point(455, 209);
-			this.pictureBox5.Name = "pictureBox5";
-			this.pictureBox5.Size = new System.Drawing.Size(16, 15);
-			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox5.TabIndex = 44;
-			this.pictureBox5.TabStop = false;
-			this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-			// 
-			// pictureBox4
-			// 
-			this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pictureBox4.Image = global::GamesList.Properties.Resources.x86_microsoft_windows_imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_956;
-			this.pictureBox4.Location = new System.Drawing.Point(397, 183);
-			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(16, 15);
-			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox4.TabIndex = 43;
-			this.pictureBox4.TabStop = false;
-			this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-			// 
-			// pictureBox3
-			// 
-			this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pictureBox3.Image = global::GamesList.Properties.Resources.x86_microsoft_windows_imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_956;
-			this.pictureBox3.Location = new System.Drawing.Point(409, 155);
-			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(16, 15);
-			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox3.TabIndex = 42;
-			this.pictureBox3.TabStop = false;
-			this.pictureBox3.Click += new System.EventHandler(this.DevName_Click);
-			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pictureBox2.Image = global::GamesList.Properties.Resources.x86_microsoft_windows_imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_956;
-			this.pictureBox2.Location = new System.Drawing.Point(406, 57);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(16, 15);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox2.TabIndex = 41;
-			this.pictureBox2.TabStop = false;
-			this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-			// 
-			// SerName
-			// 
-			this.SerName.AutoSize = true;
-			this.SerName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.SerName.Location = new System.Drawing.Point(351, 59);
-			this.SerName.Name = "SerName";
-			this.SerName.Size = new System.Drawing.Size(51, 13);
-			this.SerName.TabIndex = 40;
-			this.SerName.Text = "SerName";
-			// 
 			// label33
 			// 
 			this.label33.AutoSize = true;
-			this.label33.Location = new System.Drawing.Point(267, 59);
+			this.label33.Location = new System.Drawing.Point(267, 101);
 			this.label33.Name = "label33";
 			this.label33.Size = new System.Drawing.Size(74, 13);
 			this.label33.TabIndex = 39;
@@ -1477,7 +1439,7 @@
 			this.Pirat.AutoSize = true;
 			this.Pirat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.Pirat.ForeColor = System.Drawing.Color.Red;
-			this.Pirat.Location = new System.Drawing.Point(493, 37);
+			this.Pirat.Location = new System.Drawing.Point(896, 54);
 			this.Pirat.Name = "Pirat";
 			this.Pirat.Size = new System.Drawing.Size(66, 18);
 			this.Pirat.TabIndex = 38;
@@ -1487,7 +1449,7 @@
 			// label32
 			// 
 			this.label32.AutoSize = true;
-			this.label32.Location = new System.Drawing.Point(67, 225);
+			this.label32.Location = new System.Drawing.Point(64, 243);
 			this.label32.Name = "label32";
 			this.label32.Size = new System.Drawing.Size(140, 13);
 			this.label32.TabIndex = 37;
@@ -1497,7 +1459,7 @@
 			// 
 			this.kol_updatesLabel1.AutoSize = true;
 			this.kol_updatesLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Kol_updates", true));
-			this.kol_updatesLabel1.Location = new System.Drawing.Point(408, 415);
+			this.kol_updatesLabel1.Location = new System.Drawing.Point(408, 457);
 			this.kol_updatesLabel1.Name = "kol_updatesLabel1";
 			this.kol_updatesLabel1.Size = new System.Drawing.Size(41, 13);
 			this.kol_updatesLabel1.TabIndex = 35;
@@ -1506,7 +1468,7 @@
 			// EditionLabel
 			// 
 			this.EditionLabel.AutoSize = true;
-			this.EditionLabel.Location = new System.Drawing.Point(331, 105);
+			this.EditionLabel.Location = new System.Drawing.Point(331, 147);
 			this.EditionLabel.Name = "EditionLabel";
 			this.EditionLabel.Size = new System.Drawing.Size(65, 13);
 			this.EditionLabel.TabIndex = 34;
@@ -1515,7 +1477,7 @@
 			// label31
 			// 
 			this.label31.AutoSize = true;
-			this.label31.Location = new System.Drawing.Point(267, 105);
+			this.label31.Location = new System.Drawing.Point(267, 147);
 			this.label31.Name = "label31";
 			this.label31.Size = new System.Drawing.Size(54, 13);
 			this.label31.TabIndex = 33;
@@ -1524,7 +1486,7 @@
 			// BoxLabel
 			// 
 			this.BoxLabel.AutoSize = true;
-			this.BoxLabel.Location = new System.Drawing.Point(351, 391);
+			this.BoxLabel.Location = new System.Drawing.Point(351, 433);
 			this.BoxLabel.Name = "BoxLabel";
 			this.BoxLabel.Size = new System.Drawing.Size(51, 13);
 			this.BoxLabel.TabIndex = 32;
@@ -1533,7 +1495,7 @@
 			// label30
 			// 
 			this.label30.AutoSize = true;
-			this.label30.Location = new System.Drawing.Point(267, 391);
+			this.label30.Location = new System.Drawing.Point(267, 433);
 			this.label30.Name = "label30";
 			this.label30.Size = new System.Drawing.Size(84, 13);
 			this.label30.TabIndex = 31;
@@ -1542,7 +1504,8 @@
 			// Disks
 			// 
 			this.Disks.AutoSize = true;
-			this.Disks.Location = new System.Drawing.Point(337, 365);
+			this.Disks.Location = new System.Drawing.Point(337, 407);
+			this.Disks.MaximumSize = new System.Drawing.Size(204, 0);
 			this.Disks.Name = "Disks";
 			this.Disks.Size = new System.Drawing.Size(33, 13);
 			this.Disks.TabIndex = 30;
@@ -1551,7 +1514,7 @@
 			// label29
 			// 
 			this.label29.AutoSize = true;
-			this.label29.Location = new System.Drawing.Point(267, 365);
+			this.label29.Location = new System.Drawing.Point(267, 407);
 			this.label29.Name = "label29";
 			this.label29.Size = new System.Drawing.Size(59, 13);
 			this.label29.TabIndex = 29;
@@ -1560,7 +1523,7 @@
 			// last_versionLabel1
 			// 
 			this.last_versionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Last_version", true));
-			this.last_versionLabel1.Location = new System.Drawing.Point(379, 340);
+			this.last_versionLabel1.Location = new System.Drawing.Point(379, 382);
 			this.last_versionLabel1.Name = "last_versionLabel1";
 			this.last_versionLabel1.Size = new System.Drawing.Size(95, 17);
 			this.last_versionLabel1.TabIndex = 28;
@@ -1569,7 +1532,7 @@
 			// label28
 			// 
 			this.label28.AutoSize = true;
-			this.label28.Location = new System.Drawing.Point(267, 340);
+			this.label28.Location = new System.Drawing.Point(267, 382);
 			this.label28.Name = "label28";
 			this.label28.Size = new System.Drawing.Size(105, 13);
 			this.label28.TabIndex = 27;
@@ -1642,7 +1605,7 @@
 			// Loc_type
 			// 
 			this.Loc_type.AutoSize = true;
-			this.Loc_type.Location = new System.Drawing.Point(371, 237);
+			this.Loc_type.Location = new System.Drawing.Point(371, 279);
 			this.Loc_type.Name = "Loc_type";
 			this.Loc_type.Size = new System.Drawing.Size(51, 13);
 			this.Loc_type.TabIndex = 19;
@@ -1651,7 +1614,7 @@
 			// label24
 			// 
 			this.label24.AutoSize = true;
-			this.label24.Location = new System.Drawing.Point(267, 237);
+			this.label24.Location = new System.Drawing.Point(267, 279);
 			this.label24.Name = "label24";
 			this.label24.Size = new System.Drawing.Size(98, 13);
 			this.label24.TabIndex = 18;
@@ -1660,7 +1623,7 @@
 			// Release_Date
 			// 
 			this.Release_Date.AutoSize = true;
-			this.Release_Date.Location = new System.Drawing.Point(349, 312);
+			this.Release_Date.Location = new System.Drawing.Point(349, 354);
 			this.Release_Date.Name = "Release_Date";
 			this.Release_Date.Size = new System.Drawing.Size(75, 13);
 			this.Release_Date.TabIndex = 17;
@@ -1669,7 +1632,7 @@
 			// label23
 			// 
 			this.label23.AutoSize = true;
-			this.label23.Location = new System.Drawing.Point(267, 312);
+			this.label23.Location = new System.Drawing.Point(267, 354);
 			this.label23.Name = "label23";
 			this.label23.Size = new System.Drawing.Size(76, 13);
 			this.label23.TabIndex = 16;
@@ -1678,7 +1641,8 @@
 			// PlatformsLabel
 			// 
 			this.PlatformsLabel.AutoSize = true;
-			this.PlatformsLabel.Location = new System.Drawing.Point(344, 285);
+			this.PlatformsLabel.Location = new System.Drawing.Point(344, 327);
+			this.PlatformsLabel.MaximumSize = new System.Drawing.Size(197, 0);
 			this.PlatformsLabel.Name = "PlatformsLabel";
 			this.PlatformsLabel.Size = new System.Drawing.Size(50, 13);
 			this.PlatformsLabel.TabIndex = 15;
@@ -1687,7 +1651,7 @@
 			// label22
 			// 
 			this.label22.AutoSize = true;
-			this.label22.Location = new System.Drawing.Point(267, 285);
+			this.label22.Location = new System.Drawing.Point(267, 327);
 			this.label22.Name = "label22";
 			this.label22.Size = new System.Drawing.Size(71, 13);
 			this.label22.TabIndex = 14;
@@ -1696,7 +1660,8 @@
 			// Online_Protect
 			// 
 			this.Online_Protect.AutoSize = true;
-			this.Online_Protect.Location = new System.Drawing.Point(365, 260);
+			this.Online_Protect.Location = new System.Drawing.Point(365, 302);
+			this.Online_Protect.MaximumSize = new System.Drawing.Size(176, 0);
 			this.Online_Protect.Name = "Online_Protect";
 			this.Online_Protect.Size = new System.Drawing.Size(74, 13);
 			this.Online_Protect.TabIndex = 13;
@@ -1705,7 +1670,7 @@
 			// label21
 			// 
 			this.label21.AutoSize = true;
-			this.label21.Location = new System.Drawing.Point(267, 260);
+			this.label21.Location = new System.Drawing.Point(267, 302);
 			this.label21.Name = "label21";
 			this.label21.Size = new System.Drawing.Size(89, 13);
 			this.label21.TabIndex = 12;
@@ -1715,7 +1680,8 @@
 			// 
 			this.JenrName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.JenrName.AutoSize = true;
-			this.JenrName.Location = new System.Drawing.Point(315, 129);
+			this.JenrName.Location = new System.Drawing.Point(315, 171);
+			this.JenrName.MaximumSize = new System.Drawing.Size(231, 0);
 			this.JenrName.Name = "JenrName";
 			this.JenrName.Size = new System.Drawing.Size(55, 13);
 			this.JenrName.TabIndex = 11;
@@ -1725,68 +1691,38 @@
 			// 
 			this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(267, 129);
+			this.label15.Location = new System.Drawing.Point(267, 171);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(42, 13);
 			this.label15.TabIndex = 10;
 			this.label15.Text = "Жанр: ";
 			// 
-			// RFDistrName
-			// 
-			this.RFDistrName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.RFDistrName.AutoSize = true;
-			this.RFDistrName.Location = new System.Drawing.Point(384, 211);
-			this.RFDistrName.Name = "RFDistrName";
-			this.RFDistrName.Size = new System.Drawing.Size(70, 13);
-			this.RFDistrName.TabIndex = 9;
-			this.RFDistrName.Text = "RFDistrName";
-			// 
 			// label14
 			// 
 			this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(267, 211);
+			this.label14.Location = new System.Drawing.Point(267, 253);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(111, 13);
 			this.label14.TabIndex = 8;
 			this.label14.Text = "Издатель в России: ";
 			// 
-			// DistrName
-			// 
-			this.DistrName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.DistrName.AutoSize = true;
-			this.DistrName.Location = new System.Drawing.Point(335, 185);
-			this.DistrName.Name = "DistrName";
-			this.DistrName.Size = new System.Drawing.Size(56, 13);
-			this.DistrName.TabIndex = 7;
-			this.DistrName.Text = "DistrName";
-			// 
 			// label16
 			// 
 			this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(267, 185);
+			this.label16.Location = new System.Drawing.Point(267, 227);
 			this.label16.Name = "label16";
 			this.label16.Size = new System.Drawing.Size(62, 13);
 			this.label16.TabIndex = 6;
 			this.label16.Text = "Издатель: ";
-			// 
-			// DevName
-			// 
-			this.DevName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.DevName.AutoSize = true;
-			this.DevName.Location = new System.Drawing.Point(351, 157);
-			this.DevName.Name = "DevName";
-			this.DevName.Size = new System.Drawing.Size(55, 13);
-			this.DevName.TabIndex = 5;
-			this.DevName.Text = "DevName";
 			// 
 			// OriginalName
 			// 
 			this.OriginalName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.OriginalName.AutoSize = true;
 			this.OriginalName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gamesBindingSource, "Original_Name", true));
-			this.OriginalName.Location = new System.Drawing.Point(410, 81);
+			this.OriginalName.Location = new System.Drawing.Point(410, 123);
 			this.OriginalName.Name = "OriginalName";
 			this.OriginalName.Size = new System.Drawing.Size(70, 13);
 			this.OriginalName.TabIndex = 4;
@@ -1796,7 +1732,7 @@
 			// 
 			this.Dev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.Dev.AutoSize = true;
-			this.Dev.Location = new System.Drawing.Point(267, 157);
+			this.Dev.Location = new System.Drawing.Point(267, 199);
 			this.Dev.Name = "Dev";
 			this.Dev.Size = new System.Drawing.Size(78, 13);
 			this.Dev.TabIndex = 3;
@@ -1806,7 +1742,7 @@
 			// 
 			this.Original.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.Original.AutoSize = true;
-			this.Original.Location = new System.Drawing.Point(267, 81);
+			this.Original.Location = new System.Drawing.Point(267, 123);
 			this.Original.Name = "Original";
 			this.Original.Size = new System.Drawing.Size(137, 13);
 			this.Original.TabIndex = 2;
@@ -1818,7 +1754,8 @@
 			this.GameName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.GameName.AutoSize = true;
 			this.GameName.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.GameName.Location = new System.Drawing.Point(264, 28);
+			this.GameName.Location = new System.Drawing.Point(264, 19);
+			this.GameName.MaximumSize = new System.Drawing.Size(713, 0);
 			this.GameName.Name = "GameName";
 			this.GameName.Size = new System.Drawing.Size(140, 31);
 			this.GameName.TabIndex = 1;
@@ -1829,7 +1766,7 @@
 			this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox1.Location = new System.Drawing.Point(6, 19);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(252, 425);
+			this.pictureBox1.Size = new System.Drawing.Size(252, 451);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 36;
 			this.pictureBox1.TabStop = false;
@@ -1975,7 +1912,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1253, 636);
+			this.ClientSize = new System.Drawing.Size(1253, 652);
 			this.Controls.Add(this.label34);
 			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.textBox1);
@@ -1991,6 +1928,7 @@
 			this.Name = "GamesForm";
 			this.Text = "Список игр";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GamesForm_FormClosed);
+			this.Shown += new System.EventHandler(this.GamesForm_Shown);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.SortBox.ResumeLayout(false);
@@ -2011,12 +1949,6 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gamesBindingSource1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
@@ -2058,11 +1990,8 @@
         private System.Windows.Forms.Label GameName;
         private System.Windows.Forms.Label Original;
         private System.Windows.Forms.Label OriginalName;
-        private System.Windows.Forms.Label Dev;
-        private System.Windows.Forms.Label DevName;
-        private System.Windows.Forms.Label DistrName;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label RFDistrName;
+		private System.Windows.Forms.Label Dev;
+		private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label JenrName;
@@ -2155,8 +2084,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gamedisksDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn publishersDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rFDistributorsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label Pirat;
-        private System.Windows.Forms.Label SerName;
+		private System.Windows.Forms.Label Pirat;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editGameContextToolStripMenuItem;
@@ -2165,13 +2093,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton AddGame;
         private System.Windows.Forms.ToolStripButton DelGame;
-        private System.Windows.Forms.ToolStripButton EditGame;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
+		private System.Windows.Forms.ToolStripButton EditGame;
         public System.Windows.Forms.BindingSource gamesBindingSource;
         private System.Windows.Forms.ToolStripButton AddContent;
         private System.Windows.Forms.Button button1;
@@ -2200,6 +2122,12 @@
 		private System.Windows.Forms.Label label35;
 		private System.Windows.Forms.ToolStripButton giveGameStripButton;
 		private System.Windows.Forms.LinkLabel Where;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+		private System.Windows.Forms.LinkLabel SerName;
+		private System.Windows.Forms.LinkLabel DevName;
+		private System.Windows.Forms.LinkLabel DistrName;
+		private System.Windows.Forms.LinkLabel RFDistrName;
     }
 }
 

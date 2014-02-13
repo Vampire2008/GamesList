@@ -27,8 +27,9 @@ namespace GamesList
         {
             InitializeComponent();
             var Query = from Games in Program.context.Games
-                        where Games.Localisation_Type != -1
-                        orderby Games.ID_Content == null ? Games.Name : (Games.Games2.Name + (Games.Games2.Name.IndexOf(":") > -1 ? " - " : ": ") + Games.Name)
+                        orderby Games.Games2.Games2 == null ?
+                        Games.ID_Content == null ? Games.Name : (Games.Games2.Name + (Games.Games2.Name.IndexOf(":") > -1 ? " - " : ": ") + Games.Name)
+                        : (Games.Games2.Games2.Name + (Games.Games2.Games2.Name.IndexOf(":") > -1 ? " - " : ": ") + Games.Games2.Name + " - " + Games.Name)
                         select Games;
             gamesBindingSource1.DataSource = Query.ToList();
             //gamesBindingSource1.DataSource = Program.context.Games.Local.ToBindingList();
@@ -558,15 +559,7 @@ namespace GamesList
 
         private void comboBox1_Format(object sender, ListControlConvertEventArgs e)
         {
-            if (((Games)e.ListItem).ID_Content != null)
-            {
-                if (((Games)e.ListItem).Games2.Name.IndexOf(":") > -1)
-                {
-                    e.Value = ((Games)e.ListItem).Games2.Name + " - " + ((Games)e.ListItem).Name;
-                }
-                else
-                    e.Value = ((Games)e.ListItem).Games2.Name + ": " + ((Games)e.ListItem).Name;
-            }
+            e.Value = Program.getName((Games)e.ListItem);
         }
 
         private void button1_Click(object sender, EventArgs e)
