@@ -1,25 +1,19 @@
-﻿using GamesList.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using GamesBase;
 
 namespace GamesList.Forms.Additional_Forms
 {
 	public partial class WhereGame : Form
 	{
-		private byte state = 0;
+		private byte state;
 		private decimal IDG;
 		public WhereGame(Games game)
 		{
 			InitializeComponent();
-			if (game.WhereStatus != "" && game.WhereStatus != null)
+			if (!string.IsNullOrEmpty(game.WhereStatus))
 			{
 				button1.Text = "Игра возвращена";
 				textBox1.Text = game.WhereStatus;
@@ -79,14 +73,10 @@ namespace GamesList.Forms.Additional_Forms
 
 		private void pictureBox1_DoubleClick(object sender, EventArgs e)
 		{
-			if (state == 1)
-			{
-				if (ChooseImage.ShowDialog() == DialogResult.OK)
-				{
-					pictureBox1.Image = Image.FromFile(ChooseImage.FileName);
-					label13.Visible = false;
-				}
-			}
+			if (state != 1) return;
+			if (ChooseImage.ShowDialog() != DialogResult.OK) return;
+			pictureBox1.Image = Image.FromFile(ChooseImage.FileName);
+			label13.Visible = false;
 		}
 	}
 }

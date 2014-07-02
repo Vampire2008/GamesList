@@ -1,33 +1,33 @@
 ﻿namespace GamesList
 {
-    partial class AddCollect
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class AddCollect
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.Label date_ReleaseLabel;
 			System.Windows.Forms.Label nameLabel;
@@ -127,7 +127,7 @@
 			// 
 			// gamesBindingSource
 			// 
-			this.gamesBindingSource.DataSource = typeof(GamesList.Model.Games);
+			this.gamesBindingSource.DataSource = typeof(GamesBase.Games);
 			// 
 			// date_ReleaseDateTimePicker
 			// 
@@ -182,7 +182,7 @@
 			// 
 			// publishersBindingSource
 			// 
-			this.publishersBindingSource.DataSource = typeof(GamesList.Model.Publishers);
+			this.publishersBindingSource.DataSource = typeof(GamesBase.Publishers);
 			// 
 			// label3
 			// 
@@ -210,7 +210,7 @@
 			// 
 			// rFDistributorsBindingSource
 			// 
-			this.rFDistributorsBindingSource.DataSource = typeof(GamesList.Model.RF_Distributors);
+			this.rFDistributorsBindingSource.DataSource = typeof(GamesBase.RF_Distributors);
 			// 
 			// PlatformsList
 			// 
@@ -229,7 +229,7 @@
 			// 
 			// platformsBindingSource
 			// 
-			this.platformsBindingSource.DataSource = typeof(GamesList.Model.Platforms);
+			this.platformsBindingSource.DataSource = typeof(GamesBase.Platforms);
 			// 
 			// posterPictureBox
 			// 
@@ -290,7 +290,7 @@
 			// 
 			// disktypesBindingSource
 			// 
-			this.disktypesBindingSource.DataSource = typeof(GamesList.Model.Disk_types);
+			this.disktypesBindingSource.DataSource = typeof(GamesBase.Disk_types);
 			// 
 			// ColDisks
 			// 
@@ -344,7 +344,7 @@
 			// 
 			// gamedisksBindingSource
 			// 
-			this.gamedisksBindingSource.DataSource = typeof(GamesList.Model.Game_disks);
+			this.gamedisksBindingSource.DataSource = typeof(GamesBase.Game_disks);
 			// 
 			// label5
 			// 
@@ -395,7 +395,7 @@
 			// 
 			// online_protectionsBindingSource
 			// 
-			this.online_protectionsBindingSource.DataSource = typeof(GamesList.Model.Online_protections);
+			this.online_protectionsBindingSource.DataSource = typeof(GamesBase.Online_protections);
 			// 
 			// AddBut
 			// 
@@ -451,7 +451,7 @@
 			// 
 			// editionsBindingSource
 			// 
-			this.editionsBindingSource.DataSource = typeof(GamesList.Model.Editions);
+			this.editionsBindingSource.DataSource = typeof(GamesBase.Editions);
 			// 
 			// label10
 			// 
@@ -477,7 +477,7 @@
 			// 
 			// boxesBindingSource
 			// 
-			this.boxesBindingSource.DataSource = typeof(GamesList.Model.Boxes);
+			this.boxesBindingSource.DataSource = typeof(GamesBase.Boxes);
 			// 
 			// ChooseImage
 			// 
@@ -528,7 +528,7 @@
 			// 
 			// gamesBindingSource1
 			// 
-			this.gamesBindingSource1.DataSource = typeof(GamesList.Model.Games);
+			this.gamesBindingSource1.DataSource = typeof(GamesBase.Games);
 			// 
 			// label1
 			// 
@@ -737,67 +737,67 @@
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.BindingSource gamesBindingSource;
-        private System.Windows.Forms.DateTimePicker date_ReleaseDateTimePicker;
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox original_NameTextBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.BindingSource publishersBindingSource;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.BindingSource rFDistributorsBindingSource;
-        private System.Windows.Forms.CheckedListBox PlatformsList;
-        private System.Windows.Forms.BindingSource platformsBindingSource;
-        private System.Windows.Forms.PictureBox posterPictureBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox OriginalNameEn;
-        private System.Windows.Forms.ListBox DiskTypes;
-        private System.Windows.Forms.BindingSource disktypesBindingSource;
-        private System.Windows.Forms.NumericUpDown ColDisks;
-        private System.Windows.Forms.Button AddDisk;
-        private System.Windows.Forms.Button RemoveDisk;
-        private System.Windows.Forms.ListBox GameDiskList;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckedListBox OnlineProtectionsList;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox game_TypeCheckBox;
-        private System.Windows.Forms.BindingSource online_protectionsBindingSource;
-        private System.Windows.Forms.BindingSource gamedisksBindingSource;
-        private System.Windows.Forms.Button AddBut;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.BindingSource editionsBindingSource;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.BindingSource boxesBindingSource;
-        private System.Windows.Forms.OpenFileDialog ChooseImage;
-        private System.Windows.Forms.Button EditButton;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem убратьИзображениеToolStripMenuItem;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource gamesBindingSource1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button AddGame;
-        private System.Windows.Forms.Button RemoveGame;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-    }
+		private System.Windows.Forms.BindingSource gamesBindingSource;
+		private System.Windows.Forms.DateTimePicker date_ReleaseDateTimePicker;
+		private System.Windows.Forms.TextBox nameTextBox;
+		private System.Windows.Forms.TextBox original_NameTextBox;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.ComboBox comboBox2;
+		private System.Windows.Forms.BindingSource publishersBindingSource;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.ComboBox comboBox3;
+		private System.Windows.Forms.BindingSource rFDistributorsBindingSource;
+		private System.Windows.Forms.CheckedListBox PlatformsList;
+		private System.Windows.Forms.BindingSource platformsBindingSource;
+		private System.Windows.Forms.PictureBox posterPictureBox;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.CheckBox OriginalNameEn;
+		private System.Windows.Forms.ListBox DiskTypes;
+		private System.Windows.Forms.BindingSource disktypesBindingSource;
+		private System.Windows.Forms.NumericUpDown ColDisks;
+		private System.Windows.Forms.Button AddDisk;
+		private System.Windows.Forms.Button RemoveDisk;
+		private System.Windows.Forms.ListBox GameDiskList;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.CheckedListBox OnlineProtectionsList;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.CheckBox game_TypeCheckBox;
+		private System.Windows.Forms.BindingSource online_protectionsBindingSource;
+		private System.Windows.Forms.BindingSource gamedisksBindingSource;
+		private System.Windows.Forms.Button AddBut;
+		private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+		private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.ComboBox comboBox6;
+		private System.Windows.Forms.BindingSource editionsBindingSource;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.ComboBox comboBox7;
+		private System.Windows.Forms.BindingSource boxesBindingSource;
+		private System.Windows.Forms.OpenFileDialog ChooseImage;
+		private System.Windows.Forms.Button EditButton;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem убратьИзображениеToolStripMenuItem;
+		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.BindingSource gamesBindingSource1;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.ListBox listBox1;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Button AddGame;
+		private System.Windows.Forms.Button RemoveGame;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button button5;
+		private System.Windows.Forms.Button button6;
+		private System.Windows.Forms.Button button7;
+	}
 }

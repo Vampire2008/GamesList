@@ -1,33 +1,33 @@
 ﻿namespace GamesList
 {
-    partial class ContentForm
-    {
-        /// <summary>
-        /// Требуется переменная конструктора.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class ContentForm
+	{
+		/// <summary>
+		/// Требуется переменная конструктора.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Освободить все используемые ресурсы.
-        /// </summary>
-        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Освободить все используемые ресурсы.
+		/// </summary>
+		/// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Код, автоматически созданный конструктором форм Windows
+		#region Код, автоматически созданный конструктором форм Windows
 
-        /// <summary>
-        /// Обязательный метод для поддержки конструктора - не изменяйте
-        /// содержимое данного метода при помощи редактора кода.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Обязательный метод для поддержки конструктора - не изменяйте
+		/// содержимое данного метода при помощи редактора кода.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContentForm));
 			this.kol_updatesLabel = new System.Windows.Forms.Label();
@@ -127,8 +127,8 @@
 			this.dataGridView1.AllowUserToAddRows = false;
 			this.dataGridView1.AllowUserToDeleteRows = false;
 			this.dataGridView1.AllowUserToResizeRows = false;
-			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| System.Windows.Forms.AnchorStyles.Left)));
 			this.dataGridView1.AutoGenerateColumns = false;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -207,9 +207,9 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBox1.Controls.Add(this.RFDistrName);
 			this.groupBox1.Controls.Add(this.DistrName);
 			this.groupBox1.Controls.Add(this.DevName);
@@ -758,7 +758,7 @@
 			// gamesBindingSource
 			// 
 			this.gamesBindingSource.AllowNew = false;
-			this.gamesBindingSource.DataSource = typeof(GamesList.Model.Games);
+			this.gamesBindingSource.DataSource = typeof(GamesBase.Games);
 			this.gamesBindingSource.Sort = "Name";
 			this.gamesBindingSource.CurrentChanged += new System.EventHandler(this.gamesBindingSource_CurrentChanged);
 			// 
@@ -916,85 +916,85 @@
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label GameName;
-        private System.Windows.Forms.Label Original;
-        private System.Windows.Forms.Label OriginalName;
+		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Label GameName;
+		private System.Windows.Forms.Label Original;
+		private System.Windows.Forms.Label OriginalName;
 		private System.Windows.Forms.Label Dev;
 		private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label JenrName;
-        private System.Windows.Forms.Label Online_Protect;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label PlatformsLabel;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label Release_Date;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label Loc_type;
-        private System.Windows.Forms.Label PersonalRate;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label IgromaniaRate;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label StatCompl;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label last_versionLabel1;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label Disks;
-        private System.Windows.Forms.Label BoxLabel;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label EditionLabel;
-        private System.Windows.Forms.Label kol_updatesLabel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statuscompliteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ratepersonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rateIgromaniaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn posterDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateReleaseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn localisationTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastversionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gameTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDPublisherDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDeveloperDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDRFDistributorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn developersDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gamedisksDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn publishersDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rFDistributorsDataGridViewTextBoxColumn;
+		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.Label JenrName;
+		private System.Windows.Forms.Label Online_Protect;
+		private System.Windows.Forms.Label label21;
+		private System.Windows.Forms.Label PlatformsLabel;
+		private System.Windows.Forms.Label label22;
+		private System.Windows.Forms.Label Release_Date;
+		private System.Windows.Forms.Label label23;
+		private System.Windows.Forms.Label label24;
+		private System.Windows.Forms.Label Loc_type;
+		private System.Windows.Forms.Label PersonalRate;
+		private System.Windows.Forms.Label label25;
+		private System.Windows.Forms.Label label26;
+		private System.Windows.Forms.Label IgromaniaRate;
+		private System.Windows.Forms.Label label27;
+		private System.Windows.Forms.Label StatCompl;
+		private System.Windows.Forms.Label label28;
+		private System.Windows.Forms.Label last_versionLabel1;
+		private System.Windows.Forms.Label label29;
+		private System.Windows.Forms.Label Disks;
+		private System.Windows.Forms.Label BoxLabel;
+		private System.Windows.Forms.Label label30;
+		private System.Windows.Forms.Label label31;
+		private System.Windows.Forms.Label EditionLabel;
+		private System.Windows.Forms.Label kol_updatesLabel1;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.Label label32;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn statuscompliteDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ratepersonDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn rateIgromaniaDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewImageColumn posterDataGridViewImageColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dateReleaseDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn localisationTypeDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn lastversionDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn gameTypeDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn iDPublisherDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn iDDeveloperDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn iDRFDistributorDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn developersDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn gamedisksDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn publishersDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn rFDistributorsDataGridViewTextBoxColumn;
 		private System.Windows.Forms.Label Pirat;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem editGameContextToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem delGamecontextToolStripMenuItem1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton AddGame;
-        private System.Windows.Forms.ToolStripButton DelGame;
+		private System.Windows.Forms.Label label33;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem editGameContextToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem delGamecontextToolStripMenuItem1;
+		private System.Windows.Forms.ToolStrip toolStrip1;
+		private System.Windows.Forms.ToolStripButton AddGame;
+		private System.Windows.Forms.ToolStripButton DelGame;
 		private System.Windows.Forms.ToolStripButton EditGame;
-        public System.Windows.Forms.BindingSource gamesBindingSource;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ToolStripMenuItem сделатьОбычнойИгройToolStripMenuItem;
-        private System.Windows.Forms.Label Stand;
-        private System.Windows.Forms.ToolStripButton AddContent;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem добавитьДополнениеToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.ToolStripButton toolStripButton1;
+		public System.Windows.Forms.BindingSource gamesBindingSource;
+		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.ToolStripMenuItem сделатьОбычнойИгройToolStripMenuItem;
+		private System.Windows.Forms.Label Stand;
+		private System.Windows.Forms.ToolStripButton AddContent;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.ToolStripMenuItem добавитьДополнениеToolStripMenuItem;
+		private System.Windows.Forms.Button button1;
+		public System.Windows.Forms.ToolStripButton toolStripButton1;
 		private System.Windows.Forms.LinkLabel SerName;
 		private System.Windows.Forms.LinkLabel DevName;
 		private System.Windows.Forms.LinkLabel RFDistrName;
 		private System.Windows.Forms.LinkLabel DistrName;
 		private System.Windows.Forms.Label kol_updatesLabel;
-    }
+	}
 }
 

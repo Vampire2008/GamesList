@@ -45,17 +45,6 @@
 			this.clearBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.gamseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.addGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.editGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.delGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-			this.addContentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.viewContentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-			this.addCollectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.controlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.managePublishersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.manageDevelopersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +58,17 @@
 			this.manageSeriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 			this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.gamseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.addGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.editGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.delGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+			this.addContentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.viewContentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+			this.addCollectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.SortBox = new System.Windows.Forms.GroupBox();
@@ -337,88 +337,6 @@
 			this.exitToolStripMenuItem.Text = "Выход";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
-			// gamseToolStripMenuItem
-			// 
-			this.gamseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addGameToolStripMenuItem,
-            this.editGameToolStripMenuItem,
-            this.delGameToolStripMenuItem,
-            this.toolStripSeparator3,
-            this.addContentToolStripMenuItem,
-            this.viewContentToolStripMenuItem,
-            this.toolStripSeparator5,
-            this.addCollectToolStripMenuItem,
-            this.toolStripSeparator8,
-            this.toolStripMenuItem1});
-			this.gamseToolStripMenuItem.Name = "gamseToolStripMenuItem";
-			this.gamseToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-			this.gamseToolStripMenuItem.Text = "Игры";
-			// 
-			// addGameToolStripMenuItem
-			// 
-			this.addGameToolStripMenuItem.Name = "addGameToolStripMenuItem";
-			this.addGameToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-			this.addGameToolStripMenuItem.Text = "Добавить игру";
-			this.addGameToolStripMenuItem.Click += new System.EventHandler(this.addGameToolStripMenuItem_Click);
-			// 
-			// editGameToolStripMenuItem
-			// 
-			this.editGameToolStripMenuItem.Name = "editGameToolStripMenuItem";
-			this.editGameToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-			this.editGameToolStripMenuItem.Text = "Редактировать игру";
-			this.editGameToolStripMenuItem.Click += new System.EventHandler(this.editGameToolStripMenuItem_Click);
-			// 
-			// delGameToolStripMenuItem
-			// 
-			this.delGameToolStripMenuItem.Name = "delGameToolStripMenuItem";
-			this.delGameToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-			this.delGameToolStripMenuItem.Text = "Удалить игру";
-			this.delGameToolStripMenuItem.Click += new System.EventHandler(this.delGameToolStripMenuItem_Click);
-			// 
-			// toolStripSeparator3
-			// 
-			this.toolStripSeparator3.Name = "toolStripSeparator3";
-			this.toolStripSeparator3.Size = new System.Drawing.Size(211, 6);
-			// 
-			// addContentToolStripMenuItem
-			// 
-			this.addContentToolStripMenuItem.Name = "addContentToolStripMenuItem";
-			this.addContentToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-			this.addContentToolStripMenuItem.Text = "Добавить дополнение";
-			this.addContentToolStripMenuItem.Click += new System.EventHandler(this.AddContent_Click);
-			// 
-			// viewContentToolStripMenuItem
-			// 
-			this.viewContentToolStripMenuItem.Name = "viewContentToolStripMenuItem";
-			this.viewContentToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-			this.viewContentToolStripMenuItem.Text = "Просмотр дополнений";
-			this.viewContentToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// toolStripSeparator5
-			// 
-			this.toolStripSeparator5.Name = "toolStripSeparator5";
-			this.toolStripSeparator5.Size = new System.Drawing.Size(211, 6);
-			// 
-			// addCollectToolStripMenuItem
-			// 
-			this.addCollectToolStripMenuItem.Name = "addCollectToolStripMenuItem";
-			this.addCollectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-			this.addCollectToolStripMenuItem.Text = "Добавить сборник";
-			this.addCollectToolStripMenuItem.Click += new System.EventHandler(this.AddCollect_Click);
-			// 
-			// toolStripSeparator8
-			// 
-			this.toolStripSeparator8.Name = "toolStripSeparator8";
-			this.toolStripSeparator8.Size = new System.Drawing.Size(211, 6);
-			// 
-			// toolStripMenuItem1
-			// 
-			this.toolStripMenuItem1.Enabled = false;
-			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
-			this.toolStripMenuItem1.Text = "Загрузить из другой базы";
-			this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-			// 
 			// controlToolStripMenuItem
 			// 
 			this.controlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -519,6 +437,88 @@
 			this.configToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
 			this.configToolStripMenuItem.Text = "Настройки программы";
 			this.configToolStripMenuItem.Click += new System.EventHandler(this.configToolStripMenuItem_Click);
+			// 
+			// gamseToolStripMenuItem
+			// 
+			this.gamseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addGameToolStripMenuItem,
+            this.editGameToolStripMenuItem,
+            this.delGameToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.addContentToolStripMenuItem,
+            this.viewContentToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.addCollectToolStripMenuItem,
+            this.toolStripSeparator8,
+            this.toolStripMenuItem1});
+			this.gamseToolStripMenuItem.Name = "gamseToolStripMenuItem";
+			this.gamseToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+			this.gamseToolStripMenuItem.Text = "Игры";
+			// 
+			// addGameToolStripMenuItem
+			// 
+			this.addGameToolStripMenuItem.Name = "addGameToolStripMenuItem";
+			this.addGameToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+			this.addGameToolStripMenuItem.Text = "Добавить игру";
+			this.addGameToolStripMenuItem.Click += new System.EventHandler(this.addGameToolStripMenuItem_Click);
+			// 
+			// editGameToolStripMenuItem
+			// 
+			this.editGameToolStripMenuItem.Name = "editGameToolStripMenuItem";
+			this.editGameToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+			this.editGameToolStripMenuItem.Text = "Редактировать игру";
+			this.editGameToolStripMenuItem.Click += new System.EventHandler(this.editGameToolStripMenuItem_Click);
+			// 
+			// delGameToolStripMenuItem
+			// 
+			this.delGameToolStripMenuItem.Name = "delGameToolStripMenuItem";
+			this.delGameToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+			this.delGameToolStripMenuItem.Text = "Удалить игру";
+			this.delGameToolStripMenuItem.Click += new System.EventHandler(this.delGameToolStripMenuItem_Click);
+			// 
+			// toolStripSeparator3
+			// 
+			this.toolStripSeparator3.Name = "toolStripSeparator3";
+			this.toolStripSeparator3.Size = new System.Drawing.Size(211, 6);
+			// 
+			// addContentToolStripMenuItem
+			// 
+			this.addContentToolStripMenuItem.Name = "addContentToolStripMenuItem";
+			this.addContentToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+			this.addContentToolStripMenuItem.Text = "Добавить дополнение";
+			this.addContentToolStripMenuItem.Click += new System.EventHandler(this.AddContent_Click);
+			// 
+			// viewContentToolStripMenuItem
+			// 
+			this.viewContentToolStripMenuItem.Name = "viewContentToolStripMenuItem";
+			this.viewContentToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+			this.viewContentToolStripMenuItem.Text = "Просмотр дополнений";
+			this.viewContentToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// toolStripSeparator5
+			// 
+			this.toolStripSeparator5.Name = "toolStripSeparator5";
+			this.toolStripSeparator5.Size = new System.Drawing.Size(211, 6);
+			// 
+			// addCollectToolStripMenuItem
+			// 
+			this.addCollectToolStripMenuItem.Name = "addCollectToolStripMenuItem";
+			this.addCollectToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+			this.addCollectToolStripMenuItem.Text = "Добавить сборник";
+			this.addCollectToolStripMenuItem.Click += new System.EventHandler(this.AddCollect_Click);
+			// 
+			// toolStripSeparator8
+			// 
+			this.toolStripSeparator8.Name = "toolStripSeparator8";
+			this.toolStripSeparator8.Size = new System.Drawing.Size(211, 6);
+			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.Enabled = false;
+			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
+			this.toolStripMenuItem1.Text = "Загрузить из другой базы";
+			this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
 			// 
 			// helpToolStripMenuItem
 			// 
@@ -821,7 +821,7 @@
 			// 
 			// platformsBindingSource
 			// 
-			this.platformsBindingSource.DataSource = typeof(GamesList.Model.Platforms);
+			this.platformsBindingSource.DataSource = typeof(GamesBase.Platforms);
 			// 
 			// label11
 			// 
@@ -856,7 +856,7 @@
 			// 
 			// genresBindingSource
 			// 
-			this.genresBindingSource.DataSource = typeof(GamesList.Model.Genres);
+			this.genresBindingSource.DataSource = typeof(GamesBase.Genres);
 			// 
 			// comboBox4
 			// 
@@ -873,7 +873,7 @@
 			// 
 			// onlineprotectionsBindingSource
 			// 
-			this.onlineprotectionsBindingSource.DataSource = typeof(GamesList.Model.Online_protections);
+			this.onlineprotectionsBindingSource.DataSource = typeof(GamesBase.Online_protections);
 			// 
 			// label9
 			// 
@@ -945,7 +945,7 @@
 			// developersBindingSource
 			// 
 			this.developersBindingSource.AllowNew = false;
-			this.developersBindingSource.DataSource = typeof(GamesList.Model.Developers);
+			this.developersBindingSource.DataSource = typeof(GamesBase.Developers);
 			// 
 			// comboBox2
 			// 
@@ -963,7 +963,7 @@
 			// publishersBindingSource
 			// 
 			this.publishersBindingSource.AllowNew = false;
-			this.publishersBindingSource.DataSource = typeof(GamesList.Model.Publishers);
+			this.publishersBindingSource.DataSource = typeof(GamesBase.Publishers);
 			// 
 			// label3
 			// 
@@ -1007,7 +1007,7 @@
 			// 
 			// rFDistributorsBindingSource
 			// 
-			this.rFDistributorsBindingSource.DataSource = typeof(GamesList.Model.RF_Distributors);
+			this.rFDistributorsBindingSource.DataSource = typeof(GamesBase.RF_Distributors);
 			// 
 			// shapeContainer1
 			// 
@@ -1200,7 +1200,7 @@
 			// gamesBindingSource
 			// 
 			this.gamesBindingSource.AllowNew = false;
-			this.gamesBindingSource.DataSource = typeof(GamesList.Model.Games);
+			this.gamesBindingSource.DataSource = typeof(GamesBase.Games);
 			this.gamesBindingSource.Sort = "Name";
 			this.gamesBindingSource.CurrentChanged += new System.EventHandler(this.gamesBindingSource_CurrentChanged);
 			// 
@@ -1310,7 +1310,7 @@
 			this.groupBox1.Size = new System.Drawing.Size(990, 480);
 			this.groupBox1.TabIndex = 3;
 			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Сведенья об игре";
+			this.groupBox1.Text = "Сведения об игре";
 			// 
 			// RFDistrName
 			// 
@@ -1392,7 +1392,7 @@
 			// 
 			// gamesBindingSource1
 			// 
-			this.gamesBindingSource1.DataSource = typeof(GamesList.Model.Games);
+			this.gamesBindingSource1.DataSource = typeof(GamesBase.Games);
 			// 
 			// CollectedLabel
 			// 

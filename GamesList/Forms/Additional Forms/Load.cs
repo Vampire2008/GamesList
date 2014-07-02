@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using GamesList.Model;
+using GamesBase;
 
 namespace GamesList.Forms.Additional_Forms
 {
@@ -22,87 +17,87 @@ namespace GamesList.Forms.Additional_Forms
 			{
 				/*try
 				{*/
-					SecondBase = new GamesEntities(Program.buidConStr(openFileDialog1.FileName));
-					SecondBase.Database.Connection.Open();
-					if (!DBUpdater.checkDBVersion(SecondBase))
+				SecondBase = new GamesEntities(openFileDialog1.FileName);
+				SecondBase.Database.Connection.Open();
+				if (!DBUpdater.checkDBVersion(SecondBase))
+				{
+					return;
+				}
+				List<string> MyGamesNames = new List<string>();
+				foreach (var g in Program.context.Games)
+				{
+					MyGamesNames.Add(g.GetFullName().ToUpper());
+				}
+				foreach (var g in SecondBase.Games)
+				{
+					if (!MyGamesNames.Contains(g.GetFullName().ToUpper()))
 					{
-						return;
+						GamesToAdd.Add(g);
 					}
-					List<string> MyGamesNames = new List<string>();
-					foreach (var g in Program.context.Games)
+				}
+				GamesToAdd = GamesToAdd.OrderBy(g => g.Name).ToList();
+				TreeNode TN, TN1;
+				foreach (var g in GamesToAdd)
+				{
+					if (g.Name == "Rebellion")
 					{
-						MyGamesNames.Add(g.getName().ToUpper());
+						g.Name.ToString();
 					}
-					foreach (var g in SecondBase.Games)
+					if (g.OriginalGame != null)
 					{
-						if (!MyGamesNames.Contains(Program.getName(g).ToUpper()))
+						if (g.OriginalGame.OriginalGame != null)
 						{
-							GamesToAdd.Add(g);
-						}
-					}
-					GamesToAdd = GamesToAdd.OrderBy(g => g.Name).ToList();
-					TreeNode TN, TN1;
-					foreach (var g in GamesToAdd)
-					{
-						if (g.Name == "Rebellion")
-						{
-							g.Name.ToString();
-						}
-						if (g.Games2 != null)
-						{
-							if (g.Games2.Games2 != null)
+							TN = TreeNodeFinderRecursiv(win7StyleTreeView1.Nodes, g.OriginalGame.OriginalGame);
+							if (TN == null)
 							{
-								TN = TreeNodeFinderRecursiv(win7StyleTreeView1.Nodes, g.Games2.Games2);
-								if (TN == null)
+								TN = win7StyleTreeView1.Nodes.Add(g.OriginalGame.OriginalGame.Name);
+								TN.Tag = g.OriginalGame.OriginalGame;
+								if (Program.context.Games.FirstOrDefault(g1 => g1.Name == g.OriginalGame.OriginalGame.Name) != null)
 								{
-									TN = win7StyleTreeView1.Nodes.Add(g.Games2.Games2.Name);
-									TN.Tag = g.Games2.Games2;
-									if (Program.context.Games.FirstOrDefault(g1 => g1.Name == g.Games2.Games2.Name)!= null)
-									{
-										TN.Checked = true;
-									}
-								}
-								TN1 = TreeNodeFinderRecursiv(TN.Nodes, g.Games2);
-								if (TN1 == null)
-								{
-									TN1 = TN.Nodes.Add(g.Games2.Name);
-									TN1.Tag = g.Games2;
-									if (Program.context.Games.FirstOrDefault(g1 => g1.Name == g.Games2.Name) != null)
-									{
-										TN1.Checked = true;
-									}
-								}
-								TN = TN1;
-							}
-							else
-							{
-								TN = TreeNodeFinderRecursiv(win7StyleTreeView1.Nodes, g.Games2);
-								if (TN == null)
-								{
-									TN = win7StyleTreeView1.Nodes.Add(g.Games2.Name);
-									TN.Tag = g.Games2;
-									if (Program.context.Games.FirstOrDefault(g1 => g1.Name == g.Games2.Name) != null)
-									{
-										TN.Checked = true;
-									}
+									TN.Checked = true;
 								}
 							}
-							if (TreeNodeFinderRecursiv(TN.Nodes, g) == null)
+							TN1 = TreeNodeFinderRecursiv(TN.Nodes, g.OriginalGame);
+							if (TN1 == null)
 							{
-								TN = TN.Nodes.Add(g.Name);
-								TN.Tag = g;
+								TN1 = TN.Nodes.Add(g.OriginalGame.Name);
+								TN1.Tag = g.OriginalGame;
+								if (Program.context.Games.FirstOrDefault(g1 => g1.Name == g.OriginalGame.Name) != null)
+								{
+									TN1.Checked = true;
+								}
 							}
+							TN = TN1;
 						}
 						else
 						{
-							if (TreeNodeFinderRecursiv(win7StyleTreeView1.Nodes, g) == null)
+							TN = TreeNodeFinderRecursiv(win7StyleTreeView1.Nodes, g.OriginalGame);
+							if (TN == null)
 							{
-								TN = win7StyleTreeView1.Nodes.Add(g.Name);
-								TN.Tag = g;
+								TN = win7StyleTreeView1.Nodes.Add(g.OriginalGame.Name);
+								TN.Tag = g.OriginalGame;
+								if (Program.context.Games.FirstOrDefault(g1 => g1.Name == g.OriginalGame.Name) != null)
+								{
+									TN.Checked = true;
+								}
 							}
 						}
+						if (TreeNodeFinderRecursiv(TN.Nodes, g) == null)
+						{
+							TN = TN.Nodes.Add(g.Name);
+							TN.Tag = g;
+						}
 					}
-					GamesToAdd = new List<Games>();
+					else
+					{
+						if (TreeNodeFinderRecursiv(win7StyleTreeView1.Nodes, g) == null)
+						{
+							TN = win7StyleTreeView1.Nodes.Add(g.Name);
+							TN.Tag = g;
+						}
+					}
+				}
+				GamesToAdd = new List<Games>();
 				/*}
 				catch(Exception ex)
 				{
@@ -146,11 +141,11 @@ namespace GamesList.Forms.Additional_Forms
 			List<Games> ProblemGames = new List<Games>();
 			foreach (var g in GamesToAdd)
 			{
-			/*	if ((Program.context.Games.SingleOrDefault(s => s.Developers.Name.ToUpper() == g.Developers.Name.ToUpper()) == null)||
-					Program.context.Games.SingleOrDefault)
-				{
+				/*	if ((Program.context.Games.SingleOrDefault(s => s.Developers.Name.ToUpper() == g.Developers.Name.ToUpper()) == null)||
+						Program.context.Games.SingleOrDefault)
+					{
 
-				}*/
+					}*/
 			}
 		}
 

@@ -1,33 +1,33 @@
 ﻿namespace GamesList
 {
-    partial class ManagePDL
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class ManagePDL
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagePDL));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -76,7 +76,7 @@
 			// 
 			// publishersBindingSource
 			// 
-			this.publishersBindingSource.DataSource = typeof(GamesList.Model.Publishers);
+			this.publishersBindingSource.DataSource = typeof(GamesBase.Publishers);
 			// 
 			// ChooseImage
 			// 
@@ -89,18 +89,18 @@
 			this.publishersBindingNavigator.CountItem = this.bindingNavigatorCountItem;
 			this.publishersBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
 			this.publishersBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.publishersBindingNavigatorSaveItem});
+			this.bindingNavigatorMoveFirstItem,
+			this.bindingNavigatorMovePreviousItem,
+			this.bindingNavigatorSeparator,
+			this.bindingNavigatorPositionItem,
+			this.bindingNavigatorCountItem,
+			this.bindingNavigatorSeparator1,
+			this.bindingNavigatorMoveNextItem,
+			this.bindingNavigatorMoveLastItem,
+			this.bindingNavigatorSeparator2,
+			this.bindingNavigatorAddNewItem,
+			this.bindingNavigatorDeleteItem,
+			this.publishersBindingNavigatorSaveItem});
 			this.publishersBindingNavigator.Location = new System.Drawing.Point(0, 0);
 			this.publishersBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
 			this.publishersBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -213,13 +213,13 @@
 			this.publishersDataGridView.AutoGenerateColumns = false;
 			this.publishersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.publishersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewImageColumn1,
-            this.dataGridViewTextBoxColumn6,
-            this.Description});
+			this.dataGridViewTextBoxColumn2,
+			this.dataGridViewTextBoxColumn4,
+			this.dataGridViewTextBoxColumn3,
+			this.dataGridViewTextBoxColumn5,
+			this.dataGridViewImageColumn1,
+			this.dataGridViewTextBoxColumn6,
+			this.Description});
 			this.publishersDataGridView.DataSource = this.publishersBindingSource;
 			this.publishersDataGridView.Location = new System.Drawing.Point(12, 35);
 			this.publishersDataGridView.MultiSelect = false;
@@ -309,26 +309,26 @@
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.PictureBox iconPictureBox;
-        private System.Windows.Forms.OpenFileDialog ChooseImage;
-        private System.Windows.Forms.BindingNavigator publishersBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton publishersBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView publishersDataGridView;
+		private System.Windows.Forms.PictureBox iconPictureBox;
+		private System.Windows.Forms.OpenFileDialog ChooseImage;
+		private System.Windows.Forms.BindingNavigator publishersBindingNavigator;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+		private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+		private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+		private System.Windows.Forms.ToolStripButton publishersBindingNavigatorSaveItem;
+		private System.Windows.Forms.DataGridView publishersDataGridView;
 		public System.Windows.Forms.BindingSource publishersBindingSource;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private Components.CalendarColumn dataGridViewTextBoxColumn4;
@@ -337,5 +337,5 @@
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-    }
+	}
 }

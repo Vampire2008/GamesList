@@ -24,8 +24,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Список игр</ProductName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>40</ApplicationRevision>
-    <ApplicationVersion>1.0.4.%2a</ApplicationVersion>
+    <ApplicationRevision>41</ApplicationRevision>
+    <ApplicationVersion>1.0.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -66,21 +66,21 @@
     <ApplicationIcon>Resources\ProgIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AeroWizard, Version=2.0.0.34243, Culture=neutral, PublicKeyToken=915e74f5d64b8f37, processorArchitecture=MSIL">
+    <Reference Include="AeroWizard, Version=2.0.2.27955, Culture=neutral, PublicKeyToken=915e74f5d64b8f37, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AeroWizard.2.0.0\lib\3.5\AeroWizard.dll</HintPath>
+      <HintPath>..\packages\AeroWizard.2.0.2\lib\4\AeroWizard.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.0.2\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.1.1\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
     </Reference>
     <Reference Include="Fhit.Windows.Forms">
       <HintPath>..\packages\Win7StyleTreeView.1.0.0.2\lib\net20\Fhit.Windows.Forms.dll</HintPath>
@@ -144,7 +144,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Config.cs" />
-    <Compile Include="DBUpdater.cs" />
     <Compile Include="Forms\Information Forms\InformationWindows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,60 +185,6 @@
     </Compile>
     <Compile Include="Forms\Information Forms\MaxPoster.Designer.cs">
       <DependentUpon>MaxPoster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Boxes.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Developers.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Disk_types.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Editions.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Games.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Game_disks.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Genres.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\GLDBVersion.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Online_protections.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Platforms.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Publishers.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\RF_Distributors.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Series.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -353,38 +298,21 @@
     <EmbeddedResource Include="Forms\Add Forms\AddCollect.resx">
       <DependentUpon>AddCollect.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="GamesList_TemporaryKey.pfx" />
-    <None Include="Model\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
-    <None Include="Model\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
-    <None Include="Model\Model1.edmx.sqlce" />
-    <None Include="Model\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\GamesList.Model.Boxes.datasource" />
-    <None Include="Properties\DataSources\GamesList.Model.Developers.datasource" />
-    <None Include="Properties\DataSources\GamesList.Model.Disk_types.datasource" />
-    <None Include="Properties\DataSources\GamesList.Model.Editions.datasource" />
-    <None Include="Properties\DataSources\GamesList.Model.Games.datasource" />
-    <None Include="Properties\DataSources\GamesList.Model.Game_disks.datasource" />
-    <None Include="Properties\DataSources\GamesList.Model.Genres.datasource" />
-    <None Include="Properties\DataSources\GamesList.Model.Online_protections.datasource" />
-    <None Include="Properties\DataSources\GamesList.Model.Platforms.datasource" />
-    <None Include="Properties\DataSources\GamesList.Model.Publishers.datasource" />
-    <None Include="Properties\DataSources\GamesList.Model.RF_Distributors.datasource" />
-    <None Include="Properties\DataSources\GamesList.Model.Series.datasource" />
+    <None Include="Properties\DataSources\GamesBase.Boxes.datasource" />
+    <None Include="Properties\DataSources\GamesBase.Developers.datasource" />
+    <None Include="Properties\DataSources\GamesBase.Disk_types.datasource" />
+    <None Include="Properties\DataSources\GamesBase.Editions.datasource" />
+    <None Include="Properties\DataSources\GamesBase.Games.datasource" />
+    <None Include="Properties\DataSources\GamesBase.Game_disks.datasource" />
+    <None Include="Properties\DataSources\GamesBase.Genres.datasource" />
+    <None Include="Properties\DataSources\GamesBase.GLDBVersion.datasource" />
+    <None Include="Properties\DataSources\GamesBase.Online_protections.datasource" />
+    <None Include="Properties\DataSources\GamesBase.Platforms.datasource" />
+    <None Include="Properties\DataSources\GamesBase.Publishers.datasource" />
+    <None Include="Properties\DataSources\GamesBase.RF_Distributors.datasource" />
+    <None Include="Properties\DataSources\GamesBase.Series.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -420,7 +348,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GamesBase\GamesBase.csproj">
+      <Project>{3d1ed7d2-b7bc-448e-8cec-0ab3d7e58f3e}</Project>
+      <Name>GamesBase</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AddContent.png" />
     <None Include="Resources\x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_2005.png" />
@@ -464,9 +397,6 @@
     <None Include="Resources\Vista %28199%29.png" />
     <None Include="Resources\Vista %28198%29.png" />
     <Resource Include="Resources\gws_landing_hero.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <FileAssociation Include=".gdb">

@@ -108,3 +108,62 @@ C:\Users\Михаил\Documents\GitHub\GamesList\GamesList\obj\Release\Спис�
 C:\Users\Михаил\Documents\GitHub\GamesList\GamesList\obj\Release\Список игр.application
 C:\Users\Михаил\Documents\GitHub\GamesList\GamesList\bin\Release\Microsoft.VisualBasic.PowerPacks.dll
 C:\Users\Михаил\Documents\GitHub\GamesList\GamesList\bin\Release\Microsoft.VisualBasic.PowerPacks.xml
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\Список игр.exe.config
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\Список игр.exe
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.csprojResolveAssemblyReference.cache
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\Список игр.g.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.Forms.Additional_Forms.Load.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.Forms.Additional_Forms.WhereGame.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.AboutBox.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.AddGame.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.ChooseGame.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.GamesForm.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.InformationWindows.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.ManageDiskTypes.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.ManageGEB.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.ManageOPOS.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.ManagePDL.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.MaxPoster.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.Properties.Resources.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.SaveNotSaveDialog.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.SeriesInf.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.SettingsForm.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.Wizard.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.AddContent.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.ContentForm.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.AddCollect.resources
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\GamesList.csproj.GenerateResource.Cache
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\sqlceca40.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\sqlcecompact40.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\sqlceer40EN.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\sqlceer40RU.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\sqlceme40.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\sqlceoledb40.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\sqlceqp40.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\sqlcese40.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\Resources\FileIcon.ico
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\Список игр.exe.manifest
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\Список игр.application
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\Список игр.exe
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\Список игр.pdb
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\AeroWizard.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\EntityFramework.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\EntityFramework.SqlServer.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\EntityFramework.SqlServerCompact.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\Fhit.Windows.Forms.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\GamesBase.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\Microsoft.VisualBasic.PowerPacks.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\System.Data.SqlServerCe.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\GamesBase.pdb
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\AeroWizard.xml
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\EntityFramework.xml
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\EntityFramework.SqlServer.xml
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\EntityFramework.SqlServerCompact.xml
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\Microsoft.VisualBasic.PowerPacks.xml
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\ru\EntityFramework.resources.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\bin\Release\ru\EntityFramework.SqlServer.resources.dll
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\Список игр.exe.manifest
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\Список игр.application
+D:\Библиотеки\Документы\GitHub\GamesList\GamesList\obj\Release\Список игр.pdb
+C:\Users\Михаил\Documents\GitHub\GamesList\GamesList\bin\Release\GamesBase.dll
+C:\Users\Михаил\Documents\GitHub\GamesList\GamesList\bin\Release\GamesBase.pdb

@@ -8,209 +8,245 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GamesList.Properties {
-    using System;
-    
-    
-    /// <summary>
-    ///   Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
-    /// </summary>
-    // Этот класс создан автоматически классом StronglyTypedResourceBuilder
-    // с помощью такого средства, как ResGen или Visual Studio.
-    // Чтобы добавить или удалить член, измените файл .ResX и снова запустите ResGen
-    // с параметром /str или перестройте свой проект VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
-        
-        private static global::System.Resources.ResourceManager resourceMan;
-        
-        private static global::System.Globalization.CultureInfo resourceCulture;
-        
-        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
-        }
-        
-        /// <summary>
-        ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GamesList.Properties.Resources", typeof(Resources).Assembly);
-                    resourceMan = temp;
-                }
-                return resourceMan;
-            }
-        }
-        
-        /// <summary>
-        ///   Перезаписывает свойство CurrentUICulture текущего потока для всех
-        ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
-            get {
-                return resourceCulture;
-            }
-            set {
-                resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap AddContent {
-            get {
-                object obj = ResourceManager.GetObject("AddContent", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
-        /// </summary>
-        internal static System.Drawing.Icon FileIcon {
-            get {
-                object obj = ResourceManager.GetObject("FileIcon", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap gws_landing_hero {
-            get {
-                object obj = ResourceManager.GetObject("gws_landing_hero", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap msra_exe_9 {
-            get {
-                object obj = ResourceManager.GetObject("msra_exe_9", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap netshell_dll_386 {
-            get {
-                object obj = ResourceManager.GetObject("netshell_dll_386", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
-        /// </summary>
-        internal static System.Drawing.Icon ProgIcon {
-            get {
-                object obj = ResourceManager.GetObject("ProgIcon", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap psr_exe_91 {
-            get {
-                object obj = ResourceManager.GetObject("psr_exe_91", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Vista__198_ {
-            get {
-                object obj = ResourceManager.GetObject("Vista (198)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Vista__199_ {
-            get {
-                object obj = ResourceManager.GetObject("Vista (199)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Wizard {
-            get {
-                object obj = ResourceManager.GetObject("Wizard", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap WlanMM_dll_3131_05_256x256x32bit {
-            get {
-                object obj = ResourceManager.GetObject("WlanMM_dll_3131_05_256x256x32bit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap wow64_microsoft_windows_shell32_31bf3856ad364e35_6_1_7100_0_none_438f691553cff239_shell32_dll_0d29dca9_2259 {
-            get {
-                object obj = ResourceManager.GetObject("wow64_microsoft-windows-shell32_31bf3856ad364e35_6_1_7100_0_none_438f691553cff239" +
-                        "_shell32_dll_0d29dca9_2259", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap x86_microsoft_windows_imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_2005 {
-            get {
-                object obj = ResourceManager.GetObject("x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_" +
-                        "imageres_dll_44f44625_2005", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap x86_microsoft_windows_imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_956 {
-            get {
-                object obj = ResourceManager.GetObject("x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_" +
-                        "imageres_dll_44f44625_956", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Автор {
-            get {
-                object obj = ResourceManager.GetObject("Автор", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-    }
+namespace GamesList.Properties
+{
+	/// <summary>
+	///   Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+	/// </summary>
+	// Этот класс создан автоматически классом StronglyTypedResourceBuilder
+	// с помощью такого средства, как ResGen или Visual Studio.
+	// Чтобы добавить или удалить член, измените файл .ResX и снова запустите ResGen
+	// с параметром /str или перестройте свой проект VS.
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+	[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+	[global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+	internal class Resources
+	{
+
+		private static global::System.Resources.ResourceManager resourceMan;
+
+		private static global::System.Globalization.CultureInfo resourceCulture;
+
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+		internal Resources()
+		{
+		}
+
+		/// <summary>
+		///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+		/// </summary>
+		[global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+		internal static global::System.Resources.ResourceManager ResourceManager
+		{
+			get
+			{
+				if (object.ReferenceEquals(resourceMan, null))
+				{
+					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GamesList.Properties.Resources", typeof(Resources).Assembly);
+					resourceMan = temp;
+				}
+				return resourceMan;
+			}
+		}
+
+		/// <summary>
+		///   Перезаписывает свойство CurrentUICulture текущего потока для всех
+		///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+		/// </summary>
+		[global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+		internal static global::System.Globalization.CultureInfo Culture
+		{
+			get
+			{
+				return resourceCulture;
+			}
+			set
+			{
+				resourceCulture = value;
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap AddContent
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("AddContent", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+		/// </summary>
+		internal static System.Drawing.Icon FileIcon
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("FileIcon", resourceCulture);
+				return ((System.Drawing.Icon)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap gws_landing_hero
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("gws_landing_hero", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap msra_exe_9
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("msra_exe_9", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap netshell_dll_386
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("netshell_dll_386", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+		/// </summary>
+		internal static System.Drawing.Icon ProgIcon
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("ProgIcon", resourceCulture);
+				return ((System.Drawing.Icon)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap psr_exe_91
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("psr_exe_91", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap Vista__198_
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("Vista (198)", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap Vista__199_
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("Vista (199)", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap Wizard
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("Wizard", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap WlanMM_dll_3131_05_256x256x32bit
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("WlanMM_dll_3131_05_256x256x32bit", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap wow64_microsoft_windows_shell32_31bf3856ad364e35_6_1_7100_0_none_438f691553cff239_shell32_dll_0d29dca9_2259
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("wow64_microsoft-windows-shell32_31bf3856ad364e35_6_1_7100_0_none_438f691553cff239" +
+						"_shell32_dll_0d29dca9_2259", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap x86_microsoft_windows_imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_2005
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_" +
+						"imageres_dll_44f44625_2005", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap x86_microsoft_windows_imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_imageres_dll_44f44625_956
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("x86_microsoft-windows-imageres_31bf3856ad364e35_6_1_7100_0_none_4db09b944cfbd780_" +
+						"imageres_dll_44f44625_956", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+
+		/// <summary>
+		///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap Автор
+		{
+			get
+			{
+				object obj = ResourceManager.GetObject("Автор", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+	}
 }
