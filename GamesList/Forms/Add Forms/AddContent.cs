@@ -146,9 +146,11 @@ namespace GamesList
 
 			SerName.Text = AddingGame.Series != null ? AddingGame.Series.Name : "<отсутствует>";
 
-			GenLst.Text = String.Join("/n", AddingGame.Genres.Select(g => g.Name));
+			GenLst.Text = String.Join("\n", AddingGame.Genres.Select(g => g.Name));
 			GameDiskList.DataSource = AddingGame.Game_disks.ToList();
-			ParentGameName.Text = AddingGame.OriginalGame.GetFullName();
+			ParentGameName.Text = AddingGame.OriginalGame.GetFullName().Contains(":")
+				? string.Format("{0} -", AddingGame.OriginalGame.GetFullName())
+				: string.Format("{0}:", AddingGame.OriginalGame.GetFullName());
 			if (AddingGame.OriginalGame.OriginalGame != null)
 			{
 				StandAlone.Checked = false;
@@ -295,8 +297,9 @@ namespace GamesList
 				return;
 			}
 			Cursor = Cursors.WaitCursor;
-			if (!OriginalNameEn.Checked)
-				AddingGame.Original_Name = null;
+
+			AddingGame.Name = AddingGame.Name.Trim();
+			AddingGame.Original_Name = !OriginalNameEn.Checked ? null : AddingGame.Original_Name.Trim();
 
 			if (posterPictureBox.Image != null)
 			{
@@ -375,8 +378,8 @@ namespace GamesList
 				return;
 			}
 			Cursor = Cursors.WaitCursor;
-			if (!OriginalNameEn.Checked)
-				AddingGame.Original_Name = null;
+			AddingGame.Name = AddingGame.Name.Trim();
+			AddingGame.Original_Name = !OriginalNameEn.Checked ? null : AddingGame.Original_Name.Trim();
 
 			if (posterPictureBox.Image != null)
 			{
@@ -400,8 +403,8 @@ namespace GamesList
 				}
 				//Обновление платформ
 				var toAdd = PlatformsList.CheckedItems.Cast<Platforms>().Select(p => p.ID_Platform)
-				.Except(_context.Platforms.Select(p => p.ID_Platform));
-				var toRemove = _context.Platforms.Select(p => p.ID_Platform)
+				.Except(AddingGame.Platforms.Select(p => p.ID_Platform));
+				var toRemove = AddingGame.Platforms.ToList().Select(p => p.ID_Platform)
 					.Except(PlatformsList.CheckedItems.Cast<Platforms>().Select(p => p.ID_Platform));
 				foreach (var p in toAdd)
 					AddingGame.Platforms.Add(_context.Platforms.Find(p));
@@ -410,8 +413,8 @@ namespace GamesList
 
 				//Обновление защит
 				toAdd = OnlineProtectionsList.CheckedItems.Cast<Online_protections>().Select(p => p.ID_Protect)
-				.Except(_context.Online_protections.Select(p => p.ID_Protect));
-				toRemove = _context.Online_protections.Select(p => p.ID_Protect)
+				.Except(AddingGame.Online_protections.Select(p => p.ID_Protect));
+				toRemove = AddingGame.Online_protections.ToList().Select(p => p.ID_Protect)
 					.Except(OnlineProtectionsList.CheckedItems.Cast<Online_protections>().Select(p => p.ID_Protect));
 				foreach (var op in toAdd)
 					AddingGame.Online_protections.Add(_context.Online_protections.Find(op));

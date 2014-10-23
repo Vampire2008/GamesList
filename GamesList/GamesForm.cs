@@ -129,10 +129,16 @@ namespace GamesList
 				delGamecontextToolStripMenuItem1.Enabled = false;
 				editGameContextToolStripMenuItem.Enabled = false;
 				editGameToolStripMenuItem.Enabled = false;
+				AddContent.Enabled = false;
+				AddCollect.Enabled = false;
+				giveGameStripButton.Enabled = false;
 				toolStripButton1.Text = "Игор нет";
 				return;
 			}
 			addContentToolStripMenuItem.Enabled = true;
+			AddContent.Enabled = true;
+			AddCollect.Enabled = true;
+			giveGameStripButton.Enabled = true;
 			DelGame.Enabled = true;
 			EditGame.Enabled = true;
 			delGameToolStripMenuItem.Enabled = true;

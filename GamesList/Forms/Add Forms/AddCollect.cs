@@ -230,8 +230,8 @@ namespace GamesList
 			}
 
 			Cursor = Cursors.WaitCursor;
-			if (!OriginalNameEn.Checked)
-				AddingGame.Original_Name = null;
+			AddingGame.Name = AddingGame.Name.Trim();
+			AddingGame.Original_Name = !OriginalNameEn.Checked ? null : AddingGame.Original_Name.Trim();
 
 			if (posterPictureBox.Image != null)
 			{
@@ -307,8 +307,8 @@ namespace GamesList
 			}
 
 			Cursor = Cursors.WaitCursor;
-			if (!OriginalNameEn.Checked)
-				AddingGame.Original_Name = null;
+			AddingGame.Name = AddingGame.Name.Trim();
+			AddingGame.Original_Name = !OriginalNameEn.Checked ? null : AddingGame.Original_Name.Trim();
 
 			if (posterPictureBox.Image != null)
 			{

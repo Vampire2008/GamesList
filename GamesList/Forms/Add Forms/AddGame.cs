@@ -215,7 +215,7 @@ namespace GamesList
 			{
 				AddingGame.Game_disks.Add(new Game_disks
 				{
-					ID_Game_disk = (_context.Game_disks.Any() ? _context.Game_disks.Max(pp => pp.ID_Game_disk) : 0) + 1,
+					ID_Game_disk = (_context.Game_disks.Any() ? _context.Game_disks.Max(pp => pp.ID_Game_disk) : 0) + 1 + AddingGame.Game_disks.Count,
 					ID_Disk_Type = (decimal)DiskTypes.SelectedValue,
 					Disk_types = _context.Disk_types.Find(DiskTypes.SelectedValue),
 					Kol_vo = Decimal.ToDouble(ColDisks.Value),
@@ -277,8 +277,9 @@ namespace GamesList
 				return;
 			}
 			Cursor = Cursors.WaitCursor;
-			if (!OriginalNameEn.Checked)
-				AddingGame.Original_Name = null;
+
+			AddingGame.Name = AddingGame.Name.Trim();
+			AddingGame.Original_Name = !OriginalNameEn.Checked ? null : AddingGame.Original_Name.Trim();
 
 			if (posterPictureBox.Image != null)
 			{
@@ -366,9 +367,8 @@ namespace GamesList
 				return;
 			}
 			Cursor = Cursors.WaitCursor;
-
-			if (!OriginalNameEn.Checked)
-				AddingGame.Original_Name = null;
+			AddingGame.Name = AddingGame.Name.Trim();
+			AddingGame.Original_Name = !OriginalNameEn.Checked ? null : AddingGame.Original_Name.Trim();
 
 			if (posterPictureBox.Image != null)
 			{
